@@ -1,0 +1,22 @@
+.menu-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.menu-item {
+    min-height: 30px;
+    line-height: 30px;
+    width: 100px;
+    display: inline-block;
+    text-indent: 20px;
+}
+.menu-item a{
+    text-decoration: none;
+    color: #777;
+}
+.menu-item:hover {
+    background: #AAA;
+}
+.menu-item:hover a{
+    color: #FFF;
+}
