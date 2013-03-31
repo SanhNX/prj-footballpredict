@@ -41,6 +41,7 @@ create table tbl_club
 (
 	Id int AUTO_INCREMENT primary key not null,
 	Name varchar(50) not null,
+	Logo varchar(50) not null,
 	Scores int
 );
 create table tbl_matchlist
@@ -49,9 +50,10 @@ create table tbl_matchlist
 	LeaguesId int references tbl_leagues(Id),
 	ClubA int references tbl_club(Id),
 	ClubB int references tbl_club(Id),
+	StartTime Datetime,
 	Result varchar(10)
 );
-create table tbl_User
+create table tbl_user
 (
 	Id int AUTO_INCREMENT primary key not null,
 	Email varchar(50) not null,
