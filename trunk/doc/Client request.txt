@@ -1,0 +1,167 @@
+Dear Client . 
+I'm thanks very much!
+
+Comment · less than a minute ago · by Ta Chi Thanh ··· Delete
+Dear Freelancer, just got the Godaddy hosting on linux: 
+Domain: 
+footballchallenge.me 
+FTP Username: 
+field3team14 
+FTP password: 
+Fieldteam14! 
+Nameservers: 
+ns47.domaincontrol.com 
+ns48.domaincontrol.com
+
+Please let me know any further information
+
+Comment · about 4 hours ago · by Team 14
+Dear Client . 
+The Godaddy hosting service is good , I want to use linux.
+
+Comment · about 6 hours ago · by Ta Chi Thanh ··· Delete
+Dear freelancer 
+Sorry, I completely misunderstood your question I was thinking of our users ranking. 
+We need the Team Ranking that shows the statistics per team (Can we call the tab Team Statistics to avoid confusions). For the rusian league it should be a chart llike the one on the attachment. (the russian league doesn't have subdivisions) 
+Is it ok for you if we use the Godaddy hosting service? or is there another you recommend?
+
+Comment · about 15 hours ago · by Team 14
+Dear client, 
+To my understanding of your reply, you do not need the tab "Team Ranking" (similar to letspredict.it) in your website right?
+
+Comment · about 17 hours ago · by Ta Chi Thanh ··· Delete
+We are buying hosting service in go daddy, do you want it for Linux or windows?
+
+Comment · about 21 hours ago · by Team 14
+The idea is to use the same ranking structure than letspredict.it: 
+1-Global Rankings tab (rankings in letspredict.it) 
+Here you can see the points of the players on the league; whithin global rankings you can see Two alternatives: a) Global Full ranking: absolutely all the people (this is a very long list) and b) Global Friends ranking: it shows all your friends points (same than lets predict)
+
+2- Custom Rankings (just realized that using the word private can be misleading) same concept than poules: This second tab shows the scores of the group members, that are created by users. There are two types of custom groups: a) Custom public rankings: they are created by users and can be seen by all the users (users could eventually create club rankings). b) Custom non public: they are created by users and can only be seen by the group members.
+
+Comment · about 21 hours ago · by Team 14
+Dear Client 
+let's me know information of hosting which you want me deploy source code. 
+i need all thing that to coding for mapping with server which you choose
+
+Comment · 1 day ago · by Ta Chi Thanh ··· Delete
+As we are to understand the function "Team Ranking" of letspredict.it. ? 
+Refer image name : AM.png
+
+Comment · 1 day ago · by Ta Chi Thanh ··· Delete
+Ta Chi Thanh uploaded files AM.png.
+
+Comment · 1 day ago · by Ta Chi Thanh ··· Delete
+The global scores ranking is the same concept than the ranking function of letspredict.it. 
+In our case it is a ranking of the scores of all the persons that are playing in the russian league. 
+(when we include the next two leagues, each of them will have separate scores and rankings, same concept the letspredict has for different leagues)
+
+The other type of ranking that we have is the private one, which you can only see the groups members points (similar to poules of letspredict)
+
+Comment · 1 day ago · by Team 14
+Dear Client . 
+Can you explain detail function "Ranking of global scores" ?
+
+Comment · 1 day ago · by Ta Chi Thanh ··· Delete
+Dear client. sure , we will start the work and let you know if we have any question
+
+Comment · 3 days ago · by Ta Chi Thanh ··· Delete
+Dear freelancer, please let us know if you have further questions
+
+Comment · 5 days ago · by WeTask Consultant
+Dear Team 14. sure , we will start the work and let you know if we have any question
+
+Reply · 3 days ago · by Ta Chi Thanh ··· Delete
+Deleted by WeTask Consultant.
+
+Reply · 3 days ago · by Ta Chi Thanh
+WeTask Consultant uploaded files Field3Team14_-_Russian_Fixtures.docx and Field3Team14_-_FAQ___Points_system.docx.
+
+Comment · 5 days ago · by WeTask Consultant
+WeTask Consultant uploaded files Field3Team14_-_Russian_Fixtures.docx.
+
+Comment · 5 days ago · by WeTask Consultant
+WeTask Consultant uploaded files Field3Team14_-_Russian_Fixtures.docx.
+
+Comment · 5 days ago · by WeTask Consultant
+Dear client, please provide the information as you planned to today (March 26th). Thanks
+
+Comment · 5 days ago · by WeTask Consultant
+Client request:
+
+We already have the name and domain for the website: it will be called 'FootballChallenge.me'.
+
+We have compiled a list of the tasks that would make our 'minimum viable product' (and we would need to get done by April 4th), and then some others that could wait until later (April 12-15th).
+
+For April 4th, we would need (similar to website letspredict.it):
+
+- Language: English
+
+- Logo: initially don't design a logo, just put a simple text with the name (FootballChallenge.me).
+
+- Member sign-in /sign-up functions and database to keep track of everyone's score --> ideally login with Facebook, but if this takes more time then let's have a simple login function by Apr4th, and leave the Facebook feature for Apr14th 
+- User profile: Avatar, name, date of birth, favourite team, 1 field for comments/details, points the user has, his/her overall ranking (as in the letspredict.it) 
+- Predictions input screen. Initially with Russian soccer teams: around 20 teams, will be fixed for one, names, logo only –-> soccer teams and fixtures to be sent by HBS team by March, 26 
+- The actual results of the games will be entered manually by the admin: HBS team will need an admin site/tool to control and enter this information 
+- The points will be assigned once a week: compare the users' predictions with the actual results of the games to assign points and tally the ranking --> HBS to send points calculation system ("algorithm") by March 26th 
+- Ranking of global scores, based on the points earned by each user 
+- FAQ, Help, About Us, Rules: simple and straight forward, plain text --> HBS team to send content by March 26th
+
+For a later stage (April 12-15th), we would need: 
+- Logo: design logo [by April, 12] 
+- Facebook sign-in/sign-up functions (as discussed above) [by April, 12] 
+- ‘Invite friends’ button: once you're signed in with Facebook, be able to invite your Facebook friends [by April, 12]
+
+- Create groups of friends to have internal/ private rankings (see 'Poules' in letspredict.it) [by April, 12]
+
+- Other countries' soccer leagues: implement exactly same structure to 2 more countries. Only teams would change. Each country league would have its own points and global ranking [by April, 15]
+
+- Language: option to change the language to 2 other languages [by April 15]. --> HBS team will provide you with the translations
+
+Comment · 5 days ago · by WeTask Consultant
+Deleted by LOCO.
+
+Comment · 14 days ago · by LOCO
+Similar to letspredict.it website:
+
+- Member sign-in /sign-up functions and database to keep track of everyone's score
+
+- Facebook sign-in/sign-up functions if possible 
+
+- User profile: Avatar, name, date of birth, favourite team, 1 field for comments/details 
+
+- Ranking of global scores , based on the points of how close they predict the games' results: the system will be defined by the client
+
+- The sport games results will be entered manually by the admin: we will need an admin site/tool to control and enter these information
+
+- The points will be assigned once a week: compare the results of the sport games with users' preductions to assign points and tally the ranking
+
+- Sport games: start with soccers only, with only 1 country
+
+- The soccer teams: around 20 teams, will be fixed for one: names, logo only
+
+- FAQ, Help, About Us, Rules: simple and straight forward, plain text
+
+- Will need help with graphic design, but very basic. Help with logo, website designs but only basic designs
+
+- Focus mostly on the table/rankings of user performances and the sport game results table
+
+Comment · 17 days ago · by Team 14
+Thank you for the task. We will get back to you shortly
+
+Reply · 17 days ago · by WeTask Consultant
+I have read your requirements and had some following questions : 1. Could you please give clearer information of the way of scoring and rule of the game? 2. If possible, please send us the detailed description of colour struture that you design so that we can do
+
+Reply · 16 days ago · by Duong Nguyen
+Client will provide these information later
+
+Reply · 16 days ago · by WeTask Consultant
+Deleted by Duong Nguyen.
+
+Reply · 16 days ago · by Duong Nguyen
+Deleted by Duong Nguyen.
+
+Reply · 16 days ago · by Duong Nguyen
+Deleted by WeTask Consultant.
+
+Reply · 13 days ago · by LOCO
