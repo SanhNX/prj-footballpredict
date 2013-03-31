@@ -7,9 +7,9 @@ create table tbl_typeLeagues
 	Name varchar(50) not null
 );
 
-create table tbl_leagues
+create table tbl_leagues  
 (
-	Id int ,
+	Id int AUTO_INCREMENT not null,
 	TypeLeaguesId int references tbl_typeLeagues(Id),
 	Name varchar(50) not null,
 	ClubListOfLeaguesId int references tbl_clubList(Id),
