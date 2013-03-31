@@ -1,0 +1,14 @@
+<?php
+$username = 'weddin69';
+$password = '';
+$hostname = 'localhost';
+$db = 'footballpredict';
+
+$dbhandle = mysql_connect($hostname, $username, $password)
+or die("Unable to connect to MySQL");
+
+
+mysql_select_db($db);
+mysql_query("SET NAMES 'utf8'", $dbhandle);
+
+?>
