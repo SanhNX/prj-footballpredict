@@ -42,7 +42,14 @@ create table tbl_club
 	Id int AUTO_INCREMENT primary key not null,
 	Name varchar(50) not null,
 	Logo varchar(50) not null,
-	Scores int
+	/*
+    Thanh 
+    dung de quan ly nhung tran dau do user binh chon. 
+*/
+	Played int,
+	Points int,
+	Won int,
+	Lost int
 );
 create table tbl_matchlist
 (
@@ -64,4 +71,15 @@ create table tbl_user
 	DOB Datetime,
 	Gender bit,
 	Scores int
+);
+/*
+    Thanh add 
+    dung de quan ly nhung tran dau do user binh chon. 
+*/
+create table tbl_predictions
+(
+	Id int AUTO_INCREMENT primary key not null,
+	UserId int references tbl_user(Id),
+	MatchlistId int references tbl_matchlist(Id),
+	Prediction varchar(10)
 );
