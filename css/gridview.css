@@ -1,0 +1,45 @@
+.grid {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.grid .item {
+	height: 190px;
+	width: 157px;
+	float: left;
+}
+
+.grid-icon-panel {
+	height: 90px;
+	text-align: center;
+	margin-top: 10px;
+}
+
+.grid-icon-panel img {
+	height: 100%;
+}
+
+.grid-item-cap {
+	color: #C0C0C0;
+	text-align: center;
+	font-weight: bold;
+}
+
+.grid-item-mess {
+	text-align: center;
+	font-size: 12px;
+	color: #777;
+	line-height: 25px;
+}
+.grid-item-button {
+	text-decoration: none;
+	color: #FFF;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	width: 140px;
+	display: block;
+	margin: 0px auto;
+	background: url('../images/bg/flip-btn.png') center no-repeat;
+}

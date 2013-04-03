@@ -2,15 +2,17 @@ body{
     font-family: 'segoe ui','tahoma';
     margin: 0;
     padding: 0;
+    background: url('../images/bg/main-bg.jpg') no-repeat center top #000;
+    background-size: 100% auto;
 }
 .page-clear {
     clear: both;
     height: 100px;
-    background: #E6E6E6;
+	background: url('../images/bg/clear-bg.png') center top no-repeat;
 }
 .header {
     height: 100px;
-    background: #EEE;
+	background: url('../images/bg/black-twill.png');
 }
 .header .header-container {
     height: 100%;
@@ -58,7 +60,7 @@ body{
 .footer {
     height: 100px;
     clear: both;
-    background: #EEE;
+	background: url('../images/bg/black-twill.png');
 }
 .footer .footer-container {
     height: 100%;
@@ -87,18 +89,17 @@ body{
     min-height: 300px;
     width: 900px;
     margin: 0px auto;
-    background: #EEE;
 }
 .page-cont-left {
     float: left;
     width: 70%;
-    min-height: 300px;
-    background: #E5E5E5;
-    text-shadow: 0px 1px 0px #FFF;
+    min-height: 830px;
+    background:  url('../images/bg/carbon-bg.png') center;
 }
 .page-cont-right {
     float: left;
     width: 30%;
+	background: #EEE;
 }
 .cover{
     height: 150px;
@@ -115,39 +116,60 @@ body{
     height: 30px;
     line-height: 30px;
     text-indent: 20px;
-    background-color: #C5C5C5;
+    background: url('../images/bg/black-twill.png');
 }
 .page-cont-title.light {
-    background-color: #D1D1D1;
+    background: url('../images/bg/red-twill.png');
 }
 .page-cont-title .cont-title-bold {
     font-weight: bold;
+    font-size: 23px;
+    color: #FFF;
+    text-transform: uppercase;
 }
 .page-cont-title .cont-title-sub {
     padding-left: 10px;
     color: #4E4E4E;
+
 }
 .page-cont-title-sub {
-    height: 30px;
-    line-height: 30px;
+    height: 27px;
+    line-height: 24px;
     text-indent: 20px;
-    background-color: #CCC;
+    background: url('../images/bg/red-dots.png');
+    border-top: 3px solid #BA0E36;
+    color: #BA0E36;
+    font-size: 20px;
+    font-weight: bold;
+    position: relative;
 }
-
+.sub0,.sub1{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 10;
+    width: 197px;
+    height: 27px;
+    background: url('../images/bg/subtext-0.png') no-repeat right bottom;
+} 
+.sub1{
+    background: url('../images/bg/subtext-1.png') no-repeat right bottom;
+} 
 .match-list {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 .match-list .match-item {
-    height: 60px;
+    height: 70px;
+	background: url('../images/bg/list-item-bg.png') no-repeat center;
 }
 .match-list .match-item:nth-child(odd) {
-    height: 60px;
-    background: #DDD;
+    height: 70px;
+	background: url('../images/bg/list-item-bg-odd.png') no-repeat center;
 }
 .match-list .match-item-icon-panel {
-    line-height: 60px;
+    line-height: 70px;
     height: 100%;
     width: 150px;
     float: left;
@@ -161,7 +183,7 @@ body{
 .match-item-name-panel {
     display: table;
     width: 200px;
-    height: 60px;
+    height: 70px;
     float: left;
 }
 .match-item-name-panel .match-item-name {
@@ -170,16 +192,17 @@ body{
     text-align: center;
 }
 .match-item-name-panel .match-item-name .match-item-cap{
-    color: #555;
+    color: #C0C0C0;
     font-weight: bold;
 }
 .match-item-name-panel .match-item-name .match-item-sub{
     font-size: 13px;
+	color: #FF0A42;
 }
 .match-item-mess-panel {
     display: table;
-    width: 140px;
-    height: 60px;
+    width: 135px;
+    height: 70px;
     float: left;
     vertical-align: middle;
 }
@@ -192,9 +215,9 @@ body{
 }
 .match-item-num-panel {
     display: block;
-    line-height: 60px;
-    width: 140px;
-    height: 60px;
+    line-height: 70px;
+    width: 145px;
+    height: 70px;
     float: right;
     text-align: center;
     font-size: 0px;
@@ -202,19 +225,22 @@ body{
 
 .match-item-num,.match-item-num-input {
     display: inline-block;
-    width: 50px;
+    width: 67px;
     vertical-align: middle;
     border: none;
-    height: 40px;
-    line-height: 40px;
+    height: 55px;
+    line-height: 55px;
     margin: 0;
     font-size: 30px;
     text-align: center;
     margin-right: 5px;
-    background: #CCC;
+	background: url('../images/bg/flipboard.png') no-repeat center center;
+	color: #FFF;
+	font-family: 'Arial';
+	font-weight: bold;
 }
 .page-cont-control {
-    background-color: #C5C5C5;
+	background: url('../images/bg/black-twill.png');
     height: 40px;
     line-height: 40px;
 }
@@ -230,22 +256,23 @@ body{
     background-image: url('../images/icon/next.png');
 }
 .page-cont-button-save {
-    width: 100px;
-    height: 30px;
-    line-height: 30px;
-    margin: 5px;
-    float: right;
-    background: #35AEE7;
-    text-align: center;
-    color: #1D698D;
-    font-weight: bold;
-    text-shadow: 0px 1px 0px #93DCFF;
+	width: 100px;
+	height: 30px;
+	line-height: 30px;
+	margin: 5px;
+	float: right;
+	background: #BA0E36;
+	text-align: center;
+	color: #5F071C;
+	font-weight: bold;
+	text-shadow: 0px 1px 0px #E06985;
 }
 
 .page-cont-rate {
     height: 50px;
     font-size: 13px;
-    background: #C5C5C5;padding-top: 10px;
+    background: url('../images/bg/rate-bg.png') no-repeat;
+    padding-top: 10px;
 }
 .page-cont-rate .page-cont-label {
     margin: 0;
@@ -253,6 +280,8 @@ body{
     line-height: 20px;
     height: 20px;
     text-indent: 30px;
+    color: white;
+
 }
 .page-cont-tip-list {
     list-style: none;
@@ -285,9 +314,18 @@ body{
     font-size: 14px;
 }
 .tip-num {
-    height: 20px;
-    width: 30px;
-    background: #C9C9C9;
-    margin: 10px auto;
-    display: block;
+	height: 20px;
+	line-height: 20px;
+	width: 30px;
+	background: #BA0E36;
+	margin: 10px auto;
+	display: block;
+	font-weight: bold;
+	text-align: center;
+	color: #FFF;
+}
+.page-cont-ref{
+	height: 440px;
+	width: 270px;
+	background: url('../images/icon/soccer.png')center bottom no-repeat;
 }
