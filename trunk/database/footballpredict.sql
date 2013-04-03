@@ -11,7 +11,7 @@ create table tbl_typeLeagues
 -- (
 -- Id int AUTO_INCREMENT not null,
 -- TypeLeaguesId int references tbl_typeLeagues(Id),
--- ClubListOfLeaguesId int references tbl_clubList(Id),
+-- ClubListOfTypeLeaguesId int references tbl_clubList(Id),
 -- TableListOfLeaguesId int references tbl_TableList(Id),
 -- primary key(Id, TypeLeaguesId)
 -- );
@@ -19,18 +19,18 @@ create table tbl_typeLeagues
 create table tbl_clubListOfLeagues
 (
 	Id int AUTO_INCREMENT primary key not null,
-	LeaguesId int not null,	
+	TypeLeaguesId int not null,	
 	ClubId int not null,
-	CONSTRAINT FOREIGN KEY(LeaguesId) references tbl_leagues(Id),
+	CONSTRAINT FOREIGN KEY(TypeLeaguesId) references tbl_typeLeagues(Id),
 	CONSTRAINT FOREIGN KEY(ClubId) references tbl_club(Id)
 );
 create table tbl_tableListOfLeagues
 (
 	Id int AUTO_INCREMENT not null,
-	LeaguesId int not null,
+	TypeLeaguesId int not null,
 	TableName varchar(50) not null,
-	CONSTRAINT FOREIGN KEY(LeaguesId) references tbl_leagues(Id),
-	primary key(Id, LeaguesId)
+	CONSTRAINT FOREIGN KEY(TypeLeaguesId) references tbl_typeLeagues(Id),
+	primary key(Id, TypeLeaguesId)
 );
 create table tbl_clubListOfTable
 (
@@ -54,10 +54,10 @@ create table tbl_club
 create table tbl_matchlist
 (
 	Id int AUTO_INCREMENT primary key not null,
-	LeaguesId int not null,
+	TypeLeaguesId int not null,
 	ClubA int not null,
 	ClubB int not null,
-	CONSTRAINT FOREIGN KEY(LeaguesId) references tbl_leagues(Id),
+	CONSTRAINT FOREIGN KEY(TypeLeaguesId) references tbl_typeLeagues(Id),
 	CONSTRAINT FOREIGN KEY(ClubA) references tbl_club(Id),
 	CONSTRAINT FOREIGN KEY(ClubB) references tbl_club(Id),
 	StartTime Datetime,
@@ -91,31 +91,31 @@ INSERT INTO tbl_typeleagues(Name) VALUES('Top League');
 INSERT INTO tbl_typeleagues(Name) VALUES('Jupiler League');
 
 
-INSERT INTO tbl_clublistofleagues(LeaguesId, ClubId) VALUES(1, 1);
-INSERT INTO tbl_clublistofleagues(LeaguesId, ClubId) VALUES(1, 2);
-INSERT INTO tbl_clublistofleagues(LeaguesId, ClubId) VALUES(1, 3);
-INSERT INTO tbl_clublistofleagues(LeaguesId, ClubId) VALUES(1, 4);
-INSERT INTO tbl_clublistofleagues(LeaguesId, ClubId) VALUES(1, 5);
-INSERT INTO tbl_clublistofleagues(LeaguesId, ClubId) VALUES(1, 6);
-INSERT INTO tbl_clublistofleagues(LeaguesId, ClubId) VALUES(1, 7);
-INSERT INTO tbl_clublistofleagues(LeaguesId, ClubId) VALUES(1, 8);
-INSERT INTO tbl_clublistofleagues(LeaguesId, ClubId) VALUES(1, 9);
-INSERT INTO tbl_clublistofleagues(LeaguesId, ClubId) VALUES(1, 10);
+INSERT INTO tbl_clublistofleagues(TypeLeaguesId, ClubId) VALUES(1, 1);
+INSERT INTO tbl_clublistofleagues(TypeLeaguesId, ClubId) VALUES(1, 2);
+INSERT INTO tbl_clublistofleagues(TypeLeaguesId, ClubId) VALUES(1, 3);
+INSERT INTO tbl_clublistofleagues(TypeLeaguesId, ClubId) VALUES(1, 4);
+INSERT INTO tbl_clublistofleagues(TypeLeaguesId, ClubId) VALUES(1, 5);
+INSERT INTO tbl_clublistofleagues(TypeLeaguesId, ClubId) VALUES(1, 6);
+INSERT INTO tbl_clublistofleagues(TypeLeaguesId, ClubId) VALUES(1, 7);
+INSERT INTO tbl_clublistofleagues(TypeLeaguesId, ClubId) VALUES(1, 8);
+INSERT INTO tbl_clublistofleagues(TypeLeaguesId, ClubId) VALUES(1, 9);
+INSERT INTO tbl_clublistofleagues(TypeLeaguesId, ClubId) VALUES(1, 10);
 
-INSERT INTO tbl_clublistofleagues(LeaguesId, ClubId) VALUES(2, 11);
-INSERT INTO tbl_clublistofleagues(LeaguesId, ClubId) VALUES(2, 12);
-INSERT INTO tbl_clublistofleagues(LeaguesId, ClubId) VALUES(2, 13);
-INSERT INTO tbl_clublistofleagues(LeaguesId, ClubId) VALUES(2, 14);
-INSERT INTO tbl_clublistofleagues(LeaguesId, ClubId) VALUES(2, 15);
-INSERT INTO tbl_clublistofleagues(LeaguesId, ClubId) VALUES(2, 1);
-INSERT INTO tbl_clublistofleagues(LeaguesId, ClubId) VALUES(2, 2);
-INSERT INTO tbl_clublistofleagues(LeaguesId, ClubId) VALUES(2, 3);
-INSERT INTO tbl_clublistofleagues(LeaguesId, ClubId) VALUES(2, 4);
-INSERT INTO tbl_clublistofleagues(LeaguesId, ClubId) VALUES(2, 5);
+INSERT INTO tbl_clublistofleagues(TypeLeaguesId, ClubId) VALUES(2, 11);
+INSERT INTO tbl_clublistofleagues(TypeLeaguesId, ClubId) VALUES(2, 12);
+INSERT INTO tbl_clublistofleagues(TypeLeaguesId, ClubId) VALUES(2, 13);
+INSERT INTO tbl_clublistofleagues(TypeLeaguesId, ClubId) VALUES(2, 14);
+INSERT INTO tbl_clublistofleagues(TypeLeaguesId, ClubId) VALUES(2, 15);
+INSERT INTO tbl_clublistofleagues(TypeLeaguesId, ClubId) VALUES(2, 1);
+INSERT INTO tbl_clublistofleagues(TypeLeaguesId, ClubId) VALUES(2, 2);
+INSERT INTO tbl_clublistofleagues(TypeLeaguesId, ClubId) VALUES(2, 3);
+INSERT INTO tbl_clublistofleagues(TypeLeaguesId, ClubId) VALUES(2, 4);
+INSERT INTO tbl_clublistofleagues(TypeLeaguesId, ClubId) VALUES(2, 5);
 
 
-INSERT INTO tbl_tablelistofleagues(LeaguesId, TableName) VALUES(2, 'A');
-INSERT INTO tbl_tablelistofleagues(LeaguesId, TableName) VALUES(2, 'B');
+INSERT INTO tbl_tablelistofleagues(TypeLeaguesId, TableName) VALUES(2, 'A');
+INSERT INTO tbl_tablelistofleagues(TypeLeaguesId, TableName) VALUES(2, 'B');
 
 INSERT INTO tbl_clubListOfTable(TableListOfLeaguesId, ClubId) VALUES(1, 1);
 INSERT INTO tbl_clubListOfTable(TableListOfLeaguesId, ClubId) VALUES(1, 2);
@@ -146,10 +146,10 @@ INSERT INTO tbl_club(Name, Logo, Played, Points, Won, Lost) VALUES('Volga','imag
 INSERT INTO tbl_club(Name, Logo, Played, Points, Won, Lost) VALUES('Zenit','images/resources/team-logo/Zenit.jpg', 19, 230, 18, 1);
 
 
-INSERT INTO tbl_matchlist(LeaguesId, ClubA, ClubB, StartTime, Result) VALUES(1, 1, 2, '2012/01/01', '');
-INSERT INTO tbl_matchlist(LeaguesId, ClubA, ClubB, StartTime, Result) VALUES(1, 3, 4, '2012/02/02', '');
-INSERT INTO tbl_matchlist(LeaguesId, ClubA, ClubB, StartTime, Result) VALUES(1, 5, 6, '2012/03/03', '');
-INSERT INTO tbl_matchlist(LeaguesId, ClubA, ClubB, StartTime, Result) VALUES(1, 7, 8, '2012/04/04', '');
-INSERT INTO tbl_matchlist(LeaguesId, ClubA, ClubB, StartTime, Result) VALUES(1, 9, 10, '2012/05/05', '');
-INSERT INTO tbl_matchlist(LeaguesId, ClubA, ClubB, StartTime, Result) VALUES(1, 11, 12, '2012/06/06', '');
-INSERT INTO tbl_matchlist(LeaguesId, ClubA, ClubB, StartTime, Result) VALUES(1, 13, 14, '2012/07/07', '');
+INSERT INTO tbl_matchlist(TypeLeaguesId, ClubA, ClubB, StartTime, Result) VALUES(1, 1, 2, '2012/01/01', '');
+INSERT INTO tbl_matchlist(TypeLeaguesId, ClubA, ClubB, StartTime, Result) VALUES(1, 3, 4, '2012/02/02', '');
+INSERT INTO tbl_matchlist(TypeLeaguesId, ClubA, ClubB, StartTime, Result) VALUES(1, 5, 6, '2012/03/03', '');
+INSERT INTO tbl_matchlist(TypeLeaguesId, ClubA, ClubB, StartTime, Result) VALUES(1, 7, 8, '2012/04/04', '');
+INSERT INTO tbl_matchlist(TypeLeaguesId, ClubA, ClubB, StartTime, Result) VALUES(1, 9, 10, '2012/05/05', '');
+INSERT INTO tbl_matchlist(TypeLeaguesId, ClubA, ClubB, StartTime, Result) VALUES(1, 11, 12, '2012/06/06', '');
+INSERT INTO tbl_matchlist(TypeLeaguesId, ClubA, ClubB, StartTime, Result) VALUES(1, 13, 14, '2012/07/07', '');
