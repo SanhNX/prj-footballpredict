@@ -153,3 +153,10 @@ INSERT INTO tbl_matchlist(TypeLeaguesId, ClubA, ClubB, StartTime, Result) VALUES
 INSERT INTO tbl_matchlist(TypeLeaguesId, ClubA, ClubB, StartTime, Result) VALUES(1, 9, 10, '2012/05/05', '');
 INSERT INTO tbl_matchlist(TypeLeaguesId, ClubA, ClubB, StartTime, Result) VALUES(1, 11, 12, '2012/06/06', '');
 INSERT INTO tbl_matchlist(TypeLeaguesId, ClubA, ClubB, StartTime, Result) VALUES(1, 13, 14, '2012/07/07', '');
+UPDATE `footballpredict`.`tbl_matchlist` SET `StartTime`='2012-02-02 20:30:00' WHERE `Id`='2';
+UPDATE `footballpredict`.`tbl_matchlist` SET `StartTime`='2012-03-03 01:45:00' WHERE `Id`='3';
+UPDATE `footballpredict`.`tbl_matchlist` SET `StartTime`='2012-01-01 12:40:00' WHERE `Id`='1';
+UPDATE `footballpredict`.`tbl_matchlist` SET `StartTime`='2012-04-04 02:25:00' WHERE `Id`='4';
+UPDATE `footballpredict`.`tbl_matchlist` SET `StartTime`='2012-05-05 07:15:00' WHERE `Id`='5';
+UPDATE `footballpredict`.`tbl_matchlist` SET `StartTime`='2012-06-06 07:45:00' WHERE `Id`='6';
+UPDATE `footballpredict`.`tbl_matchlist` SET `StartTime`='2012-07-07 06:20:00' WHERE `Id`='7';
