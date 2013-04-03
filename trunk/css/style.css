@@ -1,260 +1,296 @@
-body{
-    font-family: 'segoe ui','tahoma';
-    margin: 0;
-    padding: 0;
-    background: url('../images/bg/main-bg.jpg') no-repeat center top #000;
-    background-size: 100% auto;
+body {
+	font-family: 'segoe ui', 'tahoma';
+	margin: 0;
+	padding: 0;
+	background: url('../images/bg/main-bg.jpg') no-repeat center top #000;
+	background-size: 100% auto;
 }
+
 .page-clear {
-    clear: both;
-    height: 100px;
+	clear: both;
+	height: 100px;
 	background: url('../images/bg/clear-bg.png') center top no-repeat;
 }
+
 .header {
-    height: 100px;
+	height: 100px;
 	background: url('../images/bg/black-twill.png');
 }
+
 .header .header-container {
-    height: 100%;
-    width: 900px;
-    margin: auto;
-    background: #CCC;
-    position: relative;
-    background: url('../images/gallery/slide1.jpg') no-repeat center top;
-    background-size: 900px auto;
+	height: 100%;
+	width: 900px;
+	margin: auto;
+	background: #CCC;
+	position: relative;
+	background: url('../images/gallery/slide1.jpg') no-repeat center top;
+	background-size: 900px auto;
 }
+
 .header .header-container .header-logo {
-    position: absolute;
-    left: 0px;
-    width: 300px;
-    height: 70px;
-    line-height: 70px;
-    text-indent: 10px;
-    color: #FFF;
-    font-family: 'segoe ui light';
-    font-size: 60px;
+	position: absolute;
+	left: 0px;
+	width: 300px;
+	height: 70px;
+	line-height: 70px;
+	text-indent: 10px;
+	color: #FFF;
+	font-family: 'segoe ui light';
+	font-size: 60px;
 }
 
 .header .header-container .header-menu {
-    height: 30px;
-    width: 100%;
-    position: absolute;
-    bottom: 0px;
-    background: rgba(255, 255, 255, 0.21);
+	height: 30px;
+	width: 100%;
+	position: absolute;
+	bottom: 0px;
+	background: rgba(255, 255, 255, 0.21);
 }
+
 .header .header-container .header-log {
-    position: absolute;
-    right: 0px;
-    width: 160px;
-    height: 70px;
+	position: absolute;
+	right: 0px;
+	width: 160px;
+	height: 70px;
 }
+
 .header .header-container .header-log .btn-expand-login {
-    height: 30px;
-    line-height: 30px;
-    background: rgba(255, 255, 255, 0.29);
-    color: #C7C7C7;
-    text-align: center;
-    font-weight: bold;
+	height: 30px;
+	line-height: 30px;
+	background: rgba(255, 255, 255, 0.29);
+	color: #C7C7C7;
+	text-align: center;
+	font-weight: bold;
 }
 
 .footer {
-    height: 100px;
-    clear: both;
+	height: 100px;
+	clear: both;
 	background: url('../images/bg/black-twill.png');
 }
+
 .footer .footer-container {
-    height: 100%;
-    width: 900px;
-    margin: auto;
-    background: #CCC;
-    position: relative;
+	height: 100%;
+	width: 900px;
+	margin: auto;
+	background: #CCC;
+	position: relative;
 }
+
 .nav-list {
-    list-style: none;
-    font-size: 12px;
-    margin: 0px;
-    padding: 0px;
+	list-style: none;
+	font-size: 12px;
+	margin: 0px;
+	padding: 0px;
 }
+
 .nav-list .nav-item {
-    height: 25px;
-    line-height: 25px;
-    text-indent: 10px;
+	height: 25px;
+	line-height: 25px;
+	text-indent: 10px;
 }
-.nav-list .nav-item a{
-    color: #777;
-    text-decoration: none;
+
+.nav-list .nav-item a {
+	color: #777;
+	text-decoration: none;
 }
 
 .page-container {
-    min-height: 300px;
-    width: 900px;
-    margin: 0px auto;
+	min-height: 300px;
+	width: 900px;
+	margin: 0px auto;
 }
+
 .page-cont-left {
-    float: left;
-    width: 70%;
-    min-height: 830px;
-    background:  url('../images/bg/carbon-bg.png') center;
+	float: left;
+	width: 70%;
+	min-height: 830px;
+	background: url('../images/bg/carbon-bg.png') center;
 }
+
 .page-cont-right {
-    float: left;
-    width: 30%;
+	float: left;
+	width: 30%;
 	background: #EEE;
 }
-.cover{
-    height: 150px;
+
+.cover {
+	height: 150px;
 }
-.cover-container{
-    height: 100%;
-    width: 900px;
-    margin: 0px auto;
-    background: url('../images/gallery/slide1.jpg') no-repeat bottom center;
-    background-size: 900px auto;
+
+.cover-container {
+	height: 100%;
+	width: 900px;
+	margin: 0px auto;
+	background: url('../images/gallery/slide1.jpg') no-repeat bottom center;
+	background-size: 900px auto;
 }
 
 .page-cont-title {
-    height: 30px;
-    line-height: 30px;
-    text-indent: 20px;
-    background: url('../images/bg/black-twill.png');
+	height: 30px;
+	line-height: 30px;
+	text-indent: 20px;
+	background: url('../images/bg/black-twill.png');
 }
+
 .page-cont-title.light {
-    background: url('../images/bg/red-twill.png');
+	background: url('../images/bg/red-twill.png');
 }
+
 .page-cont-title .cont-title-bold {
-    font-weight: bold;
-    font-size: 23px;
-    color: #FFF;
-    text-transform: uppercase;
+	font-weight: bold;
+	font-size: 23px;
+	color: #FFF;
+	text-transform: uppercase;
 }
+
 .page-cont-title .cont-title-sub {
-    padding-left: 10px;
-    color: #4E4E4E;
+	padding-left: 10px;
+	color: #4E4E4E;
 
 }
+
 .page-cont-title-sub {
-    height: 27px;
-    line-height: 24px;
-    text-indent: 20px;
-    background: url('../images/bg/red-dots.png');
-    border-top: 3px solid #BA0E36;
-    color: #BA0E36;
-    font-size: 20px;
-    font-weight: bold;
-    position: relative;
+	height: 27px;
+	line-height: 24px;
+	text-indent: 20px;
+	background: url('../images/bg/red-dots.png');
+	border-top: 3px solid #BA0E36;
+	color: #BA0E36;
+	font-size: 20px;
+	font-weight: bold;
+	position: relative;
 }
-.sub0,.sub1{
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    z-index: 10;
-    width: 197px;
-    height: 27px;
-    background: url('../images/bg/subtext-0.png') no-repeat right bottom;
-} 
-.sub1{
-    background: url('../images/bg/subtext-1.png') no-repeat right bottom;
-} 
+
+.sub0, .sub1 {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	z-index: 10;
+	width: 197px;
+	height: 27px;
+	background: url('../images/bg/subtext-0.png') no-repeat right bottom;
+}
+
+.sub1 {
+	background: url('../images/bg/subtext-1.png') no-repeat right bottom;
+}
+
 .match-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+	list-style: none;
+	margin: 0;
+	padding: 0;
 }
+
 .match-list .match-item {
-    height: 70px;
+	height: 70px;
 	background: url('../images/bg/list-item-bg.png') no-repeat center;
 }
+
 .match-list .match-item:nth-child(odd) {
-    height: 70px;
+	height: 70px;
 	background: url('../images/bg/list-item-bg-odd.png') no-repeat center;
 }
+
 .match-list .match-item-icon-panel {
-    line-height: 70px;
-    height: 100%;
-    width: 150px;
-    float: left;
-    text-align: center;
-}
-.match-list .match-item-icon-panel img {
-    height: 40px;
-    margin: 0px 5px;
-    vertical-align: middle;
-}
-.match-item-name-panel {
-    display: table;
-    width: 200px;
-    height: 70px;
-    float: left;
-}
-.match-item-name-panel .match-item-name {
-    display: table-cell;
-    vertical-align: middle;
-    text-align: center;
-}
-.match-item-name-panel .match-item-name .match-item-cap{
-    color: #C0C0C0;
-    font-weight: bold;
-}
-.match-item-name-panel .match-item-name .match-item-sub{
-    font-size: 13px;
-	color: #FF0A42;
-}
-.match-item-mess-panel {
-    display: table;
-    width: 135px;
-    height: 70px;
-    float: left;
-    vertical-align: middle;
-}
-.match-item-mess-panel .match-item-mess {
-    display: table-cell;
-    vertical-align: middle;
-    text-align: center;
-    font-size: 12px;
-    color: #777;
-}
-.match-item-num-panel {
-    display: block;
-    line-height: 70px;
-    width: 145px;
-    height: 70px;
-    float: right;
-    text-align: center;
-    font-size: 0px;
+	line-height: 70px;
+	height: 100%;
+	width: 150px;
+	float: left;
+	text-align: center;
 }
 
-.match-item-num,.match-item-num-input {
-    display: inline-block;
-    width: 67px;
-    vertical-align: middle;
-    border: none;
-    height: 55px;
-    line-height: 55px;
-    margin: 0;
-    font-size: 30px;
-    text-align: center;
-    margin-right: 5px;
+.match-list .match-item-icon-panel img {
+	height: 40px;
+	margin: 0px 5px;
+	vertical-align: middle;
+}
+
+.match-item-name-panel {
+	display: table;
+	width: 200px;
+	height: 70px;
+	float: left;
+}
+
+.match-item-name-panel .match-item-name {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.match-item-name-panel .match-item-name .match-item-cap {
+	color: #C0C0C0;
+	font-weight: bold;
+}
+
+.match-item-name-panel .match-item-name .match-item-sub {
+	font-size: 13px;
+	color: #FF0A42;
+}
+
+.match-item-mess-panel {
+	display: table;
+	width: 135px;
+	height: 70px;
+	float: left;
+	vertical-align: middle;
+}
+
+.match-item-mess-panel .match-item-mess {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	font-size: 12px;
+	color: #777;
+}
+
+.match-item-num-panel {
+	display: block;
+	line-height: 70px;
+	width: 145px;
+	height: 70px;
+	float: right;
+	text-align: center;
+	font-size: 0px;
+}
+
+.match-item-num, .match-item-num-input {
+	display: inline-block;
+	width: 67px;
+	vertical-align: middle;
+	border: none;
+	height: 55px;
+	line-height: 55px;
+	margin: 0;
+	font-size: 30px;
+	text-align: center;
+	margin-right: 5px;
 	background: url('../images/bg/flipboard.png') no-repeat center center;
 	color: #FFF;
 	font-family: 'Arial';
 	font-weight: bold;
 }
+
 .page-cont-control {
 	background: url('../images/bg/black-twill.png');
-    height: 40px;
-    line-height: 40px;
+	height: 40px;
+	line-height: 40px;
 }
+
 .page-cont-button {
-    height: 30px;
-    margin: 5px 0px 5px 5px;
-    width: 60px;
-    float: left;
-    background: url('../images/icon/back.png')no-repeat center center #8D8D8D;
-    background-size: 25px auto;
+	height: 30px;
+	margin: 5px 0px 5px 5px;
+	width: 60px;
+	float: left;
+	background: url('../images/icon/back.png') no-repeat center center #8D8D8D;
+	background-size: 25px auto;
 }
+
 .page-cont-button#page-cont-button-prev {
-    background-image: url('../images/icon/next.png');
+	background-image: url('../images/icon/next.png');
 }
+
 .page-cont-button-save {
 	width: 100px;
 	height: 30px;
@@ -269,50 +305,59 @@ body{
 }
 
 .page-cont-rate {
-    height: 50px;
-    font-size: 13px;
-    background: url('../images/bg/rate-bg.png') no-repeat;
-    padding-top: 10px;
+	height: 50px;
+	font-size: 13px;
+	background: url('../images/bg/rate-bg.png') no-repeat;
+	padding-top: 10px;
 }
+
 .page-cont-rate .page-cont-label {
-    margin: 0;
-    padding: 0;
-    line-height: 20px;
-    height: 20px;
-    text-indent: 30px;
-    color: white;
+	margin: 0;
+	padding: 0;
+	line-height: 20px;
+	height: 20px;
+	text-indent: 30px;
+	color: white;
 
 }
+
 .page-cont-tip-list {
-    list-style: none;
-    margin: 0px;
-    padding: 0px;
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
 }
+
 .page-cont-tip-list .page-cont-tip-item {
-    height: 100px;
+	height: 100px;
 }
+
 .page-cont-tip-list .page-cont-tip-item:nth-child(odd) {
-    background-color: #e5e5e5;
+	background-color: #e5e5e5;
 }
+
 .page-cont-tip-list .page-cont-tip-item .page-cont-tip-icon {
-    width: 50px;
-    height: 100%;
-    float: left;
+	width: 50px;
+	height: 100%;
+	float: left;
 }
+
 .page-cont-tip-list .page-cont-tip-item .page-cont-tip-info {
-    float: left;
-    width: 220px;
+	float: left;
+	width: 220px;
 }
+
 .page-cont-tip-info .page-cont-tip-title {
-    line-height: 30px;
-    font-weight: bold;
-    font-size: 14px;
+	line-height: 30px;
+	font-weight: bold;
+	font-size: 14px;
 }
+
 .page-cont-tip-info .page-cont-tip-des {
-    line-height: 20px;
-    height: 60px;
-    font-size: 14px;
+	line-height: 20px;
+	height: 60px;
+	font-size: 14px;
 }
+
 .tip-num {
 	height: 20px;
 	line-height: 20px;
@@ -324,8 +369,76 @@ body{
 	text-align: center;
 	color: #FFF;
 }
-.page-cont-ref{
+
+.page-cont-ref {
 	height: 440px;
 	width: 270px;
-	background: url('../images/icon/soccer.png')center bottom no-repeat;
+	background: url('../images/icon/soccer.png') center bottom no-repeat;
+}
+
+/*RANK*/
+
+.user-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.user-item {
+	height: 50px;
+}
+
+.user-item:nth-child(odd) {
+	background-color: rgba(255, 255, 255, 0.2);
+}
+
+.user-item-avatar-panel {
+	line-height: 50px;
+	text-align: center;
+	width: 50px;
+	float: left;
+}
+.user-item-avatar-panel img {
+	height: 40px;
+	vertical-align: middle;
+}
+
+.user-item-rank {
+	float: left;
+	width: 70px;
+	height: 50px;
+	line-height: 50px;
+	text-indent: 10px;
+	color: #FFF;
+}
+
+.user-item-name {
+	float: left;
+	width: 300px;
+	height: 50px;
+	line-height: 50px;
+	text-indent: 10px;
+	color: #C9C9C9;
+	font-weight: bold;
+}
+
+.user-item-score {
+	float: right;
+	height: 50px;
+	width: 80px;
+	line-height: 50px;
+	text-align: center;
+}
+
+.user-item-icon-panel {
+	float: right;
+	height: 50px;
+	width: 50px;
+	line-height: 50px;
+	text-align: center;
+}
+
+.user-item-icon-panel img {
+	height: 40px;
+	vertical-align: middle;
 }
