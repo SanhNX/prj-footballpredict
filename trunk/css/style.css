@@ -393,14 +393,23 @@ body {
 }
 
 .user-item-avatar-panel {
-	line-height: 50px;
+	line-height: 46px;
+	height: 50px;
 	text-align: center;
 	width: 50px;
+	background: url("../images/bg/avt-bg.png") no-repeat center;
 	float: left;
 }
-.user-item-avatar-panel img {
+.user-item-avatar-panel  .user-avt {
+	padding: 0;
+	background: no-repeat center;
+	background-size: 50px;
+	-webkit-border-radius: 20px;
 	height: 40px;
+	width: 40px;
+	line-height: 40px;
 	vertical-align: middle;
+	display: inline-block;
 }
 
 .user-item-rank {
@@ -425,9 +434,11 @@ body {
 .user-item-score {
 	float: right;
 	height: 50px;
-	width: 80px;
+	width: 100px;
 	line-height: 50px;
 	text-align: center;
+	background: url("../images/bg/score-bg.png") no-repeat center;
+	color: #EEE;
 }
 
 .user-item-icon-panel {
@@ -441,4 +452,10 @@ body {
 .user-item-icon-panel img {
 	height: 40px;
 	vertical-align: middle;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
 }
