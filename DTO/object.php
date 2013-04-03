@@ -5,13 +5,6 @@ class TypeLeagues{
 	var $Name;
 }
 
-class Leagues{
-	var $Id;
-	var $TypeLeaguesId;
-	var $Name;
-	var $ClubListOfLeaguesId;
-	var $TableListOfLeaguesId;
-}
 class ClubListOfLeagues{
 	var $Id;
 	var $LeaguesId;
@@ -21,7 +14,6 @@ class TableListOfLeagues{
 	var $Id;
 	var $LeaguesId;
 	var $TableName;
-	var $ClubListOfTableId;
 }
 class ClubListOfTable{
 	var $Id;
@@ -32,7 +24,10 @@ class Club{
 	var $Id;
 	var $Name;
 	var $Logo;
-	var $Scores;
+	var $Played;
+	var $Points;
+	var $Won;
+	var $Lost;
 }
 class Matchlist{
 	var $Id;
@@ -46,11 +41,17 @@ class User{
 	var $Id;
 	var $Email;
 	var $Password;
-	var $FirstName;
-	var $LastName;
+	var $FullName;
 	var $Avatar;
 	var $DOB;
 	var $Gender;
+	var $FavoriteTeam;
 	var $Scores;
+}
+class Predict{
+	var $Id;
+	var $UserId;
+	var $MatchId;
+	var $predictResult;
 }
 ?>
