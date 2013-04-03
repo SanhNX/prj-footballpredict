@@ -1,10 +1,28 @@
 <?php
 
-function getClubListOfLeagues($leaguesId) {
-    $sql = "SELECT * FROM tbl_clubListOfLeagues Where LeaguesId = $leaguesId";
+function getMatchListOfLeagues($typeLeaguesId) {
+    $sql = "SELECT * FROM tbl_matchList Where TypeLeaguesId = $typeLeaguesId";
     $queryResult = mysql_query($sql);
     $i = 0;
-    $result=  array();
+    $result = array();
+    while ($seletedItem = mysql_fetch_array($queryResult)) {
+        $item = new Matchlist();
+        $item->Id = $seletedItem['Id'];
+        $item->ClubA = $seletedItem['ClubA'];
+        $item->ClubB = $seletedItem['ClubB'];
+        $item->StartTime = $seletedItem['StartTime'];
+        $item->Result = $seletedItem['Result'];
+        $result[$i] = $item;
+        $i++;
+    }
+    return $result;
+}
+
+function getClubListOfLeagues($leaguesId) {
+    $sql = "SELECT * FROM tbl_clubListOfLeagues Where TypeLeaguesId = $leaguesId";
+    $queryResult = mysql_query($sql);
+    $i = 0;
+    $result = array();
     while ($seletedItem = mysql_fetch_array($queryResult)) {
         $item = new ClubListOfLeagues();
         $item->Id = $seletedItem['Id'];
@@ -18,21 +36,21 @@ function getClubListOfLeagues($leaguesId) {
 function getClub_byId($id) {
     $sql = "SELECT * FROM tbl_club  WHERE Id = $id";
     $queryResult = mysql_query($sql);
-    $i = 0;
-    $result=  array();
-    while ($seletedItem = mysql_fetch_array($queryResult)) {
-        $item = new Feed();
-        $item->Name = $seletedItem['Name'];
-        $item->Logo = $seletedItem['Logo'];
-        $item->Played = $seletedItem['Played'];
-        $item->Points = $seletedItem['Points'];
-        $item->Won = $seletedItem['Won'];
-        $item->Lost = $seletedItem['Lost'];
-        $result[$i] = $item;
-        $i++;
+    if (!$queryResult) {
+        echo 'Could not run query: ' . $id . mysql_error();
+        exit;
     }
-    return $result;
+    $seletedItem = mysql_fetch_array($queryResult);
+    $item = new Club();
+    $item->Name = $seletedItem['Name'];
+    $item->Logo = $seletedItem['Logo'];
+    $item->Played = $seletedItem['Played'];
+    $item->Points = $seletedItem['Points'];
+    $item->Won = $seletedItem['Won'];
+    $item->Lost = $seletedItem['Lost'];
+    return $item;
 }
+
 function getDichVu_byID($id) {
     $sql = "SELECT `Id`, `LoaiId`, `Tieude`, `Noidung`, `Hinhanh`, `Date` FROM `tb_dichvucuoi`
             WHERE Id = $id";
