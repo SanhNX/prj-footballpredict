@@ -1,5 +1,5 @@
 <?php
-$username = 'weddin69';
+$username = 'root';
 $password = '';
 $hostname = 'localhost';
 $db = 'footballpredict';

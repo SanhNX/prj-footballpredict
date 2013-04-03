@@ -7,12 +7,12 @@ class TypeLeagues{
 
 class ClubListOfLeagues{
 	var $Id;
-	var $LeaguesId;
+	var $TypeLeaguesId;
 	var $ClubId;
 }
 class TableListOfLeagues{
 	var $Id;
-	var $LeaguesId;
+	var $TypeLeaguesId;
 	var $TableName;
 }
 class ClubListOfTable{
@@ -31,7 +31,7 @@ class Club{
 }
 class Matchlist{
 	var $Id;
-	var $LeaguesId;
+	var $TypeLeaguesId;
 	var $ClubA;
 	var $ClubB;
 	var $StartTime;

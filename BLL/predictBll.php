@@ -1,38 +1,33 @@
 <?php
 
-function getDichVuList() {
-    $sql = "
-                SELECT `Id`, `LoaiId`, `Tieude`, `Noidung`, `Hinhanh`, `Date` FROM `tb_dichvucuoi`  ORDER BY  `Date` DESC";
+function getClubListOfLeagues($leaguesId) {
+    $sql = "SELECT * FROM tbl_clubListOfLeagues Where LeaguesId = $leaguesId";
     $queryResult = mysql_query($sql);
     $i = 0;
     $result=  array();
     while ($seletedItem = mysql_fetch_array($queryResult)) {
-        $item = new Feed();
+        $item = new ClubListOfLeagues();
         $item->Id = $seletedItem['Id'];
-        $item->LoaiId = $seletedItem['LoaiId'];
-        $item->Ten = $seletedItem['Tieude'];
-        $item->Date = $seletedItem['Date'];
-        $item->Noidung = $seletedItem['Noidung'];
-        $item->Hinhanh = $seletedItem['Hinhanh'];
+        $item->ClubId = $seletedItem['ClubId'];
         $result[$i] = $item;
         $i++;
     }
     return $result;
 }
-function getDichVuList_byLoai($type) {
-    $sql = "
-                SELECT `Id`, `LoaiId`, `Tieude`, `Noidung`, `Hinhanh`, `Date` FROM `tb_dichvucuoi`  WHERE `LoaiId`=$type  ORDER BY  `Date` DESC";
+
+function getClub_byId($id) {
+    $sql = "SELECT * FROM tbl_club  WHERE Id = $id";
     $queryResult = mysql_query($sql);
     $i = 0;
     $result=  array();
     while ($seletedItem = mysql_fetch_array($queryResult)) {
         $item = new Feed();
-        $item->Id = $seletedItem['Id'];
-        $item->LoaiId = $seletedItem['LoaiId'];
-        $item->Ten = $seletedItem['Tieude'];
-        $item->Date = $seletedItem['Date'];
-        $item->Noidung = $seletedItem['Noidung'];
-        $item->Hinhanh = $seletedItem['Hinhanh'];
+        $item->Name = $seletedItem['Name'];
+        $item->Logo = $seletedItem['Logo'];
+        $item->Played = $seletedItem['Played'];
+        $item->Points = $seletedItem['Points'];
+        $item->Won = $seletedItem['Won'];
+        $item->Lost = $seletedItem['Lost'];
         $result[$i] = $item;
         $i++;
     }
