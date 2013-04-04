@@ -152,7 +152,7 @@ INSERT INTO tbl_matchlist(TypeLeaguesId, ClubA, ClubB, StartTime, Result) VALUES
 INSERT INTO tbl_matchlist(TypeLeaguesId, ClubA, ClubB, StartTime, Result) VALUES(1, 7, 8, '2012/04/04', '');
 INSERT INTO tbl_matchlist(TypeLeaguesId, ClubA, ClubB, StartTime, Result) VALUES(1, 9, 10, '2012/05/05', '');
 INSERT INTO tbl_matchlist(TypeLeaguesId, ClubA, ClubB, StartTime, Result) VALUES(1, 11, 12, '2012/06/06', '');
-<<<<<<< .mine
+
 INSERT INTO tbl_matchlist(TypeLeaguesId, ClubA, ClubB, StartTime, Result) VALUES(1, 13, 14, '2012/07/07', '');
 
 INSERT INTO tbl_user(`Email`,`Password`,`FullName`,`Avatar`,`DOB`,`Gender`,`FavoriteTeam`,`Scores`)
@@ -211,44 +211,3 @@ VALUES('Thanhtc1#gmail','123456','ThanhTC13','images/resources/team-logo/Alania.
 INSERT INTO tbl_user(`Email`,`Password`,`FullName`,`Avatar`,`DOB`,`Gender`,`FavoriteTeam`,`Scores`)
 VALUES('Thanhtc1#gmail','123456','ThanhTC14','images/resources/team-logo/Alania.jpg','2012/01/01',1,1,0);
 INSERT INTO tbl_user(`Email`,`Password`,`FullName`,`Avatar`,`DOB`,`Gender`,`FavoriteTeam`,`Scores`)
-VALUES('Thanhtc1#gmail','123456','ThanhTC215,'images/resources/team-logo/Alania.jpg','2012/01/01',1,1,0);
-INSERT INTO tbl_user(`Email`,`Password`,`FullName`,`Avatar`,`DOB`,`Gender`,`FavoriteTeam`,`Scores`)
-VALUES('Thanhtc1#gmail','123456','ThanhTC212','images/resources/team-logo/Alania.jpg','2012/01/01',1,1,0);
-INSERT INTO tbl_user(`Email`,`Password`,`FullName`,`Avatar`,`DOB`,`Gender`,`FavoriteTeam`,`Scores`)
-VALUES('Thanhtc1#gmail','123456','ThanhTC222','images/resources/team-logo/Alania.jpg','2012/01/01',1,1,0);
-INSERT INTO tbl_user(`Email`,`Password`,`FullName`,`Avatar`,`DOB`,`Gender`,`FavoriteTeam`,`Scores`)
-VALUES('Thanhtc1#gmail','123456','ThanhTC222','images/resources/team-logo/Alania.jpg','2012/01/01',1,1,0);
-INSERT INTO tbl_user(`Email`,`Password`,`FullName`,`Avatar`,`DOB`,`Gender`,`FavoriteTeam`,`Scores`)
-VALUES('Thanhtc1#gmail','123456','ThanhTC222','images/resources/team-logo/Alania.jpg','2012/01/01',1,1,0);
-INSERT INTO tbl_user(`Email`,`Password`,`FullName`,`Avatar`,`DOB`,`Gender`,`FavoriteTeam`,`Scores`)
-VALUES('Thanhtc1#gmail','123456','ThanhTC222','images/resources/team-logo/Alania.jpg','2012/01/01',1,1,0);
-INSERT INTO tbl_user(`Email`,`Password`,`FullName`,`Avatar`,`DOB`,`Gender`,`FavoriteTeam`,`Scores`)
-VALUES('Thanhtc1#gmail','123456','ThanhTC222','images/resources/team-logo/Alania.jpg','2012/01/01',1,1,0);
-INSERT INTO tbl_user(`Email`,`Password`,`FullName`,`Avatar`,`DOB`,`Gender`,`FavoriteTeam`,`Scores`)
-VALUES('Thanhtc1#gmail','123456','ThanhTC2222','images/resources/team-logo/Alania.jpg','2012/01/01',1,1,0);
-INSERT INTO tbl_user(`Email`,`Password`,`FullName`,`Avatar`,`DOB`,`Gender`,`FavoriteTeam`,`Scores`)
-VALUES('Thanhtc1#gmail','123456','ThanhTC1112','images/resources/team-logo/Alania.jpg','2012/01/01',1,1,0);
-INSERT INTO tbl_user(`Email`,`Password`,`FullName`,`Avatar`,`DOB`,`Gender`,`FavoriteTeam`,`Scores`)
-VALUES('Thanhtc1#gmail','123456','ThanhTC2232','images/resources/team-logo/Alania.jpg','2012/01/01',1,1,0);
-INSERT INTO tbl_user(`Email`,`Password`,`FullName`,`Avatar`,`DOB`,`Gender`,`FavoriteTeam`,`Scores`)
-VALUES('Thanhtc1#gmail','123456','ThanhTC23212','images/resources/team-logo/Alania.jpg','2012/01/01',1,1,0);
-INSERT INTO tbl_user(`Email`,`Password`,`FullName`,`Avatar`,`DOB`,`Gender`,`FavoriteTeam`,`Scores`)
-VALUES('Thanhtc1#gmail','123456','ThanhTC232','images/resources/team-logo/Alania.jpg','2012/01/01',1,1,0);
-INSERT INTO tbl_user(`Email`,`Password`,`FullName`,`Avatar`,`DOB`,`Gender`,`FavoriteTeam`,`Scores`)
-VALUES('Thanhtc1#gmail','123456','ThanhTC1232','images/resources/team-logo/Alania.jpg','2012/01/01',1,1,0);
-INSERT INTO tbl_user(`Email`,`Password`,`FullName`,`Avatar`,`DOB`,`Gender`,`FavoriteTeam`,`Scores`)
-VALUES('Thanhtc1#gmail','123456','ThanhTC122','images/resources/team-logo/Alania.jpg','2012/01/01',1,1,0);
-INSERT INTO tbl_user(`Email`,`Password`,`FullName`,`Avatar`,`DOB`,`Gender`,`FavoriteTeam`,`Scores`)
-VALUES('Thanhtc1#gmail','123456','ThanhTC122','images/resources/team-logo/Alania.jpg','2012/01/01',1,1,0);
-INSERT INTO tbl_user(`Email`,`Password`,`FullName`,`Avatar`,`DOB`,`Gender`,`FavoriteTeam`,`Scores`)
-VALUES('Thanhtc1#gmail','123456','ThanhTC22','images/resources/team-logo/Alania.jpg','2012/01/01',1,1,0);;
-
-=======
-INSERT INTO tbl_matchlist(TypeLeaguesId, ClubA, ClubB, StartTime, Result) VALUES(1, 13, 14, '2012/07/07', '');
-UPDATE `footballpredict`.`tbl_matchlist` SET `StartTime`='2012-02-02 20:30:00' WHERE `Id`='2';
-UPDATE `footballpredict`.`tbl_matchlist` SET `StartTime`='2012-03-03 01:45:00' WHERE `Id`='3';
-UPDATE `footballpredict`.`tbl_matchlist` SET `StartTime`='2012-01-01 12:40:00' WHERE `Id`='1';
-UPDATE `footballpredict`.`tbl_matchlist` SET `StartTime`='2012-04-04 02:25:00' WHERE `Id`='4';
-UPDATE `footballpredict`.`tbl_matchlist` SET `StartTime`='2012-05-05 07:15:00' WHERE `Id`='5';
-UPDATE `footballpredict`.`tbl_matchlist` SET `StartTime`='2012-06-06 07:45:00' WHERE `Id`='6';
-UPDATE `footballpredict`.`tbl_matchlist` SET `StartTime`='2012-07-07 06:20:00' WHERE `Id`='7';>>>>>>> .r22
