@@ -1,0 +1,94 @@
+/*POPUP*/
+.popup {
+	position: fixed;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 500;
+}
+
+.popup .popup-container {
+	width: 630px;
+	height: 392px;
+	margin: 100px auto 0px auto;
+	position: relative;
+}
+.popup .popup-form {
+	width: 630px;
+	height: 392px;
+	background: url('../images/bg/carbon-bg.png')center top;
+	-webkit-box-shadow: 0px 50px 180px 90px #000;
+}
+
+.popup .popup-bottom {
+	width: 630px;
+	height: 15px;
+	background: url('../images/bg/popup-bottom.png') no-repeat center bottom;
+}
+
+.popup-input-row{
+	margin: 10px auto;
+	width: 480px;
+	height: 41px;
+	background: url('../images/bg/input-bg.png') no-repeat;
+}
+.popup-btn-row{
+	margin: 10px auto;
+	width: 480px;
+	height: 51px;
+}
+.popup-input-row span {
+	display: inline-block;
+	vertical-align: middle;
+	height: 41px;
+	line-height: 41px;
+	width: 135px;
+	color: #FFF;
+	text-align: center;
+	font-weight: bold;
+	font-size: 20px;
+}
+.popup-btn-row .popup-btn-login{
+	display: block;
+	float: right;
+	width: 222px;
+	height: 51px;
+	line-height: 51px;
+	text-align: center;
+	font-weight: bold;
+	background: url('../images/bg/login-btn.png') no-repeat center bottom;
+	text-decoration: none;
+	color: #FFF;
+}
+.popup-input-row input {
+	height: 28px;
+	width: 340px;
+	font-size: 20px;
+	line-height: 28px;
+	vertical-align: middle;
+	border: none;
+	background: none;
+	color: #B3B3B3;
+	font-family: 'Segoe UI';
+	text-indent: 5px;
+}
+.popup-btn-row .popup-btn-login:hover{
+	background: url('../images/bg/login-btn.png') no-repeat center top;
+}
+.popup-btn-row .popup-btn-forgot{
+	line-height: 51px;
+	height: 51px;
+	color: #BA0E36;
+	text-shadow: 0px 2px 3px #000;
+	text-decoration: none;
+}
+.popup-btn-row i {
+	display: inline-block;
+	height: 15px;
+	width: 15px;
+	vertical-align: middle;
+	background: #BA0E36;
+	margin: 10px;
+	-webkit-border-radius: 10px;
+}
