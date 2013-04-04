@@ -61,6 +61,7 @@ body {
 	color: #C7C7C7;
 	text-align: center;
 	font-weight: bold;
+	cursor: pointer;
 }
 
 .footer {
@@ -431,7 +432,7 @@ body {
 	background-size: 40px;
 	top: 410px;
 }
-.disable{
+.undisplayed{
 	display: none;
 }
 
@@ -534,6 +535,7 @@ input::-webkit-inner-spin-button {
 	text-indent: 5px;
 	color: #BA0E36;
 	text-decoration: none;
+	cursor: pointer;
 }
 
 .popup-input-row {
@@ -572,6 +574,10 @@ input::-webkit-inner-spin-button {
 	background: url('../images/bg/login-btn.png') no-repeat center bottom;
 	text-decoration: none;
 	color: #FFF;
+}
+.popup-btn-login#btn-register {
+	float: none;
+	margin: 0px auto;
 }
 
 .popup-input-row input {
@@ -633,4 +639,12 @@ input::-webkit-inner-spin-button {
 	height: 13px;
 	background: url("../images/icon/warning-ico.png") no-repeat;
 	margin-left: 5px;
+ }
+ .popup-btn-close{
+	 display: inline-block;
+	 float: right;
+	 width: 30px;
+	 height: 30px;
+	 background: url("../images/icon/close-ico.png") no-repeat;
+	 cursor: pointer;
  }

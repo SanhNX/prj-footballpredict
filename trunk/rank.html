@@ -7,7 +7,8 @@
 	<link href="css/menu.css" rel="stylesheet"/>
 
 	<link rel="SHORTCUT ICON" href="images/icon/logo-head.png"/>
-	<script src="js/jquery-1.8.3.min.js"></script>
+	<script src="scripts/jquery-1.8.3.min.js"></script>
+	<script src="scripts/main.js"></script>
 
 </head>
 <body>
@@ -24,7 +25,7 @@
 			</div>
 			<div class="header-logo">LOGO</div>
 			<div class="header-log">
-				<div class="btn-expand-login">Login</div>
+				<div class="btn-expand-login" id="expand-login-btn">Login</div>
 			</div>
 		</div>
 	</div>
@@ -188,11 +189,12 @@
 		</div>
 	</div>
 </div>
-<div class="popup">
+<div class="popup undisplayed" id="login-popup">
 	<div class="popup-container">
 		<div class="popup-form">
 			<div class="page-cont-title">
 				<span class="cont-title-bold">Login</span><span class="cont-title-sub">Sub text</span>
+				<span class="popup-btn-close" id="popup-btn-login-close"></span>
 			</div>
 			<div class="page-cont-title-sub">
 				<span class="cont-title-sub"></span>
@@ -204,7 +206,7 @@
 			</div>
 			<div class="popup-mess-row"><i class="bullet"></i>
 				<span> Log in with your email address or </span>
-				<a class="popup-link" href="#">create an account.</a>
+				<a class="popup-link" id="btn-expand-register">create an account.</a>
 			</div>
 			<div class="popup-input-row"><span>Email</span><input type="text"/></div>
 			<div class="popup-input-row"><span>Password</span><input type="password"/></div>
@@ -213,7 +215,33 @@
 				<a class="popup-btn-login" href="#">Login</a>
 			</div>
 			<span class="popup-error-mess"><i></i> Password is not correct!</span>
-			<span class="loading-spin"></span>
+			<span class="loading-spin undisplayed"></span>
+		</div>
+		<div class="popup-bottom"></div>
+	</div>
+</div>
+
+<div class="popup undisplayed" id="register-popup">
+	<div class="popup-container">
+		<div class="popup-form">
+			<div class="page-cont-title">
+				<span class="cont-title-bold">Register</span><span class="cont-title-sub">Sub text</span>
+				<span class="popup-btn-close" id="popup-btn-register-close"></span>
+			</div>
+			<div class="page-cont-title-sub">
+				<span class="cont-title-sub"></span>
+				<i class="sub0"></i>
+			</div>
+			<span class="popup-error-mess"><i></i> Input is not correct!</span>
+			<div class="popup-input-row"><span>Name</span><input type="text"/></div>
+			<div class="popup-input-row"><span>Email</span><input type="text"/></div>
+			<div class="popup-input-row"><span>Confirm</span><input type="text" placeholder="email"/></div>
+			<div class="popup-input-row"><span>Password</span><input type="password"/></div>
+			<div class="popup-input-row"><span>Confirm</span><input type="password" placeholder="password"/></div>
+			<div class="popup-btn-row">
+				<a class="popup-btn-login" id="btn-register" href="#">Register</a>
+			</div>
+			<span class="loading-spin undisplayed"></span>
 		</div>
 		<div class="popup-bottom"></div>
 	</div>
