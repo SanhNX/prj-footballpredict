@@ -52,6 +52,6 @@ class Predict{
 	var $Id;
 	var $UserId;
 	var $MatchId;
-	var $predictResult;
+	var $PredictResult;
 }
 ?>
