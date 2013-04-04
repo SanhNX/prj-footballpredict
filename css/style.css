@@ -621,3 +621,16 @@ input::-webkit-inner-spin-button {
 .bullet.red {
 	background: #BA0E36;
 }
+.popup-error-mess {
+	text-align: center;
+	display: block;
+	font-size: 13px;
+	font-style: italic;
+	color: #F5EB00;
+}.popup-error-mess i{
+	display: inline-block;
+	width: 14px;
+	height: 13px;
+	background: url("../images/icon/warning-ico.png") no-repeat;
+	margin-left: 5px;
+ }
