@@ -400,6 +400,7 @@ body {
 	background: url("../images/bg/avt-bg.png") no-repeat center;
 	float: left;
 }
+
 .user-item-avatar-panel  .user-avt {
 	padding: 0;
 	background: no-repeat center;
@@ -410,6 +411,28 @@ body {
 	line-height: 40px;
 	vertical-align: middle;
 	display: inline-block;
+}
+
+.user-item-avatar-panel.default {
+	float: none;
+	width: 100%;
+	margin: 20px 0px;
+}
+
+.user-item-avatar-panel  .user-avt.default {
+	background-image: url("../images/icon/account-ico.png");
+}
+.loading-spin{
+	height: 60px;
+	width: 100%;
+	background: url("../images/icon/spinner.gif") no-repeat center;
+	position: absolute;
+	left: 0px;
+	background-size: 40px;
+	top: 410px;
+}
+.disable{
+	display: none;
 }
 
 .user-item-rank {
@@ -476,10 +499,11 @@ input::-webkit-inner-spin-button {
 	margin: 100px auto 0px auto;
 	position: relative;
 }
+
 .popup .popup-form {
 	width: 630px;
 	height: 392px;
-	background: url('../images/bg/carbon-bg.png')center top;
+	background: url('../images/bg/carbon-bg.png') center top;
 	-webkit-box-shadow: 0px 50px 180px 90px #000;
 }
 
@@ -489,17 +513,42 @@ input::-webkit-inner-spin-button {
 	background: url('../images/bg/popup-bottom.png') no-repeat center bottom;
 }
 
-.popup-input-row{
+.popup-mess-row {
+	margin: 10px auto;
+	width: 480px;
+	height: 40px;
+	text-shadow: 0px 2px 3px #000;
+	color: #B1B1B1;
+}
+
+.popup-mess-row span {
+	height: 40px;
+	line-height: 40px;
+	vertical-align: middle;
+}
+
+.popup-link {
+	height: 40px;
+	line-height: 40px;
+	vertical-align: middle;
+	text-indent: 5px;
+	color: #BA0E36;
+	text-decoration: none;
+}
+
+.popup-input-row {
 	margin: 10px auto;
 	width: 480px;
 	height: 41px;
 	background: url('../images/bg/input-bg.png') no-repeat;
 }
-.popup-btn-row{
+
+.popup-btn-row {
 	margin: 10px auto;
 	width: 480px;
 	height: 51px;
 }
+
 .popup-input-row span {
 	display: inline-block;
 	vertical-align: middle;
@@ -511,7 +560,8 @@ input::-webkit-inner-spin-button {
 	font-weight: bold;
 	font-size: 20px;
 }
-.popup-btn-row .popup-btn-login{
+
+.popup-btn-row .popup-btn-login {
 	display: block;
 	float: right;
 	width: 222px;
@@ -523,6 +573,7 @@ input::-webkit-inner-spin-button {
 	text-decoration: none;
 	color: #FFF;
 }
+
 .popup-input-row input {
 	height: 28px;
 	width: 340px;
@@ -535,22 +586,38 @@ input::-webkit-inner-spin-button {
 	font-family: 'Segoe UI';
 	text-indent: 5px;
 }
-.popup-btn-row .popup-btn-login:hover{
+
+.popup-btn-row .popup-btn-login:hover {
 	background: url('../images/bg/login-btn.png') no-repeat center top;
 }
-.popup-btn-row .popup-btn-forgot{
+
+.popup-btn-row .popup-btn-forgot {
 	line-height: 51px;
 	height: 51px;
 	color: #BA0E36;
 	text-shadow: 0px 2px 3px #000;
 	text-decoration: none;
 }
-.popup-btn-row i {
+
+.popup-mess-row:hover .bullet,.popup-btn-forgot:hover .bullet.red  {
+	margin: 0px;
+	border: 10px solid #000;
+}
+
+.bullet {
 	display: inline-block;
 	height: 15px;
 	width: 15px;
 	vertical-align: middle;
+	background: #B1B1B1;
+	-webkit-border-radius: 20px;
+	line-height: 15px;
+	text-align: center;
+	color: #F00;
+	border: 0px solid #242424;
+	-webkit-transition: border 100ms linear;
+}
+
+.bullet.red {
 	background: #BA0E36;
-	margin: 10px;
-	-webkit-border-radius: 10px;
 }
