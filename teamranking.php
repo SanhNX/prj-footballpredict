@@ -7,7 +7,8 @@
         <link href="css/menu.css" rel="stylesheet"/>
 
         <link rel="SHORTCUT ICON" href="images/icon/logo-head.png"/>
-        <script src="js/jquery-1.8.3.min.js"></script>
+        <script src="scripts/jquery-1.8.3.min.js"></script>
+        <script src="scripts/main.js"></script>
 
     </head>
     <body>
@@ -24,7 +25,7 @@
                     </div>
                     <div class="header-logo">LOGO</div>
                     <div class="header-log">
-                        <div class="btn-expand-login">Login</div>
+                        <div class="btn-expand-login" id="expand-login-btn">Login</div>
                     </div>
                 </div>
             </div>
@@ -43,7 +44,14 @@
                             <span class="cont-title-sub">Sub text</span>
                             <i class="sub0"></i>
                         </div>
-                        <ul class="user-list">
+                        <div class="team-list-head">
+                            
+                            <div class="team-list-head-item">Points</div>
+                            <div class="team-list-head-item">Lost</div>
+                            <div class="team-list-head-item">Won</div>
+                            <div class="team-list-head-item">Played</div>
+                        </div>
+                        <ul class="team-list">
                             <?php
                             include 'DAO/connection.php';
                             include 'DTO/object.php';
@@ -54,19 +62,21 @@
                             $itemList = getRankingDESC();
                             for ($i = 0; $i < count($itemList); $i++) {
                                 $item = $itemList[$i];
-                                echo '<li class = "user-item">';
-                                echo '<div class = "user-item-rank">'. ($i + 1) .'</div>';
-                                echo '<div class = "user-item-avatar-panel">';
-                                echo "<span class = 'user-avt' style = 'background-image: url(". $item->Logo .")'></span>";
-                                echo '</div>';
-                                echo '<span class = "user-item-name">'. $item->Name .'</span>';
-                                echo '<div class = "user-item-score">'. $item->Points .'</div>';
-                                echo '<div class = "user-item-icon-panel">';
-                                echo '<img src = "resources/img/png1.png"/>';
-                                echo '</div>';
-                                echo '</li>';
+                                echo '<li class="team-item">
+                                    <div class="team-item-rank">' . ($i + 1) . '</div>
+                                    <div class="team-item-icon-panel">
+                                        <img src="' . $item->Logo . '"/>
+                                    </div>
+                                    <span class="team-item-name">'. $item->Name .'</span>
+
+                                    <div class="team-item-score">'. $item->Points .'</div>
+                                    <div class="team-item-score">'. $item->Lost .'</div>
+                                    <div class="team-item-score">'. $item->Won .'</div>
+                                    <div class="team-item-score">'. $item->Played .'</div>
+                                    </li>';
                             }
                             ?>
+
                         </ul>
                         <div class="page-cont-control">
                             <div class="page-cont-button" id="page-cont-button-next"></div>
@@ -131,6 +141,9 @@
                 </div>
             </div>
         </div>
+        <?php
+        include './loginPanel.php';
+        ?>
 
     </body>
 </html>

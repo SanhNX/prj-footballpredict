@@ -51,39 +51,12 @@ function getClub_byId($id) {
     return $item;
 }
 
-function getDichVu_byID($id) {
-    $sql = "SELECT `Id`, `LoaiId`, `Tieude`, `Noidung`, `Hinhanh`, `Date` FROM `tb_dichvucuoi`
-            WHERE Id = $id";
-    $queryResult = mysql_query($sql);
-
-    if (!$queryResult) {
-        echo 'Could not run query: ' . $id . mysql_error();
-        exit;
-    }
-    $seletedItem = mysql_fetch_array($queryResult);
-
-    $item = new Feed();
-    $item->Id = $seletedItem['Id'];
-    $item->LoaiId = $seletedItem['LoaiId'];
-    $item->Ten = $seletedItem['Tieude'];
-    $item->Date = $seletedItem['Date'];
-    $item->Noidung = $seletedItem['Noidung'];
-    $item->Hinhanh = $seletedItem['Hinhanh'];
-    return $item;
-}
-
-function addDichVu($LoaiId, $Ten, $Date, $Noidung, $Hinhanh) {
-    $LoaiId = mysql_real_escape_string($LoaiId);
-    $Ten = mysql_real_escape_string($Ten);
-    $Date = mysql_real_escape_string($Date);
-    $Noidung = mysql_real_escape_string($Noidung);
-    $Hinhanh = mysql_real_escape_string($Hinhanh);
-
-
-    $sql = "INSERT INTO `tb_dichvucuoi` (
-	`LoaiId`, `Tieude`, `Date`, `Noidung`, 
-	`Hinhanh`) 
-	VALUES ('$LoaiId', '$Ten','$Date', '$Noidung','$Hinhanh');";
+function addPredict($userId, $matchId, $result){
+    $userId = mysql_real_escape_string($userId);
+    $matchId = mysql_real_escape_string($matchId);
+    $result = mysql_real_escape_string($result);
+//    echo '<script>alert("'.$result.'");</script>';
+    $sql = "INSERT INTO tbl_predict(UserId, MatchId, predictResult) VALUES ($userId, $matchId, '$result')";
     $queryResult = mysql_query($sql);
     if ($queryResult)
         return mysql_insert_id();

@@ -49,7 +49,6 @@ class User{
 	var $Scores;
 }
 class Predict{
-	var $Id;
 	var $UserId;
 	var $MatchId;
 	var $PredictResult;

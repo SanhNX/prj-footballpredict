@@ -663,11 +663,14 @@ input::-webkit-inner-spin-button {
 	background: url('../images/bg/login-btn.png') no-repeat center bottom;
 	text-decoration: none;
 	color: #FFF;
+        border: 0px;
+        font-size: 16px;
 }
 
 .popup-btn-login#btn-register {
 	float: none;
 	margin: 0px auto;
+        border: 0px;
 }
 
 .popup-input-row input {
