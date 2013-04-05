@@ -52,6 +52,9 @@ $.fn.numeric.keypress = function(e)
 	// get the key that was pressed
 	var key = e.charCode ? e.charCode : e.keyCode ? e.keyCode : 0;
 	// allow enter/return key (only when in an input box)
+        //customize for football web
+        if($(this).val().length > 1)
+            return false;
 	if(key == 13 && this.nodeName.toLowerCase() == "input")
 	{
 		return true;

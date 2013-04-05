@@ -10,34 +10,9 @@
 
         <link rel="SHORTCUT ICON" href="images/icon/logo-head.png"/>
         <script src="scripts/jquery-1.8.3.min.js"></script>
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
         <script type="text/javascript" src="scripts/jquery.numeric.js"></script>
         <script src="scripts/main.js"></script>
-        <script type="text/javascript">
-            $("#10").numeric();
-            $(".integer").numeric(false, function() {
-                alert("Integers only");
-                this.value = "";
-                this.focus();
-            });
-            $(".positive").numeric({negative: false}, function() {
-                alert("No negative values");
-                this.value = "";
-                this.focus();
-            });
-            $(".positive-integer").numeric({decimal: false, negative: false}, function() {
-                alert("Positive integers only");
-                this.value = "";
-                this.focus();
-            });
-            $("#remove").click(
-                    function(e)
-                    {
-                        e.preventDefault();
-                        $(".numeric,.integer,.positive").removeNumeric();
-                    }
-            );
-        </script>
+
     </head>
     <body>
         <div class="main">
@@ -105,31 +80,46 @@
                                 echo '</div>';
                                 echo '<div class = "match-item-num-panel">';
                                 echo '<input type="hidden" name="' . $item->Id . '" value="' . $item->Id . '" />';
-                                echo '<input class="match-item-num-input" name="clubA' . $item->Id . '" type="number" tabindex="1" maxlength="2" size="2" autocomplete="off" min="0" max="99" pattern="[0-9]*"/>';
-                                echo '<input class="match-item-num-input" name="clubB' . $item->Id . '" type="number" tabindex="1" maxlength="2" size="2" autocomplete="off" min="0" max="99" pattern="[0-9]*"/>';
+                                echo '<input id="' . $item->Id . '" class="match-item-num-input" name="clubA' . $item->Id . '" type="number" tabindex="1" maxlength="2" size="2" autocomplete="off" min="0" max="99" pattern="[0-9]*"/>';
+                                echo '<input id="' . $item->Id.$item->Id . '" class="match-item-num-input" name="clubB' . $item->Id . '" type="number" tabindex="1" maxlength="2" size="2" autocomplete="off" min="0" max="99" pattern="[0-9]*"/>';
                                 echo '</div>';
                                 echo '</li>';
                             }
                             if (isset($_POST['btnSave'])) {
                                 for ($i = 1; $i < 8; $i++) {
-                                    if($i == 7)
+                                    if ($i == 7)
                                         echo '<script>alert("Predict Success !!" );</script>';
 //                                echo '<script>alert("'. $_POST[$i].'---'.$_SESSION['UserId'].'--' .$_POST['clubA'.$i].'--'. $_POST['clubB'.$i].'")</script>';
-                                    if ($_POST['clubA'.$i] && $_POST['clubB'.$i]) {
-                                        $predictItem = addPredict($_SESSION['UserId'], $_POST[$i], '' . $_POST['clubA'.$i] . '-' . $_POST['clubB'.$i] . '');
+                                    if ($_POST['clubA' . $i] && $_POST['clubB' . $i]) {
+                                        $predictItem = addPredict($_SESSION['UserId'], $_POST[$i], '' . $_POST['clubA' . $i] . '-' . $_POST['clubB' . $i] . '');
                                         if ($predictItem != -1) {
 //                                            echo '<script>alert("INSET SUCCESS . '. $_POST[$i] .' " );</script>';
                                         } else {
 //                                            echo '<script>alert("INSET FAIL . '. $_POST[$i] .' " );</script>';
                                         }
-                                    }
-                                    else {
+                                    } else {
 //                                        echo '<script>alert("CONTINUE '. $_POST[$i] .'" );</script>';
                                         continue;
                                     }
                                 }
                             }
                             ?>
+                            <script type="text/javascript">
+                                $("#1").numeric();
+                                $("#11").numeric();
+                                $("#2").numeric();
+                                $("#22").numeric();
+                                $("#3").numeric();
+                                $("#33").numeric();
+                                $("#4").numeric();
+                                $("#44").numeric();
+                                $("#5").numeric();
+                                $("#55").numeric();
+                                $("#6").numeric();
+                                $("#66").numeric();
+                                $("#7").numeric();
+                                $("#77").numeric();
+                            </script>
                         </ul>
 
                         <div class="page-cont-control">
