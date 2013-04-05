@@ -81,7 +81,7 @@
                         <div class="page-cont-control">
                             <div class="page-cont-button" id="page-cont-button-next"></div>
                             <div class="page-cont-button" id="page-cont-button-prev"></div>
-                            <div class="page-cont-button-save" id="page-cont-button-save">Save</div>
+                            <!--<div class="page-cont-button-save" id="page-cont-button-save">Save</div>-->
                         </div>
                     </div>
                     <div class="page-cont-right">
