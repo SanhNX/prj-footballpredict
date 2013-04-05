@@ -106,7 +106,7 @@ body {
 	float: left;
 	width: 70%;
 	min-height: 830px;
-	background: url('../images/bg/carbon-bg.png') center;
+	background: url('../images/icon/laurel.png') no-repeat center, url('../images/bg/carbon-bg.png') center;
 	position: relative;
 }
 
@@ -520,6 +520,11 @@ input::-webkit-inner-spin-button {
 	text-align: center;
 	background: url("../images/bg/score-bg.png") no-repeat center;
 	color: #EEE;
+}
+.team-item-rank.award{
+	background: url("../images/bg/score-laurel-bg.png") no-repeat center;
+	font-weight: bold;
+	color: #FFF;
 }
 
 .team-item-name {
