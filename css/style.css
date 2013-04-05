@@ -50,20 +50,84 @@ body {
 .header .header-container .header-log {
 	position: absolute;
 	right: 0px;
-	width: 160px;
+	width: 350px;
 	height: 70px;
 }
 
 .header .header-container .header-log .btn-expand-login {
+	float: right;
+	width: 150px;
 	height: 30px;
 	line-height: 30px;
-	background: rgba(255, 255, 255, 0.29);
+	background: rgba(255, 255, 255, 0.3);
 	color: #C7C7C7;
-	text-align: center;
+	text-indent: 60px;
 	font-weight: bold;
 	cursor: pointer;
+	-webkit-transition: all 150ms ease-out;
 }
 
+.header .header-container .header-log .btn-expand-login:hover {
+	height: 70px;
+	line-height: 70px;
+	color: #FFF;
+	text-indent: 5px;
+	background: url("../images/bg/default-avt-bg.png") no-repeat center;
+	background-color: rgba(14, 165, 186, 0.66);
+}
+
+/*LOGIN*/
+.lbl-profile {
+	float: right;
+	width: 200px;
+	height: 30px;
+	line-height: 30px;
+	background: rgba(255, 255, 255, 0.2);
+	color: #C7C7C7;
+	text-indent: 10px;
+	font-weight: bold;
+	-webkit-transition: all 150ms ease-out;
+	cursor: pointer;
+	position: relative;
+	overflow: hidden;
+}
+
+.lbl-profile .user-avt {
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	-webkit-border-radius: 20px;
+	background-size: 40px;
+	background-position: center;
+	position: absolute;
+	right: 16px;
+	top: 15px;
+	opacity: 0;
+	-webkit-transition: opacity 150ms linear;
+}
+
+.lbl-profile:hover {
+	height: 70px;
+	line-height: 70px;
+	position: relative;
+	background: url("../images/bg/avt-bg.png") no-repeat 140px center;
+	background-color: rgba(186, 14, 54, 0.66);
+}
+
+.lbl-profile:hover .user-avt {
+
+	opacity: 1;
+}
+
+.lbl-profile:hover .user-name {
+	display: none;
+}
+
+.lbl-profile:hover:before {
+	content: 'Logout';
+}
+
+/*FOOTER*/
 .footer {
 	height: 100px;
 	clear: both;
@@ -106,8 +170,12 @@ body {
 	float: left;
 	width: 70%;
 	min-height: 830px;
-	background: url('../images/icon/laurel.png') no-repeat center, url('../images/bg/carbon-bg.png') center;
+	background: url('../images/bg/carbon-bg.png') center;
 	position: relative;
+}
+
+.page-cont-left.team-rank {
+	background: url('../images/icon/laurel.png') no-repeat center, url('../images/bg/carbon-bg.png') center;
 }
 
 .page-cont-right {
@@ -521,7 +589,8 @@ input::-webkit-inner-spin-button {
 	background: url("../images/bg/score-bg.png") no-repeat center;
 	color: #EEE;
 }
-.team-item-rank.award{
+
+.team-item-rank.award {
 	background: url("../images/bg/score-laurel-bg.png") no-repeat center;
 	font-weight: bold;
 	color: #FFF;
@@ -668,14 +737,14 @@ input::-webkit-inner-spin-button {
 	background: url('../images/bg/login-btn.png') no-repeat center bottom;
 	text-decoration: none;
 	color: #FFF;
-        border: 0px;
-        font-size: 16px;
+	border: 0px;
+	font-size: 16px;
 }
 
 .popup-btn-login#btn-register {
 	float: none;
 	margin: 0px auto;
-        border: 0px;
+	border: 0px;
 }
 
 .popup-input-row input {
