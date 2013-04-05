@@ -107,6 +107,7 @@ body {
 	width: 70%;
 	min-height: 830px;
 	background: url('../images/bg/carbon-bg.png') center;
+	position: relative;
 }
 
 .page-cont-right {
@@ -277,6 +278,9 @@ body {
 	background: url('../images/bg/black-twill.png');
 	height: 40px;
 	line-height: 40px;
+	position: absolute;
+	width: 100%;
+	bottom: 0px;
 }
 
 .page-cont-button {
@@ -423,7 +427,8 @@ body {
 .user-item-avatar-panel  .user-avt.default {
 	background-image: url("../images/icon/account-ico.png");
 }
-.loading-spin{
+
+.loading-spin {
 	height: 60px;
 	width: 100%;
 	background: url("../images/icon/spinner.gif") no-repeat center;
@@ -432,7 +437,8 @@ body {
 	background-size: 40px;
 	top: 410px;
 }
-.undisplayed{
+
+.undisplayed {
 	display: none;
 }
 
@@ -483,7 +489,8 @@ input::-webkit-inner-spin-button {
 	-webkit-appearance: none;
 	margin: 0;
 }
-   /*TEAM-RANK*/
+
+/*TEAM-RANK*/
 
 .team-list {
 	list-style: none;
@@ -504,7 +511,6 @@ input::-webkit-inner-spin-button {
 	width: 100%;
 	margin: 20px 0px;
 }
-
 
 .team-item-rank {
 	float: left;
@@ -550,6 +556,23 @@ input::-webkit-inner-spin-button {
 	height: 40px;
 	vertical-align: middle;
 }
+
+.team-list-head {
+	height: 30px;
+}
+
+.team-list-head-item {
+	float: right;
+	height: 30px;
+	width: 70px;
+	line-height: 30px;
+	text-align: center;
+	color: #C0C0C0;
+	font-size: 12px;
+	background: rgba(186, 14, 54, 0.41);
+	margin-left: 5px;
+}
+
 /*POPUP*/
 .popup {
 	position: fixed;
@@ -641,6 +664,7 @@ input::-webkit-inner-spin-button {
 	text-decoration: none;
 	color: #FFF;
 }
+
 .popup-btn-login#btn-register {
 	float: none;
 	margin: 0px auto;
@@ -671,7 +695,7 @@ input::-webkit-inner-spin-button {
 	text-decoration: none;
 }
 
-.popup-mess-row:hover .bullet,.popup-btn-forgot:hover .bullet.red  {
+.popup-mess-row:hover .bullet, .popup-btn-forgot:hover .bullet.red {
 	margin: 0px;
 	border: 10px solid #000;
 }
@@ -693,24 +717,28 @@ input::-webkit-inner-spin-button {
 .bullet.red {
 	background: #BA0E36;
 }
+
 .popup-error-mess {
 	text-align: center;
 	display: block;
 	font-size: 13px;
 	font-style: italic;
 	color: #F5EB00;
-}.popup-error-mess i{
+}
+
+.popup-error-mess i {
 	display: inline-block;
 	width: 14px;
 	height: 13px;
 	background: url("../images/icon/warning-ico.png") no-repeat;
 	margin-left: 5px;
- }
- .popup-btn-close{
-	 display: inline-block;
-	 float: right;
-	 width: 30px;
-	 height: 30px;
-	 background: url("../images/icon/close-ico.png") no-repeat;
-	 cursor: pointer;
- }
+}
+
+.popup-btn-close {
+	display: inline-block;
+	float: right;
+	width: 30px;
+	height: 30px;
+	background: url("../images/icon/close-ico.png") no-repeat;
+	cursor: pointer;
+}
