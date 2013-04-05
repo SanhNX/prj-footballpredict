@@ -7,13 +7,29 @@
         <link href="css/menu.css" rel="stylesheet" />
 
         <link rel="SHORTCUT ICON" href="images/icon/logo-head.png"/>
-        <script src="js/jquery-1.8.3.min.js"></script>
-
+        <script src="scripts/jquery-1.8.3.min.js"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+        <script type="text/javascript" src="scripts/jquery.numeric.js"></script>
+        <script src="scripts/main.js"></script>
+        <script type="text/javascript">
+	$("#10").numeric();
+	$(".integer").numeric(false, function() { alert("Integers only"); this.value = ""; this.focus(); });
+	$(".positive").numeric({ negative: false }, function() { alert("No negative values"); this.value = ""; this.focus(); });
+	$(".positive-integer").numeric({ decimal: false, negative: false }, function() { alert("Positive integers only"); this.value = ""; this.focus(); });
+	$("#remove").click(
+		function(e)
+		{
+			e.preventDefault();
+			$(".numeric,.integer,.positive").removeNumeric();
+		}
+	);
+	</script>
     </head>
     <body>
         <?php
         // put your code here
         ?>
+        
         <div class="main">
             <div class="header">
                 <div class="header-container">
@@ -26,7 +42,8 @@
                     </div>
                     <div class="header-logo">LOGO</div>
                     <div class="header-log">
-                        <div class="btn-expand-login">Login</div>
+                        <div class='currentUser' ><?php echo $_SESSION['currentUser']->FullName; ?></div>
+                        <div class="btn-expand-login" id="expand-login-btn">Login</div>
                     </div>
                 </div>
             </div>
@@ -54,6 +71,7 @@
 
 
                             $itemList = getMatchListOfLeagues(1);
+                            echo '<form method="POST">';
                             for ($i = 0; $i < count($itemList); $i++) {
                                 $item = $itemList[$i];
                                 $startTime = date_format(date_create($item->StartTime), 'l, d F Y h:i');
@@ -62,28 +80,42 @@
 //                                echo '<script>alert("'.$clubA->Logo.'");</script>';
                                 echo '<li class = "match-item">';
                                 echo '<div class = "match-item-icon-panel">';
-                                echo '<img src = "'. $clubA->Logo .'"/><img src = "'. $clubB->Logo .'"/>';
+                                echo '<img src = "' . $clubA->Logo . '"/><img src = "' . $clubB->Logo . '"/>';
                                 echo '</div>';
                                 echo '<div class = "match-item-name-panel">';
                                 echo '<span class = "match-item-name">';
-                                echo '<span class = "match-item-cap">'. $clubA->Name .' - '. $clubB->Name .'</span><br>';
-                                echo '<span class = "match-item-sub">'. $startTime .'</span>';
+                                echo '<span class = "match-item-cap">' . $clubA->Name . ' - ' . $clubB->Name . '</span><br>';
+                                echo '<span class = "match-item-sub">' . $startTime . '</span>';
                                 echo '</span>';
                                 echo '</div>';
                                 echo '<div class = "match-item-num-panel">';
-                                echo '<input class = "match-item-num-input" type = "number" tabindex="1" size="2" autocomplete="off" min="0" max="99" pattern="[0-9]*"/>';
-                                echo '<input class = "match-item-num-input" type = "number" tabindex="1" size="2" autocomplete="off" min="0" max="99" pattern="[0-9]*"/>';
+                                echo '<input class="match-item-num-input" name="clubA'. $i .'" type="number" tabindex="1" maxlength="2" size="2" autocomplete="off" min="0" max="99" pattern="[0-9]*"/>';
+                                echo '<input class="match-item-num-input" name="clubB'. $i .'" type="number" tabindex="1" maxlength="2" size="2" autocomplete="off" min="0" max="99" pattern="[0-9]*"/>';
                                 echo '</div>';
                                 echo '</li>';
                             }
+                            if(isset($_POST['btnSave'])){
+//                                echo '<script>alert("'. $_POST['clubA0'] .'-'. $_POST['clubB0'] .'");</script>';
+                                $predictItem = addPredict(1, 1, ''.$_POST['clubA0'] .'-'. $_POST['clubB0'].'');
+                                if ($predictItem != -1) {
+//                                    echo '<script>alert("'. $_POST['clubA0'] .'-'. $_POST['clubB0'] .'");</script>';
+                                }
+                                else{
+                                    echo '<script>alert("INSERT FAIL");</script>';
+                                }
+                            }
+                            
                             ?>
                         </ul>
 
                         <div class="page-cont-control">
                             <div class="page-cont-button" id="page-cont-button-next"></div>  
                             <div class="page-cont-button" id="page-cont-button-prev"></div>  
-                            <div class="page-cont-button-save" id="page-cont-button-save">Save</div>  
+                            <input class="page-cont-button-save" type="submit" name="btnSave" id="page-cont-button-save" value="Save"/>  
                         </div>
+                        <?php
+                            echo '</form>';
+                        ?>
                     </div>
                     <div class="page-cont-right">
                         <div class="page-cont-title light">
@@ -134,6 +166,8 @@
                 </div>
             </div>
         </div>
-
+        <?php
+            include './loginPanel.php';
+        ?>
     </body>
 </html>

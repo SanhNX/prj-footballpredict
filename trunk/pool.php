@@ -8,7 +8,7 @@
         <link href="css/gridview.css" rel="stylesheet"/>
 
         <link rel="SHORTCUT ICON" href="images/icon/logo-head.png"/>
-        <script src="js/jquery-1.8.3.min.js"></script>
+        <script src="scripts/jquery-1.8.3.min.js"></script>
 
     </head>
     <body>
@@ -28,6 +28,14 @@
                     </div>
                     <div class="header-logo">LOGO</div>
                     <div class="header-log">
+                        <div class="currentUser"> 
+                            <?php
+                                if(isset($_SESSION['currentUser']))
+                                    echo $_SESSION["currentUser"]->FullName;
+                                else
+                                    echo 'aaaaaaaaaaaaa';
+                            ?>
+                        </div>
                         <div class="btn-expand-login">Login</div>
                     </div>
                 </div>

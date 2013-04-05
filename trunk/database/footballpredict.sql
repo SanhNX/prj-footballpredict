@@ -160,3 +160,7 @@ UPDATE `footballpredict`.`tbl_matchlist` SET `StartTime`='2012-04-04 02:25:00' W
 UPDATE `footballpredict`.`tbl_matchlist` SET `StartTime`='2012-05-05 07:15:00' WHERE `Id`='5';
 UPDATE `footballpredict`.`tbl_matchlist` SET `StartTime`='2012-06-06 07:45:00' WHERE `Id`='6';
 UPDATE `footballpredict`.`tbl_matchlist` SET `StartTime`='2012-07-07 06:20:00' WHERE `Id`='7';
+
+
+
+INSERT INTO tbl_user(Email, Password, FullName, Avatar, DOB, Gender, FavoriteTeam, Scores) VALUES('justin@gmail.com','123', 'Justin Nguyen', 'images/resources/team-logo/Alania.jpg', '1987-02-23 20:20:20', 1, 1, 20);
