@@ -20,7 +20,7 @@ function getUserByEmailPass($email, $pass) {
     }
     $seletedItem = mysql_fetch_array($queryResult);
     $item = new User();
-    $item->Id = $seletedItem['Name'];
+    $item->Id = $seletedItem['Id'];
     $item->Email = $seletedItem['Email'];
     $item->Password = $seletedItem['Password'];
     $item->FullName = $seletedItem['FullName'];

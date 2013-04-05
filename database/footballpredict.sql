@@ -164,3 +164,18 @@ UPDATE `footballpredict`.`tbl_matchlist` SET `StartTime`='2012-07-07 06:20:00' W
 
 
 INSERT INTO tbl_user(Email, Password, FullName, Avatar, DOB, Gender, FavoriteTeam, Scores) VALUES('justin@gmail.com','123', 'Justin Nguyen', 'images/resources/team-logo/Alania.jpg', '1987-02-23 20:20:20', 1, 1, 20);
+INSERT INTO tbl_user(Email, Password, FullName, Avatar, DOB, Gender, FavoriteTeam, Scores) VALUES('justin@gmail.com','123', 'Justin Nguyen 1', 'images/resources/team-logo/Amkar.jpg', '1987-03-23 20:20:20', 1, 1, 120);
+INSERT INTO tbl_user(Email, Password, FullName, Avatar, DOB, Gender, FavoriteTeam, Scores) VALUES('justin@gmail.com','123', 'Justin Nguyen 2', 'images/resources/team-logo/Anzhi.jpg', '1987-04-23 20:20:20', 1, 1, 220);
+INSERT INTO tbl_user(Email, Password, FullName, Avatar, DOB, Gender, FavoriteTeam, Scores) VALUES('justin@gmail.com','123', 'Justin Nguyen 3', 'images/resources/team-logo/CSKA.jpg', '1987-05-23 20:20:20', 1, 1, 320);
+INSERT INTO tbl_user(Email, Password, FullName, Avatar, DOB, Gender, FavoriteTeam, Scores) VALUES('justin@gmail.com','123', 'Justin Nguyen 4', 'images/resources/team-logo/Dinamo.jpg', '1987-06-23 20:20:20', 1, 1, 1120);
+INSERT INTO tbl_user(Email, Password, FullName, Avatar, DOB, Gender, FavoriteTeam, Scores) VALUES('justin@gmail.com','123', 'Justin Nguyen 5', 'images/resources/team-logo/Krasnodar.jpg', '1987-07-23 20:20:20', 1, 1, 230);
+INSERT INTO tbl_user(Email, Password, FullName, Avatar, DOB, Gender, FavoriteTeam, Scores) VALUES('justin@gmail.com','123', 'Justin Nguyen 6', 'images/resources/team-logo/KryliaSovetov.jpg', '1987-08-23 20:20:20', 1, 1, 520);
+INSERT INTO tbl_user(Email, Password, FullName, Avatar, DOB, Gender, FavoriteTeam, Scores) VALUES('justin@gmail.com','123', 'Justin Nguyen 7', 'images/resources/team-logo/Kuban.jpg', '1987-09-23 20:20:20', 1, 1, 720);
+INSERT INTO tbl_user(Email, Password, FullName, Avatar, DOB, Gender, FavoriteTeam, Scores) VALUES('justin@gmail.com','123', 'Justin Nguyen 8', 'images/resources/team-logo/Lokomotiv.jpg', '1987-10-23 20:20:20', 1, 1, 520);
+INSERT INTO tbl_user(Email, Password, FullName, Avatar, DOB, Gender, FavoriteTeam, Scores) VALUES('justin@gmail.com','123', 'Justin Nguyen 9', 'images/resources/team-logo/Mordovia.jpg', '1987-11-23 20:20:20', 1, 1, 320);
+INSERT INTO tbl_user(Email, Password, FullName, Avatar, DOB, Gender, FavoriteTeam, Scores) VALUES('justin@gmail.com','123', 'Justin Nguyen 10', 'images/resources/team-logo/Rostov.jpg', '1987-12-23 20:20:20', 1, 1, 220);
+INSERT INTO tbl_user(Email, Password, FullName, Avatar, DOB, Gender, FavoriteTeam, Scores) VALUES('justin@gmail.com','123', 'Justin Nguyen 11', 'images/resources/team-logo/Rubin.jpg', '1987-01-24 20:20:20', 1, 1, 120);
+INSERT INTO tbl_user(Email, Password, FullName, Avatar, DOB, Gender, FavoriteTeam, Scores) VALUES('justin@gmail.com','123', 'Justin Nguyen 12', 'images/resources/team-logo/Spartak.jpg', '1987-02-24 20:20:20', 1, 1, 120);
+INSERT INTO tbl_user(Email, Password, FullName, Avatar, DOB, Gender, FavoriteTeam, Scores) VALUES('justin@gmail.com','123', 'Justin Nguyen 13', 'images/resources/team-logo/Terek.jpg', '1987-03-24 20:20:20', 1, 1, 520);
+INSERT INTO tbl_user(Email, Password, FullName, Avatar, DOB, Gender, FavoriteTeam, Scores) VALUES('justin@gmail.com','123', 'Justin Nguyen 14', 'images/resources/team-logo/Volga.jpg', '1987-04-24 20:20:20', 1, 1, 920);
+INSERT INTO tbl_user(Email, Password, FullName, Avatar, DOB, Gender, FavoriteTeam, Scores) VALUES('justin@gmail.com','123', 'Justin Nguyen 15', 'images/resources/team-logo/Zenit.jpg', '1987-05-24 20:20:20', 1, 1, 820);

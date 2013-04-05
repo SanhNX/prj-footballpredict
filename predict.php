@@ -1,6 +1,8 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
     <head>
+
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title></title>
         <link href="css/style.css" rel="stylesheet" />
@@ -12,24 +14,32 @@
         <script type="text/javascript" src="scripts/jquery.numeric.js"></script>
         <script src="scripts/main.js"></script>
         <script type="text/javascript">
-	$("#10").numeric();
-	$(".integer").numeric(false, function() { alert("Integers only"); this.value = ""; this.focus(); });
-	$(".positive").numeric({ negative: false }, function() { alert("No negative values"); this.value = ""; this.focus(); });
-	$(".positive-integer").numeric({ decimal: false, negative: false }, function() { alert("Positive integers only"); this.value = ""; this.focus(); });
-	$("#remove").click(
-		function(e)
-		{
-			e.preventDefault();
-			$(".numeric,.integer,.positive").removeNumeric();
-		}
-	);
-	</script>
+            $("#10").numeric();
+            $(".integer").numeric(false, function() {
+                alert("Integers only");
+                this.value = "";
+                this.focus();
+            });
+            $(".positive").numeric({negative: false}, function() {
+                alert("No negative values");
+                this.value = "";
+                this.focus();
+            });
+            $(".positive-integer").numeric({decimal: false, negative: false}, function() {
+                alert("Positive integers only");
+                this.value = "";
+                this.focus();
+            });
+            $("#remove").click(
+                    function(e)
+                    {
+                        e.preventDefault();
+                        $(".numeric,.integer,.positive").removeNumeric();
+                    }
+            );
+        </script>
     </head>
     <body>
-        <?php
-        // put your code here
-        ?>
-        
         <div class="main">
             <div class="header">
                 <div class="header-container">
@@ -42,7 +52,12 @@
                     </div>
                     <div class="header-logo">LOGO</div>
                     <div class="header-log">
-                        <div class='currentUser' ><?php echo $_SESSION['currentUser']->FullName; ?></div>
+                        <div class='currentUser' >
+                            <?php
+                            if (isset($_SESSION["UserName"]))
+                                echo $_SESSION["UserName"];
+                            ?>
+                        </div>
                         <div class="btn-expand-login" id="expand-login-btn">Login</div>
                     </div>
                 </div>
@@ -89,22 +104,31 @@
                                 echo '</span>';
                                 echo '</div>';
                                 echo '<div class = "match-item-num-panel">';
-                                echo '<input class="match-item-num-input" name="clubA'. $i .'" type="number" tabindex="1" maxlength="2" size="2" autocomplete="off" min="0" max="99" pattern="[0-9]*"/>';
-                                echo '<input class="match-item-num-input" name="clubB'. $i .'" type="number" tabindex="1" maxlength="2" size="2" autocomplete="off" min="0" max="99" pattern="[0-9]*"/>';
+                                echo '<input type="hidden" name="' . $item->Id . '" value="' . $item->Id . '" />';
+                                echo '<input class="match-item-num-input" name="clubA' . $item->Id . '" type="number" tabindex="1" maxlength="2" size="2" autocomplete="off" min="0" max="99" pattern="[0-9]*"/>';
+                                echo '<input class="match-item-num-input" name="clubB' . $item->Id . '" type="number" tabindex="1" maxlength="2" size="2" autocomplete="off" min="0" max="99" pattern="[0-9]*"/>';
                                 echo '</div>';
                                 echo '</li>';
                             }
-                            if(isset($_POST['btnSave'])){
-//                                echo '<script>alert("'. $_POST['clubA0'] .'-'. $_POST['clubB0'] .'");</script>';
-                                $predictItem = addPredict(1, 1, ''.$_POST['clubA0'] .'-'. $_POST['clubB0'].'');
-                                if ($predictItem != -1) {
-//                                    echo '<script>alert("'. $_POST['clubA0'] .'-'. $_POST['clubB0'] .'");</script>';
-                                }
-                                else{
-                                    echo '<script>alert("INSERT FAIL");</script>';
+                            if (isset($_POST['btnSave'])) {
+                                for ($i = 1; $i < 8; $i++) {
+                                    if($i == 7)
+                                        echo '<script>alert("Predict Success !!" );</script>';
+//                                echo '<script>alert("'. $_POST[$i].'---'.$_SESSION['UserId'].'--' .$_POST['clubA'.$i].'--'. $_POST['clubB'.$i].'")</script>';
+                                    if ($_POST['clubA'.$i] && $_POST['clubB'.$i]) {
+                                        $predictItem = addPredict($_SESSION['UserId'], $_POST[$i], '' . $_POST['clubA'.$i] . '-' . $_POST['clubB'.$i] . '');
+                                        if ($predictItem != -1) {
+//                                            echo '<script>alert("INSET SUCCESS . '. $_POST[$i] .' " );</script>';
+                                        } else {
+//                                            echo '<script>alert("INSET FAIL . '. $_POST[$i] .' " );</script>';
+                                        }
+                                    }
+                                    else {
+//                                        echo '<script>alert("CONTINUE '. $_POST[$i] .'" );</script>';
+                                        continue;
+                                    }
                                 }
                             }
-                            
                             ?>
                         </ul>
 
@@ -114,7 +138,7 @@
                             <input class="page-cont-button-save" type="submit" name="btnSave" id="page-cont-button-save" value="Save"/>  
                         </div>
                         <?php
-                            echo '</form>';
+                        echo '</form>';
                         ?>
                     </div>
                     <div class="page-cont-right">
@@ -167,7 +191,7 @@
             </div>
         </div>
         <?php
-            include './loginPanel.php';
+        include 'loginPanel.php';
         ?>
     </body>
 </html>
