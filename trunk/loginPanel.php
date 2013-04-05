@@ -23,13 +23,12 @@
                 if (isset($_POST['btnLogin'])) {
                     $user = getUserByEmailPass($_POST['txtEmail'], $_POST['txtPass']);
                     if ($user->Email == $_POST['txtEmail']) {
-
-                        //Start your session
-                        session_start();
+                        
 //                        //Store the name in the session
-                        $_SESSION['currentUser'] = $user;
+                        $_SESSION['UserName'] = $user->FullName;
+                        $_SESSION['UserId'] = $user->Id;
+//                        echo '<script>alert("'.$_SESSION['UserId'].'");</script>';
 //                        header("Location: pool.php");
-//                        echo '<script>alert("' . $_SESSION['currentUser']->DOB . '");</script>';
                         redirect('pool.php');
                     } else {                       
 //                        echo '<script>alert("LOGIN FAIL");</script>';

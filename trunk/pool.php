@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -9,12 +10,10 @@
 
         <link rel="SHORTCUT ICON" href="images/icon/logo-head.png"/>
         <script src="scripts/jquery-1.8.3.min.js"></script>
+        <script src="scripts/main.js"></script>
 
     </head>
     <body>
-        <?php
-        // put your code here
-        ?>
         <div class="main">
             <div class="header">
                 <div class="header-container">
@@ -30,10 +29,8 @@
                     <div class="header-log">
                         <div class="currentUser"> 
                             <?php
-                                if(isset($_SESSION['currentUser']))
-                                    echo $_SESSION["currentUser"]->FullName;
-                                else
-                                    echo 'aaaaaaaaaaaaa';
+                            if ($_SESSION["UserName"])
+                                echo $_SESSION["UserName"];
                             ?>
                         </div>
                         <div class="btn-expand-login">Login</div>
@@ -62,23 +59,19 @@
                                 include 'DTO/object.php';
                                 include 'BLL/poolBll.php';
                                 // ---------------------------------
-
-
                                 $itemList = getClubs();
                                 for ($i = 0; $i < count($itemList); $i++) {
                                     $item = $itemList[$i];
                                     echo '<li class = "item">';
                                     echo '<div class = "grid-icon-panel">';
-                                    echo '<img src = "'. $item->Logo .'"/>';
+                                    echo '<img src = "' . $item->Logo . '"/>';
                                     echo '</div>';
-                                    echo '<div class = "grid-item-cap">'. $item->Name .'</div>';
+                                    echo '<div class = "grid-item-cap">' . $item->Name . '</div>';
                                     echo '<div class = "grid-item-mess">by Tim</div>';
                                     echo '<a class = "grid-item-button" href = "#"> Join</a>';
                                     echo '</li>';
                                 }
                                 ?>
-
-
                             </ul>
 
 
@@ -144,6 +137,8 @@
                 </div>
             </div>
         </div>
-
+        <?php
+        include 'loginPanel.php';
+        ?>
     </body>
 </html>
