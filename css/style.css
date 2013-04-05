@@ -518,7 +518,7 @@ input::-webkit-inner-spin-button {
 
 .team-item-name {
 	float: left;
-	width: 200px;
+	width: 180px;
 	height: 50px;
 	line-height: 50px;
 	text-indent: 10px;
@@ -533,6 +533,9 @@ input::-webkit-inner-spin-button {
 	line-height: 50px;
 	text-align: center;
 	color: #EEE;
+	font-size: 12px;
+	background: rgba(238, 238, 238, 0.12);
+	margin-left: 5px;
 }
 
 .team-item-icon-panel {
