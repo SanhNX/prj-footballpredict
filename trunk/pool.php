@@ -130,21 +130,12 @@
                 </div>
 
             </div>
-            <div class="footer">
-                <div class="footer-container">
-                    <div class="footer-menu">
-                        <ul class="nav-list">
-                            <li class="nav-item"><a href="#" id="nav-item1">Item 1</a></li>
-                            <li class="nav-item"><a href="#" id="nav-item1">Item 2</a></li>
-                            <li class="nav-item"><a href="#" id="nav-item1">Item 3</a></li>
-                            <li class="nav-item"><a href="#" id="nav-item1">Item 4</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            <?php
+            include 'footerpanel.php';
+            ?>
         </div>
         <?php
-        include 'loginPanel.php';
+        include 'loginpanel.php';
         ?>
     </body>
 </html>
