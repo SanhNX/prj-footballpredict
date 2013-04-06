@@ -100,15 +100,21 @@
                                         $tempB = $_POST['clubB' . $i];
 //                                echo '<script>alert("'. $_POST[$i].'---'.$_SESSION['UserId'].'--' .$_POST['clubA'.$i].'--'. $_POST['clubB'.$i].'")</script>';
                                         if ($tempA != "" && $tempB != "") {
-                                            $predictItem = addPredict($_SESSION['UserId'], $_POST[$i], '' . $tempA . '-' . $tempB . '');
-                                            if ($predictItem != -1) {
+                                            $isExist = getPredict_byUIdMId($_SESSION['UserId'], $_POST[$i]);
+//                                            echo '<script>alert("Exists : ' . $isExist . ' " );</script>';
+                                            if ($isExist == 1) {
+                                                updatePredict($_SESSION['UserId'], $_POST[$i], '' . $tempA . '-' . $tempB . '');
+                                            } else {
+                                                $predictItem = addPredict($_SESSION['UserId'], $_POST[$i], '' . $tempA . '-' . $tempB . '');
+                                                if ($predictItem != -1) {
 //                                                echo '<script>alert("INSET SUCCESS . ' . $_POST[$i] . ' " );</script>';
 //                                                if ($i == 7)
 //                                                    echo '<script>alert("Predict Success !!" );</script>';
-                                            } else {
+                                                } else {
 //                                                echo '<script>alert("INSET FAIL . ' . $_POST[$i] . ' " );</script>';
 //                                                if ($i == 7)
 //                                                    echo '<script>alert("1.Please input valid to predict !!" );</script>';
+                                                }
                                             }
                                         } else {
 //                                            echo '<script>alert("CONTINUE ' . $_POST[$i] . '" );</script>';
@@ -117,8 +123,7 @@
                                             continue;
                                         }
                                     }
-                                }
-                                else {
+                                } else {
                                     echo '<script>alert("Please login to use function");</script>';
                                 }
                             }

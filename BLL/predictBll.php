@@ -51,6 +51,17 @@ function getClub_byId($id) {
     return $item;
 }
 
+function getPredict_byUIdMId($userId, $matchId) {
+    $sql = "SELECT * FROM tbl_predict  WHERE UserId = $userId AND MatchId = $matchId";
+    $queryResult = mysql_query($sql);
+    if (!$queryResult) {
+        echo 'Could not run query: ' . $id . mysql_error();
+        exit;
+    }
+    $count = mysql_num_rows($queryResult);
+    return $count;
+}
+
 function addPredict($userId, $matchId, $result){
     $userId = mysql_real_escape_string($userId);
     $matchId = mysql_real_escape_string($matchId);
@@ -64,13 +75,8 @@ function addPredict($userId, $matchId, $result){
         return -1;
 }
 
-function updateDichVu_byId($id, $Ten, $Date, $Noidung, $Hinhanh) {
-    $sql = "UPDATE `tb_dichvucuoi`
-	SET `Tieude`='$Ten',
-            `Date`='$Date',
-            `Noidung`='$Noidung',
-            `Hinhanh`='$Hinhanh',
-	WHERE `tb_dichvucuoi`.`Id` = $id;";
+function updatePredict($userId, $matchId, $result) {
+    $sql = "UPDATE tbl_predict SET predictResult = '$result' WHERE UserId = $userId AND MatchId = $matchId";
     $queryResult = mysql_query($sql);
     return $queryResult;
 }
