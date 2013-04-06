@@ -101,7 +101,17 @@ function countPoint ($matchId, $resultA, $resultB) {
                         $scoresUser = $scoresUser + 20;
                 }
                 
+                // doichunha da vaoluoi +10diem
+                if (($resultA > 0) &&
+                       ($predictResultA > 0)) {
+                        $scoresUser = $scoresUser + 10;
+                }
                 
+                // doichunha da vaoluoi +10diem
+                if (($resultB > 0) &&
+                       ($predictResultB > 0)) {
+                        $scoresUser = $scoresUser + 10;
+                }
                 
                 // update diem cho user
                 updateUserById($itemPredict->UserId, $scoresUser);

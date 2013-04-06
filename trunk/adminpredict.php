@@ -93,23 +93,24 @@
                                  
                                     $resultA  = $_POST['clubA' . $i];
                                     $resultB  = $_POST['clubB' . $i];
-                                    echo '<script>alert("'. $resultA .'---'. $resultB .'")</script>';
+ //                                   echo '<script>alert("'. $resultA .'---'. $resultB .'")</script>';
                                     
                                     if ($i == 7)
-                                        echo '<script>alert("Predict Success !!" );</script>';
+                                        echo '<script>alert("You are save Success !!" );</script>';
+                                        redirect('adminpredict.php');
 //                                echo '<script>alert("'. $_POST[$i].'---'.$_SESSION['UserId'].'--' .$_POST['clubA'.$i].'--'. $_POST['clubB'.$i].'")</script>';
                                     
                                     
                                     if ($resultA >= 0 && $resultB >= 0 && $resultA !="" && $resultB !="") {
-                                        echo '<script>alert("UPDATE FAIL . ' . $resultA . '-' . $resultB . ' " );</script>';
+//                                        echo '<script>alert("UPDATE FAIL . ' . $resultA . '-' . $resultB . ' " );</script>';
                                         $predictItem = updateResult($_POST[$i], '' . $resultA . '-' . $resultB . '');
                                         if ($predictItem != -1) {
                                             countPoint ($_POST[$i], $_POST['clubA' . $i], $_POST['clubB' . $i]);
                                         } else {
-                                            echo '<script>alert("UPDATE FAIL . '. $_POST[$i] .' " );</script>';
+                                            //echo '<script>alert("UPDATE FAIL . '. $_POST[$i] .' " );</script>';
                                         }
                                     } else {
-                                        echo '<script>alert("CONTINUE '. $_POST[$i] .'" );</script>';
+                                        //echo '<script>alert("CONTINUE '. $_POST[$i] .'" );</script>';
                                         continue;
                                     }
                                 }
