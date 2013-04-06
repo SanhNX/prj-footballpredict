@@ -92,26 +92,34 @@
                                 echo '</li>';
                             }
                             if (isset($_POST['btnSave'])) {
-                                for ($i = 1; $i < 8; $i++) {
-
-//                                echo '<script>alert("'. $_POST[$i].'---'.$_SESSION['UserId'].'--' .$_POST['clubA'.$i].'--'. $_POST['clubB'.$i].'")</script>';
-                                    if ($_POST['clubA' . $i] && $_POST['clubB' . $i]) {
-                                        $predictItem = addPredict($_SESSION['UserId'], $_POST[$i], '' . $_POST['clubA' . $i] . '-' . $_POST['clubB' . $i] . '');
-                                        if ($predictItem != -1) {
-//                                            echo '<script>alert("INSET SUCCESS . '. $_POST[$i] .' " );</script>';
-                                            if ($i == 7)
-                                                echo '<script>alert("Predict Success !!" );</script>';
-                                        } else {
-//                                            echo '<script>alert("INSET FAIL . '. $_POST[$i] .' " );</script>';
-                                            if ($i == 7)
-                                                echo '<script>alert("Please input valid to predict !!" );</script>';
-                                        }
-                                    } else {
-//                                        echo '<script>alert("CONTINUE '. $_POST[$i] .'" );</script>';
+                                if (isset($_SESSION['UserName'])) {
+                                    for ($i = 1; $i < 8; $i++) {
                                         if ($i == 7)
-                                            echo '<script>alert("Please input valid to predict !!" );</script>';
-                                        continue;
+                                            echo '<script>alert("Predict Success !!" );</script>';
+                                        $tempA = $_POST['clubA' . $i];
+                                        $tempB = $_POST['clubB' . $i];
+//                                echo '<script>alert("'. $_POST[$i].'---'.$_SESSION['UserId'].'--' .$_POST['clubA'.$i].'--'. $_POST['clubB'.$i].'")</script>';
+                                        if ($tempA != "" && $tempB != "") {
+                                            $predictItem = addPredict($_SESSION['UserId'], $_POST[$i], '' . $tempA . '-' . $tempB . '');
+                                            if ($predictItem != -1) {
+//                                                echo '<script>alert("INSET SUCCESS . ' . $_POST[$i] . ' " );</script>';
+//                                                if ($i == 7)
+//                                                    echo '<script>alert("Predict Success !!" );</script>';
+                                            } else {
+//                                                echo '<script>alert("INSET FAIL . ' . $_POST[$i] . ' " );</script>';
+//                                                if ($i == 7)
+//                                                    echo '<script>alert("1.Please input valid to predict !!" );</script>';
+                                            }
+                                        } else {
+//                                            echo '<script>alert("CONTINUE ' . $_POST[$i] . '" );</script>';
+//                                            if ($i == 7)
+//                                                echo '<script>alert("2.Please input valid to predict !!" );</script>';
+                                            continue;
+                                        }
                                     }
+                                }
+                                else {
+                                    echo '<script>alert("Please login to use function");</script>';
                                 }
                             }
                             ?>
@@ -179,12 +187,12 @@ echo '</form>';
                 </div>
 
             </div>
-            <?php
-            include 'footerpanel.php';
-            ?>
+<?php
+include 'footerpanel.php';
+?>
         </div>
-        <?php
-        include 'loginpanel.php';
-        ?>
+            <?php
+            include 'loginpanel.php';
+            ?>
     </body>
 </html>
