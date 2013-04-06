@@ -84,10 +84,13 @@
                                 echo '<span class = "match-item-sub">' . $startTime . '</span>';
                                 echo '</span>';
                                 echo '</div>';
+                                echo '<div class="match-item-mess-panel">';
+                                echo '<span class="match-item-mess">awaiting outcome...</span>';
+                                echo '</div>';
                                 echo '<div class = "match-item-num-panel">';
                                 echo '<input type="hidden" name="' . $item->Id . '" value="' . $item->Id . '" />';
-                                echo '<span class="match-item-num-input" >1</span>';
-                                echo '<span class="match-item-num-input" >3</span>';
+                                echo '<span class="match-item-num-input" ></span>';
+                                echo '<span class="match-item-num-input" ></span>';
                                 echo '</div>';
                                 echo '</li>';
                             }
