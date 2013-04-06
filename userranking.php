@@ -60,7 +60,7 @@
                             <?php
                             include ("DAO/connection.php");
                             //xac dinh bao nhieu dong
-                            $display = 5;
+                            $display = 16;
                             // tinh tong so trang can hien thi
                             if (isset($_GET['page']) && (int) $_GET['page']) {
                                 $page = $_GET['page'];
@@ -184,19 +184,12 @@
                 </div>
 
             </div>
-            <div class="footer">
-                <div class="footer-container">
-                    <div class="footer-menu">
-                        <ul class="nav-list">
-                            <li class="nav-item"><a href="#" id="nav-item1">Item 1</a></li>
-                            <li class="nav-item"><a href="#" id="nav-item2">Item 2</a></li>
-                            <li class="nav-item"><a href="#" id="nav-item3">Item 3</a></li>
-                            <li class="nav-item"><a href="#" id="nav-item4">Item 4</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            <?php
+            include 'footerpanel.php';
+            ?>
         </div>
-
+        <?php
+        include 'loginpanel.php';
+        ?>
     </body>
 </html>

@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/1">
+        <file>file:/C:/xampp/htdocs/prj-footballpredict/BLL/predictBll.php</file>
+        <file>file:/C:/xampp/htdocs/prj-footballpredict/predict.php</file>
+        <file>file:/C:/xampp/htdocs/prj-footballpredict/DTO/object.php</file>
+        <file>file:/C:/xampp/htdocs/prj-footballpredict/BLL/signup_inBll.php</file>
+        <file>file:/C:/xampp/htdocs/prj-footballpredict/pool.php</file>
+        <file>file:/C:/xampp/htdocs/prj-footballpredict/teamranking.php</file>
+        <file>file:/C:/xampp/htdocs/prj-footballpredict/userranking.php</file>
+        <file>file:/C:/xampp/htdocs/prj-footballpredict/result.php</file>
+        <file>file:/C:/xampp/htdocs/prj-footballpredict/footerpanel.php</file>
+    </open-files>
 </project-private>
