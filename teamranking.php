@@ -80,7 +80,7 @@
                                         <img src="' . $item->Logo . '"/>
                                     </div>
                                     <span class="team-item-name">'. $item->Name .'</span>
-
+                                        
                                     <div class="team-item-score">'. $item->Points .'</div>
                                     <div class="team-item-score">'. $item->Lost .'</div>
                                     <div class="team-item-score">'. $item->Won .'</div>
