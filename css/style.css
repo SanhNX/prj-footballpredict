@@ -209,7 +209,7 @@ body {
 
 .page-cont-title .cont-title-bold {
 	font-weight: bold;
-	font-size: 23px;
+	font-size: 20px;
 	color: #FFF;
 	text-transform: uppercase;
 }
@@ -227,7 +227,7 @@ body {
 	background: url('../images/bg/red-dots.png');
 	border-top: 3px solid #BA0E36;
 	color: #BA0E36;
-	font-size: 20px;
+	font-size: 15px;
 	font-weight: bold;
 	position: relative;
 }
@@ -375,6 +375,7 @@ body {
 	color: #5F071C;
 	font-weight: bold;
 	text-shadow: 0px 1px 0px #E06985;
+        border: 0px;
 }
 
 .page-cont-rate {
@@ -818,4 +819,21 @@ input::-webkit-inner-spin-button {
 	height: 30px;
 	background: url("../images/icon/close-ico.png") no-repeat;
 	cursor: pointer;
+}
+
+.btn-page {
+    background: url(../images/bg/btn-page.png) no-repeat;
+    display: block;
+    float: left;
+    height: 24px;
+    width: 24px;
+    margin: 5px;
+    line-height: 24px;
+    text-align: center;
+    font-weight: bold;
+    color: #FFF!important;
+    text-decoration: none;
+}
+.btn-page.active {
+    background: url(../images/bg/btn-page.png) 0 -24px;
 }

@@ -11,7 +11,6 @@
         <link rel="SHORTCUT ICON" href="images/icon/logo-head.png"/>
         <script src="scripts/jquery-1.8.3.min.js"></script>
         <script src="scripts/main.js"></script>
-
     </head>
     <body>
         <div class="main">
@@ -19,21 +18,27 @@
                 <div class="header-container">
                     <div class="header-menu">
                         <ul class="menu-list">
-                            <li class="menu-item"><a href="#" id="menu-item1">Item 1</a></li>
-                            <li class="menu-item"><a href="#" id="menu-item1">Item 2</a></li>
-                            <li class="menu-item"><a href="#" id="menu-item1">Item 3</a></li>
-                            <li class="menu-item"><a href="#" id="menu-item1">Item 4</a></li>
+                            <li class="menu-item"><a href="predict.php" id="menu-item1">Prediction</a></li>
+                            <li class="menu-item"><a href="result.php" id="menu-item2">Result</a></li>
+                            <li class="menu-item"><a href="pool.php" id="menu-item3">Poules</a></li>
+                            <li class="menu-item"><a href="userranking.php" id="menu-item4">Ranking</a></li>
+                            <li class="menu-item"><a href="teamranking.php" id="menu-item5">Team Ranking</a></li>
                         </ul>
                     </div>
                     <div class="header-logo">LOGO</div>
                     <div class="header-log">
-                        <div class="currentUser"> 
-                            <?php
-                            if ($_SESSION["UserName"])
-                                echo $_SESSION["UserName"];
-                            ?>
-                        </div>
-                        <div class="btn-expand-login">Login</div>
+                        <?php
+                        if (!isset($_SESSION["UserName"]))
+                            echo '<div class = "btn-expand-login" id = "expand-login-btn">Login</div>';
+                        else {
+                            echo '<div class = "lbl-profile" id = "profile-label">';
+                            echo '<span class="user-name">';
+                            echo $_SESSION["UserName"];
+                            echo '</span>';
+                            echo '<span class="user-avt" style="background-image: url(' . $_SESSION["UserAvatar"] . ')"></span>';
+                            echo '</div>';
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
@@ -52,6 +57,7 @@
                             <span class="cont-title-sub">Available pools</span>
                             <i class="sub0"></i>
                         </div>
+                        <div class="popup-input-row"><span>Search</span><input type="text"></div>
                         <div class="grid-wrapper">
                             <ul class="grid">
                                 <?php
@@ -79,7 +85,7 @@
                     </div>
                     <div class="page-cont-right">
                         <div class="page-cont-title light">
-                            <span class="cont-title-bold">Text</span>
+                            <span class="cont-title-bold">Eredivisie</span>
                         </div>
                         <div class="page-cont-rate">
                             <p class="page-cont-label">115,098 participants</p>

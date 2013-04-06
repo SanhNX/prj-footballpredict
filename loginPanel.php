@@ -27,6 +27,7 @@
 //                        //Store the name in the session
                         $_SESSION['UserName'] = $user->FullName;
                         $_SESSION['UserId'] = $user->Id;
+                        $_SESSION['UserAvatar'] = $user->Avatar;
 //                        echo '<script>alert("'.$_SESSION['UserId'].'");</script>';
 //                        header("Location: pool.php");
                         redirect('pool.php');
@@ -64,7 +65,7 @@
                 <i class="sub0"></i>
             </div>
             <span class="popup-error-mess"><i></i> Input is not correct!</span>
-            <div class="popup-input-row"><span>Name</span><input type="text"/></div>
+            <div class="popup-input-row"><span>Full Name</span><input type="text"/></div>
             <div class="popup-input-row"><span>Email</span><input type="text"/></div>
             <div class="popup-input-row"><span>Confirm</span><input type="text" placeholder="email"/></div>
             <div class="popup-input-row"><span>Password</span><input type="password"/></div>

@@ -7,9 +7,10 @@
 	position: relative;
 	min-height: 30px;
 	line-height: 30px;
-	width: 100px;
+	width: 120px;
 	display: inline-block;
-	text-indent: 20px;
+	/*text-indent: 20px;*/
+        text-align: center;
 }
 .menu-item a{
 	text-decoration: none;
