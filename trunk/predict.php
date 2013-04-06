@@ -12,28 +12,34 @@
         <script src="scripts/jquery-1.8.3.min.js"></script>
         <script type="text/javascript" src="scripts/jquery.numeric.js"></script>
         <script src="scripts/main.js"></script>
-
     </head>
     <body>
         <div class="main">
             <div class="header">
                 <div class="header-container">
-                    <div class="header-menu"><ul class="menu-list">
-                            <li class="menu-item"><a href="#" id="menu-item1">Item 1</a></li>
-                            <li class="menu-item"><a href="#" id="menu-item1">Item 2</a></li>
-                            <li class="menu-item"><a href="#" id="menu-item1">Item 3</a></li>
-                            <li class="menu-item"><a href="#" id="menu-item1">Item 4</a></li>
+                    <div class="header-menu">
+                        <ul class="menu-list">
+                            <li class="menu-item"><a href="predict.php" id="menu-item1">Prediction</a></li>
+                            <li class="menu-item"><a href="result.php" id="menu-item2">Result</a></li>
+                            <li class="menu-item"><a href="pool.php" id="menu-item3">Poules</a></li>
+                            <li class="menu-item"><a href="userranking.php" id="menu-item4">Ranking</a></li>
+                            <li class="menu-item"><a href="teamranking.php" id="menu-item5">Team Ranking</a></li>
                         </ul>
                     </div>
                     <div class="header-logo">LOGO</div>
                     <div class="header-log">
-                        <div class='currentUser' >
-                            <?php
-                            if (isset($_SESSION["UserName"]))
-                                echo $_SESSION["UserName"];
-                            ?>
-                        </div>
-                        <div class="btn-expand-login" id="expand-login-btn">Login</div>
+                        <?php
+                        if (!isset($_SESSION["UserName"]))
+                            echo '<div class = "btn-expand-login" id = "expand-login-btn">Login</div>';
+                        else {
+                            echo '<div class = "lbl-profile" id = "profile-label">';
+                            echo '<span class="user-name">';
+                            echo $_SESSION["UserName"];
+                            echo '</span>';
+                            echo '<span class="user-avt" style="background-image: url(' . $_SESSION["UserAvatar"] . ')"></span>';
+                            echo '</div>';
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
@@ -46,10 +52,10 @@
                 <div class="page-container">
                     <div class="page-cont-left">
                         <div class="page-cont-title">
-                            <span class="cont-title-bold">Text</span><span class="cont-title-sub">Sub text</span>
+                            <span class="cont-title-bold">Prediction round 29</span><span class="cont-title-sub">Friday 5 April to Sunday 7 April</span>
                         </div>
                         <div class="page-cont-title-sub">
-                            <span class="cont-title-sub">Sub text</span>
+                            <span class="cont-title-sub">Already played games</span>
                             <i class="sub0"></i>
                         </div>
                         <ul class="match-list">
@@ -81,24 +87,29 @@
                                 echo '<div class = "match-item-num-panel">';
                                 echo '<input type="hidden" name="' . $item->Id . '" value="' . $item->Id . '" />';
                                 echo '<input id="' . $item->Id . '" class="match-item-num-input" name="clubA' . $item->Id . '" type="number" tabindex="1" maxlength="2" size="2" autocomplete="off" min="0" max="99" pattern="[0-9]*"/>';
-                                echo '<input id="' . $item->Id.$item->Id . '" class="match-item-num-input" name="clubB' . $item->Id . '" type="number" tabindex="1" maxlength="2" size="2" autocomplete="off" min="0" max="99" pattern="[0-9]*"/>';
+                                echo '<input id="' . $item->Id . $item->Id . '" class="match-item-num-input" name="clubB' . $item->Id . '" type="number" tabindex="1" maxlength="2" size="2" autocomplete="off" min="0" max="99" pattern="[0-9]*"/>';
                                 echo '</div>';
                                 echo '</li>';
                             }
                             if (isset($_POST['btnSave'])) {
                                 for ($i = 1; $i < 8; $i++) {
-                                    if ($i == 7)
-                                        echo '<script>alert("Predict Success !!" );</script>';
+
 //                                echo '<script>alert("'. $_POST[$i].'---'.$_SESSION['UserId'].'--' .$_POST['clubA'.$i].'--'. $_POST['clubB'.$i].'")</script>';
                                     if ($_POST['clubA' . $i] && $_POST['clubB' . $i]) {
                                         $predictItem = addPredict($_SESSION['UserId'], $_POST[$i], '' . $_POST['clubA' . $i] . '-' . $_POST['clubB' . $i] . '');
                                         if ($predictItem != -1) {
 //                                            echo '<script>alert("INSET SUCCESS . '. $_POST[$i] .' " );</script>';
+                                            if ($i == 7)
+                                                echo '<script>alert("Predict Success !!" );</script>';
                                         } else {
 //                                            echo '<script>alert("INSET FAIL . '. $_POST[$i] .' " );</script>';
+                                            if ($i == 7)
+                                                echo '<script>alert("Please input valid to predict !!" );</script>';
                                         }
                                     } else {
 //                                        echo '<script>alert("CONTINUE '. $_POST[$i] .'" );</script>';
+                                        if ($i == 7)
+                                            echo '<script>alert("Please input valid to predict !!" );</script>';
                                         continue;
                                     }
                                 }
@@ -127,13 +138,13 @@
                             <div class="page-cont-button" id="page-cont-button-prev"></div>  
                             <input class="page-cont-button-save" type="submit" name="btnSave" id="page-cont-button-save" value="Save"/>  
                         </div>
-                        <?php
-                        echo '</form>';
-                        ?>
+<?php
+echo '</form>';
+?>
                     </div>
                     <div class="page-cont-right">
                         <div class="page-cont-title light">
-                            <span class="cont-title-bold">Text</span>
+                            <span class="cont-title-bold">Eredivisie</span>
                         </div>
                         <div class="page-cont-rate">
                             <p class="page-cont-label">115,098 participants</p>
@@ -180,8 +191,8 @@
                 </div>
             </div>
         </div>
-        <?php
-        include 'loginPanel.php';
-        ?>
+<?php
+include 'loginPanel.php';
+?>
     </body>
 </html>
