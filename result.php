@@ -73,6 +73,9 @@
                                 $startTime = date_format(date_create($item->StartTime), 'l, d F Y h:i');
                                 $clubA = getClub_byId($item->ClubA);
                                 $clubB = getClub_byId($item->ClubB);
+                                $pieces = explode("-", $item->Result);
+                                $predictResultA = $pieces[0];
+                                $predictResultB = $pieces[1];
 //                                echo '<script>alert("'.$clubA->Logo.'");</script>';
                                 echo '<li class = "match-item">';
                                 echo '<div class = "match-item-icon-panel">';
@@ -84,13 +87,15 @@
                                 echo '<span class = "match-item-sub">' . $startTime . '</span>';
                                 echo '</span>';
                                 echo '</div>';
-                                echo '<div class="match-item-mess-panel">';
-                                echo '<span class="match-item-mess">awaiting outcome...</span>';
-                                echo '</div>';
+                                if($item->Result == ""){
+                                    echo '<div class="match-item-mess-panel">';
+                                    echo '<span class="match-item-mess">awaiting outcome...</span>';
+                                    echo '</div>';
+                                }
                                 echo '<div class = "match-item-num-panel">';
                                 echo '<input type="hidden" name="' . $item->Id . '" value="' . $item->Id . '" />';
-                                echo '<span class="match-item-num-input" ></span>';
-                                echo '<span class="match-item-num-input" ></span>';
+                                echo '<span class="match-item-num-input" >' . $predictResultA . '</span>';
+                                echo '<span class="match-item-num-input" >' . $predictResultB . '</span>';
                                 echo '</div>';
                                 echo '</li>';
                             }
