@@ -26,6 +26,9 @@ body {
 	background: url('../images/gallery/slide1.jpg') no-repeat center top;
 	background-size: 900px auto;
 }
+.header .header-container.home{
+	background-position:  center -240px;
+}
 
 .header .header-container .header-logo {
 	position: absolute;
@@ -44,7 +47,7 @@ body {
 	width: 100%;
 	position: absolute;
 	bottom: 0px;
-	background: rgba(255, 255, 255, 0.21);
+	background: rgba(111, 111, 111, 0.21);
 }
 
 .header .header-container .header-log {
@@ -77,6 +80,7 @@ body {
 }
 .main {
 	background: url('../images/bg/main-footer-bg.jpg') no-repeat center bottom;
+	background-size: 900px auto;
 }
 
 /*LOGIN*/
@@ -319,6 +323,33 @@ body {
 	background: url('../images/bg/black-twill.png');
 	height: 100px;
 }
+@-webkit-keyframes LOOPMAP {
+	0%   { background-position: 0px center; }
+	100% { background-position: -143px center; }
+}
+.cover-container-worldmap {
+	position: relative;
+	height: 100%;
+	width: 129px;
+	margin: 0px auto;
+	background: url('../images/icon/world-map-ico.png') no-repeat 0px center;
+	-webkit-animation: LOOPMAP 5s infinite linear;
+
+}
+
+.cover-container-worldmap:before {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	content: '';
+	z-index: 10;
+	background: url('../images/icon/world-map-mask2.png') no-repeat center;
+	background-size: 100% 100%;
+	background-color: rgba(214, 214, 214, 0.06);}
+
+
+
 .cover-container-bottom {
 	height: 300px;
 	width: 900px;
