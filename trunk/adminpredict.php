@@ -193,7 +193,7 @@
             </div>
         </div>
         <?php
-        include 'loginPanel.php';
+        include 'loginpanel.php';
         ?>
     </body>
 </html>

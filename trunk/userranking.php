@@ -15,13 +15,9 @@
             <div class="header">
                 <div class="header-container">
                     <div class="header-menu">
-                        <ul class="menu-list">
-                            <li class="menu-item"><a href="predict.php" id="menu-item1">Prediction</a></li>
-                            <li class="menu-item"><a href="result.php" id="menu-item2">Result</a></li>
-                            <li class="menu-item"><a href="pool.php" id="menu-item3">Poules</a></li>
-                            <li class="menu-item"><a href="userranking.php" id="menu-item4">Ranking</a></li>
-                            <li class="menu-item"><a href="teamranking.php" id="menu-item5">Team Ranking</a></li>
-                        </ul>
+                        <?php
+                        include 'navigationpanel.php';
+                        ?>
                     </div>
                     <div class="header-logo">LOGO</div>
                     <div class="header-log">
@@ -49,10 +45,10 @@
                 <div class="page-container">
                     <div class="page-cont-left">
                         <div class="page-cont-title">
-                            <span class="cont-title-bold">Text</span><span class="cont-title-sub">Sub text</span>
+                            <span class="cont-title-bold">Overall</span><span class="cont-title-sub"></span>
                         </div>
                         <div class="page-cont-title-sub">
-                            <span class="cont-title-sub">Sub text</span>
+                            <span class="cont-title-sub"></span>
                             <i class="sub0"></i>
                         </div>
 
@@ -60,7 +56,7 @@
                             <?php
                             include ("DAO/connection.php");
                             //xac dinh bao nhieu dong
-                            $display = 16;
+                            $display = 14;
                             // tinh tong so trang can hien thi
                             if (isset($_GET['page']) && (int) $_GET['page']) {
                                 $page = $_GET['page'];
@@ -118,14 +114,14 @@
 
                                 //Hien thi trang Previous
                                 if ($current != 1) {
-                                    //echo "<li><a href='UserRanking.php?start=$prev&page=$page'>Previous</a></li>";
+                                    //echo "<li><a href='userranking.php?start=$prev&page=$page'>Previous</a></li>";
 //                                    echo'<div class="page-cont-button" id="page-cont-button-next"></div>';
                                 }
                                 //Hien thi so link
                                 for ($i = 1; $i <= $page; $i++) {
                                     if ($current != $i) {
-                                        //echo "<li><a href='UserRanking.php?start=".($display*($i-1))."&page=$page'>$i</a></li>";
-                                        echo'<a class="btn-page" href="UserRanking.php?start=' . ($display * ($i - 1)) . '&page=' . $page . '">' . $i . '</a>';
+                                        //echo "<li><a href='userranking.php?start=".($display*($i-1))."&page=$page'>$i</a></li>";
+                                        echo'<a class="btn-page" href="userranking.php?start=' . ($display * ($i - 1)) . '&page=' . $page . '">' . $i . '</a>';
                                     } else {
                                         echo '<a class="btn-page active" >' . $i . '</a>';
                                     }
@@ -133,7 +129,7 @@
                                 //Hien thi trang Next
 
                                 if ($current != $page) {
-                                    //echo "<li><a href='UserRanking.php?start=$next&page=$page'>Next</a></li>";
+                                    //echo "<li><a href='userranking.php?start=$next&page=$page'>Next</a></li>";
 //                                    echo'<div class="page-cont-button" id="page-cont-button-prev"></div>';
                                 }
                             }//End: $page > 1 IF

@@ -6,7 +6,7 @@
  */
  
 function getMatchList($typeLeaguesId) {
-    $sql = "SELECT * FROM tbl_matchList Where TypeLeaguesId = $typeLeaguesId AND Result = ''";
+    $sql = "SELECT * FROM tbl_matchlist Where TypeLeaguesId = '".$typeLeaguesId."' AND Result = ''";
     $queryResult = mysql_query($sql);
     $i = 0;
     $result = array();
@@ -26,8 +26,7 @@ function getMatchList($typeLeaguesId) {
 function updateResult($id, $result) {
     $result = mysql_real_escape_string($result);
 //    echo '<script>alert("'.$result.'");</script>';
-    $sql= "
-    UPDATE `footballpredict`.`tbl_matchlist` SET `Result` = '$result' WHERE id = $id;";
+    $sql= " UPDATE tbl_matchlist SET Result = '".$result."' WHERE id = '".$id."'";
     $queryResult = mysql_query($sql);
     if (!$queryResult) {
         echo 'Error: ' . $id . mysql_error();

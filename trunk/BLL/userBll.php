@@ -6,10 +6,10 @@
  */
 
 function login ($email, $pword) {
-    $sql = "SELECT * FROM tbl_user Where Password = $pword AND Email = '$email'";
+    $sql = "SELECT * FROM tbl_user Where Password = $pword AND Email = '".$email."'";
     $queryResult = mysql_query($sql);
     if (!$queryResult) {
-        echo 'Could not login: ' . $id . mysql_error();
+        echo 'Could not run query: ' . $id . mysql_error();
         exit;
     }
     $seletedItem = mysql_fetch_array($queryResult);
@@ -26,7 +26,7 @@ function login ($email, $pword) {
 }
 
 function emailExist($email) {
-    $sql = "SELECT * FROM tbl_user Where Email = '$email'";
+    $sql = "SELECT * FROM tbl_user Where Email = '".$email."'";
     $queryResult = mysql_query($sql);
     
     if (!$queryResult) {
@@ -42,9 +42,9 @@ function emailExist($email) {
 
 
 function insertUser ($name, $email, $pword, $bod, $gender, $avatar){
-    $sql = "INSERT INTO `footballpredict`.`tbl_user` 
-                ( `Email`, `Password`, `FullName`, `Avatar`, `Dob`, `Gender`, `Scores`) 
-                VALUES ('$email', '$pword', '$name', '$avatar', '$bod', $gender, 0);";              
+    $sql = "INSERT INTO tbl_user 
+                ( Email, Password, FullName, Avatar, Dob, Gender, Scores) 
+                VALUES ($email, $pword, $name, $avatar, $bod, $gender, 0)";              
     $queryResult = mysql_query($sql) or die(mysql_error());
     
     if (!$queryResult) {
