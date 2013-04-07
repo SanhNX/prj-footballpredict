@@ -1,11 +1,11 @@
 <?php
 
 function getMatchListOfLeagues($typeLeaguesId) {
-    $sql = "SELECT * FROM tbl_matchList Where TypeLeaguesId = $typeLeaguesId";
-    $queryResult = mysql_query($sql);
+    $sql = "SELECT * FROM tbl_matchlist Where TypeLeaguesId = '".$typeLeaguesId."'";
+    $queryResult = mysql_query($sql) or die ("Couldn't execute query.");
     $i = 0;
     $result = array();
-    while ($seletedItem = mysql_fetch_array($queryResult)) {
+    while ($seletedItem = mysql_fetch_array($queryResult,MYSQL_ASSOC)) {
         $item = new Matchlist();
         $item->Id = $seletedItem['Id'];
         $item->ClubA = $seletedItem['ClubA'];
@@ -19,8 +19,8 @@ function getMatchListOfLeagues($typeLeaguesId) {
 }
 
 function getClubListOfLeagues($leaguesId) {
-    $sql = "SELECT * FROM tbl_clubListOfLeagues Where TypeLeaguesId = $leaguesId";
-    $queryResult = mysql_query($sql);
+    $sql = "SELECT * FROM tbl_clublistofleagues Where TypeLeaguesId = '".$leaguesId."'";
+    $queryResult = mysql_query($sql) or die ("Couldn't execute query.");
     $i = 0;
     $result = array();
     while ($seletedItem = mysql_fetch_array($queryResult)) {
@@ -34,8 +34,8 @@ function getClubListOfLeagues($leaguesId) {
 }
 
 function getClub_byId($id) {
-    $sql = "SELECT * FROM tbl_club  WHERE Id = $id";
-    $queryResult = mysql_query($sql);
+    $sql = "SELECT * FROM tbl_club  WHERE Id = '".$id."'";
+    $queryResult = mysql_query($sql) or die ("Couldn't execute query.");
     if (!$queryResult) {
         echo 'Could not run query: ' . $id . mysql_error();
         exit;
@@ -52,7 +52,7 @@ function getClub_byId($id) {
 }
 
 function getPredict_byUIdMId($userId, $matchId) {
-    $sql = "SELECT * FROM tbl_predict  WHERE UserId = $userId AND MatchId = $matchId";
+    $sql = "SELECT * FROM tbl_predict  WHERE UserId = '".$userId."' AND MatchId = '".$matchId."'";
     $queryResult = mysql_query($sql);
     if (!$queryResult) {
         echo 'Could not run query: ' . $id . mysql_error();
@@ -76,7 +76,7 @@ function addPredict($userId, $matchId, $result){
 }
 
 function updatePredict($userId, $matchId, $result) {
-    $sql = "UPDATE tbl_predict SET predictResult = '$result' WHERE UserId = $userId AND MatchId = $matchId";
+    $sql = "UPDATE tbl_predict SET predictResult = '$result' WHERE UserId = '".$userId."' AND MatchId = '".$matchId."'";
     $queryResult = mysql_query($sql);
     return $queryResult;
 }

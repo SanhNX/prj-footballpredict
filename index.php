@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title></title>
+        <link href="css/style.css" rel="stylesheet"/>
+        <link href="css/menu.css" rel="stylesheet"/>
+
+        <link rel="SHORTCUT ICON" href="images/icon/logo-head.png"/>
+        <script src="scripts/jquery-1.8.3.min.js"></script>
+        <script src="scripts/main.js"></script>
+    </head>
+    <body>
+        <?php
+        // put your code here
+        ?>
+        <div class="main">
+            <div class="header">
+                <div class="header-container">
+                    <div class="header-menu">
+                        <?php
+                        include 'navigationpanel.php';
+                        ?>
+                    </div>
+                    <div class="header-logo">LOGO</div>
+                    <div class="header-log">
+                        <?php
+                        if (!isset($_SESSION["UserName"]))
+                            echo '<div class = "btn-expand-login" id = "expand-login-btn">Login</div>';
+                        else {
+                            echo '<div class = "lbl-profile" id = "profile-label">';
+                            echo '<span class="user-name">';
+                            echo $_SESSION["UserName"];
+                            echo '</span>';
+                            echo '<span class="user-avt" style="background-image: url(' . $_SESSION["UserAvatar"] . ')"></span>';
+                            echo '</div>';
+                        }
+                        ?>
+                    </div>
+                </div>
+            </div>
+            <div class="cover home">
+                <div class="cover-container home">
+                </div>
+                <div class="cover-container-bottom">
+                    <p>Choose your competition</p>
+                    <span>Challenge your friends in one or more competitions!</span>
+                </div>
+            </div>
+            <div class="page">
+                <div class="page-container">
+                    <div class="page-cont-left home">
+
+
+                        <div class="page-home-frame">
+                            <div class="page-home-frame-item title"><span>Previous competitions on LetsPredict.it</span></div>
+                            <div class="page-home-frame-item link">
+                                <img src="http://letspredict.it/static/versioned-images/img/landing-page/eredivisie-logo-home.f3d646a9.png">
+                                <span><b>Eredivisie 2011-2012</b>
+                                    500.000 participants</span></div>
+                            <div class="page-home-frame-item link">
+                                <img src="http://letspredict.it/static/versioned-images/img/landing-page/eurocup-logo-home.c0b4ae6c.png">
+                                <span><b>Euro2012</b>
+                                    240.000 participants</span></div>
+                        </div>
+                        <div class="page-home-row">
+                            <div class="page-home-row-item">
+                                <span><b>Eredivisie</b>
+                                    Predict the matches between Ajax, AZ, PSV and the Eredivisie-new-entrant PEC Zwolle!</span>
+
+                                <div class="page-home-row-btn">Predict Eredivisie</div>
+                            </div>
+                            <div class="page-home-row-item">
+                                <span><b>Top League</b>
+                                    Predict the matches of top teams (such as Manchester United and Barcelona) in English, Italian, Spanish and German leagues.</span>
+
+                                <div class="page-home-row-btn">Predict Top League</div>
+                            </div>
+                            <div class="page-home-row-item">
+                                <span><b>Champions League</b>
+                                    Alongside of the Dutch football leagues, you can also predict for the Champions League.</span>
+
+                                <div class="page-home-row-btn">Predict Champions League</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="page-clear"></div>
+            </div>
+
+        </div>
+        <?php
+            include 'footerpanel.php';
+            ?>
+        </div>
+        <?php
+        include 'loginpanel.php';
+        ?>
+</body>
+</html>

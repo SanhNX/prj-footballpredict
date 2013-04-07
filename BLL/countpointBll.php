@@ -7,7 +7,7 @@
 
 function getListPredictByMatchId($matchId) {
     
-     $sql = "SELECT * FROM tbl_predict Where matchId = $matchId" ;
+     $sql = "SELECT * FROM tbl_predict Where matchId = '".$matchId."'" ;
     $queryResult = mysql_query($sql);
     if (!$queryResult) {
         echo 'Could not login: ' . $id . mysql_error();
@@ -30,7 +30,7 @@ function getListPredictByMatchId($matchId) {
 }
 
 function getUserById($id) {
-    $sql = "SELECT * FROM tbl_user Where Id = $id";
+    $sql = "SELECT * FROM tbl_user Where Id = '".$id."'";
     $queryResult = mysql_query($sql);
     
     if (!$queryResult) {
@@ -49,8 +49,8 @@ function getUserById($id) {
 
 function updateUserById($id, $scores) {
     $sql = "UPDATE `tbl_user`
-	SET `Scores`= $scores 
-	WHERE `Id` = $id";
+	SET `Scores`= '".$scores."' 
+	WHERE `Id` = '".$id."'  ";
     $queryResult = mysql_query($sql);
     
     if (!$queryResult) {
@@ -79,23 +79,23 @@ function countPoint ($matchId, $resultA, $resultB) {
             $scoresUser = getUserById($itemPredict->UserId);
             if($scoresUser != -1) {
                 
-                // Ð?i th?ng công 40 diem doi A thang doi B
+                // ï¿½?i th?ng cï¿½ng 40 diem doi A thang doi B
                 if (($predictResultA - $predictResultB) > 0 &&
                        ($resultA - $resultB) > 0 ) {
                         $scoresUser = $scoresUser + 40;
                         
-                // Ð?i th?ng công 40 diem doi B thang doi A    
+                // ï¿½?i th?ng cï¿½ng 40 diem doi B thang doi A    
                 } else if (($predictResultB - $predictResultA) > 0 &&
                        ($resultB - $resultA) > 0 ) {
                         $scoresUser = $scoresUser + 40;
                         
-                // Ð?i th?ng công 40 diem doi B hòa doi A 
+                // ï¿½?i th?ng cï¿½ng 40 diem doi B hï¿½a doi A 
                 } else if (($predictResultB - $predictResultA) == 0 &&
                        ($resultB - $resultA) == 0 ) {
                         $scoresUser = $scoresUser + 40;
                 }
                 
-                // d? doán dúng t? s? hòa +20
+                // d? doï¿½n dï¿½ng t? s? hï¿½a +20
                 if (($resultA == $predictResultA) &&
                        ($resultB == $predictResultB)) {
                         $scoresUser = $scoresUser + 20;
