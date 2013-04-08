@@ -242,13 +242,17 @@ body {
 	float: left;
 	display: table;
 }
+.page-home-frame-item.title {
+	padding: 0px 10px;
+	width: 220px;
+}
 .page-home-frame-item span{
 	display: table-cell;
 	vertical-align: middle;
 	line-height: 20px;
 	font-size: 14px;
 	color: #BEBEBE;
-	text-shadow: 0px 2px 1px #000;
+	text-shadow: 0px 1px 0px #000;
 }
 .page-home-frame-item.link img {
 	height: 45px;
@@ -273,7 +277,7 @@ body {
 	position: relative;
 	float: left;
 	color: #BEBEBE;
-	text-shadow: 0px 2px 1px #000;
+	text-shadow: 0px 1px 0px #000;
 }
 .page-home-row-item span{
 	display: block;
@@ -293,6 +297,11 @@ body {
 	background: url("../images/bg/btn-red-bg.png") no-repeat center bottom;
 	position: absolute;
 	bottom: 0px;
+}
+.page-home-row-btn.faq{
+	width: 240px;
+	position: static;
+	margin: 10px auto;
 }
 .page-home-row-btn:hover{
 	background-position: center top;
@@ -317,6 +326,9 @@ body {
 }
 .cover.home {
 	height: 400px;
+}
+.cover.faq {
+	height: 100px;
 }
 
 .cover-container.home {
@@ -622,7 +634,41 @@ body {
 	width: 270px;
 	background: url('../images/icon/soccer.png') center bottom no-repeat;
 }
+/*FAQ*/
+h3 {
+	margin: 20px 0px 0px 0px;
+	padding: 0;
+	color: #FFF;
+}
+p {
+	margin: 0;
+	padding: 0;
+}
+ul {
+	margin: 0;
+}
+.page-cont-text {
+	padding: 0px 40px;
+	color: #BEBEBE;
+	text-shadow: 0px 1px 0px #000;
+	font-size: 14px;
+}
+.page-cont-title.faq {
+	height: 100px;
+	background: url("../images/icon/fqa.png") no-repeat center;
+	background-size: 70px;
+	background-color: rgba(255,255,255,0.1);
+}
 
+.page-cont-ref.faq {
+	height: 440px;
+	width: 270px;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	background: url('../images/icon/soccer.png') center bottom no-repeat;
+	opacity: 0.1;
+}
 /*RANK*/
 
 .user-list {

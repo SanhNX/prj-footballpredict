@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title></title>
+	<link href="css/style.css" rel="stylesheet"/>
+	<link href="css/menu.css" rel="stylesheet"/>
+
+	<link rel="SHORTCUT ICON" href="images/icon/logo-head.png"/>
+	<script src="scripts/jquery-1.8.3.min.js"></script>
+	<script src="scripts/main.js"></script>
+
+</head>
+<body>
+<?php
+        // put your code here
+        ?>
+<div class="main">
+	<div class="header">
+		<div class="header-container home">
+			<div class="header-menu">
+				<ul class="menu-list">
+					<li class="menu-item"><a href="#" id="menu-item1">Item 1</a></li>
+					<li class="menu-item"><a href="#" id="menu-item1">Item 2</a></li>
+					<li class="menu-item"><a href="#" id="menu-item1">Item 3</a></li>
+					<li class="menu-item"><a href="#" id="menu-item1">Item 4</a></li>
+				</ul>
+			</div>
+			<div class="header-logo">LOGO</div>
+			<div class="header-log">
+				<div class="btn-expand-login" id="expand-login-btn">Login</div>
+				<div class="lbl-profile" id="profile-label">
+					<span class="user-name">Username</span>
+					<span class="user-avt" style="background-image: url('resources/avt/avt0.jpg')"></span></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="page">
+		<div class="page-container">
+			<div class="page-cont-left home">
+				<div class="page-cont-title faq">
+				</div>
+				<div class="page-cont-title">
+					<span class="cont-title-bold">Frequently asked questions</span><span class="cont-title-sub"></span>
+				</div>
+				<div class="page-cont-title-sub">
+					<span class="cont-title-sub">Your questions?</span>
+					<i class="sub0"></i>
+				</div>
+				<div class="page-cont-text">
+					<h3>How does the scoring work?</h3>
+					<p>You earn points for:
+					</p><ul>
+					<li>Proper home team score: +5</li>
+					<li>Proper away team score: +5</li>
+					<li>Proper winner or tie: +20</li>
+					<li>Bonus for correct outcome: +10</li>
+				</ul>
+					<h3>Until when can I change my prediction?</h3>
+					<p>You can change your predictions as often as you want until the start of the match.</p>
+					<h3>Can I change my favorite team setting</h3>
+					<p>Yes you can: you'll find this option in the Settings page (when you are logged in).</p>
+					<h3>How do I create my own pool?</h3>
+					<p>Click on the tab 'Pools' on top of the homepage and then 'Create new pool'</p>
+
+					<h3>What is a private pool?</h3>
+					<p>When creating a pool you can choose to make it private or public:
+					</p><ul>
+					<li>In private pools only the person who started the group can invite friends;</li>
+					<li>In public pools anyone can invite friends and participants can also sign up without invitation;</li>
+					<li>In both pools only the person who started the pool can remove participants.</li>
+				</ul>
+					<h3>Do you have another question?</h3>
+				</div>
+				<div class="page-cont-ref faq"></div>
+				<div class="page-home-row-btn faq">Send us a message</div>
+
+			</div>
+		</div>
+
+		<div class="page-clear"></div>
+	</div>
+
+</div>
+<div class="footer">
+	<div class="footer-container">
+		<div class="footer-menu">
+			<ul class="nav-list">
+				<li class="nav-item"><span>About us</span></li>
+				<li class="nav-item"><a href="#">Frequently asked questions</a></li>
+				<li class="nav-item"><a href="#">Terms of use</a></li>
+				<li class="nav-item"><a href="#">Contact us</a></li>
+				<li class="nav-item"><a href="#">Privacy statement</a></li>
+			</ul>
+			<ul class="nav-list">
+				<li class="nav-item"><span href="#">Our competitions</span></li>
+				<li class="nav-item"><a href="#">Eredivisie</a></li>
+				<li class="nav-item"><a href="#">Champions League</a></li>
+				<li class="nav-item"><a href="#">Top League</a></li>
+			</ul>
+			<ul class="nav-list">
+				<li class="nav-item"><span href="#">Copyright</span></li>
+			</ul>
+			<div class="social-list">
+				<div class="social-title">Follow us</div>
+				<div class="social-item facebook"></div>
+				<div class="social-item twitter"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="popup undisplayed" id="login-popup">
+	<div class="popup-container">
+		<div class="popup-form">
+			<div class="page-cont-title">
+				<span class="cont-title-bold">Login</span><span class="cont-title-sub">Sub text</span>
+				<span class="popup-btn-close" id="popup-btn-login-close"></span>
+			</div>
+			<div class="page-cont-title-sub">
+				<span class="cont-title-sub"></span>
+				<i class="sub1"></i>
+			</div>
+			<div class="user-item-avatar-panel default">
+				<span class="user-avt default"></span>
+
+			</div>
+			<div class="popup-mess-row"><i class="bullet"></i>
+				<span> Log in with your email address or </span>
+				<a class="popup-link" id="btn-expand-register">create an account.</a>
+			</div>
+			<div class="popup-input-row"><span>Email</span><input type="text"/></div>
+			<div class="popup-input-row"><span>Password</span><input type="password"/></div>
+			<div class="popup-btn-row">
+				<a class="popup-btn-forgot" href="#"><i class="bullet red"></i><span> Forgot your password?</span></a>
+				<a class="popup-btn-login" href="#">Login</a>
+			</div>
+			<span class="popup-error-mess"><i></i> Password is not correct!</span>
+			<span class="loading-spin undisplayed"></span>
+		</div>
+		<div class="popup-bottom"></div>
+	</div>
+</div>
+
+<div class="popup undisplayed" id="register-popup">
+	<div class="popup-container">
+		<div class="popup-form">
+			<div class="page-cont-title">
+				<span class="cont-title-bold">Register</span><span class="cont-title-sub">Sub text</span>
+				<span class="popup-btn-close" id="popup-btn-register-close"></span>
+			</div>
+			<div class="page-cont-title-sub">
+				<span class="cont-title-sub"></span>
+				<i class="sub0"></i>
+			</div>
+			<span class="popup-error-mess"><i></i> Input is not correct!</span>
+
+			<div class="popup-input-row"><span>Name</span><input type="text"/></div>
+			<div class="popup-input-row"><span>Email</span><input type="text"/></div>
+			<div class="popup-input-row"><span>Confirm</span><input type="text" placeholder="email"/></div>
+			<div class="popup-input-row"><span>Password</span><input type="password"/></div>
+			<div class="popup-input-row"><span>Confirm</span><input type="password" placeholder="password"/></div>
+			<div class="popup-btn-row">
+				<a class="popup-btn-login" id="btn-register" href="#">Register</a>
+			</div>
+			<span class="loading-spin undisplayed"></span>
+		</div>
+		<div class="popup-bottom"></div>
+	</div>
+</div>
+</div>
+
+</body>
+</html>
