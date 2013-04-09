@@ -1016,11 +1016,12 @@ input::-webkit-inner-spin-button {
 }
 
 .popup-error-mess {
-	text-align: center;
+	/*text-align: center;*/
 	display: block;
 	font-size: 13px;
 	font-style: italic;
 	color: #F5EB00;
+        margin-left: 190px;
 }
 
 .popup-error-mess i {

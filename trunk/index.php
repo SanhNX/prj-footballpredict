@@ -8,7 +8,10 @@
 
         <link rel="SHORTCUT ICON" href="images/icon/logo-head.png"/>
         <script src="scripts/jquery-1.8.3.min.js"></script>
+        <script src="scripts/jquery-latest.js"></script>
         <script src="scripts/main.js"></script>
+        <script src="scripts/ajax-vaildate.js"></script>
+        
     </head>
     <body>
         <?php
