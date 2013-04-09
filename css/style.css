@@ -1071,7 +1071,7 @@ input::-webkit-inner-spin-button {
     height: 24px;
     width: 24px;
     margin: 5px 5px 5px 0px;
-    line-height: 24px;
+    line-height: 20px;
     text-align: center;
     font-weight: bold;
     color: #FFF!important;
