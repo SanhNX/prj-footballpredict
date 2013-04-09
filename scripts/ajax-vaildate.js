@@ -1,5 +1,6 @@
 $(document).ready(function() {
     $('#btn-login').on('click', function(e) {
+        $(".login-popup-error-mess").html('<i></i> Processing............');
         $(".login-loading-spin").removeClass("undisplayed");
         var email = $("#txtemail").val();
         var pass = $("#txtpass").val();
@@ -11,18 +12,20 @@ $(document).ready(function() {
             cache: false,
             success: function(dto) {
                 setTimeout(function() {
-                    $(".login-loading-spin").addClass("undisplayed");
                     if (dto === 'success') {
-                        $(".login-popup-error-mess").html('');
-//                        alert("Login Success ! Redirect to index page");
-//                        window.location='index.php';
-                        closeLogin();
-                        location.reload();
+                        $(".login-popup-error-mess").html('<i></i> LOGIN SUCCESSFULL. Please wait a minutes to return page.');
+                        setTimeout(function() {
+                            $(".login-loading-spin").addClass("undisplayed");
+                            $(".login-popup-error-mess").html('');
+                            closeLogin();
+                            location.reload();
+                        }, 3000);
                         return false;
                     }
                     if (dto === 'fail') {
                         $("#email").focus();
                         $(".login-popup-error-mess").html('<i></i> Email or password is not valid');
+                        $(".login-loading-spin").addClass("undisplayed");
                         return false;
                     }
                 }, 5000);
