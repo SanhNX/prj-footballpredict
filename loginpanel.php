@@ -18,36 +18,15 @@
                 <a class="popup-link" id="btn-expand-register">create an account.</a>
             </div>
             <form method="post">
-                <?php
-                include 'BLL/signup_inBll.php';
-                if (isset($_POST['btnLogin'])) {
-                    $user = getUserByEmailPass($_POST['txtEmail'], $_POST['txtPass']);
-                    if ($user->Email == $_POST['txtEmail']) {
-                        
-//                        //Store the name in the session
-                        $_SESSION['UserName'] = $user->FullName;
-                        $_SESSION['UserId'] = $user->Id;
-                        $_SESSION['UserAvatar'] = $user->Avatar;
-//                        echo '<script>alert("'.$_SESSION['UserId'].'");</script>';
-//                        header("Location: pool.php");
-                        redirect('pool.php');
-                    } else {                       
-//                        echo '<script>alert("LOGIN FAIL");</script>';
-//                        header("Location: error.php");
-                        redirect('error.php');
-                    }
-                }
-                ?>
-
-                <div class="popup-input-row"><span>Email</span><input type="text" name='txtEmail'/></div>
-                <div class="popup-input-row"><span>Password</span><input type="password" name='txtPass'/></div>
+                <div class="popup-input-row"><span>Email</span><input id="txtemail" name='txtemail' type="text"/></div>
+                <div class="popup-input-row"><span>Password</span><input id="txtpass"  name='txtpass' type="password"/></div>
                 <div class="popup-btn-row">
                     <a class="popup-btn-forgot" href="#"><i class="bullet red"></i><span> Forgot your password?</span></a>
-                    <input type='submit' class="popup-btn-login" name='btnLogin' value='Login'/>
+                    <input id="btn-login" name='btn-login'  type='submit' class="popup-btn-login" value='Login'/>
                 </div>
             </form>
-            <span class="popup-error-mess"><i></i> Password is not correct!</span>
-            <span class="loading-spin undisplayed"></span>
+            <span class="login-popup-error-mess"></span>
+            <span class="login-loading-spin undisplayed"></span>
         </div>
         <div class="popup-bottom"></div>
     </div>

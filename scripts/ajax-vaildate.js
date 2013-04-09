@@ -1,22 +1,34 @@
-//$("#submit").live('click', function()
-//{
-//    var name = $("#name").val();
-//    var url = $("#url").val();
-//    var str_string = 'name=' + name + '&url=' + url;
-//    $.ajax({
-//        type: "POST",
-//        url: "excute.php",
-//        data: str_string,
-//        cache: false,
-//        success: function(html) {
-//            //    alert('Truyền dữ liệu thành công!');
-//            $("#html").html(html);
-//        }
-//    });
-//    //    alert('Submit clicked! '+name);    
-//
-//    return false;
-//});
+$(document).ready(function() {
+    $('#btn-login').on('click', function(e) {
+        $(".login-loading-spin").removeClass("undisplayed");
+        var email = $("#txtemail").val();
+        var pass = $("#txtpass").val();
+        var str_string = 'txtemail=' + email + '&txtpass=' + pass;
+        $.ajax({
+            type: "POST",
+            url: "./BLL/signup_inBll.php",
+            data: str_string,
+            cache: false,
+            success: function(dto) {
+                setTimeout(function() {
+                    $(".login-loading-spin").addClass("undisplayed");
+                    if (dto === 'success'){
+                        $(".login-popup-error-mess").html('');
+                        alert("Login Success ! Redirect to index page");
+                        window.location='index.php';
+                        return false;
+                    }
+                    if (dto === 'fail'){
+                        $("#email").focus();
+                        $(".login-popup-error-mess").html('<i></i> Email or password is not valid');
+                        return false;
+                    }
+                }, 5000);
+            }
+        });
+        return false;
+    });
+});
 
 $(document).ready(function() {
     $('#btn-register').on('click', function(e) {
