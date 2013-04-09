@@ -44,7 +44,7 @@ $(document).ready(function() {
                 type: "POST",
                 url: "./BLL/checkemailexistBll.php",
                 data: str_string_email,
-                async:false,
+                async: false,
                 cache: false,
                 success: function(dto) {
                     if (dto === 'exist') {
@@ -70,7 +70,7 @@ $(document).ready(function() {
                         }
                         else {
                             $(".popup-error-mess").html('');
-//                            return true;
+                            $(".loading-spin").removeClass("undisplayed");
                         }
                     }
                 }
@@ -83,10 +83,13 @@ $(document).ready(function() {
             data: str_string,
             cache: false,
             success: function(dto_res) {
-                if (dto_res === 'true')
-                    alert('Register success !');
-                if (dto_res === 'fail')
-                    alert('Register Fail !');
+                setTimeout(function() {
+                    $(".loading-spin").addClass("undisplayed");
+                    if (dto_res === 'true')
+                        alert('Register success !');
+                    if (dto_res === 'fail')
+                        alert('Register Fail !');
+                }, 5000);
             }
         });
         return false;
