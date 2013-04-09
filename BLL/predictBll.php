@@ -18,6 +18,21 @@ function getMatchListOfLeagues($typeLeaguesId) {
     return $result;
 }
 
+function getPredictListOfUser($userId) {
+    $sql = "SELECT * FROM tbl_predict Where UserId = '".$userId."'";
+    $queryResult = mysql_query($sql) or die ("Couldn't execute query.");
+    $i = 0;
+    $result = array();
+    while ($seletedItem = mysql_fetch_array($queryResult,MYSQL_ASSOC)) {
+        $item = new Predict();
+        $item->MatchId = $seletedItem['MatchId'];
+        $item->PredictResult = $seletedItem['predictResult'];
+        $result[$i] = $item;
+        $i++;
+    }
+    return $result;
+}
+
 function getClubListOfLeagues($leaguesId) {
     $sql = "SELECT * FROM tbl_clublistofleagues Where TypeLeaguesId = '".$leaguesId."'";
     $queryResult = mysql_query($sql) or die ("Couldn't execute query.");

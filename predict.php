@@ -71,6 +71,7 @@
                                 $startTime = date_format(date_create($item->StartTime), 'l, d F Y h:i');
                                 $clubA = getClub_byId($item->ClubA);
                                 $clubB = getClub_byId($item->ClubB);
+                                $predictListOfUser = getPredictListOfUser($_SESSION['UserId']);
 //                                echo '<script>alert("'.$clubA->Logo.'");</script>';
                                 echo '<li class = "match-item">';
                                 echo '<div class = "match-item-icon-panel">';
@@ -84,8 +85,22 @@
                                 echo '</div>';
                                 echo '<div class = "match-item-num-panel">';
                                 echo '<input type="hidden" name="' . $item->Id . '" value="' . $item->Id . '" />';
-                                echo '<input id="' . $item->Id . '" class="match-item-num-input" name="clubA' . $item->Id . '" type="number" tabindex="1" maxlength="2" size="2" autocomplete="off" min="0" max="99" pattern="[0-9]*"/>';
-                                echo '<input id="' . $item->Id . $item->Id . '" class="match-item-num-input" name="clubB' . $item->Id . '" type="number" tabindex="1" maxlength="2" size="2" autocomplete="off" min="0" max="99" pattern="[0-9]*"/>';
+//                                echo '<script>alert("'.$predictListOfUser[2]->PredictResult.'");</script>';
+                                for ($j = 0; $j < count($predictListOfUser); $j++) {
+//                                    echo '<script>alert("'.$item->Id.'='.$predictListOfUser[$j]->MatchId.'");</script>';
+                                    if($item->Id == $predictListOfUser[$j]->MatchId){
+                                        $currentPredict = $predictListOfUser[$j]->PredictResult;
+                                        break;
+                                    }
+                                    else
+                                        $currentPredict = "-";
+                                }
+                                $pieces = explode("-", $currentPredict);
+                                $predictResultA = $pieces[0];
+                                $predictResultB = $pieces[1];
+                                
+                                echo '<input id="' . $item->Id . '" class="match-item-num-input" value="'.$predictResultA.'" name="clubA' . $item->Id . '" type="number" tabindex="1" maxlength="2" size="2" autocomplete="off" min="0" max="99" pattern="[0-9]*"/>';
+                                echo '<input id="' . $item->Id . $item->Id . '" class="match-item-num-input" value="'.$predictResultB.'" name="clubB' . $item->Id . '" type="number" tabindex="1" maxlength="2" size="2" autocomplete="off" min="0" max="99" pattern="[0-9]*"/>';
                                 echo '</div>';
                                 echo '</li>';
                             }
@@ -102,12 +117,14 @@
 //                                            echo '<script>alert("Exists : ' . $isExist . ' " );</script>';
                                             if ($isExist == 1) {
                                                 updatePredict($_SESSION['UserId'], $_POST[$i], '' . $tempA . '-' . $tempB . '');
+                                                echo '<script>location.reload();</script>';
                                             } else {
                                                 $predictItem = addPredict($_SESSION['UserId'], $_POST[$i], '' . $tempA . '-' . $tempB . '');
                                                 if ($predictItem != -1) {
 //                                                echo '<script>alert("INSET SUCCESS . ' . $_POST[$i] . ' " );</script>';
 //                                                if ($i == 7)
-//                                                    echo '<script>alert("Predict Success !!" );</script>';
+//                                                    echo '<script>alert("Save your predict success !!" );</script>';
+                                                    echo '<script>location.reload();</script>';
                                                 } else {
 //                                                echo '<script>alert("INSET FAIL . ' . $_POST[$i] . ' " );</script>';
 //                                                if ($i == 7)
