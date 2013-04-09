@@ -3,7 +3,7 @@
         <div class="footer-menu">
             <ul class="nav-list">
                 <li class="nav-item"><span>About us</span></li>
-                <li class="nav-item"><a href="#">Frequently asked questions</a></li>
+                <li class="nav-item"><a href="faq.php">Frequently asked questions</a></li>
                 <li class="nav-item"><a href="#">Terms of use</a></li>
                 <li class="nav-item"><a href="#">Contact us</a></li>
                 <li class="nav-item"><a href="#">Privacy statement</a></li>

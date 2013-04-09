@@ -17,30 +17,9 @@
     </head>
     <body>
         <div class="main">
-            <div class="header">
-                <div class="header-container">
-                    <div class="header-menu">
-                        <?php
-                        include 'navigationpanel.php';
-                        ?>
-                    </div>
-                    <div class="header-logo">LOGO</div>
-                    <div class="header-log">
-                        <?php
-                        if (!isset($_SESSION["UserName"]))
-                            echo '<div class = "btn-expand-login" id = "expand-login-btn">Login</div>';
-                        else {
-                            echo '<div class = "lbl-profile" id = "profile-label">';
-                            echo '<span class="user-name">';
-                            echo $_SESSION["UserName"];
-                            echo '</span>';
-                            echo '<span class="user-avt" style="background-image: url(' . $_SESSION["UserAvatar"] . ')"></span>';
-                            echo '</div>';
-                        }
-                        ?>
-                    </div>
-                </div>
-            </div>
+            <?php
+            include 'headerpanel.php';
+            ?>
             <div class="cover">
                 <div class="cover-container">
                 </div>
@@ -88,7 +67,7 @@
 //                                echo '<script>alert("'.$predictListOfUser[2]->PredictResult.'");</script>';
                                 for ($j = 0; $j < count($predictListOfUser); $j++) {
 //                                    echo '<script>alert("'.$item->Id.'='.$predictListOfUser[$j]->MatchId.'");</script>';
-                                    if($item->Id == $predictListOfUser[$j]->MatchId){
+                                    if ($item->Id == $predictListOfUser[$j]->MatchId) {
                                         $currentPredict = $predictListOfUser[$j]->PredictResult;
                                         break;
                                     }
@@ -98,9 +77,9 @@
                                 $pieces = explode("-", $currentPredict);
                                 $predictResultA = $pieces[0];
                                 $predictResultB = $pieces[1];
-                                
-                                echo '<input id="' . $item->Id . '" class="match-item-num-input" value="'.$predictResultA.'" name="clubA' . $item->Id . '" type="number" tabindex="1" maxlength="2" size="2" autocomplete="off" min="0" max="99" pattern="[0-9]*"/>';
-                                echo '<input id="' . $item->Id . $item->Id . '" class="match-item-num-input" value="'.$predictResultB.'" name="clubB' . $item->Id . '" type="number" tabindex="1" maxlength="2" size="2" autocomplete="off" min="0" max="99" pattern="[0-9]*"/>';
+
+                                echo '<input id="' . $item->Id . '" class="match-item-num-input" value="' . $predictResultA . '" name="clubA' . $item->Id . '" type="number" tabindex="1" maxlength="2" size="2" autocomplete="off" min="0" max="99" pattern="[0-9]*"/>';
+                                echo '<input id="' . $item->Id . $item->Id . '" class="match-item-num-input" value="' . $predictResultB . '" name="clubB' . $item->Id . '" type="number" tabindex="1" maxlength="2" size="2" autocomplete="off" min="0" max="99" pattern="[0-9]*"/>';
                                 echo '</div>';
                                 echo '</li>';
                             }

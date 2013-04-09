@@ -14,30 +14,9 @@
     </head>
     <body>
         <div class="main">
-            <div class="header">
-                <div class="header-container">
-                    <div class="header-menu">
-                        <?php
-                        include 'navigationpanel.php';
-                        ?>
-                    </div>
-                    <div class="header-logo">LOGO</div>
-                    <div class="header-log">
-                        <?php
-                        if (!isset($_SESSION["UserName"]))
-                            echo '<div class = "btn-expand-login" id = "expand-login-btn">Login</div>';
-                        else {
-                            echo '<div class = "lbl-profile" id = "profile-label">';
-                            echo '<span class="user-name">';
-                            echo $_SESSION["UserName"];
-                            echo '</span>';
-                            echo '<span class="user-avt" style="background-image: url(' . $_SESSION["UserAvatar"] . ')"></span>';
-                            echo '</div>';
-                        }
-                        ?>
-                    </div>
-                </div>
-            </div>
+            <?php
+            include 'headerpanel.php';
+            ?>
             <div class="cover">
                 <div class="cover-container">
                 </div>
