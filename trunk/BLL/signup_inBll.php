@@ -1,6 +1,24 @@
 <?php
+session_start();
+include '../DAO/connection.php';
+include '../DTO/object.php';
 
-function checkLogin($email, $pass) {
+$isExist = checkExistEmail($_POST['txtemail'], $_POST['txtpass']);
+//echo '<script>alert("'.$isExist.'");</script>';   
+if ($isExist == 0)
+    echo 'fail';
+else {
+    $user = getUserByEmailPass($_POST['txtemail'], $_POST['txtpass']);
+
+    //Store the name in the session
+    $_SESSION['UserName'] = $user->FullName;
+    $_SESSION['UserId'] = $user->Id;
+    $_SESSION['UserAvatar'] = $user->Avatar;
+    echo 'success';    
+    //    redirect($_SERVER['REQUEST_URI']);
+}
+
+function checkExistEmail($email, $pass) {
     $sql = "SELECT * FROM  tbl_user WHERE Email = '" . $email . "' AND Password = '" . $pass . "' ";
     $result = mysql_query($sql);
     if (!$result) {
@@ -11,6 +29,7 @@ function checkLogin($email, $pass) {
     $count = mysql_num_rows($result);
     return $count;
 }
+
 function getUserByEmailPass($email, $pass) {
     $sql = "SELECT * FROM  tbl_user WHERE Email = '" . $email . "' AND Password = '" . $pass . "' ";
     $queryResult = mysql_query($sql);
@@ -30,11 +49,6 @@ function getUserByEmailPass($email, $pass) {
     $item->FavoriteTeam = $seletedItem['FavoriteTeam'];
     $item->Scores = $seletedItem['Scores'];
     return $item;
-}
-function changepass($new) {
-    $sql = "UPDATE  tbl_user SET Password = '".$new."' WHERE Id = 1";
-    $queryResult = mysql_query($sql);
-    return $queryResult;
 }
 
 ?>

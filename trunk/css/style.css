@@ -725,6 +725,15 @@ ul {
 	background-size: 40px;
 	top: 410px;
 }
+.login-loading-spin {
+	height: 60px;
+	width: 100%;
+	background: url("../images/icon/spinner.gif") no-repeat center;
+	position: absolute;
+	left: 0px;
+	background-size: 40px;
+	top: 410px;
+}
 
 .undisplayed {
 	display: none;
@@ -1015,7 +1024,15 @@ input::-webkit-inner-spin-button {
 	background: #BA0E36;
 }
 
-.popup-error-mess {
+.popup-error-mess{
+	/*text-align: center;*/
+	display: block;
+	font-size: 13px;
+	font-style: italic;
+	color: #F5EB00;
+        margin-left: 190px;
+}
+.login-popup-error-mess {
 	/*text-align: center;*/
 	display: block;
 	font-size: 13px;
@@ -1025,6 +1042,13 @@ input::-webkit-inner-spin-button {
 }
 
 .popup-error-mess i {
+	display: inline-block;
+	width: 14px;
+	height: 13px;
+	background: url("../images/icon/warning-ico.png") no-repeat;
+	margin-left: 5px;
+}
+.login-popup-error-mess i {
 	display: inline-block;
 	width: 14px;
 	height: 13px;
