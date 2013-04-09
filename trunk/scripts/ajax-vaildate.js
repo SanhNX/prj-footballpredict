@@ -12,13 +12,15 @@ $(document).ready(function() {
             success: function(dto) {
                 setTimeout(function() {
                     $(".login-loading-spin").addClass("undisplayed");
-                    if (dto === 'success'){
+                    if (dto === 'success') {
                         $(".login-popup-error-mess").html('');
-                        alert("Login Success ! Redirect to index page");
-                        window.location='index.php';
+//                        alert("Login Success ! Redirect to index page");
+//                        window.location='index.php';
+                        closeLogin();
+                        location.reload();
                         return false;
                     }
-                    if (dto === 'fail'){
+                    if (dto === 'fail') {
                         $("#email").focus();
                         $(".login-popup-error-mess").html('<i></i> Email or password is not valid');
                         return false;
@@ -81,29 +83,36 @@ $(document).ready(function() {
                             return false;
                         }
                         else {
-                            $(".popup-error-mess").html('');
+                            $(".popup-error-mess").html('<i></i>  Processing ..............');
                             $(".loading-spin").removeClass("undisplayed");
+                            var str_string = 'email=' + email + '&cemail=' + cemail + '&cpass=' + cpass + '&pass=' + pass + '&name=' + name;
+                            $.ajax({
+                                type: "POST",
+                                url: "./BLL/registerBll.php",
+                                data: str_string,
+                                cache: false,
+                                success: function(dto_res) {
+                                    setTimeout(function() {
+                                        $(".loading-spin").addClass("undisplayed");
+                                        if (dto_res === 'true') {
+                                            closeRegis();
+                                            $(".login-popup-error-mess").html('<i></i> Register success. Login now !');
+                                            openLogin();
+                                            return false;
+                                        }
+                                        if (dto_res === 'false') {
+                                            $(".popup-error-mess").html('<i></i> Register failed. Please try again !');
+                                            return false;
+                                        }
+                                    }, 5000);
+                                }
+                            });
                         }
                     }
                 }
             });
         }
-        var str_string = 'email=' + email + '&cemail=' + cemail + '&cpass=' + cpass + '&pass=' + pass + '&name=' + name;
-        $.ajax({
-            type: "POST",
-            url: "./BLL/registerBll.php",
-            data: str_string,
-            cache: false,
-            success: function(dto_res) {
-                setTimeout(function() {
-                    $(".loading-spin").addClass("undisplayed");
-                    if (dto_res === 'true')
-                        alert('Register success !');
-                    if (dto_res === 'fail')
-                        alert('Register Fail !');
-                }, 5000);
-            }
-        });
+
         return false;
     });
 });
