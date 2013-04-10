@@ -27,10 +27,10 @@
                 <div class="page-container">
                     <div class="page-cont-left">
                         <div class="page-cont-title">
-                            <span class="cont-title-bold">Text</span><span class="cont-title-sub">Sub text</span>
+                            <span class="cont-title-bold">Ranking Club</span><span class="cont-title-sub"></span>
                         </div>
                         <div class="page-cont-title-sub">
-                            <span class="cont-title-sub">Sub text</span>
+                            <span class="cont-title-sub"></span>
                             <i class="sub0"></i>
                         </div>
                         <div class="team-list-head">

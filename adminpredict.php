@@ -16,27 +16,9 @@
     </head>
     <body>
         <div class="main">
-            <div class="header">
-                <div class="header-container">
-                    <div class="header-menu"><ul class="menu-list">
-                            <li class="menu-item"><a href="#" id="menu-item1">Item 1</a></li>
-                            <li class="menu-item"><a href="#" id="menu-item1">Item 2</a></li>
-                            <li class="menu-item"><a href="#" id="menu-item1">Item 3</a></li>
-                            <li class="menu-item"><a href="#" id="menu-item1">Item 4</a></li>
-                        </ul>
-                    </div>
-                    <div class="header-logo">LOGO</div>
-                    <div class="header-log">
-                        <div class='currentUser' >
-                            <?php
-                            if (isset($_SESSION["UserName"]))
-                                echo $_SESSION["UserName"];
-                            ?>
-                        </div>
-                        <div class="btn-expand-login" id="expand-login-btn">Login</div>
-                    </div>
-                </div>
-            </div>
+            <?php
+            include 'headerpanel.php';
+            ?>
             <div class="cover">
                 <div class="cover-container">
                 </div>
