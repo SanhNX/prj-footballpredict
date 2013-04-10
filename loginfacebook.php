@@ -1,18 +1,21 @@
 <?php
 session_start();
+include 'DAO/connection.php';
+include 'BLL/userBll.php';
 require 'libfacebook/facebook.php';
 require 'libfacebook/fbconfig.php';
 
 // Connection...
 $user = $facebook->getUser();
-
+if (!empty($_SESSION['UserId'])) {
+	$user = null;
+}
 if ($user) {
 	$logoutUrl = $facebook->getLogoutUrl();
 	
 	try {
 		$userdata = $facebook->api('/me');
 	} catch (FacebookApiException $e) {
-		error_log($e);
 		$user = null;
 	}
 	
@@ -31,11 +34,25 @@ if ($user) {
 
 	if(!empty($userdata)) {
 		$_SESSION['UserName'] = $userdata['name'];
-		//todo
-		$_SESSION['UserId'] = $userdata['id'];
+		$_SESSION['IdFaceBook'] = $userdata['id'];
 		$_SESSION['UserAvatar'] = "https://graph.facebook.com/".$userdata['id']."/picture";
-		// TODO
+		$checkExist = idFaceExist($userdata['id']);
+		if ($checkExist < 1) {
+			if ($userdata['gender'] == 'male') {
+				$gender = true;
+			} else {
+				$gender = false;
+			}
+			$resultinsert = insertUserFace($userdata['name'], $userdata['id'], $userdata['birthday'], $gender, $_SESSION['UserAvatar']);
+			if ($resultinsert > 0) {
+				$_SESSION['UserId'] = $resultinsert;
+			}
+		} else {
+			$_SESSION['UserId'] = $checkExist;
+		}
+		
 		$user = null;
+		//echo '<script> alert('.$userdata['id'].'); </script>';
 		echo "<script> window.location='result.php'; </script>";
 	}
 }

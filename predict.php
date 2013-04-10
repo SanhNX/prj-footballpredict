@@ -157,6 +157,11 @@
                             <p class="page-cont-label">115,098 participants</p>
                             <p class="page-cont-label">5,981,178 predictions</p>
                         </div>
+						<div class="page-cont-rate">
+                             <?php
+								include 'facebookinvite.php';
+							?>
+                        </div>
                         <ul class="page-cont-tip-list">
                             <li class="page-cont-tip-item">
                                 <div class="page-cont-tip-icon"><i class="tip-num">1</i></div>
