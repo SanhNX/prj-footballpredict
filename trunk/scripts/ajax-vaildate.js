@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $('#btn-login').on('click', function(e) {
-        $(".login-popup-error-mess").html('<i></i> Processing............');
+        $(".login-popup-error-mess").html('<i></i> Processes running ............');
         $(".login-loading-spin").removeClass("undisplayed");
         var email = $("#txtemail").val();
         var pass = $("#txtpass").val();
@@ -86,7 +86,7 @@ $(document).ready(function() {
                             return false;
                         }
                         else {
-                            $(".popup-error-mess").html('<i></i>  Processing ..............');
+                            $(".popup-error-mess").html('<i></i> Processes running ............);
                             $(".loading-spin").removeClass("undisplayed");
                             var str_string = 'email=' + email + '&cemail=' + cemail + '&cpass=' + cpass + '&pass=' + pass + '&name=' + name;
                             $.ajax({
