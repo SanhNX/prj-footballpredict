@@ -38,8 +38,8 @@
                         <div class="page-home-frame">
                             <div class="page-home-frame-item title"><span>Previous competitions on LetsPredict.it</span></div>
                             <div class="page-home-frame-item link">
-                                <img src="http://letspredict.it/static/versioned-images/img/landing-page/eredivisie-logo-home.f3d646a9.png">
-                                <span><b>Eredivisie 2011-2012</b>
+                                <img src="images\resources\team-logo\RussianPremierLeague01.gif">
+                                <span><b>Russian Football Championship 2012-2013</b>
                                     500.000 participants</span></div>
                             <div class="page-home-frame-item link">
                                 <img src="http://letspredict.it/static/versioned-images/img/landing-page/eurocup-logo-home.c0b4ae6c.png">
@@ -48,10 +48,10 @@
                         </div>
                         <div class="page-home-row">
                             <div class="page-home-row-item">
-                                <span><b>Eredivisie</b>
+                                <span><b>Russian Football Championship</b>
                                     Predict the matches between Ajax, AZ, PSV and the Eredivisie-new-entrant PEC Zwolle!</span>
 
-                                <div class="page-home-row-btn">Predict Eredivisie</div>
+                                <div class="page-home-row-btn">Predict Russian Football</div>
                             </div>
                             <div class="page-home-row-item">
                                 <span><b>Top League</b>
