@@ -46,7 +46,7 @@
 							
                             <h3>1. How to register?</h3>
 							<p>You can register through your Facebook account through a simple click.  As an alternative, click </p>
-							<p>here or the “Registration” link located on the main page.  We don't need too much information </p>
+							<p>here or the &#34Registration&#34 link located on the main page.  We don't need too much information </p>
 							<p>from you -- just your name, preferred username, password, date of birth, favorite football </p>
 							<p>team, avatar, and e-mail address.  Once you're registered, you're ready to begin playing!</p>
 							
@@ -56,11 +56,11 @@
 							<p>and to those users who are great at predicting game outcomes!  Stick around for that day to come.</p>
 							
 							<h3>3. How do I play?</h3>
-							<p>Choose the tab “My Predictions” and add your respective predictions for the following week. </p>
+							<p>Choose the tab &#34My Predictions&#34 and add your respective predictions for the following week. </p>
 							<p>You can scroll down and submit your predictions for future rounds as well, but can </p>
 							<p>change/update them in due time. Your predictions will be considered final as of 24 hours </p>
 							<p>before each game begins. Make sure you have submitted your results by then, or else you</p>
-							<p>won’t get any points for that round! You will receive a notification email every week letting</p>
+							<p>won&#39t get any points for that round! You will receive a notification email every week letting</p>
 							<p>you know that you can submit the results for the following week.</p>
 							
 							<h3>4. Point system</h3>
