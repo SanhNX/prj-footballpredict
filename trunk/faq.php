@@ -56,7 +56,7 @@
 							<p>and to those users who are great at predicting game outcomes!  Stick around for that day to come.</p>
 							
 							<h3>3. How do I play?</h3>
-							<p>Choose the tab</p> <h3>“My Predictions”</h3> <p>and add your respective predictions for the following week. </p>
+							<p>Choose the tab “My Predictions” and add your respective predictions for the following week. </p>
 							<p>You can scroll down and submit your predictions for future rounds as well, but can </p>
 							<p>change/update them in due time. Your predictions will be considered final as of 24 hours </p>
 							<p>before each game begins. Make sure you have submitted your results by then, or else you</p>
@@ -72,15 +72,11 @@
                                 <li>Correct outcome +20 bonus points</li>
                             </ul>
 							<p>Your points will be added after each round until the end of the Russian championship</p>
-							
-							
-							
+								
                             <h3>5. Can I invite my friends?</h3>
                             <p>Yes you can! Just click on the 'invite friends' button at the top right of the home page and invite </p>
-                            <h3>your friends. You can type their e-mail addresses or if you logged in by your Facebook account, you </h3>
+                            <p>your friends. You can type their e-mail addresses or if you logged in by your Facebook account, you </p>
                             <p>can select them from your Facebook friends.</p>
-							
-							
 							
                             <h3>6. Can I create a group?</h3>
                             <p>Yes you can! It is very easy and fun to create your own group and have your group ranking to</p>
