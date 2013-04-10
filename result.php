@@ -113,7 +113,7 @@
                     </div>
                     <div class="page-cont-right">
                         <div class="page-cont-title light">
-                            <span class="cont-title-bold">Eredivisie</span>
+                            <span class="cont-title-bold">Russian Football Championship</span>
                         </div>
                         <div class="page-cont-rate">
                             <p class="page-cont-label">115,098 participants</p>
