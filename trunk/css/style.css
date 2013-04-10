@@ -35,11 +35,11 @@ body {
 	left: 0px;
 	width: 300px;
 	height: 70px;
-	line-height: 70px;
+	line-height: 28px;
 	text-indent: 10px;
 	color: #FFF;
 	font-family: 'segoe ui light';
-	font-size: 60px;
+	font-size: 34px;
 }
 
 .header .header-container .header-menu {

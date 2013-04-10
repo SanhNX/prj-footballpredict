@@ -9,7 +9,8 @@
                 <li class="menu-item"><a href="teamranking.php" id="menu-item5">Team Ranking</a></li>
             </ul>
         </div>
-        <div class="header-logo">LOGO</div>
+        <div class="header-logo"><span class="" style="color: red;"> FOOTBALL </span><br/><span class="" style="color: white;"> Challenge</span>
+		</div>
         <div class="header-log">
             <?php
             if (!isset($_SESSION["UserName"]))

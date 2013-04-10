@@ -2,16 +2,17 @@
     <div class="popup-container">
         <div class="popup-form">
             <div class="page-cont-title">
-                <span class="cont-title-bold">Login</span><span class="cont-title-sub">Sub text</span>
+                <span class="cont-title-bold">Login</span><span class="cont-title-sub"></span>
                 <span class="popup-btn-close" id="popup-btn-login-close"></span>
             </div>
             <div class="page-cont-title-sub">
                 <span class="cont-title-sub"></span>
                 <i class="sub1"></i>
             </div>
-            <div class="user-item-avatar-panel default">
-                <span class="user-avt default"></span>
-
+            <div>
+                <?php
+				include 'loginfacebook.php';
+				?>
             </div>
             <div class="popup-mess-row"><i class="bullet"></i>
                 <span> Log in with your email address or </span>
