@@ -37,7 +37,7 @@
     <div class="popup-container">
         <div class="popup-form">
             <div class="page-cont-title">
-                <span class="cont-title-bold">Register</span><span class="cont-title-sub">Sub text</span>
+                <span class="cont-title-bold">Register</span><span class="cont-title-sub"></span>
                 <span class="popup-btn-close" id="popup-btn-register-close"></span>
             </div>
             <div class="page-cont-title-sub">

@@ -66,9 +66,10 @@ create table tbl_matchlist
 create table tbl_user
 (
 	Id int AUTO_INCREMENT primary key not null,
-	Email varchar(50) not null,
-	Password varchar(50) not null,
-	FullName varchar(50) not null,
+	IdFaceBook varchar(50),
+	Email varchar(50),
+	Password varchar(50),
+	FullName varchar(50),
 	Avatar varchar(50),
 	DOB Datetime,
 	Gender bit,
