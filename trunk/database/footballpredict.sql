@@ -55,6 +55,7 @@ create table tbl_matchlist
 (
 	Id int AUTO_INCREMENT primary key not null,
 	TypeLeaguesId int not null,
+	TourId int,
 	ClubA int not null,
 	ClubB int not null,
 	CONSTRAINT FOREIGN KEY(TypeLeaguesId) references tbl_typeLeagues(Id),
@@ -147,21 +148,77 @@ INSERT INTO tbl_club(Name, Logo, Played, Points, Won, Lost) VALUES('Amkar','imag
 INSERT INTO tbl_club(Name, Logo, Played, Points, Won, Lost) VALUES('Volga','images/resources/team-logo/Volga.jpg', 23, 21, 5, 12);
 
 
-INSERT INTO tbl_matchlist(TypeLeaguesId, ClubA, ClubB, StartTime, Result) VALUES(1, 1, 2, '2012/01/01', '');
-INSERT INTO tbl_matchlist(TypeLeaguesId, ClubA, ClubB, StartTime, Result) VALUES(1, 3, 4, '2012/02/02', '');
-INSERT INTO tbl_matchlist(TypeLeaguesId, ClubA, ClubB, StartTime, Result) VALUES(1, 5, 6, '2012/03/03', '');
-INSERT INTO tbl_matchlist(TypeLeaguesId, ClubA, ClubB, StartTime, Result) VALUES(1, 7, 8, '2012/04/04', '');
-INSERT INTO tbl_matchlist(TypeLeaguesId, ClubA, ClubB, StartTime, Result) VALUES(1, 9, 10, '2012/05/05', '');
-INSERT INTO tbl_matchlist(TypeLeaguesId, ClubA, ClubB, StartTime, Result) VALUES(1, 11, 12, '2012/06/06', '');
-INSERT INTO tbl_matchlist(TypeLeaguesId, ClubA, ClubB, StartTime, Result) VALUES(1, 13, 14, '2012/07/07', '');
-UPDATE `footballpredict`.`tbl_matchlist` SET `StartTime`='2012-02-02 20:30:00' WHERE `Id`='2';
-UPDATE `footballpredict`.`tbl_matchlist` SET `StartTime`='2012-03-03 01:45:00' WHERE `Id`='3';
-UPDATE `footballpredict`.`tbl_matchlist` SET `StartTime`='2012-01-01 12:40:00' WHERE `Id`='1';
-UPDATE `footballpredict`.`tbl_matchlist` SET `StartTime`='2012-04-04 02:25:00' WHERE `Id`='4';
-UPDATE `footballpredict`.`tbl_matchlist` SET `StartTime`='2012-05-05 07:15:00' WHERE `Id`='5';
-UPDATE `footballpredict`.`tbl_matchlist` SET `StartTime`='2012-06-06 07:45:00' WHERE `Id`='6';
-UPDATE `footballpredict`.`tbl_matchlist` SET `StartTime`='2012-07-07 06:20:00' WHERE `Id`='7';
+INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 23, 2, 5, '2013-04-05 17:00', '');
+INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 23, 4, 15, '2013-04-06 14:00', '');
+INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 23, 11, 13, '2013-04-06 16:30', '');
+INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 23, 9, 14, '2013-04-06 19:00', '');
+INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 23, 16, 7, '2013-04-07 13:30', '');
+INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 23, 3, 1, '2013-04-07 16:00', '');
+INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 23, 8, 12, '2013-04-07 18:30', '');
+INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 23, 10, 6, '2013-04-08 19:00', '');
 
+INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 24, 5, 4, '2013-04-12 17:00', '');
+INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 24, 9, 16, '2013-04-13 14:00', '');
+INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 24, 6, 7, '2013-04-13 16:30', '');
+INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 24, 13, 2, '2013-04-13 18:00', '');
+INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 24, 14, 8, '2013-04-13 19:00', '');
+INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 24, 15, 3, '2013-04-14 13:30', '');
+INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 24, 12, 11, '2013-04-14 16:00', '');
+INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 24, 1, 10, '2013-04-15 19:00', '');
+
+INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 25, 2, 12, '2013-04-19 17:00', '');
+INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 25, 10, 15, '2013-04-20 14:00', '');
+INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 25, 7, 1, '2013-04-20 16:30', '');
+INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 25, 8, 9, '2013-04-20 19:00', '');
+INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 25, 16, 6, '2013-04-21 13:30', '');
+INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 25, 4, 13, '2013-04-21 16:00', '');
+INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 25, 3, 5, '2013-04-21 18:30', '');
+INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 25, 11, 14, '2013-04-22 19:00', '');
+
+INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 26, 15, 7, '2013-04-26 17:00', '');
+INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 26, 5, 10, '2013-04-27 14:00', '');
+INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 26, 14, 2, '2013-04-27 16:30', '');
+INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 26, 9, 11, '2013-04-27 19:00', '');
+INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 26, 8, 16, '2013-04-28 13:30', '');
+INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 26, 12, 4, '2013-04-28 16:00', '');
+INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 26, 13, 3, '2013-04-28 18:30', '');
+INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 26, 1, 6, '2013-04-29 19:00', '');
+
+INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 27, 10, 13, '2013-05-03 17:00', '');
+INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 27, 16, 1, '2013-05-05 01:00', '');
+INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 27, 4, 14, '2013-05-05 02:30', '');
+INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 27, 3, 12, '2013-05-05 05:30', '');
+INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 27, 7, 5, '2013-05-05 13:30', '');
+INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 27, 6, 15, '2013-05-05 16:00', '');
+INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 27, 2, 9, '2013-05-05 18:30', '');
+INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 27, 11, 8, '2013-05-05 20:00', '');
+
+INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 28, 12, 10, '2013-05-10 17:00', '');
+INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 28, 13, 7, '2013-05-10 19:00', '');
+INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 28, 5, 6, '2013-05-11 14:00', '');
+INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 28, 15, 1, '2013-05-11 16:30', '');
+INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 28, 8, 2, '2013-05-11 19:00', '');
+INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 28, 11, 16, '2013-05-12 13:30', '');
+INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 28, 9, 4, '2013-05-12 16:00', '');
+INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 28, 14, 3, '2013-05-12 18:00', '');
+
+INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 29, 2, 11, '2013-05-17 17:00', '');
+INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 29, 4, 8, '2013-05-18 14:00', '');
+INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 29, 10, 14, '2013-05-18 16:30', '');
+INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 29, 6, 13, '2013-05-18 19:00', '');
+INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 29, 16, 15, '2013-05-19 13:30', '');
+INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 29, 7, 12, '2013-05-19 16:00', '');
+INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 29, 1, 5, '2013-05-19 18:30', '');
+INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 29, 3, 9, '2013-05-20 20:00', '');
+
+INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 30, 2, 16, '2013-05-26 17:00', '');
+INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 30, 5, 15, '2013-05-26 14:00', '');
+INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 30, 13, 1, '2013-05-26 16:30', '');
+INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 30, 9, 10, '2013-05-26 19:00', '');
+INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 30, 11, 4, '2013-05-26 13:30', '');
+INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 30, 8, 3, '2013-05-26 16:00', '');
+INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 30, 14, 7, '2013-05-26 18:30', '');
+INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 30, 12, 6, '2013-05-26 19:00', '');
 
 
 INSERT INTO tbl_user(Email, Password, FullName, Avatar, DOB, Gender, FavoriteTeam, Scores) VALUES('justin@gmail.com','123', 'Justin Nguyen', 'images/resources/team-logo/Alania.jpg', '1987-02-23 20:20:20', 1, 1, 20);

@@ -73,46 +73,9 @@
                             <!--<div class="page-cont-button-save" id="page-cont-button-save">Save</div>-->
                         </div>
                     </div>
-                    <div class="page-cont-right">
-                        <div class="page-cont-title light">
-                            <span class="cont-title-bold">Russian Football Championship</span>
-                        </div>
-                        <div class="page-cont-rate">
-                            <p class="page-cont-label">115,098 participants</p>
-
-                            <p class="page-cont-label">5,981,178 predictions</p>
-                        </div>
-                        <ul class="page-cont-tip-list">
-                            <li class="page-cont-tip-item">
-                                <div class="page-cont-tip-icon"><i class="tip-num">1</i></div>
-                                <div class="page-cont-tip-info">
-                                    <div class="page-cont-tip-title">Enter your predictions</div>
-                                    <div class="page-cont-tip-des">You will score points when you predict the correct winner, or
-                                        the exact score of one or both teams
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="page-cont-tip-item">
-                                <div class="page-cont-tip-icon"><i class="tip-num">2</i></div>
-                                <div class="page-cont-tip-info">
-                                    <div class="page-cont-tip-title">Enter your predictions</div>
-                                    <div class="page-cont-tip-des">You will score points when you predict the correct winner, or
-                                        the exact score of one or both teams
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="page-cont-tip-item">
-                                <div class="page-cont-tip-icon"><i class="tip-num">3</i></div>
-                                <div class="page-cont-tip-info">
-                                    <div class="page-cont-tip-title">Enter your predictions</div>
-                                    <div class="page-cont-tip-des">You will score points when you predict the correct winner, or
-                                        the exact score of one or both teams
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                        <div class="page-cont-ref"></div>
-                    </div>
+                    <?php
+                    include 'rightpanel.php';
+                    ?>
                     <div class="page-clear"></div>
                 </div>
 

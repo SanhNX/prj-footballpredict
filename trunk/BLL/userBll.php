@@ -91,4 +91,27 @@ function insertUserFace ($name, $idface, $DOB, $gender, $avatar){
     else
         return -1;
 }
+
+function countPredictions() {
+    $sql = "SELECT DISTINCT UserId FROM tbl_predict";
+    $queryResult = mysql_query($sql);
+    
+    if (!$queryResult) {
+        echo 'Error: ' . $id . mysql_error();
+        return -1;
+    }
+    
+    return mysql_num_rows($queryResult);
+}
+function countParticipants() {
+    $sql = "SELECT DISTINCT Id FROM tbl_user";
+    $queryResult = mysql_query($sql);
+    
+    if (!$queryResult) {
+        echo 'Error: ' . $id . mysql_error();
+        return -1;
+    }
+    
+    return mysql_num_rows($queryResult);
+}
 ?>

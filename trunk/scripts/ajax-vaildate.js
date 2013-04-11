@@ -1,36 +1,52 @@
 $(document).ready(function() {
     $('#btn-login').on('click', function(e) {
-        $(".login-popup-error-mess").html('<i></i> Processes running ............');
-        $(".login-loading-spin").removeClass("undisplayed");
+        
         var email = $("#txtemail").val();
         var pass = $("#txtpass").val();
         var str_string = 'txtemail=' + email + '&txtpass=' + pass;
-        $.ajax({
-            type: "POST",
-            url: "./BLL/signup_inBll.php",
-            data: str_string,
-            cache: false,
-            success: function(dto) {
-                setTimeout(function() {
-                    if (dto === 'success') {
-                        $(".login-popup-error-mess").html('<i></i> LOGIN SUCCESSFULL. Please wait a minutes to return page.');
-                        setTimeout(function() {
+        var email_regex = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
+
+        if (!email_regex.test(email) || email === "") {
+            $("#txtemail").focus();
+            $(".login-popup-error-mess").html('<i></i> Email can not blank and must be valid');
+            return false;
+        }
+        else if (pass === "") {
+            $("#txtpass").focus();
+            $(".login-popup-error-mess").html('<i></i> Password can not blank !');
+            return false;
+        }
+        else if (email_regex.test(email)) {
+            $(".login-popup-error-mess").html('<i></i> Processes running ............');
+            $(".login-loading-spin").removeClass("undisplayed");
+            $.ajax({
+                type: "POST",
+                url: "./BLL/signup_inBll.php",
+                data: str_string,
+                cache: false,
+                success: function(dto) {
+                    setTimeout(function() {
+                        if (dto === 'success') {
+                            $(".login-popup-error-mess").html('<i></i> LOGIN SUCCESSFULL. Please wait a minutes to return page.');
+                            setTimeout(function() {
+                                $(".login-loading-spin").addClass("undisplayed");
+                                $(".login-popup-error-mess").html('');
+                                closeLogin();
+                                location.reload();
+                            }, 3000);
+                            return false;
+                        }
+                        if (dto === 'fail') {
+                            $("#email").focus();
+                            $(".login-popup-error-mess").html('<i></i> Email or password is not valid');
                             $(".login-loading-spin").addClass("undisplayed");
-                            $(".login-popup-error-mess").html('');
-                            closeLogin();
-                            location.reload();
-                        }, 3000);
-                        return false;
-                    }
-                    if (dto === 'fail') {
-                        $("#email").focus();
-                        $(".login-popup-error-mess").html('<i></i> Email or password is not valid');
-                        $(".login-loading-spin").addClass("undisplayed");
-                        return false;
-                    }
-                }, 5000);
-            }
-        });
+                            return false;
+                        }
+                    }, 5000);
+                }
+            });
+        }
+
         return false;
     });
 });

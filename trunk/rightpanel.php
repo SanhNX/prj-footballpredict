@@ -1,0 +1,41 @@
+<div class="page-cont-right">
+    <div class="page-cont-title light">
+        <span class="cont-title-bold">Russian Football Championship</span>
+    </div>
+    <div class="page-cont-rate">
+        <?php
+        include 'BLL/userBll.php';
+
+        echo '<p class="page-cont-label">' . countParticipants() . ' participants</p>';
+        echo '<p class="page-cont-label">' . countPredictions() . ' predictions</p>';
+        ?>
+    </div>
+    <ul class="page-cont-tip-list">
+        <li class="page-cont-tip-item">
+            <div class="page-cont-tip-icon"><i class="tip-num">1</i></div>
+            <div class="page-cont-tip-info">
+                <div class="page-cont-tip-title">Enter your predictions</div>
+                <div class="page-cont-tip-des">You will score points when you predict the correct winner, or
+                    the exact score of one or both teams
+                </div>
+            </div>
+        </li>
+        <li class="page-cont-tip-item">
+            <div class="page-cont-tip-icon"><i class="tip-num">2</i></div>
+            <div class="page-cont-tip-info">
+                <div class="page-cont-tip-title">Save your prediction</div>
+                <div class="page-cont-tip-des">Save your prediction by logging in with your Facebook or Twitter account, or by email address
+                </div>
+            </div>
+        </li>
+        <li class="page-cont-tip-item">
+            <div class="page-cont-tip-icon"><i class="tip-num">3</i></div>
+            <div class="page-cont-tip-info">
+                <div class="page-cont-tip-title">Challenge and follow!</div>
+                <div class="page-cont-tip-des">Invite your friends, create pools and compete with each other during this Eredivisie season!
+                </div>
+            </div>
+        </li>
+    </ul>
+    <div class="page-cont-ref"></div>
+</div>

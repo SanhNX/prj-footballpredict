@@ -28,42 +28,57 @@
             <div class="page">
                 <div class="page-container">
                     <div class="page-cont-left">
-                        <div class="page-cont-title">
-                            <span class="cont-title-bold">Prediction round 29</span><span class="cont-title-sub">Friday 5 April to Sunday 7 April</span>
-                        </div>
-                        <div class="page-cont-title-sub">
-                            <span class="cont-title-sub">Already played games</span>
-                            <i class="sub0"></i>
-                        </div>
-                        <ul class="match-list">
+                        
+                        <form method="POST">
                             <?php
                             include 'DAO/connection.php';
                             include 'DTO/object.php';
                             include 'BLL/predictBll.php';
                             // ---------------------------------
+                            $tourIndex = 23;
 
-
-                            $itemList = getMatchListOfLeagues(1);
-                            echo '<form method="POST">';
+                            $itemList = getMatchListOfLeagues(1, $tourIndex);
+                            echo '<div class="page-cont-title">
+                                    <span class="cont-title-bold">Prediction tour '.$tourIndex.'</span><span class="cont-title-sub">'.date_format(date_create($itemList[0]->StartTime), 'l d F').' to '.date_format(date_create($itemList[7]->StartTime), 'l d F').'</span>
+                                </div>';
+                            
+                            
+                            
+                            
+                            echo '<ul class="match-list">';
                             for ($i = 0; $i < count($itemList); $i++) {
                                 $item = $itemList[$i];
-                                $startTime = date_format(date_create($item->StartTime), 'l, d F Y h:i');
+//                                $startTime = date_format(date_create($item->StartTime), 'l, d F Y h:i');
+                                if($i == 0)
+                                    $start = $item->Id;
+                                if($i == count($itemList) - 1)
+                                    $end = $item->Id;
+                                if($i == 0 || date_format(date_create($itemList[$i - 1]->StartTime), 'd F Y , l') != date_format(date_create($itemList[$i]->StartTime), 'd F Y , l')){
+                                    echo '<div class="page-cont-title-sub">
+                                        <span class="cont-title-sub">'.date_format(date_create($item->StartTime), 'd F Y , l').'</span>
+                                        <i class="sub0"></i>
+                                    </div>';
+                                    
+                                }
+                                
+                                $startTime = date_format(date_create($item->StartTime), 'd F Y , l');
                                 $clubA = getClub_byId($item->ClubA);
                                 $clubB = getClub_byId($item->ClubB);
                                 $predictListOfUser = getPredictListOfUser($_SESSION['UserId']);
 //                                echo '<script>alert("'.$clubA->Logo.'");</script>';
                                 echo '<li class = "match-item">';
+                                echo '<div class="start-time">'.date_format(date_create($item->StartTime), 'H : i').'</div>';
                                 echo '<div class = "match-item-icon-panel">';
                                 echo '<img src = "' . $clubA->Logo . '"/><img src = "' . $clubB->Logo . '"/>';
                                 echo '</div>';
                                 echo '<div class = "match-item-name-panel">';
                                 echo '<span class = "match-item-name">';
                                 echo '<span class = "match-item-cap">' . $clubA->Name . ' - ' . $clubB->Name . '</span><br>';
-                                echo '<span class = "match-item-sub">' . $startTime . '</span>';
+//                                echo '<span class = "match-item-sub">' . $startTime . '</span>';
                                 echo '</span>';
                                 echo '</div>';
                                 echo '<div class = "match-item-num-panel">';
-                                echo '<input type="hidden" name="' . $item->Id . '" value="' . $item->Id . '" />';
+                                echo '<input type="hidden" name="' . $item->Id . '" value="' . $item->Id . '" class="hidden"/>';
 //                                echo '<script>alert("'.$predictListOfUser[2]->PredictResult.'");</script>';
                                 for ($j = 0; $j < count($predictListOfUser); $j++) {
 //                                    echo '<script>alert("'.$item->Id.'='.$predictListOfUser[$j]->MatchId.'");</script>';
@@ -77,7 +92,7 @@
                                 $pieces = explode("-", $currentPredict);
                                 $predictResultA = $pieces[0];
                                 $predictResultB = $pieces[1];
-
+                                
                                 echo '<input id="' . $item->Id . '" class="match-item-num-input" value="' . $predictResultA . '" name="clubA' . $item->Id . '" type="number" tabindex="1" maxlength="2" size="2" autocomplete="off" min="0" max="99" pattern="[0-9]*"/>';
                                 echo '<input id="' . $item->Id . $item->Id . '" class="match-item-num-input" value="' . $predictResultB . '" name="clubB' . $item->Id . '" type="number" tabindex="1" maxlength="2" size="2" autocomplete="off" min="0" max="99" pattern="[0-9]*"/>';
                                 echo '</div>';
@@ -85,33 +100,35 @@
                             }
                             if (isset($_POST['btnSave'])) {
                                 if (isset($_SESSION['UserName'])) {
-                                    for ($i = 1; $i < 8; $i++) {
-                                        if ($i == 7)
+//                                    echo '<script>alert("Start : ' . $start . ' End : '.$end.' " );</script>';
+                                    for ($preIndex = $start; $preIndex <= $end; $preIndex++) {
+//                                        echo '<script>alert("preIndex : ' . $preIndex . '" );</script>';
+                                        if ($preIndex == $end)
                                             echo '<script>alert("Predict Success !!" );</script>';
-                                        $tempA = $_POST['clubA' . $i];
-                                        $tempB = $_POST['clubB' . $i];
-//                                echo '<script>alert("'. $_POST[$i].'---'.$_SESSION['UserId'].'--' .$_POST['clubA'.$i].'--'. $_POST['clubB'.$i].'")</script>';
+                                        $tempA = $_POST['clubA' . $preIndex];
+                                        $tempB = $_POST['clubB' . $preIndex];
+//                                        echo '<script>alert("'. $_POST[$preIndex].'---'.$_SESSION['UserId'].'--' .$_POST['clubA'.$preIndex].'--'. $_POST['clubB'.$preIndex].'")</script>';
                                         if ($tempA != "" && $tempB != "") {
-                                            $isExist = getPredict_byUIdMId($_SESSION['UserId'], $_POST[$i]);
+                                            $isExist = getPredict_byUIdMId($_SESSION['UserId'], $_POST[$preIndex]);
 //                                            echo '<script>alert("Exists : ' . $isExist . ' " );</script>';
                                             if ($isExist == 1) {
-                                                updatePredict($_SESSION['UserId'], $_POST[$i], '' . $tempA . '-' . $tempB . '');
+                                                updatePredict($_SESSION['UserId'], $_POST[$preIndex], '' . $tempA . '-' . $tempB . '');
                                                 echo '<script>location.reload();</script>';
                                             } else {
-                                                $predictItem = addPredict($_SESSION['UserId'], $_POST[$i], '' . $tempA . '-' . $tempB . '');
+                                                $predictItem = addPredict($_SESSION['UserId'], $_POST[$preIndex], '' . $tempA . '-' . $tempB . '');
                                                 if ($predictItem != -1) {
-//                                                echo '<script>alert("INSET SUCCESS . ' . $_POST[$i] . ' " );</script>';
+//                                                echo '<script>alert("INSET SUCCESS . ' . $_POST[$preIndex] . ' " );</script>';
 //                                                if ($i == 7)
 //                                                    echo '<script>alert("Save your predict success !!" );</script>';
                                                     echo '<script>location.reload();</script>';
                                                 } else {
-//                                                echo '<script>alert("INSET FAIL . ' . $_POST[$i] . ' " );</script>';
+//                                                echo '<script>alert("INSET FAIL . ' . $_POST[$preIndex] . ' " );</script>';
 //                                                if ($i == 7)
 //                                                    echo '<script>alert("1.Please input valid to predict !!" );</script>';
                                                 }
                                             }
                                         } else {
-//                                            echo '<script>alert("CONTINUE ' . $_POST[$i] . '" );</script>';
+//                                            echo '<script>alert("CONTINUE ' . $_POST[$preIndex] . '" );</script>';
 //                                            if ($i == 7)
 //                                                echo '<script>alert("2.Please input valid to predict !!" );</script>';
                                             continue;
@@ -121,72 +138,25 @@
                                     echo '<script>alert("Please login to use function");</script>';
                                 }
                             }
+                            echo '</ul>';
                             ?>
                             <script type="text/javascript">
-                                $("#1").numeric();
-                                $("#11").numeric();
-                                $("#2").numeric();
-                                $("#22").numeric();
-                                $("#3").numeric();
-                                $("#33").numeric();
-                                $("#4").numeric();
-                                $("#44").numeric();
-                                $("#5").numeric();
-                                $("#55").numeric();
-                                $("#6").numeric();
-                                $("#66").numeric();
-                                $("#7").numeric();
-                                $("#77").numeric();
+                                for(var i = 0; i < 16 ; i++){
+                                    var id = $(".match-item-num-input")[i].id;
+                                    $('#'+id).numeric();
+                                }
                             </script>
-                        </ul>
 
                         <div class="page-cont-control">
                             <div class="page-cont-button" id="page-cont-button-next"></div>  
                             <div class="page-cont-button" id="page-cont-button-prev"></div>  
                             <input class="page-cont-button-save" type="submit" name="btnSave" id="page-cont-button-save" value="Save"/>  
                         </div>
-                        <?php
-                        echo '</form>';
-                        ?>
+                        </form>
                     </div>
-                    <div class="page-cont-right">
-                        <div class="page-cont-title light">
-                            <span class="cont-title-bold">Russian Football Championship</span>
-                        </div>
-                        <div class="page-cont-rate">
-                            <p class="page-cont-label">115,098 participants</p>
-                            <p class="page-cont-label">5,981,178 predictions</p>
-                        </div>
-						<div class="page-cont-rate">
-                             <?php
-								include 'facebookinvite.php';
-							?>
-                        </div>
-                        <ul class="page-cont-tip-list">
-                            <li class="page-cont-tip-item">
-                                <div class="page-cont-tip-icon"><i class="tip-num">1</i></div>
-                                <div class="page-cont-tip-info">
-                                    <div class="page-cont-tip-title">Enter your predictions</div>
-                                    <div class="page-cont-tip-des">You will score points when you predict the correct winner, or the exact score of one or both teams</div>
-                                </div>
-                            </li>
-                            <li class="page-cont-tip-item">
-                                <div class="page-cont-tip-icon"><i class="tip-num">2</i></div>
-                                <div class="page-cont-tip-info">
-                                    <div class="page-cont-tip-title">Enter your predictions</div>
-                                    <div class="page-cont-tip-des">You will score points when you predict the correct winner, or the exact score of one or both teams</div>
-                                </div>
-                            </li>
-                            <li class="page-cont-tip-item">
-                                <div class="page-cont-tip-icon"><i class="tip-num">3</i></div>
-                                <div class="page-cont-tip-info">
-                                    <div class="page-cont-tip-title">Enter your predictions</div>
-                                    <div class="page-cont-tip-des">You will score points when you predict the correct winner, or the exact score of one or both teams</div>
-                                </div>
-                            </li>
-                        </ul>
-                        <div class="page-cont-ref"></div>
-                    </div>
+                    <?php
+                    include 'rightpanel.php';
+                    ?>
                     <div class="page-clear"></div>
                 </div>
 
