@@ -6,6 +6,10 @@
  * To change this template use File | Settings | File Templates.
  */
 
+function redirect($url) {
+    window.location='$url';
+}
+
 $(function() {
     $('#expand-login-btn').click(function() {
         openLogin();
