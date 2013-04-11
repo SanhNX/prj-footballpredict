@@ -11,8 +11,6 @@ $dbhandle = mysql_connect($hostname, $username, $password) or die("Unable to con
 mysql_select_db($db);
 mysql_query("SET NAMES 'utf8'", $dbhandle);
 
-function redirect($url) {
-    echo "<script> window.location='$url'; </script>";
-}
+
 
 ?>
