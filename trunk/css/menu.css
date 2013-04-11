@@ -33,6 +33,9 @@
 	left: 0;
 	z-index: 0;
 	-webkit-transition: height 150ms ease-in-out;
+	-moz-transition: height 150ms ease-in-out;
+	-o-transition: height 150ms ease-in-out;
+	transition: height 150ms ease-in-out;
 }
 .menu-item:hover:before {
 	height: 100%;
