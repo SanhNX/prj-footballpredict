@@ -91,7 +91,7 @@ $(document).ready(function() {
                             $(".popup-error-mess").html('<i></i> Confirm Email must be similar with Email');
                             return false;
                         }
-                        else if (pass === "" || pass < 8) {
+                        else if (pass === "" || pass.length < 8) {
                             $("#pass").focus();
                             $(".popup-error-mess").html('<i></i> Password can not blank and larger than 8 character');
                             return false;

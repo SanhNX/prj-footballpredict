@@ -35,14 +35,12 @@
                             include 'BLL/predictBll.php';
                             // ---------------------------------
 
-                            $tourIndex = 23;
+                            $tourIndex = isset($_REQUEST['tourIndex']) ? $_REQUEST['tourIndex'] : 23;  
 
                             $itemList = getMatchListOfLeagues(1, $tourIndex);
                             echo '<div class="page-cont-title">
                                     <span class="cont-title-bold">Prediction tour '.$tourIndex.'</span><span class="cont-title-sub">'.date_format(date_create($itemList[0]->StartTime), 'l d F').' to '.date_format(date_create($itemList[7]->StartTime), 'l d F').'</span>
                                 </div>';
-                            
-                            
                             
                             echo '<form method="POST">';
                             for ($i = 0; $i < count($itemList); $i++) {
@@ -85,35 +83,21 @@
                                 echo '</div>';
                                 echo '</li>';
                             }
-                            if (isset($_POST['btnSave'])) {
-                                for ($i = 1; $i < 8; $i++) {
-
-//                                echo '<script>alert("'. $_POST[$i].'---'.$_SESSION['UserId'].'--' .$_POST['clubA'.$i].'--'. $_POST['clubB'.$i].'")</script>';
-                                    if ($_POST['clubA' . $i] && $_POST['clubB' . $i]) {
-                                        $predictItem = addPredict($_SESSION['UserId'], $_POST[$i], '' . $_POST['clubA' . $i] . '-' . $_POST['clubB' . $i] . '');
-                                        if ($predictItem != -1) {
-//                                            echo '<script>alert("INSET SUCCESS . '. $_POST[$i] .' " );</script>';
-                                            if ($i == 7)
-                                                echo '<script>alert("Predict Success !!" );</script>';
-                                        } else {
-//                                            echo '<script>alert("INSET FAIL . '. $_POST[$i] .' " );</script>';
-                                            if ($i == 7)
-                                                echo '<script>alert("Please input valid to predict !!" );</script>';
-                                        }
-                                    } else {
-//                                        echo '<script>alert("CONTINUE '. $_POST[$i] .'" );</script>';
-                                        if ($i == 7)
-                                            echo '<script>alert("Please input valid to predict !!" );</script>';
-                                        continue;
-                                    }
-                                }
+                            if (isset($_POST['btnNext'])) {
+                                if($tourIndex < 30)
+                                    $tourIndex++;
+                                echo '<script>window.location = "result.php?tourIndex='.$tourIndex.'";</script>';
+                            }else if (isset($_POST['btnPrevious'])) {
+                                if($tourIndex >= 24)
+                                    $tourIndex--;
+                                echo '<script>window.location = "result.php?tourIndex='.$tourIndex.'";</script>';
                             }
                             ?>
                         </ul>
 
                         <div class="page-cont-control">
-                            <div class="page-cont-button" id="page-cont-button-next"></div>  
-                            <div class="page-cont-button" id="page-cont-button-prev"></div>  
+                            <input class="page-cont-button" type="submit" id="page-cont-button-next" name="btnPrevious" value=""></input>  
+                            <input class="page-cont-button" type="submit" id="page-cont-button-prev" name="btnNext" value=""></input>  
                             <!--<input class="page-cont-button-save" type="submit" name="btnSave" id="page-cont-button-save" value="Save"/>-->  
                         </div>
                         <?php

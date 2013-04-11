@@ -28,15 +28,17 @@
             <div class="page">
                 <div class="page-container">
                     <div class="page-cont-left">
-                        
+<!--                        <script type="text/javascript">
+                                document.getElementsByClassName("page-cont-button")[0].className="page-cont-button undisplayed";
+                            </script>-->
                         <form method="POST">
                             <?php
                             include 'DAO/connection.php';
                             include 'DTO/object.php';
                             include 'BLL/predictBll.php';
                             // ---------------------------------
-                            $tourIndex = 23;
-
+                            $tourIndex = isset($_REQUEST['tourIndex']) ? $_REQUEST['tourIndex'] : 23;  
+                            
                             $itemList = getMatchListOfLeagues(1, $tourIndex);
                             echo '<div class="page-cont-title">
                                     <span class="cont-title-bold">Prediction tour '.$tourIndex.'</span><span class="cont-title-sub">'.date_format(date_create($itemList[0]->StartTime), 'l d F').' to '.date_format(date_create($itemList[7]->StartTime), 'l d F').'</span>
@@ -137,6 +139,14 @@
                                 } else {
                                     echo '<script>alert("Please login to use function");</script>';
                                 }
+                            }else if (isset($_POST['btnNext'])) {
+                                if($tourIndex < 30)
+                                    $tourIndex++;
+                                echo '<script>window.location = "predict.php?tourIndex='.$tourIndex.'";</script>';
+                            }else if (isset($_POST['btnPrevious'])) {
+                                if($tourIndex >= 24)
+                                    $tourIndex--;
+                                echo '<script>window.location = "predict.php?tourIndex='.$tourIndex.'";</script>';
                             }
                             echo '</ul>';
                             ?>
@@ -148,8 +158,8 @@
                             </script>
 
                         <div class="page-cont-control">
-                            <div class="page-cont-button" id="page-cont-button-next"></div>  
-                            <div class="page-cont-button" id="page-cont-button-prev"></div>  
+                            <input class="page-cont-button" type="submit" id="page-cont-button-next" name="btnPrevious" value=""></input>  
+                            <input class="page-cont-button" type="submit" id="page-cont-button-prev" name="btnNext" value=""></input>  
                             <input class="page-cont-button-save" type="submit" name="btnSave" id="page-cont-button-save" value="Save"/>  
                         </div>
                         </form>
