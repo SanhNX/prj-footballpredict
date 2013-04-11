@@ -63,6 +63,7 @@
                                 $predictResultB = $pieces[1];
 //                                echo '<script>alert("'.$clubA->Logo.'");</script>';
                                 echo '<li class = "match-item">';
+                                echo '<div class="start-time">'.date_format(date_create($item->StartTime), 'H : i').'</div>';
                                 echo '<div class = "match-item-icon-panel">';
                                 echo '<img src = "' . $clubA->Logo . '"/><img src = "' . $clubB->Logo . '"/>';
                                 echo '</div>';
