@@ -1,7 +1,7 @@
 <?php
 
-function getMatchListOfLeagues($typeLeaguesId) {
-    $sql = "SELECT * FROM tbl_matchlist Where TypeLeaguesId = '".$typeLeaguesId."'";
+function getMatchListOfLeagues($typeLeaguesId, $tour) {
+    $sql = "SELECT * FROM tbl_matchlist Where TypeLeaguesId = '".$typeLeaguesId."' AND TourId = '".$tour."'";
     $queryResult = mysql_query($sql) or die ("Couldn't execute query.");
     $i = 0;
     $result = array();

@@ -1,7 +1,7 @@
 <?php
 session_start();
 include 'DAO/connection.php';
-include 'BLL/userBll.php';
+//include 'BLL/userBll.php';
 require 'libfacebook/facebook.php';
 require 'libfacebook/fbconfig.php';
 

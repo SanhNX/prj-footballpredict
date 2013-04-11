@@ -28,25 +28,33 @@
             <div class="page">
                 <div class="page-container">
                     <div class="page-cont-left">
-                        <div class="page-cont-title">
-                            <span class="cont-title-bold">Result round 28</span><span class="cont-title-sub">Saturday 30 March to Sunday 31 March</span>
-                        </div>
-                        <div class="page-cont-title-sub">
-                            <span class="cont-title-sub"></span>
-                            <i class="sub0"></i>
-                        </div>
-                        <ul class="match-list">
+                        
                             <?php
                             include 'DAO/connection.php';
                             include 'DTO/object.php';
                             include 'BLL/predictBll.php';
                             // ---------------------------------
 
+                            $tourIndex = 23;
 
-                            $itemList = getMatchListOfLeagues(1);
+                            $itemList = getMatchListOfLeagues(1, $tourIndex);
+                            echo '<div class="page-cont-title">
+                                    <span class="cont-title-bold">Prediction tour '.$tourIndex.'</span><span class="cont-title-sub">'.date_format(date_create($itemList[0]->StartTime), 'l d F').' to '.date_format(date_create($itemList[7]->StartTime), 'l d F').'</span>
+                                </div>';
+                            
+                            
+                            
                             echo '<form method="POST">';
                             for ($i = 0; $i < count($itemList); $i++) {
                                 $item = $itemList[$i];
+//                                $startTime = date_format(date_create($item->StartTime), 'l, d F Y h:i');
+                                if($i == 0 || date_format(date_create($itemList[$i - 1]->StartTime), 'd F Y , l') != date_format(date_create($itemList[$i]->StartTime), 'd F Y , l')){
+                                    echo '<div class="page-cont-title-sub">
+                                        <span class="cont-title-sub">'.date_format(date_create($item->StartTime), 'd F Y , l').'</span>
+                                        <i class="sub0"></i>
+                                    </div>
+                                    <ul class="match-list">';
+                                }
                                 $startTime = date_format(date_create($item->StartTime), 'l, d F Y h:i');
                                 $clubA = getClub_byId($item->ClubA);
                                 $clubB = getClub_byId($item->ClubB);
@@ -61,7 +69,7 @@
                                 echo '<div class = "match-item-name-panel">';
                                 echo '<span class = "match-item-name">';
                                 echo '<span class = "match-item-cap">' . $clubA->Name . ' - ' . $clubB->Name . '</span><br>';
-                                echo '<span class = "match-item-sub">' . $startTime . '</span>';
+//                                echo '<span class = "match-item-sub">' . $startTime . '</span>';
                                 echo '</span>';
                                 echo '</div>';
                                 if($item->Result == ""){
@@ -111,39 +119,9 @@
                         echo '</form>';
                         ?>
                     </div>
-                    <div class="page-cont-right">
-                        <div class="page-cont-title light">
-                            <span class="cont-title-bold">Russian Football Championship</span>
-                        </div>
-                        <div class="page-cont-rate">
-                            <p class="page-cont-label">115,098 participants</p>
-                            <p class="page-cont-label">5,981,178 predictions</p>
-                        </div>
-                        <ul class="page-cont-tip-list">
-                            <li class="page-cont-tip-item">
-                                <div class="page-cont-tip-icon"><i class="tip-num">1</i></div>
-                                <div class="page-cont-tip-info">
-                                    <div class="page-cont-tip-title">Enter your predictions</div>
-                                    <div class="page-cont-tip-des">You will score points when you predict the correct winner, or the exact score of one or both teams</div>
-                                </div>
-                            </li>
-                            <li class="page-cont-tip-item">
-                                <div class="page-cont-tip-icon"><i class="tip-num">2</i></div>
-                                <div class="page-cont-tip-info">
-                                    <div class="page-cont-tip-title">Enter your predictions</div>
-                                    <div class="page-cont-tip-des">You will score points when you predict the correct winner, or the exact score of one or both teams</div>
-                                </div>
-                            </li>
-                            <li class="page-cont-tip-item">
-                                <div class="page-cont-tip-icon"><i class="tip-num">3</i></div>
-                                <div class="page-cont-tip-info">
-                                    <div class="page-cont-tip-title">Enter your predictions</div>
-                                    <div class="page-cont-tip-des">You will score points when you predict the correct winner, or the exact score of one or both teams</div>
-                                </div>
-                            </li>
-                        </ul>
-                        <div class="page-cont-ref"></div>
-                    </div>
+                    <?php
+                    include 'rightpanel.php';
+                    ?>
                     <div class="page-clear"></div>
                 </div>
 
