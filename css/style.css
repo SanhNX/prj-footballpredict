@@ -508,7 +508,7 @@ body {
 .match-list .match-item-icon-panel {
     line-height: 70px;
     height: 100%;
-    width: 150px;
+    width: 140px;
     float: left;
     text-align: center;
 }
@@ -521,7 +521,7 @@ body {
 
 .match-item-name-panel {
     display: table;
-    width: 170px;
+    width: 200px;
     height: 70px;
     float: left;
 }
@@ -544,7 +544,7 @@ body {
 
 .match-item-mess-panel {
     display: table;
-    width: 120px;
+    width: 100px;
     height: 70px;
     float: left;
     vertical-align: middle;
@@ -1171,7 +1171,7 @@ input::-webkit-inner-spin-button {
 
 .start-time{
     float: left;
-    margin: 0px -15px 0px 10px;
+    margin: 0px -15px 0px 5px;
     color: #BA0E36;
     font-size: 15px;
     line-height: 70px;
