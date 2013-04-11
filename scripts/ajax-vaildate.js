@@ -86,7 +86,7 @@ $(document).ready(function() {
                             return false;
                         }
                         else {
-                            $(".popup-error-mess").html('<i></i> Processes running ............);
+                            $(".popup-error-mess").html('<i></i> Processes running ............');
                             $(".loading-spin").removeClass("undisplayed");
                             var str_string = 'email=' + email + '&cemail=' + cemail + '&cpass=' + cpass + '&pass=' + pass + '&name=' + name;
                             $.ajax({
