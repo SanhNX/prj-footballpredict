@@ -10,6 +10,9 @@ body {
 	clear: both;
 	height: 170px;
 	background: url('../images/bg/clear-bg.png') center top no-repeat;
+	background-color: #F00;
+	background: url('../images/bg/clear-bg.png') center top no-repeat,url('../images/bg/main-footer-bg.jpg') no-repeat center bottom;
+	background-size: auto, 900px auto;
 }
 
 .header {
@@ -241,14 +244,16 @@ body {
 	width: 900px;
 	margin: 0px auto;
 	position: relative;
+	background-color: #EEE;
 }
 
 .page-cont-left {
 	float: left;
 	width: 70%;
-	min-height: 830px;
+	min-height: 790px;
 	background: url('../images/bg/carbon-bg.png') center;
 	position: relative;
+	padding-bottom: 40px;
 }
 
 .page-cont-left.home {
@@ -686,6 +691,8 @@ body {
 	height: 440px;
 	width: 270px;
 	background: url('../images/icon/soccer.png') center bottom no-repeat;
+	position: absolute;
+	bottom: 170px;
 }
 
 /***********************************************************************************/
