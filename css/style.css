@@ -521,7 +521,7 @@ body {
 
 .match-item-name-panel {
     display: table;
-    width: 200px;
+    width: 150px;
     height: 70px;
     float: left;
 }
@@ -544,7 +544,7 @@ body {
 
 .match-item-mess-panel {
     display: table;
-    width: 135px;
+    width: 120px;
     height: 70px;
     float: left;
     vertical-align: middle;
