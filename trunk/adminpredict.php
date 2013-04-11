@@ -65,29 +65,29 @@
                                 echo '<div class = "match-item-num-panel">';
                                 echo '<input type="hidden" name="' . $item->Id . '" value="' . $item->Id . '" />';
                                 echo '<input id="' . $item->Id . '" class="match-item-num-input" name="clubA' . $item->Id . '" type="number" tabindex="1" maxlength="2" size="2" autocomplete="off" min="0" max="99" pattern="[0-9]*"/>';
-                                echo '<input id="' . $item->Id.$item->Id . '" class="match-item-num-input" name="clubB' . $item->Id . '" type="number" tabindex="1" maxlength="2" size="2" autocomplete="off" min="0" max="99" pattern="[0-9]*"/>';
+                                echo '<input id="' . $item->Id . $item->Id . '" class="match-item-num-input" name="clubB' . $item->Id . '" type="number" tabindex="1" maxlength="2" size="2" autocomplete="off" min="0" max="99" pattern="[0-9]*"/>';
                                 echo '</div>';
                                 echo '</li>';
                             }
                             if (isset($_POST['btnSave'])) {
                                 for ($i = 1; $i < 8; $i++) {
 
-                                 
-                                    $resultA  = $_POST['clubA' . $i];
-                                    $resultB  = $_POST['clubB' . $i];
- //                                   echo '<script>alert("'. $resultA .'---'. $resultB .'")</script>';
-                                    
+
+                                    $resultA = $_POST['clubA' . $i];
+                                    $resultB = $_POST['clubB' . $i];
+                                    //                                   echo '<script>alert("'. $resultA .'---'. $resultB .'")</script>';
+
                                     if ($i == 7)
                                         echo '<script>alert("You are save Success !!" );</script>';
-                                        redirect('adminpredict.php');
+                                    redirect('adminpredict.php');
 //                                echo '<script>alert("'. $_POST[$i].'---'.$_SESSION['UserId'].'--' .$_POST['clubA'.$i].'--'. $_POST['clubB'.$i].'")</script>';
-                                    
-                                    
-                                    if ($resultA >= 0 && $resultB >= 0 && $resultA !="" && $resultB !="") {
+
+
+                                    if ($resultA >= 0 && $resultB >= 0 && $resultA != "" && $resultB != "") {
 //                                        echo '<script>alert("UPDATE FAIL . ' . $resultA . '-' . $resultB . ' " );</script>';
                                         $predictItem = updateResult($_POST[$i], '' . $resultA . '-' . $resultB . '');
                                         if ($predictItem != -1) {
-                                            countPoint ($_POST[$i], $_POST['clubA' . $i], $_POST['clubB' . $i]);
+                                            countPoint($_POST[$i], $_POST['clubA' . $i], $_POST['clubB' . $i]);
                                         } else {
                                             //echo '<script>alert("UPDATE FAIL . '. $_POST[$i] .' " );</script>';
                                         }
@@ -130,29 +130,37 @@
                             <span class="cont-title-bold">Russian Football Championship</span>
                         </div>
                         <div class="page-cont-rate">
-                            <p class="page-cont-label">115,098 participants</p>
-                            <p class="page-cont-label">5,981,178 predictions</p>
+                            <?php
+                            include 'BLL/userBll.php';
+
+                            echo '<p class="page-cont-label">' . countParticipants() . ' participants</p>';
+                            echo '<p class="page-cont-label">' . countPredictions() . ' predictions</p>';
+                            ?>
                         </div>
                         <ul class="page-cont-tip-list">
                             <li class="page-cont-tip-item">
                                 <div class="page-cont-tip-icon"><i class="tip-num">1</i></div>
                                 <div class="page-cont-tip-info">
                                     <div class="page-cont-tip-title">Enter your predictions</div>
-                                    <div class="page-cont-tip-des">You will score points when you predict the correct winner, or the exact score of one or both teams</div>
+                                    <div class="page-cont-tip-des">You will score points when you predict the correct winner, or
+                                        the exact score of one or both teams
+                                    </div>
                                 </div>
                             </li>
                             <li class="page-cont-tip-item">
                                 <div class="page-cont-tip-icon"><i class="tip-num">2</i></div>
                                 <div class="page-cont-tip-info">
-                                    <div class="page-cont-tip-title">Enter your predictions</div>
-                                    <div class="page-cont-tip-des">You will score points when you predict the correct winner, or the exact score of one or both teams</div>
+                                    <div class="page-cont-tip-title">Save your prediction</div>
+                                    <div class="page-cont-tip-des">Save your prediction by logging in with your Facebook or Twitter account, or by email address
+                                    </div>
                                 </div>
                             </li>
                             <li class="page-cont-tip-item">
                                 <div class="page-cont-tip-icon"><i class="tip-num">3</i></div>
                                 <div class="page-cont-tip-info">
-                                    <div class="page-cont-tip-title">Enter your predictions</div>
-                                    <div class="page-cont-tip-des">You will score points when you predict the correct winner, or the exact score of one or both teams</div>
+                                    <div class="page-cont-tip-title">Challenge and follow!</div>
+                                    <div class="page-cont-tip-des">Invite your friends, create pools and compete with each other during this Eredivisie season!
+                                    </div>
                                 </div>
                             </li>
                         </ul>
