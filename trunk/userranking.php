@@ -65,6 +65,8 @@
                                 $name = $set['fullname'];
                                 $avatar = $set['avatar'];
                                 $scores = $set['scores'];
+                                if($scores == 0)
+                                    continue;
                                 echo'
 						<li class="user-item">
 							<div class="user-item-rank">
