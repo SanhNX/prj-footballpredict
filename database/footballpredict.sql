@@ -130,22 +130,22 @@ INSERT INTO tbl_clubListOfTable(TableListOfLeaguesId, ClubId) VALUES(2, 13);
 INSERT INTO tbl_clubListOfTable(TableListOfLeaguesId, ClubId) VALUES(2, 14);
 INSERT INTO tbl_clubListOfTable(TableListOfLeaguesId, ClubId) VALUES(2, 15);
 
-INSERT INTO tbl_club(Name, Logo, Played, Points, Won, Lost) VALUES('CSKA','images/resources/team-logo/CSKA.jpg', 23, 55, 18, 4);
-INSERT INTO tbl_club(Name, Logo, Played, Points, Won, Lost) VALUES('Zenit','images/resources/team-logo/Zenit.jpg', 23, 47, 14, 4);
-INSERT INTO tbl_club(Name, Logo, Played, Points, Won, Lost) VALUES('Anzhi','images/resources/team-logo/Anzhi.jpg', 23, 43, 12, 4);
-INSERT INTO tbl_club(Name, Logo, Played, Points, Won, Lost) VALUES('Rubin','images/resources/team-logo/Rubin.jpg', 23, 39, 12, 8);
-INSERT INTO tbl_club(Name, Logo, Played, Points, Won, Lost) VALUES('Dinamo','images/resources/team-logo/Dinamo.jpg', 23, 38, 12, 9);
-INSERT INTO tbl_club(Name, Logo, Played, Points, Won, Lost) VALUES('Kuban','images/resources/team-logo/Kuban.jpg', 23, 38, 11, 7);
-INSERT INTO tbl_club(Name, Logo, Played, Points, Won, Lost) VALUES('Terek','images/resources/team-logo/Terek.jpg', 23, 34, 10, 9);
-INSERT INTO tbl_club(Name, Logo, Played, Points, Won, Lost) VALUES('Spartak','images/resources/team-logo/Spartak.jpg', 23, 37, 11, 8);
-INSERT INTO tbl_club(Name, Logo, Played, Points, Won, Lost) VALUES('Lokomotiv','images/resources/team-logo/Lokomotiv.jpg', 23, 33, 9, 8);
-INSERT INTO tbl_club(Name, Logo, Played, Points, Won, Lost) VALUES('Krasnodar','images/resources/team-logo/Krasnodar.jpg', 23, 35, 10, 8);
-INSERT INTO tbl_club(Name, Logo, Played, Points, Won, Lost) VALUES('Rostov','images/resources/team-logo/Rostov.jpg', 23, 24, 6, 11);
-INSERT INTO tbl_club(Name, Logo, Played, Points, Won, Lost) VALUES('KrylyaSovetov','images/resources/team-logo/KryliaSovetov.jpg', 23, 17, 4, 14);
-INSERT INTO tbl_club(Name, Logo, Played, Points, Won, Lost) VALUES('Mordovia','images/resources/team-logo/Mordovia.jpg', 23, 16, 4, 15);
-INSERT INTO tbl_club(Name, Logo, Played, Points, Won, Lost) VALUES('Alania','images/resources/team-logo/Alania.jpg', 23, 13, 2, 14);
-INSERT INTO tbl_club(Name, Logo, Played, Points, Won, Lost) VALUES('Amkar','images/resources/team-logo/Amkar.jpg', 23, 24, 6, 11);
-INSERT INTO tbl_club(Name, Logo, Played, Points, Won, Lost) VALUES('Volga','images/resources/team-logo/Volga.jpg', 23, 21, 5, 12);
+INSERT INTO tbl_club(Id, Name, Logo, Played, Points, Won, Lost) VALUES(4,'CSKA','images/resources/team-logo/CSKA.jpg', 23, 55, 18, 4);
+INSERT INTO tbl_club(Id, Name, Logo, Played, Points, Won, Lost) VALUES(16,'Zenit','images/resources/team-logo/Zenit.jpg', 23, 47, 14, 4);
+INSERT INTO tbl_club(Id, Name, Logo, Played, Points, Won, Lost) VALUES(3,'Anzhi','images/resources/team-logo/Anzhi.jpg', 23, 43, 12, 4);
+INSERT INTO tbl_club(Id, Name, Logo, Played, Points, Won, Lost) VALUES(12,'Rubin','images/resources/team-logo/Rubin.jpg', 23, 39, 12, 8);
+INSERT INTO tbl_club(Id, Name, Logo, Played, Points, Won, Lost) VALUES(5,'Dinamo','images/resources/team-logo/Dinamo.jpg', 23, 38, 12, 9);
+INSERT INTO tbl_club(Id, Name, Logo, Played, Points, Won, Lost) VALUES(8,'Kuban','images/resources/team-logo/Kuban.jpg', 23, 38, 11, 7);
+INSERT INTO tbl_club(Id, Name, Logo, Played, Points, Won, Lost) VALUES(14,'Terek','images/resources/team-logo/Terek.jpg', 23, 34, 10, 9);
+INSERT INTO tbl_club(Id, Name, Logo, Played, Points, Won, Lost) VALUES(13,'Spartak','images/resources/team-logo/Spartak.jpg', 23, 37, 11, 8);
+INSERT INTO tbl_club(Id, Name, Logo, Played, Points, Won, Lost) VALUES(9,'Lokomotiv','images/resources/team-logo/Lokomotiv.jpg', 23, 33, 9, 8);
+INSERT INTO tbl_club(Id, Name, Logo, Played, Points, Won, Lost) VALUES(6,'Krasnodar','images/resources/team-logo/Krasnodar.jpg', 23, 35, 10, 8);
+INSERT INTO tbl_club(Id, Name, Logo, Played, Points, Won, Lost) VALUES(11,'Rostov','images/resources/team-logo/Rostov.jpg', 23, 24, 6, 11);
+INSERT INTO tbl_club(Id, Name, Logo, Played, Points, Won, Lost) VALUES(7,'KrylyaSovetov','images/resources/team-logo/KryliaSovetov.jpg', 23, 17, 4, 14);
+INSERT INTO tbl_club(Id, Name, Logo, Played, Points, Won, Lost) VALUES(10,'Mordovia','images/resources/team-logo/Mordovia.jpg', 23, 16, 4, 15);
+INSERT INTO tbl_club(Id, Name, Logo, Played, Points, Won, Lost) VALUES(1,'Alania','images/resources/team-logo/Alania.jpg', 23, 13, 2, 14);
+INSERT INTO tbl_club(Id, Name, Logo, Played, Points, Won, Lost) VALUES(2,'Amkar','images/resources/team-logo/Amkar.jpg', 23, 24, 6, 11);
+INSERT INTO tbl_club(Id, Name, Logo, Played, Points, Won, Lost) VALUES(15,'Volga','images/resources/team-logo/Volga.jpg', 23, 21, 5, 12);
 
 
 INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 23, 2, 5, '2013-04-05 17:00', '');
