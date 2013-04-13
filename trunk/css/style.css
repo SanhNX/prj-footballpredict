@@ -35,15 +35,20 @@ body {
 }
 
 .header .header-container .header-logo {
-    position: absolute;
-    left: 0px;
-    width: 300px;
-    height: 70px;
-    line-height: 28px;
-    text-indent: 10px;
-    color: #FFF;
-    font-family: 'segoe ui light';
-    font-size: 34px;
+	position: absolute;
+	left: 0px;
+	width: 300px;
+	height: 70px;
+	line-height: 28px;
+	text-indent: 10px;
+	color: transparent;
+	font-family: 'segoe ui light';
+	font-size: 34px;
+	background: url('../images/icon/logo-full.png') no-repeat left top;
+	background-size: auto 100%;
+}
+.header .header-container .header-logo span{
+	color: transparent!important;
 }
 
 .header .header-container .header-menu {
@@ -180,6 +185,11 @@ body {
     height: 20px;
     line-height: 20px;
     text-indent: 10px;
+}
+.nav-list .nav-item-logo {
+	height: 80px;
+	background: url("../images/icon/logo.png") no-repeat 40px 10px;
+	background-size: auto 50px;
 }
 
 .nav-list .nav-item a {
@@ -420,13 +430,12 @@ body {
 }
 
 .cover-container-bottom {
-    height: 300px;
-    width: 900px;
-    margin: 0px auto;
-    color: #FFF;
-    font-family: 'Segoe UI light';
-    background: #FFF;
-    background: rgba(255, 255, 255, 0.3);
+	height: 300px;
+	width: 900px;
+	margin: 0px auto;
+	color: #FFF;
+	font-family: 'Segoe UI light';
+	background:url("../images/icon/logo.png")no-repeat center rgba(255, 255, 255, 0.3);
 }
 
 .cover-container-bottom p {
