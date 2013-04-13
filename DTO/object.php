@@ -53,4 +53,8 @@ class Predict{
 	var $MatchId;
 	var $PredictResult;
 }
+
+class Groups{
+	var $ClubId;
+}
 ?>

@@ -97,11 +97,20 @@ create table tbl_facebook
     Scores int
 );
 
-create table tbl_freind
+create table tbl_friend
 (
 	Id int AUTO_INCREMENT primary key not null,
-        idFace1 varchar(30) not null,
-        idFace2 varchar(30) not null
+	idFace1 varchar(30) not null,
+	idFace2 varchar(30) not null
+);
+
+create table tbl_groups
+(
+	Id int AUTO_INCREMENT primary key not null,
+	ClubId int not null,
+	CONSTRAINT FOREIGN KEY(ClubId) references tbl_club(Id),
+	MemberId int,
+	CONSTRAINT FOREIGN KEY(MemberId) references tbl_user(Id)
 );
 
 INSERT INTO tbl_typeleagues(Name) VALUES('Eredivisie');

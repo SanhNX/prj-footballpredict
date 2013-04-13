@@ -11,6 +11,7 @@
         <link rel="SHORTCUT ICON" href="images/icon/logo-head.png"/>
         <script src="scripts/jquery-1.8.3.min.js"></script>
         <script src="scripts/jquery-latest.js"></script>
+        <script type="text/javascript" src="scripts/jquery.numeric.js"></script>
         <script src="scripts/main.js"></script>
         <script src="scripts/ajax-vaildate.js"></script>
         <script src="scripts/ajax-search.js"></script>
@@ -31,18 +32,44 @@
                         <div class="page-cont-title">
                             <span class="cont-title-bold">Groups</span><span class="cont-title-sub">Create new group</span>
                         </div>
+                        <?php
+                        include 'DAO/connection.php';
+                        include 'DTO/object.php';
+                        include 'BLL/poolBll.php';
+                        include 'BLL/predictBll.php';
+                        // ---------------------------------
+                        
+                        $groupsOfUser = getGroupsOfUser($_SESSION['UserId']);
+                        if(count($groupsOfUser) > 0){
+                            echo '<div class="page-cont-title-sub">
+                                    <span class="cont-title-sub">Your groups</span>
+                                    <i class="sub0"></i>
+                                </div>
+                                <div class="grid-wrapper-your-group">
+                                    <ul class="grid-your-group">';
+                            for ($i = 0; $i < count($groupsOfUser); $i++) {
+                                $item = getClub_byId($groupsOfUser[$i]->ClubId);
+                                echo '<li class = "item">';
+                                echo '<div class = "grid-icon-panel">';
+                                echo '<img src = "' . $item->Logo . '"/>';
+                                echo '</div>';
+                                echo '<div class = "grid-item-cap">' . $item->Name . '</div>';
+                                echo '<div class = "grid-item-mess">by Tim</div>';
+                                echo '<a class = "grid-item-button-your-group" href="pool-detail.php">See your rank</a>';
+                                echo '</li>';
+                            }
+                            echo '</ul><span class="join-error"></span></div>';
+                        }
+                        
+                        ?>
                         <div class="page-cont-title-sub">
                             <span class="cont-title-sub">Available groups</span>
                             <i class="sub0"></i>
                         </div>
-                            <div class="popup-input-row"><span>Search</span><input id="txtSearch" name="txtSearch" type="text"/></div>
+                        <div class="popup-input-row"><span>Search</span><input id="txtSearch" name="txtSearch" type="text"/></div>
                         <div class="grid-wrapper">
                             <ul class="grid">
                                 <?php
-                                include 'DAO/connection.php';
-                                include 'DTO/object.php';
-                                include 'BLL/poolBll.php';
-                                // ---------------------------------
                                 $itemList = getClubs("");
                                 for ($i = 0; $i < count($itemList); $i++) {
                                     $item = $itemList[$i];
@@ -52,12 +79,21 @@
                                     echo '</div>';
                                     echo '<div class = "grid-item-cap">' . $item->Name . '</div>';
                                     echo '<div class = "grid-item-mess">by Tim</div>';
-                                    echo '<a class = "grid-item-button" href = "#"> Join</a>';
+                                    $isGroup = groupExist($item->Id, $_SESSION['UserId']);
+                                    if($isGroup == -1)
+                                        echo '<a id="'.$item->Id.'" class = "grid-item-button"  onclick="joingroup('.$item->Id.', '.$_SESSION['UserId'].')"> Join</a>';
+                                    else
+                                        echo '<a id="'.$item->Id.'" class = "grid-item-button disable" > Had Joined</a>';
                                     echo '</li>';
                                 }
                                 ?>
                             </ul>
-
+<!--                            <script type="text/javascript">
+                                for(var i = 0; i < 16 ; i++){
+                                    var id = $(".grid-item-button")[i].id;
+                                    $('#'+id).joingroup();
+                                }
+                            </script>-->
 
                         </div>
                     </div>
