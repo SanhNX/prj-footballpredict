@@ -19,7 +19,7 @@ include '../DAO/connection.php';
 
 function checkExistFriend($idFace1, $idFace2) {
       
-    $sql = "SELECT * FROM  tbl_freind WHERE IdFace1 = '" . $idFace1 . "' AND  IdFace2 = '" . $idFace2 . "'";
+    $sql = "SELECT * FROM  tbl_friend WHERE IdFace1 = '" . $idFace1 . "' AND  IdFace2 = '" . $idFace2 . "'";
     $queryResult = mysql_query($sql);
     if (!$queryResult) {
         echo 'Could not run query: ';
@@ -35,7 +35,7 @@ function checkExistFriend($idFace1, $idFace2) {
 }
 
 function insertFriend($idFace1, $idface2) {
-     $sql = "INSERT INTO tbl_freind 
+     $sql = "INSERT INTO tbl_friend 
                 (IdFace1, IdFace2) 
                 VALUES ('$idFace1', '$idface2')";              
     $queryResult = mysql_query($sql) or die(mysql_error());
