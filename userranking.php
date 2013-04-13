@@ -37,7 +37,7 @@
                             <?php
                             include ("DAO/connection.php");
                             //xac dinh bao nhieu dong
-                            $display = 14;
+                            $display = 15;
                             // tinh tong so trang can hien thi
                             if (isset($_GET['page']) && (int) $_GET['page']) {
                                 $page = $_GET['page'];
@@ -53,20 +53,22 @@
                                 }
                             }
 
-                            $start = (isset($_GET['start']) && (int) $_GET['start'] >= 0) ? $_GET['start'] : 0;
-                            $sql = "SELECT fullname , avatar ,scores
-							FROM tbl_user
-							ORDER BY scores DESC
-							LIMIT $start, $display";
+                            $start = (isset($_GET['start']) && (int) $_GET['start'] >= 0) ? $_GET['start'] : 0;	
+			    $index = $start;
+                           
+                            $sql = "SELECT fullname, avatar, scores
+                                            FROM tbl_user
+                                            UNION ALL 
+                                            SELECT fullname, avatar, scores
+                                            FROM tbl_facebook
+                                            ORDER BY Scores DESC 
+                                            LIMIT $start, $display";
                             $result = mysql_query($sql) or die(mysql_error());
-                            $index = 0;
                             while ($set = mysql_fetch_array($result, MYSQL_ASSOC)) {
                                 $index = $index + 1;
                                 $name = $set['fullname'];
                                 $avatar = $set['avatar'];
                                 $scores = $set['scores'];
-                                if($scores == 0)
-                                    continue;
                                 echo'
 						<li class="user-item">
 							<div class="user-item-rank">

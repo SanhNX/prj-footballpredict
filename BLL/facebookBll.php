@@ -21,10 +21,10 @@ function idFaceExist($id) {
         return -1;
 }
 
-function insertUserFace ($idface){
+function insertUserFace ($idface, $fullname, $avatar){
     $sql = "INSERT INTO tbl_facebook 
-                (IdFaceBook, Scores) 
-                VALUES ('$idface', 0)";              
+                (IdFaceBook, FullName, Avatar, Scores) 
+                VALUES ('$idface', '$fullname', '$avatar', 0)";              
     $queryResult = mysql_query($sql) or die(mysql_error());
     
     if (!$queryResult) {
