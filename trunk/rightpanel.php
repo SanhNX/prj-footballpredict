@@ -7,7 +7,7 @@
         include 'BLL/userBll.php';
 
         echo '<p class="page-cont-label">' . countParticipants() . ' participants</p>';
-        echo '<p class="page-cont-label">' . countPredictions() . ' people predictions</p>';
+        echo '<p class="page-cont-label">' . countPredictions() . ' predictions</p>';
         ?>
     </div>
     <ul class="page-cont-tip-list">
