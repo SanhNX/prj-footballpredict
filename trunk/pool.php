@@ -35,10 +35,7 @@
                             <span class="cont-title-sub">Available groups</span>
                             <i class="sub0"></i>
                         </div>
-                        <!--<form method="POST">-->
                             <div class="popup-input-row"><span>Search</span><input id="txtSearch" name="txtSearch" type="text"/></div>
-                            <!--<input type="submit" name="btnSubmit" value="Search"/>-->
-                        <!--</form>-->
                         <div class="grid-wrapper">
                             <ul class="grid">
                                 <?php
@@ -46,10 +43,6 @@
                                 include 'DTO/object.php';
                                 include 'BLL/poolBll.php';
                                 // ---------------------------------
-//                                if(isset($_POST['btnSubmit'])){
-//                                    $keyword = $_POST['txtSearch'];
-//                                    echo '<script>alert("'.$keyword.'");</script>';
-//                                }
                                 $itemList = getClubs("");
                                 for ($i = 0; $i < count($itemList); $i++) {
                                     $item = $itemList[$i];
