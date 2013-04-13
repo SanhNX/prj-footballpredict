@@ -1,7 +1,7 @@
 <?php
 session_start();
 include 'DAO/connection.php';
-//include 'BLL/userBll.php';
+include 'BLL/facebookBll.php';
 require 'libfacebook/facebook.php';
 require 'libfacebook/fbconfig.php';
 
@@ -25,25 +25,23 @@ if ($user) {
 
 
 
-	$facebook=$_SESSION['facebook'];
-	$userdata=$_SESSION['userdata'];
-	$logoutUrl=$_SESSION['logout'];
-	$access_token_title='fb_'.$facebook_appid.'_access_token';
-	$access_token=$facebook[$access_token_title];
+	$facebook = $_SESSION['facebook'];
+	$userdata = $_SESSION['userdata'];
+	$logoutUrl = $_SESSION['logout'];
+	$access_token_title = 'fb_'.$facebook_appid.'_access_token';
+	$access_token = $facebook[$access_token_title];
 
 
 	if(!empty($userdata)) {
 		$_SESSION['UserName'] = $userdata['name'];
 		$_SESSION['IdFaceBook'] = $userdata['id'];
 		$_SESSION['UserAvatar'] = "https://graph.facebook.com/".$userdata['id']."/picture";
+                
 		$checkExist = idFaceExist($userdata['id']);
+                
 		if ($checkExist < 1) {
-			if ($userdata['gender'] == 'male') {
-				$gender = true;
-			} else {
-				$gender = false;
-			}
-			$resultinsert = insertUserFace($userdata['name'], $userdata['id'], $userdata['birthday'], $gender, $_SESSION['UserAvatar']);
+			
+			$resultinsert = insertUserFace($userdata['id']);
 			if ($resultinsert > 0) {
 				$_SESSION['UserId'] = $resultinsert;
 			}
@@ -52,11 +50,12 @@ if ($user) {
 		}
 		
 		$user = null;
-		//echo '<script> alert('.$userdata['id'].'); </script>';
+                
+		//echo '<script> alert('.$logoutUrl.'); </script>';
 		echo "<script> window.location='result.php'; </script>";
 	}
 }
-else { 
+else {
 	$loginUrl = $facebook->getLoginUrl(array( 'display' => 'popup','scope' => 'email,user_birthday'));
 	echo '<a href="'.$loginUrl.'"><img src="images\icon\facebook.png" title="Login with Facebook" /></a>';
 }
