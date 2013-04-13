@@ -28,10 +28,10 @@
                 <div class="page-container">
                     <div class="page-cont-left">
                         <div class="page-cont-title">
-                            <span class="cont-title-bold">Pools</span><span class="cont-title-sub">Create new pool</span>
+                            <span class="cont-title-bold">Groups</span><span class="cont-title-sub">Create new group</span>
                         </div>
                         <div class="page-cont-title-sub">
-                            <span class="cont-title-sub">Available pools</span>
+                            <span class="cont-title-sub">Available groups</span>
                             <i class="sub0"></i>
                         </div>
                         <div class="popup-input-row"><span>Search</span><input type="text"></div>
