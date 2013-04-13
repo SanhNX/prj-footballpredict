@@ -87,6 +87,20 @@ create table tbl_predict
 	CONSTRAINT FOREIGN KEY(MatchId) references tbl_matchlist(Id)
 );
 
+create table tbl_facebook
+(
+	Id int AUTO_INCREMENT primary key not null,
+	idFacebook varchar(30) not null,
+        Scores int
+);
+
+create table tbl_freind
+(
+	Id int AUTO_INCREMENT primary key not null,
+        idFace1 varchar(30) not null,
+        idFace2 varchar(30) not null
+);
+
 INSERT INTO tbl_typeleagues(Name) VALUES('Eredivisie');
 INSERT INTO tbl_typeleagues(Name) VALUES('Champions League');
 INSERT INTO tbl_typeleagues(Name) VALUES('Top League');
