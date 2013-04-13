@@ -7,7 +7,7 @@
         include 'BLL/userBll.php';
 
         echo '<p class="page-cont-label">' . countParticipants() . ' participants</p>';
-        echo '<p class="page-cont-label">' . countPredictions() . ' predictions</p>';
+        echo '<p class="page-cont-label">' . countPredictions() . ' people predictions</p>';
         ?>
     </div>
     <ul class="page-cont-tip-list">
@@ -24,7 +24,7 @@
             <div class="page-cont-tip-icon"><i class="tip-num">2</i></div>
             <div class="page-cont-tip-info">
                 <div class="page-cont-tip-title">Save your prediction</div>
-                <div class="page-cont-tip-des">Save your prediction by logging in with your Facebook or Twitter account, or by email address
+                <div class="page-cont-tip-des">Save your prediction by logging in with your email address
                 </div>
             </div>
         </li>
@@ -32,7 +32,7 @@
             <div class="page-cont-tip-icon"><i class="tip-num">3</i></div>
             <div class="page-cont-tip-info">
                 <div class="page-cont-tip-title">Challenge and follow!</div>
-                <div class="page-cont-tip-des">Invite your friends, create pools and compete with each other during this Eredivisie season!
+                <div class="page-cont-tip-des">Invite your friends, create groups and compete with each other during this season!
                 </div>
             </div>
         </li>

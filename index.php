@@ -20,11 +20,9 @@
         ?>
         <div class="main">
             <?php
-            include 'headerpanel.php';
+            include 'headerpanelindex.php';
             ?>
             <div class="cover home">
-                <div class="cover-container home">
-                </div>
                 <div class="cover-container-bottom">
                     <p>Choose your competition</p>
                     <span>Challenge your friends in one or more competitions!</span>
@@ -36,34 +34,34 @@
 
 
                         <div class="page-home-frame">
-                            <div class="page-home-frame-item title"><span>Previous competitions on LetsPredict.it</span></div>
+                            <div class="page-home-frame-item title"><span>New Leagues Coming Soon Footballchallenge.me</span></div>
                             <div class="page-home-frame-item link">
                                 <img src="images\resources\team-logo\RussianPremierLeague01.gif">
-                                <span><b>Russian Football Championship 2012-2013</b>
-                                    500.000 participants</span></div>
+                                <span><b></b>
+                                    </span></div>
                             <div class="page-home-frame-item link">
                                 <img src="http://letspredict.it/static/versioned-images/img/landing-page/eurocup-logo-home.c0b4ae6c.png">
-                                <span><b>Euro2012</b>
-                                    240.000 participants</span></div>
+                                <span><b></b>
+                                    </span></div>
                         </div>
                         <div class="page-home-row">
                             <div class="page-home-row-item">
                                 <span><b>Russian Football Championship</b>
-                                    Predict the matches between Ajax, AZ, PSV and the Eredivisie-new-entrant PEC Zwolle!</span>
+                                    Predict the matches between CSKA, Zenit, Anzhi....</span>
 
-                                <div class="page-home-row-btn">Predict Russian Football</div>
+                                <div><a class="page-home-row-btn" href="predict.php">Predict Russian Football</a></div>
                             </div>
                             <div class="page-home-row-item">
-                                <span><b>Top League</b>
-                                    Predict the matches of top teams (such as Manchester United and Barcelona) in English, Italian, Spanish and German leagues.</span>
+                                <span><b></b>
+                                    </span>
 
-                                <div class="page-home-row-btn">Predict Top League</div>
+                                <div class="page-home-row-btn">Coming Soon</div>
                             </div>
                             <div class="page-home-row-item">
-                                <span><b>Champions League</b>
-                                    Alongside of the Dutch football leagues, you can also predict for the Champions League.</span>
+                                <span><b></b>
+								</span>
 
-                                <div class="page-home-row-btn">Predict Champions League</div>
+                                <div class="page-home-row-btn">Coming Soon</div>
                             </div>
                         </div>
                     </div>

@@ -344,6 +344,7 @@ body {
     background: url("../images/bg/btn-red-bg.png") no-repeat center bottom;
     position: absolute;
     bottom: 0px;
+	text-decoration:none;
 }
 
 .page-home-row-btn.faq {
@@ -375,7 +376,7 @@ body {
 }
 
 .cover.home {
-    height: 400px;
+    height: 304px;
 }
 
 .cover.faq {
