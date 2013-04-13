@@ -41,7 +41,7 @@ if ($user) {
                 
 		if ($checkExist < 1) {
 			
-			$resultinsert = insertUserFace($userdata['id']);
+			$resultinsert = insertUserFace($userdata['id'], $userdata['name'], $_SESSION['UserAvatar']);
 			if ($resultinsert > 0) {
 				$_SESSION['UserId'] = $resultinsert;
 			}

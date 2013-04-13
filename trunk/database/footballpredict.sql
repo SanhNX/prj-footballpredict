@@ -91,7 +91,10 @@ create table tbl_facebook
 (
 	Id int AUTO_INCREMENT primary key not null,
 	idFacebook varchar(30) not null,
-        Scores int
+	FullName varchar(100),
+	Avatar varchar(100),
+	FavoriteTeam int,
+    Scores int
 );
 
 create table tbl_freind
