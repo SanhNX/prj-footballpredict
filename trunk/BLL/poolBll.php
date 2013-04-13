@@ -1,7 +1,11 @@
 <?php
 
-function getClubs() {
-    $sql = "SELECT * FROM  tbl_club";
+function getClubs($keyword) {
+    
+    if($keyword != "" || $keyword != 'undefined' || $keyword != null)
+        $sql = "SELECT * FROM  tbl_club Where Name LIKE '%".$keyword."%' ";
+    else
+        $sql = "SELECT * FROM  tbl_club ";
     $queryResult = mysql_query($sql);
     $i = 0;
     $result;
