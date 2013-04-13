@@ -7,7 +7,7 @@
  */
 
 function redirect($url) {
-    window.location='$url';
+    window.location = $url;
 }
 
 $(function() {

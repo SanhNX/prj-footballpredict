@@ -13,6 +13,7 @@
         <script src="scripts/jquery-latest.js"></script>
         <script src="scripts/main.js"></script>
         <script src="scripts/ajax-vaildate.js"></script>
+        <script src="scripts/ajax-search.js"></script>
     </head>
     <body>
         <div class="main">
@@ -34,7 +35,10 @@
                             <span class="cont-title-sub">Available groups</span>
                             <i class="sub0"></i>
                         </div>
-                        <div class="popup-input-row"><span>Search</span><input type="text"></div>
+                        <!--<form method="POST">-->
+                            <div class="popup-input-row"><span>Search</span><input id="txtSearch" name="txtSearch" type="text"/></div>
+                            <!--<input type="submit" name="btnSubmit" value="Search"/>-->
+                        <!--</form>-->
                         <div class="grid-wrapper">
                             <ul class="grid">
                                 <?php
@@ -42,7 +46,11 @@
                                 include 'DTO/object.php';
                                 include 'BLL/poolBll.php';
                                 // ---------------------------------
-                                $itemList = getClubs();
+//                                if(isset($_POST['btnSubmit'])){
+//                                    $keyword = $_POST['txtSearch'];
+//                                    echo '<script>alert("'.$keyword.'");</script>';
+//                                }
+                                $itemList = getClubs("");
                                 for ($i = 0; $i < count($itemList); $i++) {
                                     $item = $itemList[$i];
                                     echo '<li class = "item">';
