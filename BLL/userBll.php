@@ -60,7 +60,7 @@ function insertUser ($name, $email, $pword, $DOB, $gender, $avatar){
 
 
 function countPredictions() {
-    $sql = "SELECT DISTINCT UserId FROM tbl_predict";
+    $sql = "SELECT DISTINCT Id FROM tbl_predict";
     $queryResult = mysql_query($sql);
     
     if (!$queryResult) {
@@ -72,13 +72,15 @@ function countPredictions() {
 }
 function countParticipants() {
     $sql = "SELECT DISTINCT Id FROM tbl_user";
+    $sqlf = "SELECT DISTINCT Id FROM tbl_facebook";
     $queryResult = mysql_query($sql);
+    $queryResultf = mysql_query($sqlf);
     
-    if (!$queryResult) {
-        echo 'Error: ' . $id . mysql_error();
+    if (!$queryResult || !$queryResultf) {
+        echo 'Error: ';
         return -1;
     }
     
-    return mysql_num_rows($queryResult);
+    return (mysql_num_rows($queryResult) + mysql_num_rows($queryResultf));
 }
 ?>
