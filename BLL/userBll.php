@@ -58,39 +58,6 @@ function insertUser ($name, $email, $pword, $DOB, $gender, $avatar){
         return -1;
 }
 
-function idFaceExist($id) {
-    $sql = "SELECT * FROM tbl_user Where IdFaceBook = $id";
-    $queryResult = mysql_query($sql);
-    
-    if (!$queryResult) {
-        echo 'Error: ' . $id . mysql_error();
-        return -1;
-    }
-    
-    if (mysql_num_rows($queryResult) > 0) {
-		return  $seletedItem['Id'];
-	}
-        
-    else
-        return -1;
-}
-
-function insertUserFace ($name, $idface, $DOB, $gender, $avatar){
-    $sql = "INSERT INTO tbl_user 
-                (IdFaceBook, FullName, Avatar, Dob, Gender, Scores) 
-                VALUES ('$idface', '$name', '$avatar', '$DOB', $gender, 0)";              
-    $queryResult = mysql_query($sql) or die(mysql_error());
-    
-    if (!$queryResult) {
-        echo 'Error: ' . $id . mysql_error();
-        return -1;
-    }
-    
-    if ($queryResult)
-        return mysql_insert_id();
-    else
-        return -1;
-}
 
 function countPredictions() {
     $sql = "SELECT DISTINCT UserId FROM tbl_predict";
