@@ -1,7 +1,5 @@
-create database footballpredict;
-use footballpredict;
 
-create table tbl_typeLeagues
+create table tbl_typeleagues
 (
 	Id bigint AUTO_INCREMENT primary key,
 	Name varchar(50) not null
@@ -15,32 +13,6 @@ create table tbl_typeLeagues
 -- TableListOfLeaguesId bigint references tbl_TableList(Id),
 -- primary key(Id, TypeLeaguesId)
 -- );
-
-create table tbl_clubListOfLeagues
-(
-	Id bigint AUTO_INCREMENT primary key not null,
-	TypeLeaguesId bigint not null,	
-	ClubId bigint not null,
-	CONSTRAINT FOREIGN KEY(TypeLeaguesId) references tbl_typeLeagues(Id),
-	CONSTRAINT FOREIGN KEY(ClubId) references tbl_club(Id)
-);
-create table tbl_tableListOfLeagues
-(
-	Id bigint AUTO_INCREMENT not null,
-	TypeLeaguesId bigint not null,
-	TableName varchar(50) not null,
-	CONSTRAINT FOREIGN KEY(TypeLeaguesId) references tbl_typeLeagues(Id),
-	primary key(Id, TypeLeaguesId)
-);
-create table tbl_clubListOfTable
-(
-	Id bigint AUTO_INCREMENT not null,
-	TableListOfLeaguesId bigint not null,	
-	ClubId bigint not null,
-	CONSTRAINT FOREIGN KEY(TableListOfLeaguesId) references tbl_tableListOfLeagues(Id),
-	CONSTRAINT FOREIGN KEY(ClubId) references tbl_club(Id),
-	primary key(Id, TableListOfLeaguesId)
-);
 create table tbl_club
 (
 	Id bigint AUTO_INCREMENT primary key not null,
@@ -51,6 +23,33 @@ create table tbl_club
 	Won bigint,
 	Lost bigint
 );
+
+create table tbl_clublistofleagues
+(
+	Id bigint AUTO_INCREMENT primary key not null,
+	TypeLeaguesId bigint not null,	
+	ClubId bigint not null,
+	CONSTRAINT FOREIGN KEY(TypeLeaguesId) references tbl_typeLeagues(Id),
+	CONSTRAINT FOREIGN KEY(ClubId) references tbl_club(Id)
+);
+create table tbl_tablelistofleagues
+(
+	Id bigint AUTO_INCREMENT not null,
+	TypeLeaguesId bigint not null,
+	TableName varchar(50) not null,
+	CONSTRAINT FOREIGN KEY(TypeLeaguesId) references tbl_typeLeagues(Id),
+	primary key(Id, TypeLeaguesId)
+);
+create table tbl_clublistoftable
+(
+	Id bigint AUTO_INCREMENT not null,
+	TableListOfLeaguesId bigint not null,	
+	ClubId bigint not null,
+	CONSTRAINT FOREIGN KEY(TableListOfLeaguesId) references tbl_tableListOfLeagues(Id),
+	CONSTRAINT FOREIGN KEY(ClubId) references tbl_club(Id),
+	primary key(Id, TableListOfLeaguesId)
+);
+
 create table tbl_matchlist
 (
 	Id bigint AUTO_INCREMENT primary key not null,
@@ -145,16 +144,16 @@ INSERT INTO tbl_clublistofleagues(TypeLeaguesId, ClubId) VALUES(2, 5);
 INSERT INTO tbl_tablelistofleagues(TypeLeaguesId, TableName) VALUES(2, 'A');
 INSERT INTO tbl_tablelistofleagues(TypeLeaguesId, TableName) VALUES(2, 'B');
 
-INSERT INTO tbl_clubListOfTable(TableListOfLeaguesId, ClubId) VALUES(1, 1);
-INSERT INTO tbl_clubListOfTable(TableListOfLeaguesId, ClubId) VALUES(1, 2);
-INSERT INTO tbl_clubListOfTable(TableListOfLeaguesId, ClubId) VALUES(1, 3);
-INSERT INTO tbl_clubListOfTable(TableListOfLeaguesId, ClubId) VALUES(1, 4);
-INSERT INTO tbl_clubListOfTable(TableListOfLeaguesId, ClubId) VALUES(1, 5);
-INSERT INTO tbl_clubListOfTable(TableListOfLeaguesId, ClubId) VALUES(2, 11);
-INSERT INTO tbl_clubListOfTable(TableListOfLeaguesId, ClubId) VALUES(2, 12);
-INSERT INTO tbl_clubListOfTable(TableListOfLeaguesId, ClubId) VALUES(2, 13);
-INSERT INTO tbl_clubListOfTable(TableListOfLeaguesId, ClubId) VALUES(2, 14);
-INSERT INTO tbl_clubListOfTable(TableListOfLeaguesId, ClubId) VALUES(2, 15);
+INSERT INTO tbl_clublistoftable(TableListOfLeaguesId, ClubId) VALUES(1, 1);
+INSERT INTO tbl_clublistoftable(TableListOfLeaguesId, ClubId) VALUES(1, 2);
+INSERT INTO tbl_clublistoftable(TableListOfLeaguesId, ClubId) VALUES(1, 3);
+INSERT INTO tbl_clublistoftable(TableListOfLeaguesId, ClubId) VALUES(1, 4);
+INSERT INTO tbl_clublistoftable(TableListOfLeaguesId, ClubId) VALUES(1, 5);
+INSERT INTO tbl_clublistoftable(TableListOfLeaguesId, ClubId) VALUES(2, 11);
+INSERT INTO tbl_clublistoftable(TableListOfLeaguesId, ClubId) VALUES(2, 12);
+INSERT INTO tbl_clublistoftable(TableListOfLeaguesId, ClubId) VALUES(2, 13);
+INSERT INTO tbl_clublistoftable(TableListOfLeaguesId, ClubId) VALUES(2, 14);
+INSERT INTO tbl_clublistoftable(TableListOfLeaguesId, ClubId) VALUES(2, 15);
 
 INSERT INTO tbl_club(Id, Name, Logo, Played, Pobigints, Won, Lost) VALUES(4,'CSKA','images/resources/team-logo/CSKA.jpg', 23, 55, 18, 4);
 INSERT INTO tbl_club(Id, Name, Logo, Played, Pobigints, Won, Lost) VALUES(16,'Zenit','images/resources/team-logo/Zenit.jpg', 23, 47, 14, 4);

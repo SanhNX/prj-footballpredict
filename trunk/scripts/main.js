@@ -33,8 +33,8 @@ $(function() {
         {
             $.post("logout.php", function(data) {
                 alert("Logout Success !");
-                window.location = $_SESSION['logout'];
-                window.location = 'predict.php';
+                window.location = data;
+		location.reload();
             });
         }
         else
