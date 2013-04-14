@@ -7,10 +7,7 @@ require 'libfacebook/fbconfig.php';
 
 // Connection...
 $user = $facebook->getUser();
-if (!empty($_SESSION['UserId'])) {
-	$user = null;
-}
-if ($user) {
+if($user) {
 	$logoutUrl = $facebook->getLogoutUrl();
 	
 	try {
@@ -36,6 +33,7 @@ if ($user) {
 		$_SESSION['UserName'] = $userdata['name'];
 		$_SESSION['IdFaceBook'] = $userdata['id'];
 		$_SESSION['UserAvatar'] = "https://graph.facebook.com/".$userdata['id']."/picture";
+		$_SESSION['UserId'] = $_SESSION['IdFaceBook'];
                 
 		$checkExist = idFaceExist($userdata['id']);
                 
@@ -52,7 +50,8 @@ if ($user) {
 		$user = null;
                 
 		//echo '<script> alert('.$logoutUrl.'); </script>';
-		echo "<script> window.location='result.php'; </script>";
+		//echo "<script> location.reload(); </script>";
+		
 	}
 }
 else {
