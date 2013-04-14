@@ -90,7 +90,7 @@ create table tbl_predict
 create table tbl_facebook
 (
 	Id int AUTO_INCREMENT primary key not null,
-	idFacebook varchar(30) not null,
+	IdFacebook varchar(30) not null,
 	FullName varchar(100),
 	Avatar varchar(100),
 	FavoriteTeam int,
@@ -100,8 +100,8 @@ create table tbl_facebook
 create table tbl_friend
 (
 	Id int AUTO_INCREMENT primary key not null,
-	idFace1 varchar(30) not null,
-	idFace2 varchar(30) not null
+	IdFace1 varchar(30) not null,
+	IdFace2 varchar(30) not null
 );
 
 create table tbl_groups
