@@ -41,7 +41,7 @@ create table tbl_facebook
     Scores int
 );
 
-create table tbl_friend
+create table tbl_freind
 (
 	Id int AUTO_INCREMENT primary key not null,
 	IdFace1 varchar(30) not null,
