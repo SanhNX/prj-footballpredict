@@ -25,6 +25,7 @@ function login ($email, $pword) {
     return $item;
 }
 
+
 function emailExist($email) {
     $sql = "SELECT * FROM tbl_user Where Email = '".$email."'";
     $queryResult = mysql_query($sql);

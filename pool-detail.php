@@ -26,35 +26,34 @@
             <div class="page">
                 <div class="page-container">
                     <div class="page-cont-left">
-                        <div class="page-cont-title">
-                            <span class="cont-title-bold">Name Of Club</span><span class="cont-title-sub"></span>
-                        </div>
+
                         <?php
                         include 'DAO/connection.php';
                         include 'DTO/object.php';
                         include 'BLL/poolBll.php';
                         include 'BLL/predictBll.php';
                         // ---------------------------------
-
-                        $groupsOfUser = getGroupsOfUser($_SESSION['UserId']);
-                        if (count($groupsOfUser) > 0) {
+                        
+                        if (isset($_REQUEST['clubId'])) {
+                            $item = getClub_byId($_REQUEST['clubId']);
+                            echo '<div class="page-cont-title">
+                                <span class="cont-title-bold">'.$item->Name.'</span><span class="cont-title-sub"></span>
+                            </div>';
                             echo '<div class="page-cont-title-sub">
-                                    <span class="cont-title-sub">Your groups</span>
+                                    <span class="cont-title-sub">Detail of groups</span>
                                     <i class="sub0"></i>
                                 </div>
                                 <div class="grid-wrapper-your-group">
                                     <ul class="grid-your-group">';
-                            for ($i = 0; $i < count($groupsOfUser); $i++) {
-                                $item = getClub_byId($groupsOfUser[$i]->ClubId);
-                                echo '<li class = "item">';
-                                echo '<div class = "grid-icon-panel">';
-                                echo '<img src = "' . $item->Logo . '"/>';
-                                echo '</div>';
-                                echo '<div class = "grid-item-cap">' . $item->Name . '</div>';
-                                echo '<div class = "grid-item-mess">by Tim</div>';
-                                echo '<a class = "grid-item-button-your-group">Leave this group</a>';
-                                echo '</li>';
-                            }
+                            
+                            echo '<li class = "item">';
+                            echo '<div class = "grid-icon-panel">';
+                            echo '<img src = "' . $item->Logo . '"/>';
+                            echo '</div>';
+                            echo '<div class = "grid-item-cap">' . $item->Name . '</div>';
+                            echo '<div class = "grid-item-mess">by Tim</div>';
+                            echo '<a class = "grid-item-button-your-group">Leave this group</a>';
+                            echo '</li>';
                             echo '</ul><span class="join-error"></span><div class="right-content"><div class="group-details">
                                     <p><span class="group-details-label">by</span>
                                         <a href="#">Tim</a>
@@ -65,29 +64,28 @@
                                     </p>
                                     <p>
                                         <span class="group-details-label">Members </span>
-                                        <span class="pool-members-count">10962</span>
+                                        <span class="pool-members-count">' . count(getUsersOfGroup($_REQUEST['clubId'])) . '</span>
                                     </p>
                                     <p class="group-description">Voor alle fans van Ajax.</p>
                                 </div></div></div>';
                         }
                         ?>
                         <div class="page-cont-title-sub">
-                            <span class="cont-title-sub"></span>
+                            <span class="cont-title-sub">Member List</span>
                             <i class="sub0"></i>
                         </div>
 
                         <ul class="user-list">
                             <?php
-                            include ("DAO/connection.php");
                             //xac dinh bao nhieu dong
                             $display = 15;
                             // tinh tong so trang can hien thi
                             if (isset($_GET['page']) && (int) $_GET['page']) {
                                 $page = $_GET['page'];
                             } else { //neu chua xac dinh, thi tim so trang
-                                $query = "SELECT COUNT(id) FROM tbl_user";
-                                $res = mysql_query($query) or die(mysql_error());
-                                $rows = mysql_fetch_array($res);
+                                $itemList = getUsersOfGroup($_REQUEST['clubId']);
+                                $rows = count($itemList);
+//                                echo '<script>alert("'.$rows.'");</script>';
                                 $record = $rows[0];
                                 if ((int) $record > (int) $display) {
                                     $page = ceil($record / $display);
@@ -99,36 +97,27 @@
                             $start = (isset($_GET['start']) && (int) $_GET['start'] >= 0) ? $_GET['start'] : 0;
                             $index = $start;
 
-                            $sql = "SELECT fullname, avatar, scores
-                                            FROM tbl_user
-                                            UNION ALL 
-                                            SELECT fullname, avatar, scores
-                                            FROM tbl_facebook
-                                            ORDER BY Scores DESC 
-                                            LIMIT $start, $display";
-                            $result = mysql_query($sql) or die(mysql_error());
-                            while ($set = mysql_fetch_array($result, MYSQL_ASSOC)) {
+                            for ($i = 0; $i < count($itemList); $i++) {
                                 $index = $index + 1;
-                                $name = $set['fullname'];
-                                $avatar = $set['avatar'];
-                                $scores = $set['scores'];
-                                echo'
-						<li class="user-item">
-							<div class="user-item-rank">
-								' . $index . '
-							</div>
-							<div class="user-item-avatar-panel">
-								<span class="user-avt" style="background-image: url(' . $avatar . ')"></span>
-							</div>
-							<span class="user-item-name">' . $name . '</span>
-							<div class="user-item-score">
-								' . $scores . '
-							</div>
-							<div class="user-item-icon-panel">
-								<img src="resources/img/png1.png"/>
-							</div>
 
-						</li>';
+                                $item = getUser_byId($itemList[$i]->UserId);
+//                                echo '<script>alert("'.$item->FullName.'");</script>';
+                                echo'<li class="user-item">
+                                            <div class="user-item-rank">
+                                                    ' . $index . '
+                                            </div>
+                                            <div class="user-item-avatar-panel">
+                                                    <span class="user-avt" style="background-image: url(' . $item->Avatar . ')"></span>
+                                            </div>
+                                            <span class="user-item-name">' . $item->Name . '</span>
+                                            <div class="user-item-score">
+                                                    ' . $item->Scores . '
+                                            </div>
+                                            <div class="user-item-icon-panel">
+                                                    <img src="resources/img/png1.png"/>
+                                            </div>
+
+                                    </li>';
                             }
                             ?>
                         </ul>
