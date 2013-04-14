@@ -3,23 +3,70 @@ use footballpredict;
 
 create table tbl_typeLeagues
 (
-	Id int AUTO_INCREMENT primary key,
+	Id bigint AUTO_INCREMENT primary key,
 	Name varchar(50) not null
+);
+
+-- create table tbl_leagues  
+-- (
+-- Id bigint AUTO_INCREMENT not null,
+-- TypeLeaguesId bigint references tbl_typeLeagues(Id),
+-- ClubListOfTypeLeaguesId bigint references tbl_clubList(Id),
+-- TableListOfLeaguesId bigint references tbl_TableList(Id),
+-- primary key(Id, TypeLeaguesId)
+-- );
+
+create table tbl_clubListOfLeagues
+(
+	Id bigint AUTO_INCREMENT primary key not null,
+	TypeLeaguesId bigint not null,	
+	ClubId bigint not null,
+	CONSTRAINT FOREIGN KEY(TypeLeaguesId) references tbl_typeLeagues(Id),
+	CONSTRAINT FOREIGN KEY(ClubId) references tbl_club(Id)
+);
+create table tbl_tableListOfLeagues
+(
+	Id bigint AUTO_INCREMENT not null,
+	TypeLeaguesId bigint not null,
+	TableName varchar(50) not null,
+	CONSTRAINT FOREIGN KEY(TypeLeaguesId) references tbl_typeLeagues(Id),
+	primary key(Id, TypeLeaguesId)
+);
+create table tbl_clubListOfTable
+(
+	Id bigint AUTO_INCREMENT not null,
+	TableListOfLeaguesId bigint not null,	
+	ClubId bigint not null,
+	CONSTRAINT FOREIGN KEY(TableListOfLeaguesId) references tbl_tableListOfLeagues(Id),
+	CONSTRAINT FOREIGN KEY(ClubId) references tbl_club(Id),
+	primary key(Id, TableListOfLeaguesId)
 );
 create table tbl_club
 (
-	Id int AUTO_INCREMENT primary key not null,
+	Id bigint AUTO_INCREMENT primary key not null,
 	Name varchar(50) not null,
 	Logo varchar(50) not null,
-	Played int,
-	Points int,
-	Won int,
-	Lost int
+	Played bigint,
+	Pobigints bigint,
+	Won bigint,
+	Lost bigint
 );
-
+create table tbl_matchlist
+(
+	Id bigint AUTO_INCREMENT primary key not null,
+	TypeLeaguesId bigint not null,
+	TourId bigint,
+	ClubA bigint not null,
+	ClubB bigint not null,
+	CONSTRAINT FOREIGN KEY(TypeLeaguesId) references tbl_typeLeagues(Id),
+	CONSTRAINT FOREIGN KEY(ClubA) references tbl_club(Id),
+	CONSTRAINT FOREIGN KEY(ClubB) references tbl_club(Id),
+	StartTime Datetime,
+	Result varchar(10)
+);
 create table tbl_user
 (
-	Id int AUTO_INCREMENT primary key not null,
+	Id bigint AUTO_INCREMENT primary key not null,
 	IdFaceBook varchar(50),
 	Email varchar(50),
 	Password varchar(50),
@@ -27,95 +74,42 @@ create table tbl_user
 	Avatar varchar(50),
 	DOB Datetime,
 	Gender bit,
-	FavoriteTeam int,
-	Scores int
+	FavoriteTeam bigint,
+	Scores bigint
 );
-
-create table tbl_facebook
-(
-	Id int AUTO_INCREMENT primary key not null,
-	IdFacebook varchar(30) not null,
-	FullName varchar(100),
-	Avatar varchar(100),
-	FavoriteTeam int,
-    Scores int
-);
-
-create table tbl_friend
-(
-	Id int AUTO_INCREMENT primary key not null,
-	IdFace1 varchar(30) not null,
-	IdFace2 varchar(30) not null
-);
--- create table tbl_leagues  
--- (
--- Id int AUTO_INCREMENT not null,
--- TypeLeaguesId int references tbl_typeLeagues(Id),
--- ClubListOfTypeLeaguesId int references tbl_clubList(Id),
--- TableListOfLeaguesId int references tbl_TableList(Id),
--- primary key(Id, TypeLeaguesId)
--- );
-
-create table tbl_clubListOfLeagues
-(
-	Id int AUTO_INCREMENT primary key not null,
-	TypeLeaguesId int not null,	
-	ClubId int not null,
-	CONSTRAINT FOREIGN KEY(TypeLeaguesId) references tbl_typeLeagues(Id),
-	CONSTRAINT FOREIGN KEY(ClubId) references tbl_club(Id)
-);
-create table tbl_tableListOfLeagues
-(
-	Id int AUTO_INCREMENT not null,
-	TypeLeaguesId int not null,
-	TableName varchar(50) not null,
-	CONSTRAINT FOREIGN KEY(TypeLeaguesId) references tbl_typeLeagues(Id),
-	primary key(Id, TypeLeaguesId)
-);
-create table tbl_clubListOfTable
-(
-	Id int AUTO_INCREMENT not null,
-	TableListOfLeaguesId int not null,	
-	ClubId int not null,
-	CONSTRAINT FOREIGN KEY(TableListOfLeaguesId) references tbl_tableListOfLeagues(Id),
-	CONSTRAINT FOREIGN KEY(ClubId) references tbl_club(Id),
-	primary key(Id, TableListOfLeaguesId)
-);
-
-create table tbl_matchlist
-(
-	Id int AUTO_INCREMENT primary key not null,
-	TypeLeaguesId int not null,
-	TourId int,
-	ClubA int not null,
-	ClubB int not null,
-	CONSTRAINT FOREIGN KEY(TypeLeaguesId) references tbl_typeLeagues(Id),
-	CONSTRAINT FOREIGN KEY(ClubA) references tbl_club(Id),
-	CONSTRAINT FOREIGN KEY(ClubB) references tbl_club(Id),
-	StartTime Datetime,
-	Result varchar(10)
-);
-
 create table tbl_predict
 (
-	Id int AUTO_INCREMENT primary key not null,
-	UserId int not null,
-	MatchId int not null,
+	Id bigint AUTO_INCREMENT primary key not null,
+	UserId bigint not null,
+	MatchId bigint not null,
 	predictResult varchar(10) not null,
 	CONSTRAINT FOREIGN KEY(UserId) references tbl_user(Id),
 	CONSTRAINT FOREIGN KEY(MatchId) references tbl_matchlist(Id)
 );
 
+create table tbl_facebook
+(
+	Id bigint AUTO_INCREMENT primary key not null,
+	idFacebook varchar(30) not null,
+	FullName varchar(100),
+	Avatar varchar(100),
+	FavoriteTeam bigint,
+    Scores bigint
+);
 
-
-
+create table tbl_friend
+(
+	Id bigint AUTO_INCREMENT primary key not null,
+	idFace1 varchar(30) not null,
+	idFace2 varchar(30) not null
+);
 
 create table tbl_groups
 (
-	Id int AUTO_INCREMENT primary key not null,
-	ClubId int not null,
+	Id bigint AUTO_INCREMENT primary key not null,
+	ClubId bigint not null,
 	CONSTRAINT FOREIGN KEY(ClubId) references tbl_club(Id),
-	MemberId int,
+	MemberId bigint,
 	CONSTRAINT FOREIGN KEY(MemberId) references tbl_user(Id)
 );
 
@@ -124,40 +118,6 @@ INSERT INTO tbl_typeleagues(Name) VALUES('Champions League');
 INSERT INTO tbl_typeleagues(Name) VALUES('Top League');
 INSERT INTO tbl_typeleagues(Name) VALUES('Jupiler League');
 
-INSERT INTO tbl_club(Id, Name, Logo, Played, Points, Won, Lost) VALUES(4,'CSKA','images/resources/team-logo/CSKA.jpg', 23, 55, 18, 4);
-INSERT INTO tbl_club(Id, Name, Logo, Played, Points, Won, Lost) VALUES(16,'Zenit','images/resources/team-logo/Zenit.jpg', 23, 47, 14, 4);
-INSERT INTO tbl_club(Id, Name, Logo, Played, Points, Won, Lost) VALUES(3,'Anzhi','images/resources/team-logo/Anzhi.jpg', 23, 43, 12, 4);
-INSERT INTO tbl_club(Id, Name, Logo, Played, Points, Won, Lost) VALUES(12,'Rubin','images/resources/team-logo/Rubin.jpg', 23, 39, 12, 8);
-INSERT INTO tbl_club(Id, Name, Logo, Played, Points, Won, Lost) VALUES(5,'Dinamo','images/resources/team-logo/Dinamo.jpg', 23, 38, 12, 9);
-INSERT INTO tbl_club(Id, Name, Logo, Played, Points, Won, Lost) VALUES(8,'Kuban','images/resources/team-logo/Kuban.jpg', 23, 38, 11, 7);
-INSERT INTO tbl_club(Id, Name, Logo, Played, Points, Won, Lost) VALUES(14,'Terek','images/resources/team-logo/Terek.jpg', 23, 34, 10, 9);
-INSERT INTO tbl_club(Id, Name, Logo, Played, Points, Won, Lost) VALUES(13,'Spartak','images/resources/team-logo/Spartak.jpg', 23, 37, 11, 8);
-INSERT INTO tbl_club(Id, Name, Logo, Played, Points, Won, Lost) VALUES(9,'Lokomotiv','images/resources/team-logo/Lokomotiv.jpg', 23, 33, 9, 8);
-INSERT INTO tbl_club(Id, Name, Logo, Played, Points, Won, Lost) VALUES(6,'Krasnodar','images/resources/team-logo/Krasnodar.jpg', 23, 35, 10, 8);
-INSERT INTO tbl_club(Id, Name, Logo, Played, Points, Won, Lost) VALUES(11,'Rostov','images/resources/team-logo/Rostov.jpg', 23, 24, 6, 11);
-INSERT INTO tbl_club(Id, Name, Logo, Played, Points, Won, Lost) VALUES(7,'KrylyaSovetov','images/resources/team-logo/KryliaSovetov.jpg', 23, 17, 4, 14);
-INSERT INTO tbl_club(Id, Name, Logo, Played, Points, Won, Lost) VALUES(10,'Mordovia','images/resources/team-logo/Mordovia.jpg', 23, 16, 4, 15);
-INSERT INTO tbl_club(Id, Name, Logo, Played, Points, Won, Lost) VALUES(1,'Alania','images/resources/team-logo/Alania.jpg', 23, 13, 2, 14);
-INSERT INTO tbl_club(Id, Name, Logo, Played, Points, Won, Lost) VALUES(2,'Amkar','images/resources/team-logo/Amkar.jpg', 23, 24, 6, 11);
-INSERT INTO tbl_club(Id, Name, Logo, Played, Points, Won, Lost) VALUES(15,'Volga','images/resources/team-logo/Volga.jpg', 23, 21, 5, 12);
-
-
-INSERT INTO tbl_user(Email, Password, FullName, Avatar, DOB, Gender, FavoriteTeam, Scores) VALUES('justin@gmail.com','123', 'Justin Nguyen', 'images/resources/team-logo/Alania.jpg', '1987-02-23 20:20:20', 1, 1, 20);
-INSERT INTO tbl_user(Email, Password, FullName, Avatar, DOB, Gender, FavoriteTeam, Scores) VALUES('justin@gmail.com','123', 'Justin Nguyen 1', 'images/resources/team-logo/Amkar.jpg', '1987-03-23 20:20:20', 1, 1, 120);
-INSERT INTO tbl_user(Email, Password, FullName, Avatar, DOB, Gender, FavoriteTeam, Scores) VALUES('justin@gmail.com','123', 'Justin Nguyen 2', 'images/resources/team-logo/Anzhi.jpg', '1987-04-23 20:20:20', 1, 1, 220);
-INSERT INTO tbl_user(Email, Password, FullName, Avatar, DOB, Gender, FavoriteTeam, Scores) VALUES('justin@gmail.com','123', 'Justin Nguyen 3', 'images/resources/team-logo/CSKA.jpg', '1987-05-23 20:20:20', 1, 1, 320);
-INSERT INTO tbl_user(Email, Password, FullName, Avatar, DOB, Gender, FavoriteTeam, Scores) VALUES('justin@gmail.com','123', 'Justin Nguyen 4', 'images/resources/team-logo/Dinamo.jpg', '1987-06-23 20:20:20', 1, 1, 1120);
-INSERT INTO tbl_user(Email, Password, FullName, Avatar, DOB, Gender, FavoriteTeam, Scores) VALUES('justin@gmail.com','123', 'Justin Nguyen 5', 'images/resources/team-logo/Krasnodar.jpg', '1987-07-23 20:20:20', 1, 1, 230);
-INSERT INTO tbl_user(Email, Password, FullName, Avatar, DOB, Gender, FavoriteTeam, Scores) VALUES('justin@gmail.com','123', 'Justin Nguyen 6', 'images/resources/team-logo/KryliaSovetov.jpg', '1987-08-23 20:20:20', 1, 1, 520);
-INSERT INTO tbl_user(Email, Password, FullName, Avatar, DOB, Gender, FavoriteTeam, Scores) VALUES('justin@gmail.com','123', 'Justin Nguyen 7', 'images/resources/team-logo/Kuban.jpg', '1987-09-23 20:20:20', 1, 1, 720);
-INSERT INTO tbl_user(Email, Password, FullName, Avatar, DOB, Gender, FavoriteTeam, Scores) VALUES('justin@gmail.com','123', 'Justin Nguyen 8', 'images/resources/team-logo/Lokomotiv.jpg', '1987-10-23 20:20:20', 1, 1, 520);
-INSERT INTO tbl_user(Email, Password, FullName, Avatar, DOB, Gender, FavoriteTeam, Scores) VALUES('justin@gmail.com','123', 'Justin Nguyen 9', 'images/resources/team-logo/Mordovia.jpg', '1987-11-23 20:20:20', 1, 1, 320);
-INSERT INTO tbl_user(Email, Password, FullName, Avatar, DOB, Gender, FavoriteTeam, Scores) VALUES('justin@gmail.com','123', 'Justin Nguyen 10', 'images/resources/team-logo/Rostov.jpg', '1987-12-23 20:20:20', 1, 1, 220);
-INSERT INTO tbl_user(Email, Password, FullName, Avatar, DOB, Gender, FavoriteTeam, Scores) VALUES('justin@gmail.com','123', 'Justin Nguyen 11', 'images/resources/team-logo/Rubin.jpg', '1987-01-24 20:20:20', 1, 1, 120);
-INSERT INTO tbl_user(Email, Password, FullName, Avatar, DOB, Gender, FavoriteTeam, Scores) VALUES('justin@gmail.com','123', 'Justin Nguyen 12', 'images/resources/team-logo/Spartak.jpg', '1987-02-24 20:20:20', 1, 1, 120);
-INSERT INTO tbl_user(Email, Password, FullName, Avatar, DOB, Gender, FavoriteTeam, Scores) VALUES('justin@gmail.com','123', 'Justin Nguyen 13', 'images/resources/team-logo/Terek.jpg', '1987-03-24 20:20:20', 1, 1, 520);
-INSERT INTO tbl_user(Email, Password, FullName, Avatar, DOB, Gender, FavoriteTeam, Scores) VALUES('justin@gmail.com','123', 'Justin Nguyen 14', 'images/resources/team-logo/Volga.jpg', '1987-04-24 20:20:20', 1, 1, 920);
-INSERT INTO tbl_user(Email, Password, FullName, Avatar, DOB, Gender, FavoriteTeam, Scores) VALUES('justin@gmail.com','123', 'Justin Nguyen 15', 'images/resources/team-logo/Zenit.jpg', '1987-05-24 20:20:20', 1, 1, 820);
 
 INSERT INTO tbl_clublistofleagues(TypeLeaguesId, ClubId) VALUES(1, 1);
 INSERT INTO tbl_clublistofleagues(TypeLeaguesId, ClubId) VALUES(1, 2);
@@ -196,7 +156,22 @@ INSERT INTO tbl_clubListOfTable(TableListOfLeaguesId, ClubId) VALUES(2, 13);
 INSERT INTO tbl_clubListOfTable(TableListOfLeaguesId, ClubId) VALUES(2, 14);
 INSERT INTO tbl_clubListOfTable(TableListOfLeaguesId, ClubId) VALUES(2, 15);
 
-
+INSERT INTO tbl_club(Id, Name, Logo, Played, Pobigints, Won, Lost) VALUES(4,'CSKA','images/resources/team-logo/CSKA.jpg', 23, 55, 18, 4);
+INSERT INTO tbl_club(Id, Name, Logo, Played, Pobigints, Won, Lost) VALUES(16,'Zenit','images/resources/team-logo/Zenit.jpg', 23, 47, 14, 4);
+INSERT INTO tbl_club(Id, Name, Logo, Played, Pobigints, Won, Lost) VALUES(3,'Anzhi','images/resources/team-logo/Anzhi.jpg', 23, 43, 12, 4);
+INSERT INTO tbl_club(Id, Name, Logo, Played, Pobigints, Won, Lost) VALUES(12,'Rubin','images/resources/team-logo/Rubin.jpg', 23, 39, 12, 8);
+INSERT INTO tbl_club(Id, Name, Logo, Played, Pobigints, Won, Lost) VALUES(5,'Dinamo','images/resources/team-logo/Dinamo.jpg', 23, 38, 12, 9);
+INSERT INTO tbl_club(Id, Name, Logo, Played, Pobigints, Won, Lost) VALUES(8,'Kuban','images/resources/team-logo/Kuban.jpg', 23, 38, 11, 7);
+INSERT INTO tbl_club(Id, Name, Logo, Played, Pobigints, Won, Lost) VALUES(14,'Terek','images/resources/team-logo/Terek.jpg', 23, 34, 10, 9);
+INSERT INTO tbl_club(Id, Name, Logo, Played, Pobigints, Won, Lost) VALUES(13,'Spartak','images/resources/team-logo/Spartak.jpg', 23, 37, 11, 8);
+INSERT INTO tbl_club(Id, Name, Logo, Played, Pobigints, Won, Lost) VALUES(9,'Lokomotiv','images/resources/team-logo/Lokomotiv.jpg', 23, 33, 9, 8);
+INSERT INTO tbl_club(Id, Name, Logo, Played, Pobigints, Won, Lost) VALUES(6,'Krasnodar','images/resources/team-logo/Krasnodar.jpg', 23, 35, 10, 8);
+INSERT INTO tbl_club(Id, Name, Logo, Played, Pobigints, Won, Lost) VALUES(11,'Rostov','images/resources/team-logo/Rostov.jpg', 23, 24, 6, 11);
+INSERT INTO tbl_club(Id, Name, Logo, Played, Pobigints, Won, Lost) VALUES(7,'KrylyaSovetov','images/resources/team-logo/KryliaSovetov.jpg', 23, 17, 4, 14);
+INSERT INTO tbl_club(Id, Name, Logo, Played, Pobigints, Won, Lost) VALUES(10,'Mordovia','images/resources/team-logo/Mordovia.jpg', 23, 16, 4, 15);
+INSERT INTO tbl_club(Id, Name, Logo, Played, Pobigints, Won, Lost) VALUES(1,'Alania','images/resources/team-logo/Alania.jpg', 23, 13, 2, 14);
+INSERT INTO tbl_club(Id, Name, Logo, Played, Pobigints, Won, Lost) VALUES(2,'Amkar','images/resources/team-logo/Amkar.jpg', 23, 24, 6, 11);
+INSERT INTO tbl_club(Id, Name, Logo, Played, Pobigints, Won, Lost) VALUES(15,'Volga','images/resources/team-logo/Volga.jpg', 23, 21, 5, 12);
 
 
 INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 23, 2, 5, '2013-04-05 17:00', '');
@@ -271,3 +246,20 @@ INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result
 INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 30, 14, 7, '2013-05-26 18:30', '');
 INSERT INTO tbl_matchlist(TypeLeaguesId, TourId, ClubA, ClubB, StartTime, Result) VALUES(1, 30, 12, 6, '2013-05-26 19:00', '');
 
+
+INSERT INTO tbl_user(Email, Password, FullName, Avatar, DOB, Gender, FavoriteTeam, Scores) VALUES('justin@gmail.com','123', 'Justin Nguyen', 'images/resources/team-logo/Alania.jpg', '1987-02-23 20:20:20', 1, 1, 20);
+INSERT INTO tbl_user(Email, Password, FullName, Avatar, DOB, Gender, FavoriteTeam, Scores) VALUES('justin@gmail.com','123', 'Justin Nguyen 1', 'images/resources/team-logo/Amkar.jpg', '1987-03-23 20:20:20', 1, 1, 120);
+INSERT INTO tbl_user(Email, Password, FullName, Avatar, DOB, Gender, FavoriteTeam, Scores) VALUES('justin@gmail.com','123', 'Justin Nguyen 2', 'images/resources/team-logo/Anzhi.jpg', '1987-04-23 20:20:20', 1, 1, 220);
+INSERT INTO tbl_user(Email, Password, FullName, Avatar, DOB, Gender, FavoriteTeam, Scores) VALUES('justin@gmail.com','123', 'Justin Nguyen 3', 'images/resources/team-logo/CSKA.jpg', '1987-05-23 20:20:20', 1, 1, 320);
+INSERT INTO tbl_user(Email, Password, FullName, Avatar, DOB, Gender, FavoriteTeam, Scores) VALUES('justin@gmail.com','123', 'Justin Nguyen 4', 'images/resources/team-logo/Dinamo.jpg', '1987-06-23 20:20:20', 1, 1, 1120);
+INSERT INTO tbl_user(Email, Password, FullName, Avatar, DOB, Gender, FavoriteTeam, Scores) VALUES('justin@gmail.com','123', 'Justin Nguyen 5', 'images/resources/team-logo/Krasnodar.jpg', '1987-07-23 20:20:20', 1, 1, 230);
+INSERT INTO tbl_user(Email, Password, FullName, Avatar, DOB, Gender, FavoriteTeam, Scores) VALUES('justin@gmail.com','123', 'Justin Nguyen 6', 'images/resources/team-logo/KryliaSovetov.jpg', '1987-08-23 20:20:20', 1, 1, 520);
+INSERT INTO tbl_user(Email, Password, FullName, Avatar, DOB, Gender, FavoriteTeam, Scores) VALUES('justin@gmail.com','123', 'Justin Nguyen 7', 'images/resources/team-logo/Kuban.jpg', '1987-09-23 20:20:20', 1, 1, 720);
+INSERT INTO tbl_user(Email, Password, FullName, Avatar, DOB, Gender, FavoriteTeam, Scores) VALUES('justin@gmail.com','123', 'Justin Nguyen 8', 'images/resources/team-logo/Lokomotiv.jpg', '1987-10-23 20:20:20', 1, 1, 520);
+INSERT INTO tbl_user(Email, Password, FullName, Avatar, DOB, Gender, FavoriteTeam, Scores) VALUES('justin@gmail.com','123', 'Justin Nguyen 9', 'images/resources/team-logo/Mordovia.jpg', '1987-11-23 20:20:20', 1, 1, 320);
+INSERT INTO tbl_user(Email, Password, FullName, Avatar, DOB, Gender, FavoriteTeam, Scores) VALUES('justin@gmail.com','123', 'Justin Nguyen 10', 'images/resources/team-logo/Rostov.jpg', '1987-12-23 20:20:20', 1, 1, 220);
+INSERT INTO tbl_user(Email, Password, FullName, Avatar, DOB, Gender, FavoriteTeam, Scores) VALUES('justin@gmail.com','123', 'Justin Nguyen 11', 'images/resources/team-logo/Rubin.jpg', '1987-01-24 20:20:20', 1, 1, 120);
+INSERT INTO tbl_user(Email, Password, FullName, Avatar, DOB, Gender, FavoriteTeam, Scores) VALUES('justin@gmail.com','123', 'Justin Nguyen 12', 'images/resources/team-logo/Spartak.jpg', '1987-02-24 20:20:20', 1, 1, 120);
+INSERT INTO tbl_user(Email, Password, FullName, Avatar, DOB, Gender, FavoriteTeam, Scores) VALUES('justin@gmail.com','123', 'Justin Nguyen 13', 'images/resources/team-logo/Terek.jpg', '1987-03-24 20:20:20', 1, 1, 520);
+INSERT INTO tbl_user(Email, Password, FullName, Avatar, DOB, Gender, FavoriteTeam, Scores) VALUES('justin@gmail.com','123', 'Justin Nguyen 14', 'images/resources/team-logo/Volga.jpg', '1987-04-24 20:20:20', 1, 1, 920);
+INSERT INTO tbl_user(Email, Password, FullName, Avatar, DOB, Gender, FavoriteTeam, Scores) VALUES('justin@gmail.com','123', 'Justin Nguyen 15', 'images/resources/team-logo/Zenit.jpg', '1987-05-24 20:20:20', 1, 1, 820);
