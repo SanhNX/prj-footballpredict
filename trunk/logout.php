@@ -7,6 +7,7 @@ if(isset($_SESSION['UserName'])){
     unset($_SESSION['UserName']);
     unset($_SESSION['UserAvatar']);
 	unset($_SESSION['IdFaceBook']);
+	unset($_SESSION['FlagReload']);
 	session_destroy();
 }
 echo $_SESSION['logout'];
