@@ -54,7 +54,10 @@ class Predict{
 	var $PredictResult;
 }
 
-class Groups{
+class GroupsListOfUser{
 	var $ClubId;
+}
+class UsersListOFGroup{
+	var $UserId;
 }
 ?>

@@ -1,5 +1,36 @@
 <?php
-
+function getUser_byId($id) {
+    $sql = "SELECT * FROM tbl_user WHERE Id = '".$id."' ";
+    $queryResult = mysql_query($sql) or die ("Couldn't execute query.");
+    if (!$queryResult) {
+        echo 'Could not run query: ' . $id . mysql_error();
+        exit;
+    }
+    $seletedItem = mysql_fetch_array($queryResult);
+    $item = new User();
+    $item->Email = $seletedItem['Email'];
+    $item->FullName = $seletedItem['FullName'];
+    $item->Avatar = $seletedItem['Avatar'];
+    $item->DOB = $seletedItem['DOB'];
+    $item->Gender = $seletedItem['Gender'];
+    $item->FavoriteTeam = $seletedItem['FavoriteTeam'];
+    $item->Scores = $seletedItem['Scores'];
+    return $item;
+}
+function getUsersOfGroup($clubId) {
+    
+    $sql = "SELECT * FROM  tbl_groups where ClubId = '".$clubId."' ";
+    $queryResult = mysql_query($sql);
+    $i = 0;
+    $result;
+    while ($seletedItem = mysql_fetch_array($queryResult)) {
+        $item = new UsersListOFGroup();
+        $item->UserId = $seletedItem['MemberId'];
+        $result[$i] = $item;
+        $i++;
+    }
+    return $result;
+}
 function getGroupsOfUser($userId) {
     
     $sql = "SELECT * FROM  tbl_groups where MemberId = '".$userId."' ";
@@ -7,7 +38,7 @@ function getGroupsOfUser($userId) {
     $i = 0;
     $result;
     while ($seletedItem = mysql_fetch_array($queryResult)) {
-        $item = new Groups();
+        $item = new GroupsListOfUser();
         $item->ClubId = $seletedItem['ClubId'];
 
         $result[$i] = $item;

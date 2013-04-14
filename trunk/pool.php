@@ -55,7 +55,7 @@
                                 echo '</div>';
                                 echo '<div class = "grid-item-cap">' . $item->Name . '</div>';
                                 echo '<div class = "grid-item-mess">by Tim</div>';
-                                echo '<a class = "grid-item-button-your-group" href="pool-detail.php">See your rank</a>';
+                                echo '<a class = "grid-item-button-your-group" href="pool-detail.php?clubId='.$groupsOfUser[$i]->ClubId.'">See your rank</a>';
                                 echo '</li>';
                             }
                             echo '</ul><span class="join-error"></span></div>';
