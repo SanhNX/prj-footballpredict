@@ -50,7 +50,11 @@ if($user) {
 		$user = null;
                 
 		//echo '<script> alert('.$logoutUrl.'); </script>';
-		//echo "<script> location.reload(); </script>";
+		if(!isset($_SESSION['FlagReload'])) {
+			echo "<script> location.reload(); </script>";
+			$_SESSION['FlagReload'] = 1;
+		}
+		
 		
 	}
 }
