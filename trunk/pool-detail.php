@@ -12,6 +12,7 @@
         <script src="scripts/jquery-latest.js"></script>
         <script src="scripts/main.js"></script>
         <script src="scripts/ajax-vaildate.js"></script>
+        <script src="scripts/ajax-search.js"></script>
     </head>
     <body>
         <div class="main">
@@ -52,9 +53,9 @@
                             echo '</div>';
                             echo '<div class = "grid-item-cap">' . $item->Name . '</div>';
                             echo '<div class = "grid-item-mess">by Tim</div>';
-                            echo '<a class = "grid-item-button-your-group">Leave this group</a>';
+                            echo '<a class = "grid-item-button-your-group" onclick="leavegroup('.$_REQUEST['clubId'].', '.$_SESSION['UserId'].')">Leave this group</a>';
                             echo '</li>';
-                            echo '</ul><span class="join-error"></span><div class="right-content"><div class="group-details">
+                            echo '</ul><span class="detail-group-error"></span><div class="right-content"><div class="group-details">
                                     <p><span class="group-details-label">by</span>
                                         <a href="#">Tim</a>
                                     </p>

@@ -35,3 +35,28 @@ function joingroup($clubId, $userId) {
         }
     });
 }
+function leavegroup($clubId, $userId) {
+    var str_string = 'clubId=' + $clubId + '&userId=' + $userId;
+    var r = confirm("Do you want to leave this group ?");
+    if (r == true)
+    {
+        $.ajax({
+            type: "POST",
+            url: "./BLL/leave-groupBll.php",
+            data: str_string,
+            cache: false,
+            success: function(dto) {
+                dto = dto.trim();
+                if (dto == "true")
+                    redirect('pool.php');
+                else
+                    $(".detail-group-error").html('<i></i> This action had been interrupted !');
+            }
+        });
+    }
+    else
+    {
+//            alert("You pressed Cancel!")
+    }
+
+}
