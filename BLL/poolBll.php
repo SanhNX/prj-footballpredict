@@ -80,6 +80,15 @@ function insertGroup ($clubId, $userId){
     }else
         return -1;
 }
+function leavegroup($clubId, $userId) {
+    $sql = "DELETE FROM tbl_groups WHERE ClubId = '".$clubId."'  AND MemberId = '".$userId."' ";
+    $queryResult = mysql_query($sql);
+    if (!$queryResult) {
+        return -1;
+    } else {
+        return 1;
+    }
+}
 
 function getClubs($keyword) {
     

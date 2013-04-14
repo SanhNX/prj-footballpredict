@@ -93,6 +93,22 @@
     background: url("../images/icon/warning-ico.png") no-repeat;
     margin-left: 5px;
 }
+.detail-group-error {
+    position: absolute;
+    top: 250px;
+    display: block;
+    font-size: 13px;
+    font-style: italic;
+    color: rgb(245, 235, 0);
+    text-indent: 160px;
+}
+.detail-group-error i {
+    display: inline-block;
+    width: 14px;
+    height: 13px;
+    background: url("../images/icon/warning-ico.png") no-repeat;
+    margin-left: 5px;
+}
 .right-content {
     width: 465px;
     height: 210px;
