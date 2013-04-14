@@ -43,10 +43,10 @@ if ($user) {
 			
 			$resultinsert = insertUserFace($userdata['id'], $userdata['name'], $_SESSION['UserAvatar']);
 			if ($resultinsert > 0) {
-				$_SESSION['UserId'] = $resultinsert;
+				$_SESSION['UserId'] = $_SESSION['IdFaceBook'];
 			}
 		} else {
-			$_SESSION['UserId'] = $checkExist;
+			$_SESSION['UserId'] = $_SESSION['IdFaceBook'];
 		}
 		
 		$user = null;
