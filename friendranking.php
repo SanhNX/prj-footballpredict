@@ -26,7 +26,7 @@
                 <div class="page-container">
                     <div class="page-cont-left">
                         <div class="page-cont-title">
-                            <span class="cont-title-bold">Freind</span><span class="cont-title-sub"></span>
+                            <span class="cont-title-bold">Friend</span><span class="cont-title-sub"></span>
                         </div>
                         <div class="page-cont-title-sub">
                             <span class="cont-title-sub"></span>
@@ -49,7 +49,7 @@
                                                 SELECT A.fullname, A.avatar, A.scores 
                                                 FROM
                                                     tbl_facebook AS A JOIN 
-                                                    (SELECT IdFace2 FROM tbl_freind WHERE IdFace1 = '".$_SESSION['IdFaceBook']."') AS B
+                                                    (SELECT IdFace2 FROM tbl_friend WHERE IdFace1 = '".$_SESSION['IdFaceBook']."') AS B
                                                     ON A.IdFaceBook = B.IdFace2 ";
                                     $res = mysql_query($query) or die(mysql_error());
                                     $rows = mysql_fetch_array($res);
@@ -69,7 +69,7 @@
                                                 SELECT A.fullname, A.avatar, A.scores 
                                                 FROM
                                                     tbl_facebook AS A JOIN 
-                                                    (SELECT IdFace2 FROM tbl_freind WHERE IdFace1 = '".$_SESSION['IdFaceBook']."') AS B
+                                                    (SELECT IdFace2 FROM tbl_friend WHERE IdFace1 = '".$_SESSION['IdFaceBook']."') AS B
                                                     ON A.IdFaceBook = B.IdFace2 
                                                 ORDER BY scores DESC 
                                                 LIMIT $start, $display";
@@ -164,14 +164,14 @@
 
                                 //Hien thi trang Previous
                                 if ($current != 1) {
-                                    //echo "<li><a href='userranking.php?start=$prev&page=$page'>Previous</a></li>";
+                                    //echo "<li><a href='friendranking.php?start=$prev&page=$page'>Previous</a></li>";
 //                                    echo'<div class="page-cont-button" id="page-cont-button-next"></div>';
                                 }
                                 //Hien thi so link
                                 for ($i = 1; $i <= $page; $i++) {
                                     if ($current != $i) {
-                                        //echo "<li><a href='userranking.php?start=".($display*($i-1))."&page=$page'>$i</a></li>";
-                                        echo'<a class="btn-page" href="userranking.php?start=' . ($display * ($i - 1)) . '&page=' . $page . '">' . $i . '</a>';
+                                        //echo "<li><a href='friendranking.php?start=".($display*($i-1))."&page=$page'>$i</a></li>";
+                                        echo'<a class="btn-page" href="friendranking.php?start=' . ($display * ($i - 1)) . '&page=' . $page . '">' . $i . '</a>';
                                     } else {
                                         echo '<a class="btn-page active" >' . $i . '</a>';
                                     }
@@ -179,7 +179,7 @@
                                 //Hien thi trang Next
 
                                 if ($current != $page) {
-                                    //echo "<li><a href='userranking.php?start=$next&page=$page'>Next</a></li>";
+                                    //echo "<li><a href='friendranking.php?start=$next&page=$page'>Next</a></li>";
 //                                    echo'<div class="page-cont-button" id="page-cont-button-prev"></div>';
                                 }
                             }//End: $page > 1 IF
