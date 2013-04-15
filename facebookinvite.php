@@ -25,6 +25,7 @@
 				var receiverUserIds = FB.ui({ 
                                 method : 'apprequests',
                                 message: 'Your Welcome http://FoolBallChallenge.me',
+								display: 'popup',
 								 },
 				function(receiverUserIds) {
 				var myCars=new Array(); 
