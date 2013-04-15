@@ -8,7 +8,8 @@ require 'libfacebook/fbconfig.php';
 // Connection...
 $user = $facebook->getUser();
 if($user) {
-	$logoutUrl = $facebook->getLogoutUrl();
+	$params = array( 'next' => 'http://www.//footballchallenge.me/' );
+	$logoutUrl = $facebook->getLogoutUrl($params);
 	
 	try {
 		$userdata = $facebook->api('/me');

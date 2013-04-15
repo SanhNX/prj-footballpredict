@@ -8,6 +8,11 @@
 
         echo '<p class="page-cont-label">' . countParticipants() . ' participants</p>';
         echo '<p class="page-cont-label">' . countPredictions() . ' predictions</p>';
+		if(isset($_SESSION['IdFaceBook'])) { 
+			echo '<p class="page-cont-label">';include 'facebookinvite.php'; echo'</p>';
+        }
+		
+		
         ?>
     </div>
     <ul class="page-cont-tip-list">
