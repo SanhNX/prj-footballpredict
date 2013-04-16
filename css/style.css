@@ -1311,7 +1311,7 @@ textarea{
 	clear: both;
 }
 .popup-input-check-row {
-	height: 30px;
+	height: 50px;
 	margin: 0px 10px;
 	color: #FFF;
 }
@@ -1328,9 +1328,26 @@ textarea{
 	color: #FFF;
 	border: 0px;
 	font-size: 16px;
+	position: relative;
 }.popup-btn-upload:hover {
 	 background: url('../images/bg/login-btn.png') no-repeat center top;
  }
+.popup-btn-upload input{
+	opacity: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 10;
+	position: absolute;
+	display: block;
+}
+.popup-btn-upload span{
+	width: 100%;
+	height: 100%;
+	z-index: 10;
+	position: absolute;
+	display: block;
+	background: url('../images/icon/photo-ico.png') no-repeat 30px center;
+}
 
 .popup-create-pool-info .popup-input-row {
 	background: url('../images/bg/pool-name-input.png') no-repeat;
