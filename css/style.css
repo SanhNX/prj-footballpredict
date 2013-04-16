@@ -472,6 +472,22 @@ body {
     color: #4E4E4E;
 
 }
+.page-cont-title .cont-title-button {
+	background: url('../images/bg/btn-create-bg.png') no-repeat top center;
+	text-decoration: none;
+	color: #FFF;
+	float: right;
+	height: 100%;
+	width: 160px;
+	text-align: right;
+	padding: 0px 10px;
+	cursor: pointer;
+	font-size: 13px;
+	line-height: 30px;
+}
+.page-cont-title .cont-title-button:hover {
+	background: url('../images/bg/btn-create-bg.png') no-repeat bottom center;
+}
 
 .page-cont-title-sub {
     height: 27px;
