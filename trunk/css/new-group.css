@@ -1,0 +1,145 @@
+
+
+/*CREATE NEW POOL - POPUP*/
+.popup-create-pool-info {
+	height: 230px;
+	width: 390px;
+	overflow: hidden;
+	float: left;
+}
+
+.popup-create-pool-group {
+	height: 230px;
+	float: left;
+	width: 240px;
+}
+.popup-create-pool-group-avt {
+	height: 170px;
+	line-height: 165px;
+	width: 240px;
+	text-align: center;
+	background: url("../images/bg/pool-avt-bg.png") no-repeat center;
+}
+.popup-create-pool-img {
+	padding: 0;
+	background: no-repeat center;
+	-webkit-border-radius: 90px;
+	-moz-border-radius: 90px;
+	border-radius: 90px;
+	height: 135px;
+	width: 135px;
+	vertical-align: middle;
+	display: inline-block;
+	background-image: url("../images/icon/default-pool-avt-bg.png");
+}
+.popup-control-row {
+	clear: both;
+}
+.popup-input-check-row {
+	height: 50px;
+	margin: 0px 10px;
+	color: #FFF;
+}
+.popup-btn-upload {
+	display: block;
+	margin: auto;
+	width: 222px;
+	height: 51px;
+	line-height: 51px;
+	text-align: center;
+	font-weight: bold;
+	background: url('../images/bg/login-btn.png') no-repeat center bottom;
+	text-decoration: none;
+	color: #FFF;
+	border: 0px;
+	font-size: 16px;
+	position: relative;
+}.popup-btn-upload:hover {
+	 background: url('../images/bg/login-btn.png') no-repeat center top;
+ }
+.popup-btn-upload input{
+	opacity: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 10;
+	position: absolute;
+	display: block;
+}
+.popup-btn-upload span{
+	width: 100%;
+	height: 100%;
+	z-index: 10;
+	position: absolute;
+	display: block;
+	background: url('../images/icon/photo-ico.png') no-repeat 30px center;
+}
+
+.popup-create-pool-info .popup-input-row {
+	background: url('../images/bg/pool-name-input.png') no-repeat;
+	width: 370px;
+}
+
+.popup-create-pool-info .popup-input-row input {
+	width: 230px;
+}
+
+.popup-create-pool-info .popup-area-row {
+	margin: 10px auto;
+	width: 480px;
+	height: 161px;
+	background: url('../images/bg/pool-des-input.png') no-repeat;
+	width: 370px;
+}
+
+.popup-create-pool-info .popup-area-row span {
+	display: block;
+	vertical-align: middle;
+	height: 41px;
+	line-height: 41px;
+	width: 180px;
+	color: #FFF;
+	text-align: center;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+.popup-create-pool-info .popup-area-row textarea  {
+	width: 370px;
+	height: 120px;
+	font-size: 20px;
+	line-height: 28px;
+	vertical-align: middle;
+	border: none;
+	background: none;
+	color: #B3B3B3;
+	font-family: 'Segoe UI';
+	text-indent: 5px;
+	margin: 0;
+	padding: 0;
+}
+
+
+input[type=checkbox].css-checkbox {
+	display:none;
+}
+
+input[type=checkbox].css-checkbox + label.css-label {
+	padding-left:20px;
+	height:21px;
+	display:inline-block;
+	line-height:21px;
+	background-repeat:no-repeat;
+	background-position: 0 -21px;
+	font-size:15px;
+	vertical-align:middle;
+	cursor:pointer;
+	text-indent: 10px;
+}
+
+input[type=checkbox].css-checkbox:checked + label.css-label {
+	background-position: 0 0;
+}
+
+.css-label{
+	background-image:url('../images/bg/pool-check-bg.png');
+}
