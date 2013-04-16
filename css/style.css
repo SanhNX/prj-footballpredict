@@ -35,20 +35,20 @@ body {
 }
 
 .header .header-container .header-logo {
-	position: absolute;
-	left: 0px;
-	width: 300px;
-	height: 70px;
-	line-height: 28px;
-	text-indent: 10px;
-	color: transparent;
-	font-family: 'segoe ui light';
-	font-size: 34px;
-	background: url('../images/icon/logo-full.png') no-repeat left top;
-	background-size: auto 100%;
+    position: absolute;
+    left: 0px;
+    width: 300px;
+    height: 70px;
+    line-height: 28px;
+    text-indent: 10px;
+    color: transparent;
+    font-family: 'segoe ui light';
+    font-size: 34px;
+    background: url('../images/icon/logo-full.png') no-repeat left top;
+    background-size: auto 100%;
 }
 .header .header-container .header-logo span{
-	color: transparent!important;
+    color: transparent!important;
 }
 
 .header .header-container .header-menu {
@@ -187,9 +187,9 @@ body {
     text-indent: 10px;
 }
 .nav-list .nav-item-logo {
-	height: 80px;
-	background: url("../images/icon/logo.png") no-repeat 40px 10px;
-	background-size: auto 50px;
+    height: 80px;
+    background: url("../images/icon/logo.png") no-repeat 40px 10px;
+    background-size: auto 50px;
 }
 
 .nav-list .nav-item a {
@@ -430,12 +430,12 @@ body {
 }
 
 .cover-container-bottom {
-	height: 300px;
-	width: 900px;
-	margin: 0px auto;
-	color: #FFF;
-	font-family: 'Segoe UI light';
-	background:url("../images/icon/logo.png")no-repeat center rgba(255, 255, 255, 0.3);
+    height: 300px;
+    width: 900px;
+    margin: 0px auto;
+    color: #FFF;
+    font-family: 'Segoe UI light';
+    background:url("../images/icon/logo.png")no-repeat center rgba(255, 255, 255, 0.3);
 }
 
 .cover-container-bottom p {
@@ -472,7 +472,22 @@ body {
     color: #4E4E4E;
 
 }
-
+.page-cont-title .cont-title-button {
+	background: url('../images/bg/btn-create-bg.png') no-repeat top center;
+	text-decoration: none;
+	color: #FFF;
+	float: right;
+	height: 100%;
+	width: 160px;
+	text-align: right;
+	padding: 0px 10px;
+	cursor: pointer;
+	font-size: 13px;
+	line-height: 30px;
+}
+.page-cont-title .cont-title-button:hover {
+	background: url('../images/bg/btn-create-bg.png') no-repeat bottom center;
+}
 .page-cont-title-sub {
     height: 27px;
     line-height: 24px;
@@ -962,6 +977,26 @@ input::-webkit-inner-spin-button {
 }
 
 /*POPUP*/
+textarea{
+    display: inline-block;
+    width: 335px;
+    height: 110px;
+    padding: 4px;
+    margin-bottom: 9px;
+    font-size: 13px;
+    line-height: 18px;
+    background: none;
+    font-family: 'Segoe UI';
+    text-indent: 5px;
+    color: #B3B3B3;
+    border: none;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
 .popup {
     position: fixed;
     top: 0;
@@ -971,7 +1006,7 @@ input::-webkit-inner-spin-button {
     z-index: 500;
 }
 
-.popup .popup-container {
+.popup .popup-container,.create-group-popup-container {
     width: 630px;
     height: 392px;
     margin: 100px auto 0px auto;
@@ -1024,6 +1059,12 @@ input::-webkit-inner-spin-button {
     height: 41px;
     background: url('../images/bg/input-bg.png') no-repeat;
 }
+.popup-textarea-row {
+    margin: 10px auto;
+    width: 480px;
+    height: 123px;
+    background: url('../images/bg/textarea-bg.png') no-repeat;
+}
 
 .popup-btn-row {
     margin: 10px auto;
@@ -1036,6 +1077,16 @@ input::-webkit-inner-spin-button {
     vertical-align: middle;
     height: 41px;
     line-height: 41px;
+    width: 135px;
+    color: #FFF;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+.popup-textarea-row span {
+    display: inline-block;
+    vertical-align: middle;
+    height: 150px;
     width: 135px;
     color: #FFF;
     text-align: center;
@@ -1057,6 +1108,33 @@ input::-webkit-inner-spin-button {
     border: 0px;
     font-size: 16px;
 }
+.popup-btn-row .popup-btn-create {
+    display: block;
+    float: right;
+    width: 222px;
+    height: 51px;
+    line-height: 51px;
+    text-align: center;
+    font-weight: bold;
+    background: url('../images/bg/login-btn.png') no-repeat center bottom;
+    text-decoration: none;
+    color: #FFF;
+    border: 0px;
+    font-size: 16px;
+    margin-top: 20px;
+}
+.logo-group {
+    float: left;
+    margin-left: 100px;
+}
+.controls {
+    margin-left: 206px;
+    text-align: left;
+    color: #FFF;
+}
+.quote {
+    margin-left: 25px;
+}
 
 .popup-btn-login#btn-register {
     float: none;
@@ -1077,7 +1155,7 @@ input::-webkit-inner-spin-button {
     text-indent: 5px;
 }
 
-.popup-btn-row .popup-btn-login:hover {
+.popup-btn-row .popup-btn-login,.popup-btn-create:hover {
     background: url('../images/bg/login-btn.png') no-repeat center top;
 }
 
