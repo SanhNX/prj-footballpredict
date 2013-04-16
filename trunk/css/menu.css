@@ -12,6 +12,7 @@
 	/*text-indent: 20px;*/
         text-align: center;
 }
+
 .menu-item a{
 	text-decoration: none;
 	color: #FF003B;
@@ -38,6 +39,47 @@
 	transition: height 150ms ease-in-out;
 }
 .menu-item:hover:before {
+	height: 100%;
+	bottom: initial;
+	top: 0;
+}
+
+.menu-item11 {
+	position: relative;
+	min-height: 30px;
+	line-height: 30px;
+	width: 130px;
+	display: inline-block;
+	/*text-indent: 20px;*/
+        text-align: center;
+}
+
+.menu-item11 a {
+	text-decoration: none;
+	color: #FF003B;
+	position: relative;
+	z-index: 10;
+	text-shadow: 0px 1px 0px #000;
+}
+.menu-item11:hover {
+}
+.menu-item11:hover a {
+	color: #FFF;
+}
+.menu-item11:before {
+	content: '';
+	width: 100%;
+	background: #BA0E36;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 0;
+	-webkit-transition: height 150ms ease-in-out;
+	-moz-transition: height 150ms ease-in-out;
+	-o-transition: height 150ms ease-in-out;
+	transition: height 150ms ease-in-out;
+}
+.menu-item11:hover:before {
 	height: 100%;
 	bottom: initial;
 	top: 0;
