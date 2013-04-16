@@ -14,6 +14,12 @@
 	margin: 100px auto 0px auto;
 	position: relative;
 }
+.popup .create-group-popup-container {
+	width: 630px;
+	height: 392px;
+	margin: 100px auto 0px auto;
+	position: relative;
+}
 .popup .popup-form {
 	width: 630px;
 	height: 392px;
