@@ -533,7 +533,7 @@ body {
 .match-list .match-item-icon-panel {
     line-height: 70px;
     height: 100%;
-    width: 125px;
+    width: 140px;
     float: left;
     text-align: center;
 }
@@ -586,7 +586,7 @@ body {
 .match-item-num-panel {
     display: block;
     line-height: 70px;
-    width: 165px;
+    width: 150px;
     height: 70px;
     float: right;
     text-align: center;
