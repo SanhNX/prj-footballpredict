@@ -26,11 +26,11 @@
 	-webkit-border-radius: 90px;
 	-moz-border-radius: 90px;
 	border-radius: 90px;
-	height: 135px;
-	width: 135px;
+	height: 150px;
+	width: 150px;
 	vertical-align: middle;
 	display: inline-block;
-	background-image: url("../images/icon/default-pool-avt-bg.png");
+	/*background-image: url("../images/icon/default-pool-avt-bg.png");*/
 }
 .popup-control-row {
 	clear: both;
@@ -127,7 +127,7 @@ input[type=checkbox].css-checkbox + label.css-label {
 	padding-left:20px;
 	height:21px;
 	display:inline-block;
-	line-height:21px;
+	line-height:17px;
 	background-repeat:no-repeat;
 	background-position: 0 -21px;
 	font-size:15px;

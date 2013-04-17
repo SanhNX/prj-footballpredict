@@ -11,8 +11,8 @@
             </div>
             <div>
                 <?php
-				include 'loginfacebook.php';
-				?>
+                include 'loginfacebook.php';
+                ?>
             </div>
             <div class="popup-mess-row"><i class="bullet"></i>
                 <span> Log in with your email address or </span>
@@ -55,9 +55,10 @@
                     <input id="btn-register" name='btn-register' type='submit' class="popup-btn-login" value='Register'/>
                 </div>
             </form>
-           
+
             <span class="loading-spin undisplayed"></span>
         </div>
         <div class="popup-bottom"></div>
     </div>
 </div>
+
