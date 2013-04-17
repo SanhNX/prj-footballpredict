@@ -814,7 +814,7 @@ ul {
     background-image: url("../images/icon/account-ico.png");
 }
 
-.loading-spin {
+.loading-spin,.create-loading-spin {
     height: 60px;
     width: 100%;
     background: url("../images/icon/spinner.gif") no-repeat center;
@@ -1213,8 +1213,16 @@ textarea{
     color: #F5EB00;
     margin-left: 190px;
 }
+.create-group-error-mess {
+    /*text-align: center;*/
+    display: block;
+    font-size: 13px;
+    font-style: italic;
+    color: #F5EB00;
+    margin-left: 30px;
+}
 
-.popup-error-mess i {
+.popup-error-mess,.create-group-error-mess i {
     display: inline-block;
     width: 14px;
     height: 13px;
