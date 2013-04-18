@@ -44,7 +44,7 @@
                             // ---------------------------------
 
 
-                            $itemList = getMatchList(1);
+                            $itemList = getAdminMatchList(1);
                             echo '<form method="POST">';
                             for ($i = 0; $i < count($itemList); $i++) {
                                 $item = $itemList[$i];
