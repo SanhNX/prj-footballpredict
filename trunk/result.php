@@ -37,9 +37,9 @@
 
                             $tourIndex = isset($_REQUEST['tourIndex']) ? $_REQUEST['tourIndex'] : 23;  
 
-                            $itemList = getMatchListOfLeagues(1, $tourIndex);
+                            $itemList = getResultMatchListOfLeagues(1, $tourIndex);
                             echo '<div class="page-cont-title">
-                                    <span class="cont-title-bold">Prediction tour '.$tourIndex.'</span><span class="cont-title-sub">'.date_format(date_create($itemList[0]->StartTime), 'l d F').' to '.date_format(date_create($itemList[7]->StartTime), 'l d F').'</span>
+                                    <span class="cont-title-bold">Results tour '.$tourIndex.'</span><span class="cont-title-sub">'.date_format(date_create($itemList[0]->StartTime), 'l d F').' to '.date_format(date_create($itemList[7]->StartTime), 'l d F').'</span>
                                 </div>';
                             
                             echo '<form method="POST">';

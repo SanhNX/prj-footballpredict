@@ -1,7 +1,25 @@
 <?php
 
 function getMatchListOfLeagues($typeLeaguesId, $tour) {
-    $sql = "SELECT * FROM tbl_matchlist Where TypeLeaguesId = '".$typeLeaguesId."' AND TourId = '".$tour."'";
+    $sql = "SELECT * FROM tbl_matchlist Where TypeLeaguesId = '".$typeLeaguesId."' AND TourId = '".$tour."' AND StartTime > CURDATE() ";
+    $queryResult = mysql_query($sql) or die ("Couldn't execute query.");
+    $i = 0;
+    $result = array();
+    while ($seletedItem = mysql_fetch_array($queryResult,MYSQL_ASSOC)) {
+        $item = new Matchlist();
+        $item->Id = $seletedItem['Id'];
+        $item->ClubA = $seletedItem['ClubA'];
+        $item->ClubB = $seletedItem['ClubB'];
+        $item->StartTime = $seletedItem['StartTime'];
+        $item->Result = $seletedItem['Result'];
+        $result[$i] = $item;
+        $i++;
+    }
+    return $result;
+}
+
+function getResultMatchListOfLeagues($typeLeaguesId, $tour) {
+    $sql = "SELECT * FROM tbl_matchlist Where TypeLeaguesId = '".$typeLeaguesId."' AND TourId = '".$tour."' ";
     $queryResult = mysql_query($sql) or die ("Couldn't execute query.");
     $i = 0;
     $result = array();

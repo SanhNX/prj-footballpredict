@@ -1,7 +1,8 @@
 <div class="header">
     <div class="header-container">
-       <div class="header-logo"><span class="" style="color: red;"> FOOTBALL </span><br/><span class="" style="color: white;"> Challenge</span>
-		</div>
+        <a href="http://www.footballchallenge.me" class="header-logo">
+            <span class="" style="color: red;"> </span><br/><span class="" style="color: white;"> </span>
+        </a>
         <div class="header-log">
             <?php
             if (!isset($_SESSION["UserName"]))
