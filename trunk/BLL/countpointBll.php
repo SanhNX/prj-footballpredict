@@ -124,4 +124,66 @@ function countPoint ($matchId, $resultA, $resultB) {
      
 }
 
+function pointClub ($idClubA, $idClubB, $resultA, $resultB) {
+	
+	if ($resultA > $resultB) {
+	// doi thang
+		updatePointClub($idClubA, 1, 3, 1, 0);
+	// doi thua
+		updatePointClub($idClubB, 1, 0, 0, 1);
+	} else if ($resultB > $resultA) {
+		// doi thang
+		updatePointClub($idClubB, 1, 3, 1, 0);
+	// doi thua
+		updatePointClub($idClubA, 1, 0, 0, 1);
+	} else {
+		// doi thang
+		updatePointClub($idClubB, 1, 1, 0, 0);
+	// doi thua
+		updatePointClub($idClubA, 1, 1, 0, 0);
+	} 
+	
+}
+
+
+function updatePointClub ($id, $pl, $p, $w, $l) {
+	
+	$clubResult = getClubPointById($id);
+	if (!empty($clubResult)) {
+		$played = (int)$clubResult->Played + (int)$pl;
+		$points = (int)$clubResult->Points + (int)$p;
+		$won = (int)$clubResult->Won + (int)$w;
+		$lost = (int)$clubResult->Lost + (int)$l;
+		
+
+		$sql = "UPDATE tbl_club SET  `Played` = '".$played."' , `Points` = '".$points."' , `Won` = '".$won."' , `Lost` = '".$lost."' WHERE `Id` = '".$id."'";
+		
+		$queryResult = mysql_query($sql);
+		
+		if (!$queryResult) {
+			echo 'Error: ' . $id . mysql_error();
+			return -1;
+		} 
+	}
+	  
+}
+
+function getClubPointById($id) {
+    
+     $sql = "SELECT * FROM tbl_club Where Id = '".$id."'" ;
+    $queryResult = mysql_query($sql);
+    if (!$queryResult) {
+        echo 'Could not login: ' . $id . mysql_error();
+        exit;
+    }
+	$seletedItem = mysql_fetch_array($queryResult);
+	$item = new Club();
+	$item->Played = $seletedItem['Played'];
+	$item->Points = $seletedItem['Points'];
+	$item->Won = $seletedItem['Won'];
+	$item->Lost = $seletedItem['Lost'];
+    return $item;
+    
+}
+
 ?>

@@ -64,30 +64,41 @@
                                 echo '</div>';
                                 echo '<div class = "match-item-num-panel">';
                                 echo '<input type="hidden" name="' . $item->Id . '" value="' . $item->Id . '" />';
+								echo '<input type="hidden" name="idA' . $i . '" value="' . $item->ClubA . '" />';
+								echo '<input type="hidden" name="idB' . $i . '" value="' . $item->ClubB . '" />';
                                 echo '<input id="' . $item->Id . '" class="match-item-num-input" name="clubA' . $item->Id . '" type="number" tabindex="1" maxlength="2" size="2" autocomplete="off" min="0" max="99" pattern="[0-9]*"/>';
                                 echo '<input id="' . $item->Id . $item->Id . '" class="match-item-num-input" name="clubB' . $item->Id . '" type="number" tabindex="1" maxlength="2" size="2" autocomplete="off" min="0" max="99" pattern="[0-9]*"/>';
                                 echo '</div>';
                                 echo '</li>';
                             }
                             if (isset($_POST['btnSave'])) {
-                                for ($i = 1; $i < 8; $i++) {
+                                for ($i = 0; $i < 40; $i++) {
 
 
                                     $resultA = $_POST['clubA' . $i];
                                     $resultB = $_POST['clubB' . $i];
-                                    //                                   echo '<script>alert("'. $resultA .'---'. $resultB .'")</script>';
+									
+									$idClubA = $_POST['idA' . $i];
+									$idClubB = $_POST['idB' . $i];
+                                    
 
-                                    if ($i == 7)
-                                        echo '<script>alert("You are save Success !!" );</script>';
-                                    redirect('adminpredict.php');
+                                    if ($i == 19) {
+										 echo '<script>alert("You are save Success !!" );</script>';
+										echo '<script>location.reload();</script>';
+									}
+                                       
 //                                echo '<script>alert("'. $_POST[$i].'---'.$_SESSION['UserId'].'--' .$_POST['clubA'.$i].'--'. $_POST['clubB'.$i].'")</script>';
 
 
                                     if ($resultA >= 0 && $resultB >= 0 && $resultA != "" && $resultB != "") {
 //                                        echo '<script>alert("UPDATE FAIL . ' . $resultA . '-' . $resultB . ' " );</script>';
                                         $predictItem = updateResult($_POST[$i], '' . $resultA . '-' . $resultB . '');
+										echo '<script>alert("'. $predictItem .'")</script>';
                                         if ($predictItem != -1) {
+											// update point user
                                             countPoint($_POST[$i], $_POST['clubA' . $i], $_POST['clubB' . $i]);
+											// update point club
+											pointClub($idClubA, $idClubB, $resultA, $resultB);
                                         } else {
                                             //echo '<script>alert("UPDATE FAIL . '. $_POST[$i] .' " );</script>';
                                         }
