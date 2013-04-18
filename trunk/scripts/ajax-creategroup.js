@@ -1,5 +1,8 @@
 $(document).ready(function() {
     $('#btn-create-group').on('click', function(e) {
+//        document.getElementById("createGroupForm").submit();
+//        return;
+        var formData = new FormData($('form[name=createGroupForm]')[0]);
         var gName = $("#txtgroupname").val();
         var gDescription = $("#txtgroupdescription").val();
         var uploadfile = ($("#uploadfile").val() === '') ? 'images/icon/default-pool-avt-bg.png' : $("#uploadfile").val();
@@ -18,6 +21,7 @@ $(document).ready(function() {
         }else {
             $(".create-group-error-mess").html('<i></i> Processes running ............');
             $(".create-loading-spin").removeClass("undisplayed");
+            
             $.ajax({
                 type: "POST",
                 url: "./BLL/create-groupBll.php",

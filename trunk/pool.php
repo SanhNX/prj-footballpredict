@@ -17,6 +17,7 @@
         <script type="text/javascript" src="scripts/ajax-vaildate.js"></script>
         <script type="text/javascript" src="scripts/ajax-search.js"></script>        
         <script type="text/javascript" src="scripts/ajax-creategroup.js"></script>        
+        <script type="text/javascript" src="scripts/webtoolkit.aim.js"></script>        
 
     </head>
     <body>
@@ -135,7 +136,8 @@
 
                     <span class="wrap hotness">
 
-                        <form id="createGroupForm" name="createGroupForm" action="BLL/create-groupBll.php" method="post" enctype="multipart/form-data">
+                        <form id="createGroupForm" name="createGroupForm" action="BLL/create-groupBll.php" 
+                              method="post" enctype="multipart/form-data">
                             <div class="popup-create-pool-group">
                                 <div class="popup-create-pool-group-avt">
                                     <img id="thumbimage" class="popup-create-pool-img"  src="images/icon/default-pool-avt-bg.png" />
@@ -147,16 +149,17 @@
                                 </div>
                                 <a class="removeimg undisplayed" href="javascript:" >remove</a>
                             </div>
-                        </form>
-                        <div class="popup-control-row">
-                            <div class="popup-input-check-row">
-                                <input id="popup-input-pool-check" class="css-checkbox popup-input-check" type="checkbox">
-                                <label for="popup-input-pool-check" class="css-label dark-check-green">This group is private
-                                    (Only you can invite others to this group)</label>
-                                <div class="create-group-error-mess"></div>
+
+                            <div class="popup-control-row">
+                                <div class="popup-input-check-row">
+                                    <input id="popup-input-pool-check" class="css-checkbox popup-input-check" type="checkbox">
+                                    <label for="popup-input-pool-check" class="css-label dark-check-green">This group is private
+                                        (Only you can invite others to this group)</label>
+                                    <div class="create-group-error-mess"></div>
+                                </div>
+                                <input id="btn-create-group" type="submit" class="popup-btn-upload" value="Save" />
                             </div>
-                            <a id="btn-create-group" class="popup-btn-upload" href="#">Save</a>
-                        </div>
+                        </form>
                         <span class="create-loading-spin undisplayed"></span>
                 </div>
                 <div class="popup-bottom"></div>
