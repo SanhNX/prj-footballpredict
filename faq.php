@@ -81,20 +81,25 @@
                             <h3>6. Can I create a group?</h3>
                             <p>Yes you can! It is very easy and fun to create your own group and have your group ranking to</p>
 							
-							<p>compete against the group members. To create a group first you should go to "Groups" tab and </p>
-							<p>under this tab you should click on "My groups". Here you can see the list if your own groups. To </p>
-							<p>create a new group you just need to click on "Create a new group" button. All you need to do is </p>
-							<p>pick a name and logo for your group and then invite your friends either by typing their e-mail </p>
-							<p>addresses or through your Facebook account. You can either create an open or closed group. Open </p>
-							<p>groups will be visible under the global groups list and other members will be able to join your </p>
-							<p>group. Closed groups are going to be open only people who were invited by the members of that </p>
-							<p>group. (Note for the developers: group names should be unique, so that system should check the </p>
-							<p>names and warn the user if the name is not available anymore).</p>
+                            <p>compete against the group members. To create a group first you should go to "Groups" tab and </p>
+                            <p>under this tab you should click on "My groups". Here you can see the list if your own groups. To </p>
+                            <p>create a new group you just need to click on "Create a new group" button. All you need to do is </p>
+                            <p>pick a name and logo for your group and then invite your friends either by typing their e-mail </p>
+                            <p>addresses or through your Facebook account. You can either create an open or closed group. Open </p>
+                            <p>groups will be visible under the global groups list and other members will be able to join your </p>
+                            <p>group. Closed groups are going to be open only people who were invited by the members of that </p>
+                            <p>group. (Note for the developers: group names should be unique, so that system should check the </p>
+                            <p>names and warn the user if the name is not available anymore).</p>
 							
 
                             <h3>7. How can I join a group?</h3>
                             <p>Go to "Groups" tab. Here you will see the list of all groups. (If they are open to public). All you need </p>
-							<p>to do is click in "Join this group" button under the logo if that group.</p>
+                            <p>to do is click in "Join this group" button under the logo if that group.</p>
+                            </br>
+                            <p>
+                                <span style="font-size: 20px;font-weight: bold;color: #F5EB00;font-style: italic">Contact :</span> 
+                                <a style="font-style: italic;font-size: 15px;color: #F5EB00;" href="#">info@footballchallenge.me</a>
+                            </p>
                         </div>
                         <div class="page-cont-ref faq"></div>
 

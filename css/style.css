@@ -1230,8 +1230,16 @@ textarea{
     color: #F5EB00;
     margin-left: 30px;
 }
+.no-match-list {
+    /*text-align: center;*/
+    display: block;
+    font-size: 20px;
+    font-style: italic;
+    color: #F5EB00;
+    margin: 180px;
+}
 
-.popup-error-mess i,.create-group-error-mess i {
+.popup-error-mess i,.create-group-error-mess i,.no-match-list i {
     display: inline-block;
     width: 14px;
     height: 13px;

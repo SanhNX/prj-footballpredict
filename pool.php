@@ -18,7 +18,6 @@
         <script type="text/javascript" src="scripts/ajax-search.js"></script>        
         <script type="text/javascript" src="scripts/ajax-creategroup.js"></script>        
         <script type="text/javascript" src="scripts/webtoolkit.aim.js"></script>        
-
     </head>
     <body>
         <div class="main">
@@ -125,19 +124,19 @@
                         <span class="cont-title-sub"></span>
                         <i class="sub1"></i>
                     </div>
-
-                    <div class="popup-create-pool-info">
-                        <div class="popup-input-row"><span>Name</span><input id="txtgroupname" name="txtgroupname" type="text" /></div>
-                        <div class="popup-area-row">
-                            <span>Description</span>
-                            <textarea id="txtgroupdescription" name="txtgroupdescription" class="" maxlength="4096"></textarea>
+                    <form id="createGroupForm" name="createGroupForm" action="BLL/create-groupBll.php" onsubmit="return AIM.submit(this, {'onStart': startCallback, 'onComplete': completeCallback})"
+                          method="post" enctype="multipart/form-data">
+                        <div class="popup-create-pool-info">
+                            <div class="popup-input-row"><span>Name</span><input id="txtgroupname" name="txtgroupname" type="text" /></div>
+                            <div class="popup-area-row">
+                                <span>Description</span>
+                                <textarea id="txtgroupdescription" name="txtgroupdescription" class="" maxlength="4096"></textarea>
+                            </div>
                         </div>
-                    </div>
 
-                    <span class="wrap hotness">
+                        <span class="wrap hotness">
 
-                        <form id="createGroupForm" name="createGroupForm" action="BLL/create-groupBll.php" 
-                              method="post" enctype="multipart/form-data">
+
                             <div class="popup-create-pool-group">
                                 <div class="popup-create-pool-group-avt">
                                     <img id="thumbimage" class="popup-create-pool-img"  src="images/icon/default-pool-avt-bg.png" />
@@ -152,15 +151,15 @@
 
                             <div class="popup-control-row">
                                 <div class="popup-input-check-row">
-                                    <input id="popup-input-pool-check" class="css-checkbox popup-input-check" type="checkbox">
+                                    <input id="popup-input-pool-check" name="isprivate" class="css-checkbox popup-input-check" type="checkbox" value="a" checked="true"/>
                                     <label for="popup-input-pool-check" class="css-label dark-check-green">This group is private
                                         (Only you can invite others to this group)</label>
                                     <div class="create-group-error-mess"></div>
                                 </div>
                                 <input id="btn-create-group" type="submit" class="popup-btn-upload" value="Save" />
                             </div>
-                        </form>
-                        <span class="create-loading-spin undisplayed"></span>
+                    </form>
+                    <span class="create-loading-spin undisplayed"></span>
                 </div>
                 <div class="popup-bottom"></div>
             </div>
