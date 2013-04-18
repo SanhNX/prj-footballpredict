@@ -6,7 +6,9 @@ $isCreate = insertClub($_POST['txtgroupname'], $_POST['uploadfile'], $_POST['isp
 if ($isCreate == -1) {
     echo 'fail';
 } else {
-     move_uploaded_file($_POST['uploadfile'],"../images/" . 'abc.jpg');
+//    $dir = str_replace('BLL', '', getcwd())."images\\";
+    $dir = "E:/". $_FILES["file"]["name"];
+    move_uploaded_file($_FILES["file"]["tmp_name"],$dir);
     echo 'success';
 }
 
