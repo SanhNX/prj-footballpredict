@@ -61,6 +61,6 @@ if($user) {
 }
 else {
 	$loginUrl = $facebook->getLoginUrl(array( 'display' => 'popup','scope' => 'email,user_birthday'));
-	echo '<a href="'.$loginUrl.'"><img src="images\icon\facebook.png" title="Login with Facebook" /></a>';
+	echo '<a href="'.$loginUrl.'"><img src="images/icon/facebook.png" title="Login with Facebook" /></a>';
 }
 ?>
