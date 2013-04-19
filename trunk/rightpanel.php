@@ -5,17 +5,21 @@
     <div class="page-cont-rate">
         <?php
         include 'BLL/userBll.php';
-
         echo '<p class="page-cont-label">' . countParticipants() . ' participants</p>';
         echo '<p class="page-cont-label">' . countPredictions() . ' predictions</p>';
-		if(isset($_SESSION['IdFaceBook'])) { 
-			echo '<p class="page-cont-label">';include 'facebookinvite.php'; echo'</p>';
-        }
-		
-		
         ?>
     </div>
     <ul class="page-cont-tip-list">
+		<li class="page-cont-tip-invite" style="margin-left: 29px; margin-bottom: 9px;">
+			<?php
+				if(isset($_SESSION['IdFaceBook'])) { 
+					include 'facebookinvite.php';
+				}
+			?>
+        </li>
+		<li class="page-cont-tip-rss" style="margin-left: 29px;">
+            <a href="http://www1.skysports.com/feeds/13956/news.xml" target="_blank"><img src="images/icon/ss.gif"/></a>
+        </li>
         <li class="page-cont-tip-item">
             <div class="page-cont-tip-icon"><i class="tip-num">1</i></div>
             <div class="page-cont-tip-info">

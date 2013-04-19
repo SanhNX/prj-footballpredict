@@ -5,7 +5,9 @@ include 'DAO/connection.php';
 include 'BLL/facebookBll.php';
 require 'libfacebook/facebook.php';
 require 'libfacebook/fbconfig.php';
+$saveLogout = $_SESSION['logout'];
 if(isset($_SESSION['UserName'])){
+	$_SESSION = array();
     unset($_SESSION['UserId']);
     unset($_SESSION['UserName']);
     unset($_SESSION['UserAvatar']);
@@ -20,5 +22,5 @@ if(isset($_SESSION['UserName'])){
 	
 	session_destroy();
 }
-echo $_SESSION['logout'];
+echo $saveLogout;
 ?>
