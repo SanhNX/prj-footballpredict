@@ -67,6 +67,6 @@
 				});
 			}
 	   </script>
-		<a href='#' onclick="FacebookInviteFriends();"> Facebook Invite Friends</a>
+		<a href='#' onclick="FacebookInviteFriends();"> <img src="images/icon/inviteface.png"/></a>
 	</body>
 </html>
