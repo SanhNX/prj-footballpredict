@@ -37,12 +37,16 @@
                             <?php
                             include ("DAO/connection.php");
                             //xac dinh bao nhieu dong
-                            $display = 15;
+                            $display = 30;
                             // tinh tong so trang can hien thi
                             if (isset($_GET['page']) && (int) $_GET['page']) {
                                 $page = $_GET['page'];
                             } else { //neu chua xac dinh, thi tim so trang
-                                $query = "SELECT COUNT(id) FROM tbl_user";
+                                $query = "SELECT COUNT(T.fullname) FROM (SELECT fullname, avatar, scores
+                                            FROM tbl_user
+                                            UNION ALL 
+                                            SELECT fullname, avatar, scores
+                                            FROM tbl_facebook) AS T";
                                 $res = mysql_query($query) or die(mysql_error());
                                 $rows = mysql_fetch_array($res);
                                 $record = $rows[0];
