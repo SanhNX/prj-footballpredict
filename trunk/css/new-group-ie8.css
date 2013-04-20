@@ -18,7 +18,7 @@
 	line-height: 165px;
 	width: 240px;
 	text-align: center;
-	background: url("../images/bg/pool-avt-bg.png") no-repeat center;
+	background: url("../images/bg/pool-avt-bg-square.png") no-repeat center!important;
 }
 .popup-create-pool-img {
 	padding: 0;
@@ -30,6 +30,7 @@
 	width: 140px;
 	vertical-align: middle;
 	display: inline-block;
+	/*background-image: url("../images/icon/default-pool-avt-bg.png");*/
 }
 .popup-control-row {
 	clear: both;
@@ -105,7 +106,7 @@
 .popup-create-pool-info .popup-area-row textarea  {
 	width: 370px;
 	height: 120px;
-    max-width: 370px;
+	max-width: 370px;
 	max-height: 120px;
 	font-size: 20px;
 	line-height: 28px;

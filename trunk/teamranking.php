@@ -4,7 +4,12 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title></title>
-        <link href="css/style.css" rel="stylesheet"/>
+        <!--[if !IE]><!-->
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <!--<![endif]-->
+        <!--[if lt IE 9]>
+        <link rel="stylesheet" type="text/css"href="css/style-ie8.css" />
+        <![endif]-->
         <link href="css/menu.css" rel="stylesheet"/>
 
         <link rel="SHORTCUT ICON" href="images/icon/logo-head.png"/>
