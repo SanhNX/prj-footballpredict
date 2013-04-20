@@ -27,8 +27,8 @@ function joingroup($clubId, $userId) {
         data: str_string,
         cache: false,
         success: function(dto) {
-            dto = dto.trim();
-            if (dto == "true")
+            dto = trim(dto);
+            if (dto === "true")
                 location.reload();
             else
                 $(".join-error").html('<i></i> You only allowed to join the 3 groups because this action had been interrupted !');
@@ -46,8 +46,8 @@ function leavegroup($clubId, $userId) {
             data: str_string,
             cache: false,
             success: function(dto) {
-                dto = dto.trim();
-                if (dto == "true")
+                dto = trim(dto);
+                if (dto === "true")
                     redirect('pool.php');
                 else
                     $(".detail-group-error").html('<i></i> This action had been interrupted !');
@@ -59,4 +59,17 @@ function leavegroup($clubId, $userId) {
 //            alert("You pressed Cancel!")
     }
 
+}
+function LTrim(value) {
+    var re = /\s*((\S+\s*)*)/;
+    return value.replace(re, "$1");
+}
+// Hàm cắt ký tự trắng ở cuối chuỗi
+function RTrim(value) {
+    var re = /((\s*\S+)*)\s*/;
+    return value.replace(re, "$1");
+}
+// Cắt các ký tự trắng ở đầu và cuối chuỗi
+function trim(value) {
+    return LTrim(RTrim(value));
 }

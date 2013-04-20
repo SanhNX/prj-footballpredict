@@ -46,6 +46,7 @@
 
 .grid-icon-panel img {
     height: 100%;
+    max-width: 120px;
 }
 
 .grid-item-cap {

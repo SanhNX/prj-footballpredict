@@ -32,10 +32,12 @@
             <div class="page">
                 <div class="page-container">
                     <div class="page-cont-left">
-                        <div class="page-cont-title">
-                            <span class="cont-title-bold">Groups</span><span id="create-group-btn" class="cont-title-button">Create new group</span>
-                        </div>
-                        <?php
+                         <?php
+                        echo '<div class="page-cont-title">';
+                        if (isset($_SESSION["UserName"])) {
+                            echo '<span class = "cont-title-bold">Groups</span><span id = "create-group-btn" class = "cont-title-button">Create new group</span>';
+                        }
+                        echo '</div>';
                         include 'DAO/connection.php';
                         include 'DTO/object.php';
                         include 'BLL/poolBll.php';
