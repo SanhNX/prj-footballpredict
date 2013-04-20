@@ -67,7 +67,7 @@
                                         <span class="group-details-label">Members </span>
                                         <span class="pool-members-count">' . count(getUsersOfGroup($_REQUEST['clubId'])) . '</span>
                                     </p>
-                                    <p class="group-description">Voor alle fans van Ajax.</p>
+                                    <p class="group-description"> </p>
                                 </div></div></div>';
                         }
                         ?>

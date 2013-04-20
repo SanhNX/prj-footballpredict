@@ -130,14 +130,14 @@
 //                                            echo '<script>alert("Exists : ' . $isExist . ' " );</script>';
                                             if ($isExist == 1) {
                                                 updatePredict($_SESSION['UserId'], $_POST[$preIndex], '' . $tempA . '-' . $tempB . '');
-                                                echo '<script>window.opener.location.reload(true);</script>';
+                                                echo '<script>setTimeout(function(){window.location=window.location;}, 50);</script>';
                                             } else {
                                                 $predictItem = addPredict($_SESSION['UserId'], $_POST[$preIndex], '' . $tempA . '-' . $tempB . '');
                                                 if ($predictItem != -1) {
 //                                                echo '<script>alert("INSET SUCCESS . ' . $_POST[$preIndex] . ' " );</script>';
 //                                                if ($i == 7)
 //                                                    echo '<script>alert("Save your predict success !!" );</script>';
-                                                    echo '<script>window.opener.location.reload(true);</script>';
+                                                    echo '<script>setTimeout(function(){window.location=window.location;}, 50);</script>';
                                                 } else {
 //                                                echo '<script>alert("INSET FAIL . ' . $_POST[$preIndex] . ' " );</script>';
 //                                                if ($i == 7)
