@@ -20,7 +20,7 @@
             <div class="social-list">
                 <div class="social-title">Follow us</div>
                 <div class="social-item facebook"></div>
-                <div class="social-item twitter"></div>
+      <!--           <div class="social-item twitter"></div>-->
             </div>
         </div>
     </div>

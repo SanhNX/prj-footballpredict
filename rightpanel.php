@@ -17,9 +17,6 @@
 				}
 			?>
         </li>
-		<li class="page-cont-tip-rss" style="margin-left: 29px;">
-            <a href="http://www1.skysports.com/feeds/13956/news.xml" target="_blank"><img src="images/icon/ss.gif"/></a>
-        </li>
         <li class="page-cont-tip-item">
             <div class="page-cont-tip-icon"><i class="tip-num">1</i></div>
             <div class="page-cont-tip-info">
