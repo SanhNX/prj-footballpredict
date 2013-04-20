@@ -8,6 +8,7 @@
 
 
 $(function() {
+
     $('#expand-login-btn').click(function() {
         openLogin();
     });

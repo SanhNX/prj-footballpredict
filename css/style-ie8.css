@@ -10,7 +10,6 @@ body {
     clear: both;
     height: 170px;
     background: url('../images/bg/clear-bg.png') center top no-repeat;
-    background: url('../images/bg/clear-bg.png') center top no-repeat,url('../images/bg/main-footer-bg.jpg') no-repeat center bottom;
     background-size: auto, 900px auto;
 }
 
@@ -140,7 +139,7 @@ body {
     height: 70px;
     line-height: 70px;
     position: relative;
-    background: url("../images/bg/avt-bg.png") no-repeat 140px center;
+    background: url("../images/bg/avt-bg-square.png") no-repeat 140px center!important;
     background-color: rgba(186, 14, 54, 0.66);
 }
 
@@ -786,7 +785,7 @@ ul {
     height: 50px;
     text-align: center;
     width: 50px;
-    background: url("../images/bg/avt-bg.png") no-repeat center;
+	background-color: rgba(0, 0, 0, 0.26);
     float: left;
 }
 
