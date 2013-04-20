@@ -7,7 +7,7 @@ if ($_FILES["file"]["name"] === "")
 else
     $avatar = "images/resources/team-logo/" . $_FILES["file"]["name"];
 
-$type = isset($_POST['isprivate']) && $_POST['isprivate'] ? 1 : 0;
+$type = isset($_POST['isprivate']) && $_POST['isprivate']?1:0;
 // insert this club 
 $isCreate = insertClub($_POST['txtgroupname'], $avatar, $type, $_POST['txtgroupdescription']);
 // insert this club in groups of this user!
