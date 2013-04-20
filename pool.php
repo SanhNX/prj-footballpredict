@@ -32,39 +32,42 @@
             <div class="page">
                 <div class="page-container">
                     <div class="page-cont-left">
-                         <?php
-                        echo '<div class="page-cont-title">';
-                        if (isset($_SESSION["UserName"])) {
-                            echo '<span class = "cont-title-bold">Groups</span><span id = "create-group-btn" class = "cont-title-button">Create new group</span>';
-                        }
-                        echo '</div>';
+                        <?php
                         include 'DAO/connection.php';
                         include 'DTO/object.php';
                         include 'BLL/poolBll.php';
                         include 'BLL/predictBll.php';
                         // ---------------------------------
+                        echo '<div class="page-cont-title">';
+                        if (isset($_SESSION["UserName"])) {
+                            echo '<span class = "cont-title-bold">Groups</span><span id = "create-group-btn" class = "cont-title-button">Create new group</span>';
 
-                        $groupsOfUser = getGroupsOfUser($_SESSION['UserId']);
-                        if (count($groupsOfUser) > 0) {
-                            echo '<div class="page-cont-title-sub">
+                            echo '</div>';
+
+
+                            $groupsOfUser = getGroupsOfUser($_SESSION['UserId']);
+                            if (count($groupsOfUser) > 0) {
+                                echo '<div class="page-cont-title-sub">
                                     <span class="cont-title-sub">Your groups</span>
                                     <i class="sub0"></i>
                                 </div>
                                 <div class="grid-wrapper-your-group">
                                     <ul class="grid-your-group">';
-                            for ($i = 0; $i < count($groupsOfUser); $i++) {
-                                $item = getClub_byId($groupsOfUser[$i]->ClubId);
-                                echo '<li class = "item">';
-                                echo '<div class = "grid-icon-panel">';
-                                echo '<img src = "' . $item->Logo . '"/>';
-                                echo '</div>';
-                                echo '<div class = "grid-item-cap">' . $item->Name . '</div>';
-                                echo '<div class = "grid-item-mess">by Tim</div>';
-                                echo '<a class = "grid-item-button-your-group" href="pool-detail.php?clubId=' . $groupsOfUser[$i]->ClubId . '">See your rank</a>';
-                                echo '</li>';
+                                for ($i = 0; $i < count($groupsOfUser); $i++) {
+                                    $item = getClub_byId($groupsOfUser[$i]->ClubId);
+                                    echo '<li class = "item">';
+                                    echo '<div class = "grid-icon-panel">';
+                                    echo '<img src = "' . $item->Logo . '"/>';
+                                    echo '</div>';
+                                    echo '<div class = "grid-item-cap">' . $item->Name . '</div>';
+                                    echo '<div class = "grid-item-mess">by Tim</div>';
+                                    echo '<a class = "grid-item-button-your-group" href="pool-detail.php?clubId=' . $groupsOfUser[$i]->ClubId . '">See your rank</a>';
+                                    echo '</li>';
+                                }
+                                echo '</ul><span class="join-error"></span>';
                             }
-                            echo '</ul><span class="join-error"></span></div>';
                         }
+                        echo '</div>';
                         ?>
                         <div class="page-cont-title-sub">
                             <span class="cont-title-sub">Available groups</span>
