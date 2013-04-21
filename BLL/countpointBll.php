@@ -138,9 +138,11 @@ function pointClub ($idClubA, $idClubB, $resultA, $resultB) {
 		updatePointClub($idClubA, 1, 0, 0, 1);
 	} else {
 		// doi thang
-		updatePointClub($idClubB, 1, 1, 0, 0);
-	// doi thua
+		// echo '<script>alert("'. $idClubA.'")</script>';
 		updatePointClub($idClubA, 1, 1, 0, 0);
+	// doi thua
+		//echo '<script>alert("'. $idClubB.'")</script>';
+		updatePointClub($idClubB, 1, 1, 0, 0);
 	} 
 	
 }
@@ -149,13 +151,14 @@ function pointClub ($idClubA, $idClubB, $resultA, $resultB) {
 function updatePointClub ($id, $pl, $p, $w, $l) {
 	
 	$clubResult = getClubPointById($id);
+	//echo '<script>alert("'. $clubResult->Played.'---'.$clubResult->Points.'---'.$clubResult->Won.'---'.$clubResult->Lost.'")</script>';
 	if (!empty($clubResult)) {
 		$played = (int)$clubResult->Played + (int)$pl;
 		$points = (int)$clubResult->Points + (int)$p;
 		$won = (int)$clubResult->Won + (int)$w;
 		$lost = (int)$clubResult->Lost + (int)$l;
 		
-
+		
 		$sql = "UPDATE tbl_club SET  `Played` = '".$played."' , `Points` = '".$points."' , `Won` = '".$won."' , `Lost` = '".$lost."' WHERE `Id` = '".$id."'";
 		
 		$queryResult = mysql_query($sql);
