@@ -64,7 +64,7 @@ function groupExist($clubId, $userId) {
 function insertGroup ($clubId, $userId){
     
     if(groupExist($clubId, $userId) == -1 && count(getGroupsOfUser($userId)) < 4 ){
-        echo '<script>alert("'.$clubId."----".$userId."----".count(getGroupsOfUser($userId)).'");</script>';
+//        echo '<script>alert("'.$clubId."----".$userId."----".count(getGroupsOfUser($userId)).'");</script>';
         $sql = "INSERT INTO tbl_groups ( ClubId, MemberId) VALUES ('$clubId', '$userId')";              
         $queryResult = mysql_query($sql) or die(mysql_error());
 
