@@ -73,7 +73,11 @@
                                 }
                                 echo '</ul><span class="join-error"></span></div>';
                             }
+                            
+                        }  else {
+                            echo '</div>';
                         }
+                        
                         ?>
                         <div class="page-cont-title-sub">
                             <span class="cont-title-sub">Available groups</span>
