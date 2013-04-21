@@ -49,7 +49,7 @@
                             } else {
                                 echo '<div class="page-cont-title">
                                     <span class="cont-title-bold">Prediction tour ' . $tourIndex . '</span>
-                                    <span class="cont-title-sub">' . date_format(date_create($itemList[0]->StartTime), 'l d F') . ' to ' . date_format(date_create($itemList[7]->StartTime), 'l d F') . '</span>
+                                    <span class="cont-title-sub">' . date_format(date_create($itemList[0]->StartTime), 'l d F') . ' to ' . date_format(date_create($itemList[count($itemList) - 1]->StartTime), 'l d F') . '</span>
                                         </div>';
                                 echo '<ul class="match-list">';
                                 for ($i = 0; $i < count($itemList); $i++) {
