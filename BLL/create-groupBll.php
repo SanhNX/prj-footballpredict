@@ -1,6 +1,8 @@
 <?php
 session_start();
-include '../BLL/join-groupBll.php';
+include '../DAO/connection.php';
+include '../DTO/object.php';
+include '../BLL/poolBll.php';
 
 if ($_FILES["file"]["name"] === "")
     $avatar = 'images/icon/default-pool-avt-bg.png';
