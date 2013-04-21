@@ -56,6 +56,8 @@
                             $itemList = getRankingDESC();
                             for ($i = 0; $i < count($itemList); $i++) {
                                 $item = $itemList[$i];
+                                if(!$item->Played)
+                                    continue;
                                 echo '<li class="team-item">
                                     <div class="team-item-rank">' . ($i + 1) . '</div>
                                     <div class="team-item-icon-panel">
