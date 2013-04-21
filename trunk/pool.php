@@ -71,10 +71,9 @@
                                     echo '<a class = "grid-item-button-your-group" href="pool-detail.php?clubId=' . $groupsOfUser[$i]->ClubId . '">See your rank</a>';
                                     echo '</li>';
                                 }
-                                echo '</ul><span class="join-error"></span>';
+                                echo '</ul><span class="join-error"></span></div>';
                             }
                         }
-                        echo '</div>';
                         ?>
                         <div class="page-cont-title-sub">
                             <span class="cont-title-sub">Available groups</span>
