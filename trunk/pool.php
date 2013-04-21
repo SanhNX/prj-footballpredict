@@ -161,7 +161,7 @@
                                     <span href="javascript:" >Choose file</span>
                                     <input id="uploadfile" name="file" class="file" type="file" onchange="readURL(this);"/>
                                 </div>
-                                <a class="removeimg undisplayed" href="javascript:" >remove</a>
+                                <!--<a class="removeimg undisplayed" href="javascript:" >remove</a>-->
                             </div>
 
                             <div class="popup-control-row">
