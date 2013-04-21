@@ -47,12 +47,14 @@
                         // ---------------------------------
                         echo '<div class="page-cont-title">';
                         if (isset($_SESSION["UserName"])) {
-                            echo '<span class = "cont-title-bold">Groups</span><span id = "create-group-btn" class = "cont-title-button">Create new group</span>';
+                            $groupsOfUser = getGroupsOfUser($_SESSION['UserId']);
+                            if (count($groupsOfUser) < 4)
+                                echo '<span class = "cont-title-bold">Groups</span><span id = "create-group-btn" class = "cont-title-button">Create new group</span>';
 
                             echo '</div>';
 
 
-                            $groupsOfUser = getGroupsOfUser($_SESSION['UserId']);
+
                             if (count($groupsOfUser) > 0) {
                                 echo '<div class="page-cont-title-sub">
                                     <span class="cont-title-sub">Your groups</span>
@@ -71,13 +73,15 @@
                                     echo '<a class = "grid-item-button-your-group" href="pool-detail.php?clubId=' . $groupsOfUser[$i]->ClubId . '">See your rank</a>';
                                     echo '</li>';
                                 }
-                                echo '</ul><span class="join-error"></span></div>';
+                                echo '</ul>';
+                                if (count($groupsOfUser) >= 4)
+                                    echo '<span class="join-error"><i></i> Your group is full</span></div>';
+                                else
+                                    echo '<span class="join-error"></span></div>';
                             }
-                            
-                        }  else {
+                        } else {
                             echo '</div>';
                         }
-                        
                         ?>
                         <div class="page-cont-title-sub">
                             <span class="cont-title-sub">Available groups</span>
@@ -86,24 +90,24 @@
                         <div class="popup-input-row"><span>Search</span><input id="txtSearch" name="txtSearch" type="text"/></div>
                         <div class="grid-wrapper">
                             <ul class="grid">
-                                <?php
-                                $itemList = getClubs("");
-                                for ($i = 0; $i < count($itemList); $i++) {
-                                    $item = $itemList[$i];
-                                    echo '<li class = "item">';
-                                    echo '<div class = "grid-icon-panel">';
-                                    echo '<img src = "' . $item->Logo . '"/>';
-                                    echo '</div>';
-                                    echo '<div class = "grid-item-cap">' . $item->Name . '</div>';
-                                    echo '<div class = "grid-item-mess">by Tim</div>';
-                                    $isGroup = groupExist($item->Id, $_SESSION['UserId']);
-                                    if ($isGroup == -1)
-                                        echo '<a id="' . $item->Id . '" class = "grid-item-button"  onclick="joingroup(' . $item->Id . ', ' . $_SESSION['UserId'] . ')"> Join</a>';
-                                    else
-                                        echo '<a id="' . $item->Id . '" class = "grid-item-button disable" > Had Joined</a>';
-                                    echo '</li>';
-                                }
-                                ?>
+<?php
+$itemList = getClubs("");
+for ($i = 0; $i < count($itemList); $i++) {
+    $item = $itemList[$i];
+    echo '<li class = "item">';
+    echo '<div class = "grid-icon-panel">';
+    echo '<img src = "' . $item->Logo . '"/>';
+    echo '</div>';
+    echo '<div class = "grid-item-cap">' . $item->Name . '</div>';
+    echo '<div class = "grid-item-mess">by Tim</div>';
+    $isGroup = groupExist($item->Id, $_SESSION['UserId']);
+    if ($isGroup == -1)
+        echo '<a id="' . $item->Id . '" class = "grid-item-button"  onclick="joingroup(' . $item->Id . ', ' . $_SESSION['UserId'] . ')"> Join</a>';
+    else
+        echo '<a id="' . $item->Id . '" class = "grid-item-button disable" > Had Joined</a>';
+    echo '</li>';
+}
+?>
                             </ul>
 <!--                            <script type="text/javascript">
                                 for(var i = 0; i < 16 ; i++){
@@ -114,20 +118,20 @@
 
                         </div>
                     </div>
-                    <?php
-                    include 'rightpanel.php';
-                    ?>
+<?php
+include 'rightpanel.php';
+?>
                     <div class="page-clear"></div>
                 </div>
 
             </div>
-            <?php
-            include 'footerpanel.php';
-            ?>
+<?php
+include 'footerpanel.php';
+?>
         </div>
-        <?php
-        include 'loginpanel.php';
-        ?>
+            <?php
+            include 'loginpanel.php';
+            ?>
         <div class="popup undisplayed" id="create-group-popup">
             <div class="popup-container">
                 <div class="popup-form">

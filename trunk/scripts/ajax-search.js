@@ -28,8 +28,12 @@ function joingroup($clubId, $userId) {
         cache: false,
         success: function(dto) {
             dto = trim(dto);
-            if (dto === "true")
-                location.reload();
+            if (dto === "true"){
+                $('body,html').animate({
+                    scrollTop: 0
+                }, 800);
+                setTimeout(function(){location.reload();}, 800);
+            }
             else {
                 $('body,html').animate({
                     scrollTop: 250
