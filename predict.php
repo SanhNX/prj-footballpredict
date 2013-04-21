@@ -70,17 +70,11 @@
                                     $clubA = getClub_byId($item->ClubA);
                                     $clubB = getClub_byId($item->ClubB);
                                     $predictListOfUser = getPredictListOfUser($_SESSION['UserId']);
-//                                echo '<script>alert("'.$clubA->Logo.'");</script>';
-//                                $now = getdate();
+                                    $now = getdate();
 ////                                $currentTime = $now["hours"] . ":" . $now["minutes"] . ":" . $now["seconds"];
-//                                $itemDate = date_format(date_create($item->StartTime), 'Y-F-d');
-//                                $currentDate = $now["year"] . "-" . $now["mon"] . "-" . $now["mday"];
-//                                $now = date_format(date_create(getdate()), 'd F Y , l');
-//                                if (strtotime($itemDate) > strtotime($currentDate)) {//neu ngay hien tai lon hon ngay so sanh
-//                                    echo '<script>alert(">");</script>';
-//                                } else {
-//                                    echo '<script>alert("<");</script>';
-//                                }
+                                    $itemDate = date_format(date_create($item->StartTime), 'Y-m-d H:i');
+                                    $currentDate = $now["year"] . "-" . $now["mon"] . "-" . $now["mday"] . " " . $now["hours"] . ":" . $now["minutes"];
+//                                
 
                                     echo '<li class = "match-item">';
                                     echo '<div class="start-time">' . date_format(date_create($item->StartTime), 'H : i') . '</div>';
@@ -108,9 +102,14 @@
                                     $pieces = explode("-", $currentPredict);
                                     $predictResultA = $pieces[0];
                                     $predictResultB = $pieces[1];
-
-                                    echo '<input id="' . $item->Id . '" class="match-item-num-input" value="' . $predictResultA . '" name="clubA' . $item->Id . '" type="number" tabindex="1" maxlength="2" size="2" autocomplete="off" min="0" max="99" pattern="[0-9]*"/>';
-                                    echo '<input id="' . $item->Id . $item->Id . '" class="match-item-num-input" value="' . $predictResultB . '" name="clubB' . $item->Id . '" type="number" tabindex="1" maxlength="2" size="2" autocomplete="off" min="0" max="99" pattern="[0-9]*"/>';
+//                                    echo '<script>alert("'.$itemDate."----".$currentDate.'");</script>';
+                                    if (strtotime($itemDate) <= strtotime($currentDate)) {//neu ngay hien tai lon hon ngay so sanh
+                                        echo '<span class="match-item-num-input disable" >' . $predictResultA . '</span>';
+                                        echo '<span class="match-item-num-input disable" >' . $predictResultB . '</span>';
+                                    } else {
+                                        echo '<input id="' . $item->Id . '" class="match-item-num-input" value="' . $predictResultA . '" name="clubA' . $item->Id . '" type="number" tabindex="1" maxlength="2" size="2" autocomplete="off" min="0" max="99" pattern="[0-9]*"/>';
+                                        echo '<input id="' . $item->Id . $item->Id . '" class="match-item-num-input" value="' . $predictResultB . '" name="clubB' . $item->Id . '" type="number" tabindex="1" maxlength="2" size="2" autocomplete="off" min="0" max="99" pattern="[0-9]*"/>';
+                                    }
                                     echo '</div>';
                                     echo '</li>';
                                 }

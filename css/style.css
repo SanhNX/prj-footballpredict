@@ -958,6 +958,7 @@ input::-webkit-inner-spin-button {
 
 .team-item-icon-panel img {
     height: 40px;
+    width: 40px;
     vertical-align: middle;
 }
 
@@ -1300,4 +1301,6 @@ textarea{
     color: #F5EB00;
     margin-left: 210px;
 }
-
+.disable {
+    opacity: 0.5;
+}
