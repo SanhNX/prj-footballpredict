@@ -30,8 +30,10 @@ function joingroup($clubId, $userId) {
             dto = trim(dto);
             if (dto === "true")
                 location.reload();
-            else{
-                document.body.scrollTop = 250;
+            else {
+                $('body,html').animate({
+                    scrollTop: 250
+                }, 800);
                 $(".join-error").html('<i></i> You only allowed to join the 4 groups because this action had been interrupted !');
             }
         }
