@@ -434,7 +434,7 @@ body {
     margin: 0px auto;
     color: #FFF;
     font-family: 'Segoe UI light';
-    background:url('../images/icon/Prize.png') no-repeat 50% 40% fixed;
+    background:url('../images/icon/Prize.png') no-repeat 50% 95%;
     /*background-size: 45% 95%;*/
     background-color: rgba(255, 255, 255, 0.3);
 }
