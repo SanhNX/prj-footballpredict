@@ -19,7 +19,7 @@ for ($i = 0; $i < count($itemList); $i++) {
             <img src = "' . $item->Logo . '"/>
             </div>
             <div class = "grid-item-cap">' . $item->Name . '</div>
-            <div class = "grid-item-mess">by Tim</div>
+            <div class = "grid-item-mess">' . $item->CreateBy . '</div>
             '.$button.'
             </li>';
     $girdView = $girdView . $html;
