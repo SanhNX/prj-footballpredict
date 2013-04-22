@@ -16,6 +16,7 @@
         <script src="scripts/ajax-vaildate.js"></script>
     </head>
     <body>
+        <div id="fb-root"></div>
         <div class="main">
             <?php
             include 'headerpanel.php';

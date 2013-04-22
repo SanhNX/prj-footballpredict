@@ -14,7 +14,6 @@ $(document).ready(function() {
                     $(".grid").html(dto);
                 else
                     $(".grid").html('<span class="mess-no-result">* Not found result matched. Please input another keyword !</span>');
-
             }
         });
     });
