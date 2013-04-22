@@ -3,6 +3,12 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<!-- no cache headers -->
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="no-cache">
+		<meta http-equiv="Expires" content="-1">
+		<meta http-equiv="Cache-Control" content="no-cache">
+		<!-- end no cache headers -->
         <title></title>
         <!--[if !IE]><!-->
         <link rel="stylesheet" type="text/css" href="css/style.css" />
