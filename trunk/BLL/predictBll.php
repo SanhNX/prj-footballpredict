@@ -2,11 +2,11 @@
 
 function getMatchListOfLeagues($typeLeaguesId, $tour) {
 //    $sql = "SELECT * FROM tbl_matchlist Where TypeLeaguesId = '".$typeLeaguesId."' AND TourId = '".$tour."' AND StartTime > CURDATE() ";
-    $sql = "SELECT * FROM tbl_matchlist Where TypeLeaguesId = '".$typeLeaguesId."' AND TourId = '".$tour."' ";
-    $queryResult = mysql_query($sql) or die ("Couldn't execute query.");
+    $sql = "SELECT * FROM tbl_matchlist Where TypeLeaguesId = '" . $typeLeaguesId . "' AND TourId = '" . $tour . "' ";
+    $queryResult = mysql_query($sql) or die("Couldn't execute query.");
     $i = 0;
     $result = array();
-    while ($seletedItem = mysql_fetch_array($queryResult,MYSQL_ASSOC)) {
+    while ($seletedItem = mysql_fetch_array($queryResult, MYSQL_ASSOC)) {
         $item = new Matchlist();
         $item->Id = $seletedItem['Id'];
         $item->ClubA = $seletedItem['ClubA'];
@@ -20,11 +20,11 @@ function getMatchListOfLeagues($typeLeaguesId, $tour) {
 }
 
 function getResultMatchListOfLeagues($typeLeaguesId, $tour) {
-    $sql = "SELECT * FROM tbl_matchlist Where TypeLeaguesId = '".$typeLeaguesId."' AND TourId = '".$tour."' ";
-    $queryResult = mysql_query($sql) or die ("Couldn't execute query.");
+    $sql = "SELECT * FROM tbl_matchlist Where TypeLeaguesId = '" . $typeLeaguesId . "' AND TourId = '" . $tour . "' ";
+    $queryResult = mysql_query($sql) or die("Couldn't execute query.");
     $i = 0;
     $result = array();
-    while ($seletedItem = mysql_fetch_array($queryResult,MYSQL_ASSOC)) {
+    while ($seletedItem = mysql_fetch_array($queryResult, MYSQL_ASSOC)) {
         $item = new Matchlist();
         $item->Id = $seletedItem['Id'];
         $item->ClubA = $seletedItem['ClubA'];
@@ -38,11 +38,11 @@ function getResultMatchListOfLeagues($typeLeaguesId, $tour) {
 }
 
 function getPredictListOfUser($userId) {
-    $sql = "SELECT * FROM tbl_predict Where UserId = '".$userId."'";
-    $queryResult = mysql_query($sql) or die ("Couldn't execute query.");
+    $sql = "SELECT * FROM tbl_predict Where UserId = '" . $userId . "'";
+    $queryResult = mysql_query($sql) or die("Couldn't execute query.");
     $i = 0;
     $result = array();
-    while ($seletedItem = mysql_fetch_array($queryResult,MYSQL_ASSOC)) {
+    while ($seletedItem = mysql_fetch_array($queryResult, MYSQL_ASSOC)) {
         $item = new Predict();
         $item->MatchId = $seletedItem['MatchId'];
         $item->PredictResult = $seletedItem['predictResult'];
@@ -53,8 +53,8 @@ function getPredictListOfUser($userId) {
 }
 
 function getClubListOfLeagues($leaguesId) {
-    $sql = "SELECT * FROM tbl_clublistofleagues Where TypeLeaguesId = '".$leaguesId."'";
-    $queryResult = mysql_query($sql) or die ("Couldn't execute query.");
+    $sql = "SELECT * FROM tbl_clublistofleagues Where TypeLeaguesId = '" . $leaguesId . "'";
+    $queryResult = mysql_query($sql) or die("Couldn't execute query.");
     $i = 0;
     $result = array();
     while ($seletedItem = mysql_fetch_array($queryResult)) {
@@ -68,8 +68,8 @@ function getClubListOfLeagues($leaguesId) {
 }
 
 function getClub_byId($id) {
-    $sql = "SELECT * FROM tbl_club  WHERE Id = '".$id."'";
-    $queryResult = mysql_query($sql) or die ("Couldn't execute query.");
+    $sql = "SELECT * FROM tbl_club  WHERE Id = '" . $id . "'";
+    $queryResult = mysql_query($sql) or die("Couldn't execute query.");
     if (!$queryResult) {
         echo 'Could not run query: ' . $id . mysql_error();
         exit;
@@ -82,11 +82,14 @@ function getClub_byId($id) {
     $item->Points = $seletedItem['Points'];
     $item->Won = $seletedItem['Won'];
     $item->Lost = $seletedItem['Lost'];
+    $item->Type = $seletedItem['Type'];
+    $item->CreateBy = $seletedItem['CreateBy'];
+    $item->Description = $seletedItem['Description'];
     return $item;
 }
 
 function getPredict_byUIdMId($userId, $matchId) {
-    $sql = "SELECT * FROM tbl_predict  WHERE UserId = '".$userId."' AND MatchId = '".$matchId."'";
+    $sql = "SELECT * FROM tbl_predict  WHERE UserId = '" . $userId . "' AND MatchId = '" . $matchId . "'";
     $queryResult = mysql_query($sql);
     if (!$queryResult) {
         echo 'Could not run query: ' . $id . mysql_error();
@@ -96,7 +99,7 @@ function getPredict_byUIdMId($userId, $matchId) {
     return $count;
 }
 
-function addPredict($userId, $matchId, $result){
+function addPredict($userId, $matchId, $result) {
     $userId = mysql_real_escape_string($userId);
     $matchId = mysql_real_escape_string($matchId);
     $result = mysql_real_escape_string($result);
@@ -110,7 +113,7 @@ function addPredict($userId, $matchId, $result){
 }
 
 function updatePredict($userId, $matchId, $result) {
-    $sql = "UPDATE tbl_predict SET predictResult = '$result' WHERE UserId = '".$userId."' AND MatchId = '".$matchId."'";
+    $sql = "UPDATE tbl_predict SET predictResult = '$result' WHERE UserId = '" . $userId . "' AND MatchId = '" . $matchId . "'";
     $queryResult = mysql_query($sql);
     return $queryResult;
 }

@@ -28,6 +28,7 @@ CREATE TABLE `tbl_club` (
   `Points` bigint(20) default NULL,
   `Won` bigint(20) default NULL,
   `Lost` bigint(20) default NULL,
+	`CreateBy` varchar(50) NOT NULL,
 `Description` varchar(500) default NULL,
   PRIMARY KEY  (`Id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=17 ;

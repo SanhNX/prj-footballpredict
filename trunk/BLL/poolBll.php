@@ -109,6 +109,9 @@ function getClubs($keyword) {
             $item->Points = $seletedItem['Points'];
             $item->Won = $seletedItem['Won'];
             $item->Lost = $seletedItem['Lost'];
+            $item->Type = $seletedItem['Type'];
+            $item->CreateBy = $seletedItem['CreateBy'];
+            $item->Description = $seletedItem['Description'];
 
             $result[$i] = $item;
             $i++;

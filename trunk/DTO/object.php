@@ -28,6 +28,10 @@ class Club{
 	var $Points;
 	var $Won;
 	var $Lost;
+	var $Type;
+	var $CreateBy;
+	var $Description;
+        
 }
 class Matchlist{
 	var $Id;
