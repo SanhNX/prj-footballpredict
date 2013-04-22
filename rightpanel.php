@@ -42,6 +42,12 @@
                 </div>
             </div>
         </li>
+        <li class="page-cont-tip-item-like-box">
+            <div class="fb-like-box" data-href="https://www.facebook.com/FootballChallenge.Me" data-width="260" data-height="350" data-show-faces="true" data-stream="false" data-header="true"></div>
+        </li>
     </ul>
-    <div class="page-cont-ref"></div>
+    <div class="page-cont-ref">
+        
+        
+    </div>
 </div>

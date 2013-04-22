@@ -694,6 +694,11 @@ body {
     font-weight: bold;
     font-size: 14px;
 }
+.page-cont-tip-item-like-box {
+    position: absolute;
+    margin: 25px 5px;
+    z-index: 10;
+}
 
 .page-cont-tip-info .page-cont-tip-des {
     line-height: 20px;
