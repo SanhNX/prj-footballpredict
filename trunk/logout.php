@@ -15,11 +15,13 @@ if(isset($_SESSION['UserName'])){
 	unset($_SESSION['FlagReload']);
 	if (isset($_SESSION['IdFaceBook'])) {
 		setcookie('fbs_'.$facebook->getAppId(), '', time()-300, '/', '');
+		setcookie(session_name(),time()-42000,'/',0,0);
 		unset($_SESSION['IdFaceBook']);
+		$facebook->destroySession();
 		//echo '<script>alert('.$facebook->getAppId().');</script>';
 		//$facebook->setSession(NULL);
 	}
-	
+	clearstatcache();
 	session_destroy();
 }
 echo $saveLogout;
