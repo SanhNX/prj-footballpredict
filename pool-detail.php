@@ -52,12 +52,12 @@
                             echo '<img src = "' . $item->Logo . '"/>';
                             echo '</div>';
                             echo '<div class = "grid-item-cap">' . $item->Name . '</div>';
-                            echo '<div class = "grid-item-mess">by Tim</div>';
+                            echo '<div class = "grid-item-mess">' . $item->CreateBy . '</div>';
                             echo '<a class = "grid-item-button-your-group" onclick="leavegroup('.$_REQUEST['clubId'].', '.$_SESSION['UserId'].')">Leave this group</a>';
                             echo '</li>';
                             echo '</ul><span class="detail-group-error"></span><div class="right-content"><div class="group-details">
                                     <p><span class="group-details-label">by</span>
-                                        <a href="#">Tim</a>
+                                        <a href="#">' . $item->CreateBy . '</a>
                                     </p>
                                     <p>
                                         <span class="group-details-label">Type </span>

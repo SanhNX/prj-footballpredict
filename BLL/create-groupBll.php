@@ -11,7 +11,7 @@ else
 
 $type = isset($_POST['isprivate']) && $_POST['isprivate']?1:0;
 // insert this club 
-$isCreate = insertClub($_POST['txtgroupname'], $avatar, $type, $_POST['txtgroupdescription']);
+$isCreate = insertClub($_POST['txtgroupname'], $avatar, $type, $_SESSION['UserName'], $_POST['txtgroupdescription']);
 // insert this club in groups of this user!
 $excuteQuery = insertGroup($isCreate, $_SESSION['UserId']);
 if ($isCreate == -1 && $excuteQuery == -1) {
@@ -23,8 +23,8 @@ if ($isCreate == -1 && $excuteQuery == -1) {
     echo 'success';
 }
 
-function insertClub($name, $logo, $type, $description) {
-    $sql = "INSERT INTO tbl_club(Name, Logo, Type , Description) VALUES('$name', '$logo', $type, '$description')";
+function insertClub($name, $logo, $type, $by, $description) {
+    $sql = "INSERT INTO tbl_club(Name, Logo, Type, CreateBy, Description) VALUES('$name', '$logo', $type, '$by', '$description')";
 //    echo '<script>alert("' . $sql . '");</script>';
     $queryResult = mysql_query($sql) or die(mysql_error());
 
