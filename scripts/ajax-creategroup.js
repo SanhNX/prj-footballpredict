@@ -118,7 +118,7 @@ function completeEditCallback(response) {
 // viết code xử lý sau khi đã upload xong,
     if(response === "success"){
         setTimeout(function() {
-        $(".create-group-error-mess").html('<i></i> CREATE SUCCESSFULL. Please wait a minutes to return page.');
+        $(".create-group-error-mess").html('<i></i> EDIT SUCCESSFULL. Please wait a minutes to return page.');
         setTimeout(function() {
             $(".create-loading-spin").addClass("undisplayed");
             $(".create-group-error-mess").html('');
@@ -128,7 +128,7 @@ function completeEditCallback(response) {
         return false;
     }, 3000);
     }else{
-        $(".create-group-error-mess").html('<i></i> CREATE FAIL. Please try again !');
+        $(".create-group-error-mess").html('<i></i> EDIT FAIL. Please try again !');
         $(".create-loading-spin").addClass("undisplayed");
     }
     
