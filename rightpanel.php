@@ -10,12 +10,12 @@
         ?>
     </div>
     <ul class="page-cont-tip-list">
-        <li class="page-cont-tip-invite" style="margin-left: 29px; margin-bottom: 9px;">
-            <?php
-            if (isset($_SESSION['IdFaceBook'])) {
-                include 'facebookinvite.php';
-            }
-            ?>
+		<li class="page-cont-tip-invite" style="margin-left: 29px; margin-bottom: 9px;">
+			<?php
+				if(isset($_SESSION['IdFaceBook'])) { 
+					include 'facebookinvite.php';
+				}
+			?>
         </li>
         <li class="page-cont-tip-item">
             <div class="page-cont-tip-icon"><i class="tip-num">1</i></div>
@@ -44,28 +44,11 @@
         </li>
         <!--<div class="line"></div>-->
         <li class="page-cont-tip-item-like-box">
-            
-            <div class="google-ads">
-                <script type="text/javascript"><!--//<![CDATA[
-                google_ad_client = "ca-pub-5425751846726392";
-                /* skyscraper120x600 */
-                google_ad_slot = "4658062125";
-                google_ad_width = 120;
-                google_ad_height = 405;
-                //]]>//-->
-                </script>
-                <script type="text/javascript"
-                        src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-                </script>
-            </div>
-            <div class="fb-like-box-container">
-                <div class="fb-like-box" data-href="https://www.facebook.com/FootballChallenge.Me" data-width="140" data-height="405" data-show-faces="true" data-stream="false" data-header="false"></div>
-            </div>
+            <div class="fb-like-box" data-href="https://www.facebook.com/FootballChallenge.Me" data-width="260" data-height="350" data-show-faces="true" data-stream="false" data-header="true"></div>
         </li>
-        
     </ul>
     <div class="page-cont-ref">
-
-
+        
+        
     </div>
 </div>
