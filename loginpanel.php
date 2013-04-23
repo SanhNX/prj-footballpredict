@@ -14,6 +14,10 @@
                 include 'loginfacebook.php';
                 ?>
             </div>
+            <div class="user-item-avatar-panel default">
+				<span class="user-avt default"></span>
+
+			</div>
             <div class="popup-mess-row"><i class="bullet"></i>
                 <span> Log in with your email address or </span>
                 <a class="popup-link" id="btn-expand-register">create an account.</a>

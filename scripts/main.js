@@ -123,3 +123,19 @@ function redirect($url) {
     window.location = $url;
 }
 
+function editGroup() {
+    var gName = $(".grid-item-cap")[0].innerText;
+    var gDesc = $(".description")[0].innerText;
+    var gLogo = $("img")[0].src;
+    var gType = $("#typeHidden")[0].value;
+    openCreGroup();
+    if(gType == 1)
+        document.getElementById("popup-input-pool-check").checked = true;
+    else
+        document.getElementById("popup-input-pool-check").checked = false;
+    $("#txtgroupname").val(gName);
+    $("#txtgroupdescription").val(gDesc);
+    document.getElementById("thumbimage").src = gLogo;
+    
+}
+

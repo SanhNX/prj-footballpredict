@@ -699,9 +699,10 @@ body {
     margin: 25px 5px;
     z-index: 10;
 }
-.fsl {
-    font-size: 13px;
-    color: #BA0E36;
+.line {
+    height: 16px;
+    background: url('../images/icon/line.png')no-repeat;
+    clear: both;
 }
 .page-cont-tip-info .page-cont-tip-des {
     line-height: 20px;
@@ -1231,7 +1232,7 @@ textarea{
     font-size: 13px;
     font-style: italic;
     color: #F5EB00;
-    margin-left: 190px;
+    margin: 20px 190px;
 }
 .create-group-error-mess {
     /*text-align: center;*/

@@ -23,7 +23,7 @@ CREATE TABLE `tbl_club` (
   `Id` bigint(20) NOT NULL auto_increment,
   `Name` varchar(50) NOT NULL,
   `Logo` varchar(50) NOT NULL,
-	`Type` bit(1) default NULL,
+	`Type` int default NULL,
   `Played` bigint(20) default NULL,
   `Points` bigint(20) default NULL,
   `Won` bigint(20) default NULL,
@@ -358,7 +358,7 @@ CREATE TABLE `tbl_user` (
   `FullName` varchar(50) default NULL,
   `Avatar` varchar(50) default NULL,
   `DOB` datetime default NULL,
-  `Gender` bit(1) default NULL,
+  `Gender` int default NULL,
   `FavoriteTeam` bigint(20) default NULL,
   `Scores` bigint(20) default NULL,
   PRIMARY KEY  (`Id`)
