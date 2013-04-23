@@ -143,7 +143,8 @@
                         <span class="cont-title-sub"></span>
                         <i class="sub1"></i>
                     </div>
-                    <form id="createGroupForm" name="createGroupForm" action="BLL/create-groupBll.php" onsubmit="return AIM.submit(this, {'onStart': startCallback, 'onComplete': completeCallback})"
+                    <form id="createGroupForm" name="createGroupForm" action="BLL/create-groupBll.php" 
+                          onsubmit="return AIM.submit(this, {'onStart': startCreateCallback, 'onComplete': completeCreateCallback})"
                           method="post" enctype="multipart/form-data">
                         <div class="popup-create-pool-info">
                             <div class="popup-input-row"><span>Name</span><input id="txtgroupname" name="txtgroupname" type="text" /></div>

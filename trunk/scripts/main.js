@@ -41,6 +41,9 @@ $(function() {
     $('#popup-btn-create-group-close').click(function() {
         closeCreGroup(null);
     });
+    $('#popup-btn-edit-group-close').click(function() {
+        closeEditGroup(null);
+    });
 
     $(".removeimg").click(function() {
         $("#thumbimage").attr('src', 'images/icon/default-pool-avt-bg.png');
@@ -104,6 +107,19 @@ function closeCreGroup(callback) {
             callback();
     });
 }
+function openEditGroup() {
+    $('#edit-group-popup').removeClass('undisplayed');
+    $('#edit-group-popup').css({opacity: 0}).animate({opacity: 1}, 500);
+    $('#edit-group-popup').children('.popup-container').css({marginTop: -100, opacity: 0.5}).animate({marginTop: 100, opacity: 1}, 500);
+}
+function closeEditGroup(callback) {
+    $('#edit-group-popup').children('.popup-container').animate({marginTop: -100, opacity: 0}, 250);
+    $('#edit-group-popup').animate({opacity: 1}, 250, function() {
+        $('#edit-group-popup').addClass('undisplayed');
+        if (callback)
+            callback();
+    });
+}
 function readURL(input, thumbimage) {
     if (input.files && input.files[0]) {
         var reader = new FileReader();
@@ -126,16 +142,16 @@ function redirect($url) {
 function editGroup() {
     var gName = $(".grid-item-cap")[0].innerText;
     var gDesc = $(".description")[0].innerText;
-    var gLogo = $("img")[0].src;
+//    var gLogo = $("img")[0].src;
     var gType = $("#typeHidden")[0].value;
-    openCreGroup();
+    openEditGroup();
     if(gType == 1)
         document.getElementById("popup-input-pool-check").checked = true;
     else
         document.getElementById("popup-input-pool-check").checked = false;
-    $("#txtgroupname").val(gName);
-    $("#txtgroupdescription").val(gDesc);
-    document.getElementById("thumbimage").src = gLogo;
+    $("#txtgName").val(gName);
+    $("#txtgDescription").val(gDesc);
+//    document.getElementById("thumbimage").src = gLogo;
     
 }
 
