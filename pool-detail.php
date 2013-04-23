@@ -9,11 +9,14 @@
         <link href="css/menu.css" rel="stylesheet"/>
         <link  rel="stylesheet" type="text/css" href="css/new-group.css"/>
         <link rel="SHORTCUT ICON" href="images/icon/logo-head.png"/>
-        <script src="scripts/jquery-1.8.3.min.js"></script>
-        <script src="scripts/jquery-latest.js"></script>
-        <script src="scripts/main.js"></script>
-        <script src="scripts/ajax-vaildate.js"></script>
-        <script src="scripts/ajax-search.js"></script>
+        <script type="text/javascript" src="scripts/jquery-1.8.3.min.js"></script>
+        <script type="text/javascript" src="scripts/jquery-latest.js"></script>
+        <script type="text/javascript" src="scripts/jquery.numeric.js"></script>
+        <script type="text/javascript" src="scripts/main.js"></script>
+        <script type="text/javascript" src="scripts/ajax-vaildate.js"></script>
+        <script type="text/javascript" src="scripts/ajax-search.js"></script>        
+        <script type="text/javascript" src="scripts/ajax-creategroup.js"></script>        
+        <script type="text/javascript" src="scripts/webtoolkit.aim.js"></script> 
     </head>
     <body>
         <div class="main">
@@ -175,24 +178,25 @@
         <?php
         include 'loginpanel.php';
         ?>
-        <div class="popup undisplayed" id="create-group-popup">
+        <div class="popup undisplayed" id="edit-group-popup">
             <div class="popup-container">
                 <div class="popup-form">
                     <div class="page-cont-title">
                         <span class="cont-title-bold">Create new group</span><span class="cont-title-sub"></span>
-                        <span class="popup-btn-close" id="popup-btn-create-group-close"></span>
+                        <span class="popup-btn-close" id="popup-btn-edit-group-close"></span>
                     </div>
                     <div class="page-cont-title-sub">
                         <span class="cont-title-sub"></span>
                         <i class="sub1"></i>
                     </div>
-                    <form id="createGroupForm" name="createGroupForm" action="BLL/edit-groupBll.php" onsubmit="return AIM.submit(this, {'onStart': startCallback, 'onComplete': completeCallback})"
+                    <form id="editGroupForm" name="editGroupForm" action="BLL/edit-groupBll.php" 
+                          onsubmit="return AIMEDIT.submit(this, {'onStart': startEditCallback, 'onComplete': completeEditCallback})"
                           method="post" enctype="multipart/form-data">
                         <div class="popup-create-pool-info">
-                            <div class="popup-input-row"><span>Name</span><input id="txtgroupname" name="txtgroupname" type="text" /></div>
+                            <div class="popup-input-row"><span>Name</span><input id="txtgName" name="txtgName" type="text" /></div>
                             <div class="popup-area-row">
                                 <span>Description</span>
-                                <textarea id="txtgroupdescription" name="txtgroupdescription" class="" maxlength="4096"></textarea>
+                                <textarea id="txtgDescription" name="txtgDescription" class="" maxlength="4096"></textarea>
                             </div>
                         </div>
 
@@ -206,7 +210,7 @@
                                 </div>
                                 <div class="popup-btn-upload">
                                     <span href="javascript:" >Choose file</span>
-                                    <input id="uploadfile" name="file" class="file" type="file" onchange="readURL(this);"/>
+                                    <input id="gUploadfile" name="gFile" class="file" type="file" onchange="readURL(this);"/>
                                 </div>
                                 <!--<a class="removeimg undisplayed" href="javascript:" >remove</a>-->
                             </div>
@@ -218,6 +222,10 @@
                                         (Only you can invite others to this group)</label>
                                     <div class="create-group-error-mess"></div>
                                 </div>
+                                
+                                <?php
+                                    echo '<input name="idHidden" type="hidden" value="'.$_REQUEST['clubId'].'" />';
+                                ?>
                                 <input id="btn-create-group" type="submit" class="popup-btn-upload" value="Save" />
                             </div>
                     </form>
