@@ -1228,7 +1228,7 @@ textarea{
     font-size: 13px;
     font-style: italic;
     color: #F5EB00;
-    margin-left: 190px;
+    margin: 20px 190px;
 }
 .create-group-error-mess {
     /*text-align: center;*/
