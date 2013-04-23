@@ -3,7 +3,7 @@
 $username = 'root';
 $password = '';
 $hostname = 'localhost';
-$db = 'new_schema';
+$db = 'footballpredict';
 
 $dbhandle = mysql_connect($hostname, $username, $password) or die("Unable to connect to MySQL");
 
