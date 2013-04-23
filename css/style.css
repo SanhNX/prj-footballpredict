@@ -705,6 +705,16 @@ body {
 .google-ads{
     float: left;
 }
+.google-ads-left{
+    float: left;
+    margin-left: 220px;
+    height: 600px;
+}
+.google-ads-right{
+    float: right;
+    margin-right: 220px;
+    height: 600px;
+}
 .line {
     height: 16px;
     background: url('../images/icon/line.png')no-repeat;

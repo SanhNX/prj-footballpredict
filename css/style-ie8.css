@@ -706,6 +706,16 @@ body {
 .google-ads{
     float: left;
 }
+.google-ads-left{
+    position: absolute;
+    float: left;
+    margin-left: 220px;
+}
+.google-ads-right{
+    position: absolute;
+    float: right;
+    right: 220px;
+}
 
 .page-cont-tip-info .page-cont-tip-des {
     line-height: 20px;
