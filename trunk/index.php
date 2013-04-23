@@ -3,12 +3,12 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<!-- no cache headers -->
-		<meta http-equiv="Pragma" content="no-cache">
-		<meta http-equiv="no-cache">
-		<meta http-equiv="Expires" content="-1">
-		<meta http-equiv="Cache-Control" content="no-cache">
-		<!-- end no cache headers -->
+        <!-- no cache headers -->
+        <meta http-equiv="Pragma" content="no-cache">
+        <meta http-equiv="no-cache">
+        <meta http-equiv="Expires" content="-1">
+        <meta http-equiv="Cache-Control" content="no-cache">
+        <!-- end no cache headers -->
         <title></title>
         <!--[if !IE]><!-->
         <link rel="stylesheet" type="text/css" href="css/style.css" />
@@ -24,15 +24,22 @@
         <script src="scripts/main.js"></script>
         <script src="scripts/ajax-vaildate.js"></script>
         <script>
-		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+            (function(i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function() {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                        m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-		  ga('create', 'UA-40311434-1', 'footballchallenge.me');
-		  ga('send', 'pageview');
+            ga('create', 'UA-40311434-1', 'footballchallenge.me');
+            ga('send', 'pageview');
 
-		</script>
+        </script>
 
     </head>
     <body>
@@ -40,10 +47,25 @@
         // put your code here
         ?>
         <div class="main">
+
             <?php
             include 'headerpanelindex.php';
             ?>
             <div class="cover home">
+
+                <div class="google-ads-right">
+                    <script type="text/javascript"><!--//<![CDATA[
+                    google_ad_client = "ca-pub-5425751846726392";
+                        /* skyscraper120x600 */
+                        google_ad_slot = "4658062125";
+                        google_ad_width = 120;
+                        google_ad_height = 600;
+                        //]]>//-->
+                    </script>
+                    <script type="text/javascript"
+                            src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+                    </script>
+                </div>
                 <div class="cover-container-bottom">
                     <p>Choose your competition</p>
                     <span>Challenge your friends in one or more competitions!</span>
@@ -59,11 +81,11 @@
                             <div class="page-home-frame-item link">
                                 <img src="images\resources\team-logo\RussianPremierLeague01.gif">
                                 <span><b></b>
-                                    </span></div>
+                                </span></div>
                             <div class="page-home-frame-item link">
                                 <img src="http://letspredict.it/static/versioned-images/img/landing-page/eurocup-logo-home.c0b4ae6c.png">
                                 <span><b></b>
-                                    </span></div>
+                                </span></div>
                         </div>
                         <div class="page-home-row">
                             <div class="page-home-row-item">
@@ -74,13 +96,13 @@
                             </div>
                             <div class="page-home-row-item">
                                 <span><b></b>
-                                    </span>
+                                </span>
 
                                 <div class="page-home-row-btn">Coming Soon</div>
                             </div>
                             <div class="page-home-row-item">
                                 <span><b></b>
-								</span>
+                                </span>
 
                                 <div class="page-home-row-btn">Coming Soon</div>
                             </div>
@@ -93,11 +115,11 @@
 
         </div>
         <?php
-            include 'footerpanel.php';
-            ?>
-        </div>
-        <?php
-        include 'loginpanel.php';
+        include 'footerpanel.php';
         ?>
+    </div>
+    <?php
+    include 'loginpanel.php';
+    ?>
 </body>
 </html>
