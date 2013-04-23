@@ -711,12 +711,12 @@ body {
 .google-ads-left{
     position: absolute;
     float: left;
-    margin-left: 220px;
+    margin-left: 50px;
 }
 .google-ads-right{
     position: absolute;
     float: right;
-    right: 220px;
+    right: 50px;
 }
 
 .page-cont-tip-info .page-cont-tip-des {

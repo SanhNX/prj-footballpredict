@@ -709,12 +709,12 @@ body {
 }
 .google-ads-left{
     float: left;
-    margin-left: 220px;
+    margin-left: 50px;
     height: 600px;
 }
 .google-ads-right{
     float: right;
-    margin-right: 220px;
+    margin-right: 50px;
     height: 600px;
 }
 .line {
