@@ -16,6 +16,9 @@
     fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
 $(function() {
+	$(".team-item:nth-child(odd)").addClass("odd");
+	$(".match-item:nth-child(odd)").addClass("odd");
+
 
     $('#expand-login-btn').click(function() {
         openLogin();
@@ -152,6 +155,6 @@ function editGroup() {
     $("#txtgName").val(gName);
     $("#txtgDescription").val(gDesc);
 //    document.getElementById("thumbimage").src = gLogo;
-    
+
 }
 
