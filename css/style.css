@@ -1229,6 +1229,7 @@ textarea{
 .login-popup-error-mess {
     /*text-align: center;*/
     display: block;
+    width: 100%;
     font-size: 13px;
     font-style: italic;
     color: #F5EB00;
