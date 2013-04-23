@@ -696,8 +696,14 @@ body {
 }
 .page-cont-tip-item-like-box {
     position: absolute;
-    margin: 25px 5px;
+    margin: 5px 5px;
     z-index: 10;
+}
+.fb-like-box-container{
+    float: left;
+}
+.google-ads{
+    float: left;
 }
 .line {
     height: 16px;
