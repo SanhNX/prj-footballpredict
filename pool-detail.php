@@ -182,7 +182,7 @@
             <div class="popup-container">
                 <div class="popup-form">
                     <div class="page-cont-title">
-                        <span class="cont-title-bold">Create new group</span><span class="cont-title-sub"></span>
+                        <span class="cont-title-bold">Edit your group</span><span class="cont-title-sub"></span>
                         <span class="popup-btn-close" id="popup-btn-edit-group-close"></span>
                     </div>
                     <div class="page-cont-title-sub">
