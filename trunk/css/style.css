@@ -1332,3 +1332,10 @@ textarea{
 .disable {
     opacity: 0.5;
 }
+.site-close{
+    width: 378px;
+    height: 155px;
+    margin: 300px 550px;
+    background: url("../images/gallery/site_close.jpg") no-repeat center center;
+    background-size: 100% 100%;
+}
